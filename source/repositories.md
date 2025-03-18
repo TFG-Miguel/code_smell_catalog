@@ -15,7 +15,6 @@ Los siguientes repositorios fueron obtenido a través de una serie de queries ap
 - \[1.6k] https://github.com/vladimiry/ElectronMail
 - \[1.4k] https://github.com/ngrx/example-app **ARCHIVED** Posiblemente haya que descartarlo por no ser angular como tal, más bien parecen recursos
 - \[1.3k] https://github.com/emonney/QuickApp
-- \[1.3k] https://github.com/RameshMF/Angular-10-Spring-Boot-CRUD-Full-Stack-App
 - \[1.1k] https://github.com/mathisGarberg/angular-folder-structure
 - \[954] https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app
 - \[874] https://github.com/pubkey/client-side-databases

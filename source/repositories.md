@@ -7,29 +7,30 @@ Los siguientes repositorios fueron obtenido a través de una serie de queries ap
 - `app topic:angular language:TypeScript`
 ## Resultados
 ### Hasta mínimo 200 starts
-- \[12.1k] https://github.com/linnovate/mean
-- \[9.9k] https://github.com/bitwarden/clients
-- \[5.3k] https://github.com/gothinkster/angular-realworld-example-app
-- \[2.2k] https://github.com/Ismaestro/angular-example-app
-- \[1.6k] https://github.com/vladimiry/ElectronMail
-- \[1.3k] https://github.com/emonney/QuickApp
-- \[954] https://github.com/stefanoslig/angular-ngrxx-realworld-example-app
-- \[703] https://github.com/fulls1z3/universal
-- \[204] https://github.com/avatsaev/angular-contacts-app-example [^1]
-- \[515] https://github.com/stbui/angular-material-app [^1]
-- \[495] https://github.com/r-park/todo-angular-firebase
-- \[310] https://github.com/jiayisheji/jianshu
-- \[294] https://github.com/mraible/21-points
-- \[271] https://github.com/coryrylan/ng-pokedex
-- \[261] https://github.com/ionicthemes/ionic-wordpress-integration
-- \[252] https://github.com/anihalaney/rwa-trivia
-- \[248] https://github.com/aggarwalankush/ionic-mosum
-- \[225] https://github.com/jeroenouw/AngularMaterialFirebase [^1]
-- \[221] https://github.com/AngularTemplates/angular-firebase-crud [^1]
-- \[210] https://github.com/paulsutherland/Polyonic
-- \[204] https://github.com/RameshMF/Angular-10-Spring-Boot-CRUD-Full-Stack-App
+1. \[12.1k] https://github.com/linnovate/mean - Errores de plantilla
+1. \[5.3k] https://github.com/gothinkster/angular-realworld-example-app - ok
+1. \[2.2k] https://github.com/Ismaestro/angular-example-app - Revisar, muchas reglas
+1. \[1.3k] https://github.com/emonney/QuickApp - ok
+1. \[515] https://github.com/stbui/angular-material-app - Sin errores de angular
+1. \[310] https://github.com/jiayisheji/jianshu - No angular app
+1. \[271] https://github.com/coryrylan/ng-pokedex - No consigo instalar el linter
+1. \[261] https://github.com/ionicthemes/ionic-wordpress-integration -  No he conseguido instalar el linter
+1. \[252] https://github.com/anihalaney/rwa-trivia - Angular 8
+1. \[248] https://github.com/aggarwalankush/ionic-mosum - No angular app
+1. \[225] https://github.com/jeroenouw/AngularMaterialFirebase [^1] - No he podido instalar el linter
+1. \[221] https://github.com/AngularTemplates/angular-firebase-crud [^1] - No consigo instalar el linter
+1. \[210] https://github.com/paulsutherland/Polyonic - No consigo instalar el linter
+1. \[204] https://github.com/RameshMF/Angular-10-Spring-Boot-CRUD-Full-Stack-App - No consigo instalar el linter
+### Cuarentena
+1. \[294] https://github.com/mraible/21-points - No he conseguido instalar el linter
+1. \[204] https://github.com/avatsaev/angular-contacts-app-example [^1] - Angular 8
+1. \[9.9k] https://github.com/bitwarden/clients - No soy capaz de instalar adecuadamente eslint 
+1. \[703] https://github.com/fulls1z3/universal - No he conseguido ejecutar el linter de angular y parecen más recursos, revisar
 ### Descartados
-- \[13.5k] https://github.com/Chocobozzz/PeerTube
+1. \[495] https://github.com/r-park/todo-angular-firebase - No angular app
+1. \[1.6k] https://github.com/vladimiry/ElectronMail - No angular app
+1. \[954] https://github.com/stefanoslig/angular-ngrx-nx-realworld-example-app - No angular app
+- \[13.5k] https://github.com/Chocobozzz/PeerTube - No angular app
 - \[1.4k] https://github.com/ngrx/example-app **ARCHIVED** Posiblemente haya que descartarlo por no ser angular como tal, más bien parecen recursos
 - \[1.1k] https://github.com/mathisGarberg/angular-folder-structure
 - \[391] https://github.com/AppOutlet/AppOutlet **ARCHIVED**

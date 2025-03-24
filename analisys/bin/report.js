@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const rules = require("./es-lint-rules.json")
 
-const DIRECTORY =
-	"/home/migudel/Documents/GII/42C/TFG/develop/repo/code_smell_catalog/analisys/repos"; // Cambia esto al directorio correcto
+const DIRECTORY = "../repos"; 
 const OUTPUT_FILE = path.join(DIRECTORY, "report.md");
 
 function parseLintFile(filePath) {
@@ -61,14 +61,15 @@ function processLintResults(files) {
 		for (let key in lintData) {
 			for (let problem of lintData[key]) {
 				for (let message of problem.messages) {
+					const ruleId = message.ruleId || "unknown";
 					if (
-            !message.ruleId ||
+            			!message.ruleId ||
 						!message.ruleId.startsWith("@angular-eslint") ||
 						message.ruleId.startsWith("@angular-eslint/template") ||
-						message.fix
+						message.fix ||
+						rules[message.ruleId.split("/").pop(0)].fixable
 					)
 						continue;
-					const ruleId = message.ruleId || "unknown";
 					const severity = message.severity; // 1: warning, 2: error
 
 					if (severity === 2) errorCount++;
@@ -90,11 +91,13 @@ function processLintResults(files) {
 }
 
 function generateMarkdownReport(report) {
+	const all = false
+	const fixable = false
 	let markdown = `# 📊 Reporte de Análisis de Lint\n\n`;
 
 	markdown += `## 📌 Recuento Global de Reglas\n\n`;
-	markdown += `| Regla | Modo Rec | Modo All |\n`;
-	markdown += `|-------|:--:|:--:|\n`;
+	markdown += `| Regla | ${ all ? 'Modo Rec | Modo All' : 'Apariciones' } | Recommended ${ fixable ? '| Fixable' : ''} | Has solutions | \n`;
+	markdown += `|-------|:--:${ all ? '|:--:' : '' }|:--:${fixable ? '|:--:' : ''}|:--:|\n`;
 
 	const allRules = new Set([
 		...Object.keys(report.rules.rec),
@@ -105,8 +108,17 @@ function generateMarkdownReport(report) {
 	);
 
 	sortedRules.forEach((rule) => {
-		markdown += `| \`${rule}\` | ${report.rules.rec[rule] || 0} | ${
+		const data = rules[rule.split("/").pop()]
+		const count = all ? `| ${report.rules.rec[rule] || 0}` :''
+		const fix = fixable ? `| ${ data.fixable  ? '🔧' : '' }` : ''
+		markdown += `| \`${
+			rule
+		}\` ${count}| ${
 			report.rules.all[rule] || 0
+		} | ${
+			data.recommended ? '✅' : ''
+		} ${fix} | ${
+			data.has_suggestions  ? '💡' : ''
 		} |\n`;
 	});
 

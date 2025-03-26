@@ -92,6 +92,7 @@ generate_report() {
 
     # Obtener el último commit con git log -1 en formato JSON
     local data_repo
+    url_repo=$(git config --get remote.origin.url)
     data_repo=$(git log -1 --pretty=format:'{"commit": "%H", "author": "%an", "date": "%ad", "message": "%s"}')
 
     # Inicializar un JSON vacío para el resultado
@@ -103,8 +104,8 @@ generate_report() {
             # Leer las primeras dos líneas del archivo
             local project_name
             local json_content
-            project_name=$(head -n 1 "$file" | sed 's/Linting \(.*\) .../\1/')
-            json_content=$(sed -n '2p' "$file")
+            project_name=$(sed -n '2p' "$file" | sed 's/Linting \"\(.*\)\".../\1/')
+            sed -n '3p' "$file" > $json_file_tmp
 
             # Extraer los "where" y "mode" del nombre del archivo
             local where mode
@@ -115,14 +116,15 @@ generate_report() {
             result=$(jq -n \
                 --arg where "$where" \
                 --arg mode "$mode" \
+                --argfile data "$json_file_tmp" \
                 --arg project "$project_name" \
-                --argjson json "$json_content" \
+                # --argjson json "$json_content" \
                 --argjson data_repo "$data_repo" \
                 '{
                     ($where): {
                         ($mode): [
                             {
-                                ($project): $json
+                                ($project): $data
                             }
                         ]
                     },

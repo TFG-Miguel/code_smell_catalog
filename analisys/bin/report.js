@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const rules = require("./es-lint-rules.json")
+const { rules } = require("./es-lint-rules.js")
 
 const DIRECTORY = "../repos"; 
 const OUTPUT_FILE = path.join(DIRECTORY, "report.md");
@@ -96,8 +96,8 @@ function generateMarkdownReport(report) {
 	let markdown = `# 📊 Reporte de Análisis de Lint\n\n`;
 
 	markdown += `## 📌 Recuento Global de Reglas\n\n`;
-	markdown += `| Regla | ${ all ? 'Modo Rec | Modo All' : 'Apariciones' } | Recommended ${ fixable ? '| Fixable' : ''} | Has solutions | \n`;
-	markdown += `|-------|:--:${ all ? '|:--:' : '' }|:--:${fixable ? '|:--:' : ''}|:--:|\n`;
+	markdown += `| Regla | ${ all ? 'Modo Rec | Modo All' : 'Apariciones' } | Recommended ${ fixable ? '| Fixable' : ''} | Has solutions | Doc | Code |\n`;
+	markdown += `|-------|:--:${ all ? '|:--:' : '' }|:--:${fixable ? '|:--:' : ''}|:--:|:--:|:--:|\n`;
 
 	const allRules = new Set([
 		...Object.keys(report.rules.rec),
@@ -119,8 +119,15 @@ function generateMarkdownReport(report) {
 			data.recommended ? '✅' : ''
 		} ${fix} | ${
 			data.has_suggestions  ? '💡' : ''
-		} |\n`;
+		} | [📄](${
+      data.docs
+    }) | [💻](${
+      data.code
+    }) |\n`;
 	});
+
+  // TODO eliminar esto cuando se quiera el reporte completo
+  return markdown;
 
 	markdown += `\n## 📊 Recuento por Proyecto\n\n`;
 

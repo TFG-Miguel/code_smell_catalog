@@ -1,0 +1,23 @@
+{
+  "repo": {
+    "HEAD": {
+      "commit": "39b042b0ea90953f41f2f67cbd41805a62aa6da2",
+      "author": "migudel",
+      "date": "Sat Mar 29 20:37:25 2025 +0100",
+      "message": "INICIO DE PRUEBAS"
+    },
+    "url": "https://github.com/bezkoder/angular-16-crud-example"
+  },
+  "before": {
+    "angular-16-crud": {
+      "recommended": [],
+      "all": []
+    }
+  },
+  "after": {
+    "angular-16-crud": {
+      "recommended": [],
+      "all": []
+    }
+  }
+}

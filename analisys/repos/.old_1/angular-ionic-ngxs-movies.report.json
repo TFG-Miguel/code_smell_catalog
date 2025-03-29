@@ -1,0 +1,2362 @@
+{
+  "repo": {
+    "HEAD": {
+      "commit": "00d08886e57024375cb27bc2108aec78a12490ba",
+      "author": "migudel",
+      "date": "Sat Mar 29 20:43:53 2025 +0100",
+      "message": "INICIO DE PRUEBAS"
+    },
+    "url": "https://github.com/abritopach/angular-ionic-ngxs-movies"
+  },
+  "before": {
+    "angular-ionic-ngxs-movies": {
+      "recommended": [],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 8,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  78,
+                  78
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      37,
+                      78
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 7,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 7,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      216
+                    ],
+                    "text": " } from '@angular/core';\n\n@Component({\n selector: 'app-root',\n templateUrl: './app.component.html',\n styleUrls: ['./app.component.css'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation } from '@angular/core';\n\n@Component({\n selector: 'app-root',\n templateUrl: './app.component.html',\n styleUrls: ['./app.component.css'],\n encapsulation: ViewEncapsulation.None\n})\nexport class AppComponent {\n title = 'app';\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/app.module.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 32,
+              "column": 5,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 32,
+              "endColumn": 21,
+              "fix": {
+                "range": [
+                  1175,
+                  1213
+                ],
+                "text": "AppRoutingModule,\n HttpClientModule"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 42,
+              "column": 49,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 42,
+              "endColumn": 67,
+              "fix": {
+                "range": [
+                  1527,
+                  1564
+                ],
+                "text": "SearchImageService, YoutubeApiService"
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { BrowserModule } from '@angular/platform-browser';\nimport { NgModule } from '@angular/core';\nimport { IonicModule } from '@ionic/angular';\nimport { HttpClientModule } from '@angular/common/http';\n\n// NGXS\nimport { MovieState } from '@store/state/movies.state';\nimport { NgxsModule } from '@ngxs/store';\nimport { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\nimport { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\nimport { NgxsFormPluginModule } from '@ngxs/form-plugin';\nimport { NgxsStoragePluginModule } from '@ngxs/storage-plugin';\n\nimport { AppRoutingModule } from './app-routing.module';\n\nimport { AppComponent } from './app.component';\n\nimport { MoviesService } from '@services/movies/movies-service';\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { SearchImageService } from '@services/search-image/search-image-service';\nimport { environment } from '@environments/environment';\n// import { GenreCarouselComponent } from './components/genre-carousel/genre-carousel.component';\n\n@NgModule({\n declarations: [\n AppComponent\n // GenreCarouselComponent,\n ],\n imports: [\n BrowserModule,\n HttpClientModule,\n AppRoutingModule,\n IonicModule.forRoot(),\n NgxsModule.forRoot([MovieState], {\n developmentMode: !environment.production\n }),\n NgxsStoragePluginModule.forRoot(),\n NgxsReduxDevtoolsPluginModule.forRoot(),\n NgxsLoggerPluginModule.forRoot(),\n NgxsFormPluginModule.forRoot()\n ],\n providers: [MoviesService, YoutubeApiService, SearchImageService],\n bootstrap: [AppComponent]\n})\nexport class AppModule {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/components/genre-carousel/genre-carousel.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 10,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  159,
+                  159
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 10,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      159
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { Store } from '@ngxs/store';\nimport { FilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\nimport { Store } from '@ngxs/store';\nimport { FilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n selector: 'app-genre-carousel',\n templateUrl: './genre-carousel.component.html',\n styleUrls: ['./genre-carousel.component.css']\n})\nexport class GenreCarouselComponent {\n genres: any;\n filters: any = {\n years: {\n lower: 1900,\n upper: new Date().getFullYear()\n },\n genre: 'Action',\n rating: 0\n };\n selected: Number = -1;\n\n constructor(private store: Store) {\n this.genres = [\n { text: 'Science fiction', src: 'assets/movies-genres/image1.png' },\n { text: 'Westerns', src: 'assets/movies-genres/image2.png' },\n { text: 'Crime', src: 'assets/movies-genres/image3.png' },\n { text: 'Romance', src: 'assets/movies-genres/image4.png' },\n { text: 'Comedy', src: 'assets/movies-genres/image5.png' },\n { text: 'Drama', src: 'assets/movies-genres/image6.png' },\n { text: 'Cartoon', src: 'assets/movies-genres/image7.png' },\n { text: 'Action', src: 'assets/movies-genres/image8.png' },\n { text: 'Adventure', src: 'assets/movies-genres/image9.png' },\n { text: 'Thriller', src: 'assets/movies-genres/image10.png' },\n { text: 'Fantasy', src: 'assets/movies-genres/image11.png' },\n { text: 'Horror', src: 'assets/movies-genres/image12.png' }\n ];\n }\n\n selectGenre(genre, index) {\n console.log('GenreCarouselComponent::selectGenre() | method called', genre);\n this.selected = index;\n this.filters.genre = genre.text;\n this.store.dispatch([new FilterMovies(this.filters)]);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/comment-modal/comment.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 19,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  335,
+                  335
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 19,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      45,
+                      335
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\n\nimport { EditMovie } from '@store/actions/movies.actions';\nimport { Store } from '@ngxs/store';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 16,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 16,
+              "endColumn": 36
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 18,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 18,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      481
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\n\nimport { EditMovie } from '@store/actions/movies.actions';\nimport { Store } from '@ngxs/store';\n\n@Component({\n selector: 'app-comment-modal',\n templateUrl: 'comment.modal.html',\n styleUrls: ['./comment.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\n\nimport { EditMovie } from '@store/actions/movies.actions';\nimport { Store } from '@ngxs/store';\n\n@Component({\n selector: 'app-comment-modal',\n templateUrl: 'comment.modal.html',\n styleUrls: ['./comment.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class CommentModalComponent implements OnInit {\n commentForm: FormGroup;\n\n modal: any = {\n title: ''\n };\n\n constructor(\n private modalCtrl: ModalController,\n private formBuilder: FormBuilder,\n private navParams: NavParams,\n private store: Store\n ) {\n this.createForm();\n }\n\n createForm() {\n this.commentForm = this.formBuilder.group({\n comment: new FormControl('', Validators.required),\n rating: new FormControl('')\n });\n }\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n\n commentFormSubmit() {\n let comments;\n let movieToUpdate = { ...this.modal.movie };\n if (typeof this.modal.movie.comments === 'undefined') {\n comments = [];\n } else {\n comments = [...this.modal.movie.comments];\n }\n\n if (typeof this.modal.movie.rate === 'undefined') {\n movieToUpdate = {\n ...movieToUpdate,\n rate: this.commentForm.value.rating,\n numVotes: 1\n };\n } else {\n movieToUpdate = {\n ...movieToUpdate,\n numVotes: movieToUpdate.numVotes + 1,\n rate:\n (movieToUpdate.rate + this.commentForm.value.rating) /\n (movieToUpdate.numVotes + 1)\n };\n }\n\n comments.push(this.commentForm.value.comment);\n movieToUpdate.comments = comments;\n this.store.dispatch(new EditMovie(movieToUpdate));\n }\n\n onRatingChange(event) {\n this.commentForm.patchValue({ rating: event.detail });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/favorites-movies-modal/favorites.movies.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 13,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 18,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  389,
+                  389
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 13,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 18,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      45,
+                      389
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams, AlertController } from '@ionic/angular';\n\nimport { Store } from '@ngxs/store';\nimport { Movie } from '@models/movie.model';\n\nimport {\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies\n} from '@store/actions/movies.actions';\nimport { Router } from '@angular/router';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 15,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 15,
+              "endColumn": 45
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 17,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 17,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      562
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams, AlertController } from '@ionic/angular';\n\nimport { Store } from '@ngxs/store';\nimport { Movie } from '@models/movie.model';\n\nimport {\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies\n} from '@store/actions/movies.actions';\nimport { Router } from '@angular/router';\n\n@Component({\n selector: 'app-favorites-movies-modal',\n templateUrl: 'favorites.movies.modal.html',\n styleUrls: ['./favorites.movies.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams, AlertController } from '@ionic/angular';\n\nimport { Store } from '@ngxs/store';\nimport { Movie } from '@models/movie.model';\n\nimport {\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies\n} from '@store/actions/movies.actions';\nimport { Router } from '@angular/router';\n\n@Component({\n selector: 'app-favorites-movies-modal',\n templateUrl: 'favorites.movies.modal.html',\n styleUrls: ['./favorites.movies.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class FavoritesMoviesModalComponent implements OnInit {\n modal: any = {\n title: ''\n };\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams,\n private store: Store,\n private router: Router,\n private alertCtrl: AlertController\n ) {}\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n\n viewMovieDetails(movie: Movie) {\n const movieDetailsURL = `/detail/${movie.id}`;\n this.router.navigate([movieDetailsURL]);\n this.modalCtrl.dismiss();\n }\n\n deleteFavoriteMovie(movie: Movie) {\n console.log(\n 'FavoritesMoviesModalComponent::deleteFavoriteMovie() | method called'\n );\n this.store.dispatch(new DeleteFavoriteMovie(movie));\n this.modal.favoritesMovies = this.modal.favoritesMovies.filter(\n (m) => m.title !== movie.title\n );\n }\n\n deleteAll() {\n console.log('FavoritesMoviesModalComponent::deleteAll() | method called');\n this.modal.favoritesMovies = [];\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n state.catalog.favorites = [];\n this.store.dispatch(new DeleteAllFavoritesMovies());\n }\n\n async presentAlertConfirm() {\n const alert = await this.alertCtrl.create({\n header: 'Delete all favorites',\n message: 'Are you sure you want to delete all the favorites?',\n buttons: [\n {\n text: 'Cancel',\n role: 'cancel',\n cssClass: 'secondary'\n },\n {\n text: 'Okay',\n handler: () => {\n this.deleteAll();\n }\n }\n ]\n });\n\n await alert.present();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/movie-modal/movie.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 23,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 28,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  677,
+                  677
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 23,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 28,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      81,
+                      677
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { UpdateFormValue, UpdateFormStatus } from '@ngxs/form-plugin';\nimport { AddMovie, EditMovie } from '@store/actions/movies.actions';\nimport { Movie } from '@models/movie.model';\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\nimport { Observable } from 'rxjs';\nimport { FormErrorHandlerService } from '@services/form-error-hanlder/form-error-handler.service';\nimport { MovieForm } from '@models/form.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 25,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 25,
+              "endColumn": 34
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 27,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 27,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      20,
+                      817
+                    ],
+                    "text": ",\n OnInit,\n Renderer2,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { UpdateFormValue, UpdateFormStatus } from '@ngxs/form-plugin';\nimport { AddMovie, EditMovie } from '@store/actions/movies.actions';\nimport { Movie } from '@models/movie.model';\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\nimport { Observable } from 'rxjs';\nimport { FormErrorHandlerService } from '@services/form-error-hanlder/form-error-handler.service';\nimport { MovieForm } from '@models/form.model';\n\n@Component({\n selector: 'app-movie-modal',\n templateUrl: 'movie.modal.html',\n styleUrls: ['./movie.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import {\n Component,\n ViewEncapsulation,\n OnInit,\n Renderer2,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { UpdateFormValue, UpdateFormStatus } from '@ngxs/form-plugin';\nimport { AddMovie, EditMovie } from '@store/actions/movies.actions';\nimport { Movie } from '@models/movie.model';\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\nimport { Observable } from 'rxjs';\nimport { FormErrorHandlerService } from '@services/form-error-hanlder/form-error-handler.service';\nimport { MovieForm } from '@models/form.model';\n\n@Component({\n selector: 'app-movie-modal',\n templateUrl: 'movie.modal.html',\n styleUrls: ['./movie.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class MovieModalComponent implements OnInit, AfterViewInit {\n modal: any = {\n title: '',\n buttonText: ''\n };\n\n movieForm: FormGroup;\n errorsForm: any = {};\n\n // Reads the name of the store from the store class.\n movieForm$: Observable<Movie[]>;\n\n genres = [\n { id: 1, name: 'Action', image: 'assets/movies-genres/action.png' },\n { id: 2, name: 'Comedy', image: 'assets/movies-genres/comedy.png' },\n { id: 3, name: 'Crime', image: 'assets/movies-genres/crime.png' },\n {\n id: 4,\n name: 'Documentary',\n image: 'assets/movies-genres/documentary.png'\n },\n { id: 5, name: 'Drama', image: 'assets/movies-genres/drama.png' },\n { id: 6, name: 'Fantasy', image: 'assets/movies-genres/fantasy.png' },\n { id: 7, name: 'Film noir', image: 'assets/movies-genres/film noir.png' },\n { id: 8, name: 'Horror', image: 'assets/movies-genres/horror.png' },\n { id: 9, name: 'Romance', image: 'assets/movies-genres/romance.png' },\n {\n id: 10,\n name: 'Science fiction',\n image: 'assets/movies-genres/science fiction.png'\n },\n { id: 11, name: 'Westerns', image: 'assets/movies-genres/westerns.png' }\n ];\n\n constructor(\n private formBuilder: FormBuilder,\n private modalCtrl: ModalController,\n public navParams: NavParams,\n private store: Store,\n private renderer: Renderer2,\n private formErrorHandler: FormErrorHandlerService\n ) {\n this.createForm();\n this.formErrorHandler.handleErrors(this.movieForm, this.errorsForm);\n }\n\n createForm() {\n this.movieForm = this.formBuilder.group<MovieForm>({\n id: new FormControl('', { nonNullable: true }),\n title: new FormControl('', {\n nonNullable: true,\n validators: [Validators.required]\n }),\n year: new FormControl(new Date().getFullYear(), {\n nonNullable: true,\n validators: [Validators.required]\n }),\n director: new FormControl('', { nonNullable: true }),\n cast: new FormControl('', { nonNullable: true }),\n genre: new FormControl('Action', { nonNullable: true }),\n notes: new FormControl('', { nonNullable: true }),\n poster: new FormControl('', { nonNullable: true })\n });\n\n this.movieForm$ = this.store.select((state) => state.catalog.movieForm);\n this.movieForm$.subscribe((data) => {\n if (data['model'] !== null && data['status'] === 'PENDING') {\n // Check if the user has added information about a movie but has not inserted it.\n this.movieForm.patchValue(data['model']);\n }\n });\n }\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n if (this.navParams.data.option === 'edit') {\n this.movieForm.patchValue(this.navParams.data.modalProps.movie);\n }\n }\n\n ngAfterViewInit() {\n const element = this.renderer.selectRootElement('#myInput');\n setTimeout(() => element.focus(), 3000);\n }\n\n dismiss(data?: any) {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n if (this.navParams.data.option === 'add') {\n this.store.dispatch([\n new UpdateFormValue({\n value: data,\n path: 'catalog.movieForm'\n }),\n new UpdateFormStatus({\n status: 'PENDING',\n path: 'catalog.movieForm'\n })\n ]);\n }\n this.modalCtrl.dismiss(data);\n }\n\n movieFormSubmit() {\n if (this.navParams.data.option === 'add') {\n this.store\n .dispatch(new AddMovie(this.movieForm.value))\n .subscribe(() => this.clearMovieForm());\n } else if (this.navParams.data.option === 'edit') {\n this.store.dispatch(new EditMovie(this.movieForm.value));\n }\n }\n\n clearMovieForm() {\n this.movieForm.reset();\n this.store.dispatch([\n new UpdateFormValue({\n value: <Movie>{},\n path: 'catalog.movieForm'\n }),\n new UpdateFormStatus({\n status: '',\n path: 'catalog.movieForm'\n })\n ]);\n }\n\n takePicture() {\n console.log('takePicture');\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/show-actors-modal/show.actors.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 9,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 14,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  329,
+                  329
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 9,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 14,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      78,
+                      329
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { SearchImageService } from '@services/search-image/search-image-service';\n\nimport { LoaderService } from '@services/loader/loader.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 11,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 11,
+              "endColumn": 40
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 13,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 13,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      51,
+                      487
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { SearchImageService } from '@services/search-image/search-image-service';\n\nimport { LoaderService } from '@services/loader/loader.service';\n\n@Component({\n selector: 'app-show-actors-modal',\n templateUrl: 'show.actors.modal.html',\n styleUrls: ['./show.actors.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { forkJoin } from 'rxjs';\nimport { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { SearchImageService } from '@services/search-image/search-image-service';\n\nimport { LoaderService } from '@services/loader/loader.service';\n\n@Component({\n selector: 'app-show-actors-modal',\n templateUrl: 'show.actors.modal.html',\n styleUrls: ['./show.actors.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class ShowActorsModalComponent implements OnInit {\n actors: any = [];\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams,\n private searchImageService: SearchImageService,\n private loaderService: LoaderService\n ) {\n console.log('ShowActorsModalComponent::constructor | method called');\n }\n\n ngOnInit() {\n console.log('ShowActorsModalComponent::ngOnInit | method called');\n\n this.loaderService.present('Please wait, loading actors...');\n let actors = this.navParams.data.modalProps.actors;\n actors = actors.split(',');\n\n forkJoin(\n actors.map((actor) => {\n // Code to use Google Custom Search Api.\n return this.searchImageService.searchImage(actor);\n })\n ).subscribe((results: any) => {\n if (results.length > 0) {\n results.map((result, index) => {\n this.actors.push({\n name: actors[index],\n image: result['items'][0].image.thumbnailLink\n });\n });\n this.loaderService.dismiss();\n }\n });\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/show-comments-modal/show.comments.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 9,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  147,
+                  147
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 9,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      45,
+                      147
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 6,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 6,
+              "endColumn": 42
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 8,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 8,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      311
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\n@Component({\n selector: 'app-show-comments-modal',\n templateUrl: 'show.comments.modal.html',\n styleUrls: ['./show.comments.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\n@Component({\n selector: 'app-show-comments-modal',\n templateUrl: 'show.comments.modal.html',\n styleUrls: ['./show.comments.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class ShowCommentsModalComponent implements OnInit {\n modal: any = {\n title: ''\n };\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams\n ) {}\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/youtube-modal/youtube.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 11,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 16,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  229,
+                  229
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 11,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 16,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      68,
+                      229
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 13,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 13,
+              "endColumn": 36
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 15,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 15,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      20,
+                      375
+                    ],
+                    "text": ",\n OnInit,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n@Component({\n selector: 'app-youtube-modal',\n templateUrl: 'youtube.modal.html',\n styleUrls: ['./youtube.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import {\n Component,\n ViewEncapsulation,\n OnInit,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n@Component({\n selector: 'app-youtube-modal',\n templateUrl: 'youtube.modal.html',\n styleUrls: ['./youtube.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class YoutubeModalComponent implements OnInit, AfterViewInit {\n item: any;\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams\n ) {\n console.log('YoutubeModalComponent::constructor | method called');\n }\n\n ngOnInit() {\n console.log('YoutubeModalComponent::ngOnInit | method called');\n this.item = this.navParams.data.modalProps.item;\n }\n\n ngAfterViewInit() {\n this.initializeYoutubePlayerPluginWeb();\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.destroyYoutubePlayer();\n this.modalCtrl.dismiss();\n }\n\n async initializeYoutubePlayerPluginWeb() {\n const options = {\n playerId: this.item.id,\n playerSize: { width: 640, height: 360 },\n videoId: this.item.videoId\n };\n const result = await YoutubePlayer.initialize(options);\n console.log('playerReady', result);\n }\n\n async destroyYoutubePlayer() {\n const result = await YoutubePlayer.destroy(this.item.id);\n console.log('destroyYoutubePlayer', result);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/pages/detail/detail.module.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 21,
+              "column": 5,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 21,
+              "endColumn": 33,
+              "fix": {
+                "range": [
+                  793,
+                  838
+                ],
+                "text": "DetailComponentRoutingModule,\n IonicModule"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 29,
+              "column": 5,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 29,
+              "endColumn": 26,
+              "fix": {
+                "range": [
+                  952,
+                  1000
+                ],
+                "text": "CommentModalComponent,\n YoutubeModalComponent"
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IonicModule } from '@ionic/angular';\n\nimport { DetailComponent } from './detail';\nimport { DetailComponentRoutingModule } from './detail-routing.module';\n\nimport { YoutubeModalComponent } from '@modals/youtube-modal/youtube.modal';\nimport { CommentModalComponent } from '@modals/comment-modal/comment.modal';\nimport { ShowCommentsModalComponent } from '@modals/show-comments-modal/show.comments.modal';\nimport { ShowActorsModalComponent } from '@modals/show-actors-modal/show.actors.modal';\n\nimport { ReactiveFormsModule, FormsModule } from '@angular/forms';\n\nimport { NtkmeButtonModule } from '@ctrl/ngx-github-buttons';\n\n@NgModule({\n imports: [\n CommonModule,\n IonicModule,\n DetailComponentRoutingModule,\n ReactiveFormsModule,\n FormsModule,\n NtkmeButtonModule\n ],\n declarations: [\n DetailComponent,\n YoutubeModalComponent,\n CommentModalComponent,\n ShowCommentsModalComponent,\n ShowActorsModalComponent\n ],\n schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\nexport class DetailModule {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/pages/detail/detail.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 36,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 41,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  1179,
+                  1179
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 36,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 41,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      48,
+                      1179
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\n// Ionic\nimport { ModalController } from '@ionic/angular';\n\n// Rxjs\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n// Third parties\nimport { Store } from '@ngxs/store';\nimport { Capacitor } from '@capacitor/core';\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n/* Project */\n\n// State\nimport { LikeMovie, FavoriteMovie } from '@store/actions/movies.actions';\nimport { MovieState } from '@store/state/movies.state';\n\n// Models | Interfaces\nimport { Movie } from '@models/movie.model';\n\n// Components\nimport { YoutubeModalComponent } from '@modals/youtube-modal/youtube.modal';\nimport { CommentModalComponent } from '@modals/comment-modal/comment.modal';\nimport { ShowCommentsModalComponent } from '@modals/show-comments-modal/show.comments.modal';\nimport { ShowActorsModalComponent } from '@modals/show-actors-modal/show.actors.modal';\n\n// Services\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 40,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 40,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      29,
+                      1311
+                    ],
+                    "text": " } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\n// Ionic\nimport { ModalController } from '@ionic/angular';\n\n// Rxjs\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n// Third parties\nimport { Store } from '@ngxs/store';\nimport { Capacitor } from '@capacitor/core';\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n/* Project */\n\n// State\nimport { LikeMovie, FavoriteMovie } from '@store/actions/movies.actions';\nimport { MovieState } from '@store/state/movies.state';\n\n// Models | Interfaces\nimport { Movie } from '@models/movie.model';\n\n// Components\nimport { YoutubeModalComponent } from '@modals/youtube-modal/youtube.modal';\nimport { CommentModalComponent } from '@modals/comment-modal/comment.modal';\nimport { ShowCommentsModalComponent } from '@modals/show-comments-modal/show.comments.modal';\nimport { ShowActorsModalComponent } from '@modals/show-actors-modal/show.actors.modal';\n\n// Services\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\n\n@Component({\n selector: 'app-page-detail',\n templateUrl: './detail.html',\n styleUrls: ['./detail.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "// Angular\nimport { Component, ViewEncapsulation } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\n// Ionic\nimport { ModalController } from '@ionic/angular';\n\n// Rxjs\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n// Third parties\nimport { Store } from '@ngxs/store';\nimport { Capacitor } from '@capacitor/core';\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n/* Project */\n\n// State\nimport { LikeMovie, FavoriteMovie } from '@store/actions/movies.actions';\nimport { MovieState } from '@store/state/movies.state';\n\n// Models | Interfaces\nimport { Movie } from '@models/movie.model';\n\n// Components\nimport { YoutubeModalComponent } from '@modals/youtube-modal/youtube.modal';\nimport { CommentModalComponent } from '@modals/comment-modal/comment.modal';\nimport { ShowCommentsModalComponent } from '@modals/show-comments-modal/show.comments.modal';\nimport { ShowActorsModalComponent } from '@modals/show-actors-modal/show.actors.modal';\n\n// Services\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\n\n@Component({\n selector: 'app-page-detail',\n templateUrl: './detail.html',\n styleUrls: ['./detail.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class DetailComponent {\n currentYear = new Date().getFullYear();\n selectedMovie: Observable<Movie>;\n movie: Movie;\n\n constructor(\n private store: Store,\n private youtubeApiService: YoutubeApiService,\n private modalCtrl: ModalController,\n private activatedRoute: ActivatedRoute,\n private iziToast: IziToastService\n ) {}\n\n ionViewWillEnter() {\n const id = this.activatedRoute.snapshot.paramMap.get('id');\n this.getMovieDetails(id);\n }\n\n getMovieDetails(id: string) {\n this.selectedMovie = this.store\n .select(MovieState.movieById)\n .pipe(map((filterFn) => filterFn(id)));\n this.selectedMovie.subscribe((movie) => {\n this.movie = movie;\n });\n }\n\n watchTrailer() {\n console.log('DetailsPage::watchTrailer | method called');\n\n // Code to use Youtube Api Service: providers/youtube-api-service.ts\n this.youtubeApiService.searchMovieTrailer(this.movie.title).subscribe({\n next: (result) => {\n if (result.items.length > 0) {\n const { videoId } = result.items[0].id;\n this.movie.videoId = videoId;\n\n // Code to use capacitor-youtube-player plugin.\n console.log(\n 'DetailsPage::watchTrailer -> platform: ' + Capacitor.platform\n );\n if (Capacitor.getPlatform() === 'web') {\n const componentProps = { modalProps: { item: this.movie } };\n this.presentModal(componentProps, YoutubeModalComponent);\n } else {\n // Native\n this.testYoutubePlayerPlugin();\n }\n\n /bin /run /sbin if (Capacitor.getPlatform() === 'web') {\n window.open('https://www.youtube.com/watch?v=' + videoId);\n } else { // TODO: Use capacitor-youtube-player plugin.\n window.open('https://www.youtube.com/watch?v=' + videoId, '_blank');\n }\n */\n }\n },\n error: (error) => {\n this.iziToast.show(\n 'Watch Trailer',\n 'Sorry, an error has occurred.',\n 'red',\n 'ico-error',\n 'assets/avatar.png'\n );\n }\n });\n }\n\n async presentModal(componentProps: any, component) {\n console.log(\n 'DetailsPage::presentModal | method called -> movie',\n this.movie\n );\n // const componentProps = { modalProps: { item: this.movie}};\n const modal = await this.modalCtrl.create({\n component: component,\n componentProps: componentProps\n });\n await modal.present();\n\n const { data } = await modal.onWillDismiss();\n if (data) {\n console.log('data', data);\n }\n }\n\n async testYoutubePlayerPlugin() {\n const options = {\n playerSize: { width: 640, height: 360 },\n videoId: this.movie.videoId\n };\n const playerReady = await YoutubePlayer.initialize(options);\n }\n\n onClickLike() {\n console.log('DetailsPage::onClickLike');\n if (typeof this.movie.likes === 'undefined') {\n this.movie.likes = 0;\n }\n this.movie.likes += 1;\n this.store.dispatch(new LikeMovie(this.movie));\n }\n\n onClickComment() {\n console.log('DetailsPage::onClickComment');\n const componentProps = {\n modalProps: { title: 'Comment', movie: this.movie }\n };\n this.presentModal(componentProps, CommentModalComponent);\n }\n\n onClickShowComment() {\n console.log('DetailsPage::onClickShowComment');\n const componentProps = {\n modalProps: { title: 'Comments', movie: this.movie }\n };\n this.presentModal(componentProps, ShowCommentsModalComponent);\n }\n\n onClickFavorite() {\n console.log('DetailsPage::onClickFavorite');\n\n if (typeof localStorage.getItem('@@STATE') !== 'undefined') {\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n const favorites = state.catalog.favorites;\n\n if (typeof favorites !== 'undefined') {\n const condition = (item) => item.title === this.movie.title;\n if (!favorites.some(condition)) {\n this.store.dispatch(new FavoriteMovie(this.movie)).subscribe(() => {\n this.iziToast.success('Favorite movie', 'Favorite Movie added.');\n });\n } else {\n this.iziToast.show(\n 'Favorite movie',\n 'The movie has already been added.',\n 'red',\n 'ico-error',\n 'assets/avatar.png'\n );\n }\n }\n }\n }\n\n onClickShare() {\n console.log('DetailsPage::onClickShare');\n if (navigator['share']) {\n navigator['share']({\n title: 'WebShare API Demo',\n url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'\n })\n .then(() => {\n console.log('Thanks for sharing!');\n })\n .catch(console.error);\n } else {\n // fallback\n }\n }\n\n showActors() {\n console.log('DetailsPage::showActors | method called');\n const componentProps = { modalProps: { actors: this.movie.cast } };\n this.presentModal(componentProps, ShowActorsModalComponent);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/pages/home/home.module.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 24,
+              "column": 5,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 24,
+              "endColumn": 31,
+              "fix": {
+                "range": [
+                  900,
+                  943
+                ],
+                "text": "HomeComponentRoutingModule,\n IonicModule"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 33,
+              "column": 5,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 33,
+              "endColumn": 32,
+              "fix": {
+                "range": [
+                  1075,
+                  1127
+                ],
+                "text": "FilterMoviePopoverComponent,\n MovieModalComponent"
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IonicModule } from '@ionic/angular';\n\nimport { ReactiveFormsModule, FormsModule } from '@angular/forms';\nimport { HomeComponent } from './home';\nimport { MovieModalComponent } from '@modals/movie-modal/movie.modal';\nimport { FavoritesMoviesModalComponent } from '@modals/favorites-movies-modal/favorites.movies.modal';\nimport { FilterMoviePopoverComponent } from '@popovers/filter-movie.popover';\nimport { HomeComponentRoutingModule } from './home-routing.module';\n\nimport { NgSelectModule } from '@ng-select/ng-select';\n\nimport { GenreCarouselComponent } from '@components/genre-carousel/genre-carousel.component';\n\nimport { FilterPipe } from '@pipes/filter.pipe';\n\nimport { NtkmeButtonModule } from '@ctrl/ngx-github-buttons';\n\n@NgModule({\n imports: [\n CommonModule,\n IonicModule,\n HomeComponentRoutingModule,\n NgSelectModule,\n ReactiveFormsModule,\n FormsModule,\n NtkmeButtonModule\n ],\n declarations: [\n HomeComponent,\n MovieModalComponent,\n FilterMoviePopoverComponent,\n FavoritesMoviesModalComponent,\n GenreCarouselComponent,\n FilterPipe\n ],\n schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\nexport class HomeModule {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/pages/home/home.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 40,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 45,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  1015,
+                  1015
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 40,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 45,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      89,
+                      1015
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Ionic\nimport {\n ModalController,\n PopoverController,\n IonInfiniteScroll,\n IonContent\n} from '@ionic/angular';\n\n// Rx\nimport { Observable } from 'rxjs';\nimport { withLatestFrom } from 'rxjs/operators';\n\n// Third parties\nimport { Store, Select, Actions, ofActionSuccessful } from '@ngxs/store';\n\n// Project\nimport {\n FetchMovies,\n DeleteMovie,\n AddMovie,\n EditMovie\n} from '@store/actions/movies.actions';\nimport { MovieModalComponent } from '@modals/movie-modal/movie.modal';\nimport { FavoritesMoviesModalComponent } from '@modals/favorites-movies-modal/favorites.movies.modal';\nimport { FilterMoviePopoverComponent } from '@popovers/filter-movie.popover';\nimport { Movie } from '@models/movie.model';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\nimport { AsyncEvent } from '@models/custom-event.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 44,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 44,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      31,
+                      1141
+                    ],
+                    "text": ",\n OnInit,\n ViewChild,\n ElementRef\n} from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Ionic\nimport {\n ModalController,\n PopoverController,\n IonInfiniteScroll,\n IonContent\n} from '@ionic/angular';\n\n// Rx\nimport { Observable } from 'rxjs';\nimport { withLatestFrom } from 'rxjs/operators';\n\n// Third parties\nimport { Store, Select, Actions, ofActionSuccessful } from '@ngxs/store';\n\n// Project\nimport {\n FetchMovies,\n DeleteMovie,\n AddMovie,\n EditMovie\n} from '@store/actions/movies.actions';\nimport { MovieModalComponent } from '@modals/movie-modal/movie.modal';\nimport { FavoritesMoviesModalComponent } from '@modals/favorites-movies-modal/favorites.movies.modal';\nimport { FilterMoviePopoverComponent } from '@popovers/filter-movie.popover';\nimport { Movie } from '@models/movie.model';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\nimport { AsyncEvent } from '@models/custom-event.model';\n\n@Component({\n selector: 'app-page-home',\n templateUrl: './home.html',\n styleUrls: ['./home.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "// Angular\nimport {\n Component,\n ViewEncapsulation,\n OnInit,\n ViewChild,\n ElementRef\n} from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Ionic\nimport {\n ModalController,\n PopoverController,\n IonInfiniteScroll,\n IonContent\n} from '@ionic/angular';\n\n// Rx\nimport { Observable } from 'rxjs';\nimport { withLatestFrom } from 'rxjs/operators';\n\n// Third parties\nimport { Store, Select, Actions, ofActionSuccessful } from '@ngxs/store';\n\n// Project\nimport {\n FetchMovies,\n DeleteMovie,\n AddMovie,\n EditMovie\n} from '@store/actions/movies.actions';\nimport { MovieModalComponent } from '@modals/movie-modal/movie.modal';\nimport { FavoritesMoviesModalComponent } from '@modals/favorites-movies-modal/favorites.movies.modal';\nimport { FilterMoviePopoverComponent } from '@popovers/filter-movie.popover';\nimport { Movie } from '@models/movie.model';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\nimport { AsyncEvent } from '@models/custom-event.model';\n\n@Component({\n selector: 'app-page-home',\n templateUrl: './home.html',\n styleUrls: ['./home.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class HomeComponent implements OnInit {\n @ViewChild('infiniteScroll', { read: ElementRef, static: true })\n infiniteScroll: IonInfiniteScroll;\n @ViewChild(IonContent, { read: ElementRef, static: true })\n content: IonContent;\n\n // Reads the name of the store from the store class.\n @Select((state) => state.catalog.movies) movies$: Observable<Movie[]>;\n\n currentYear = new Date().getFullYear();\n start: number;\n end: number;\n showScrollTop: Boolean = false;\n showSkeleton: Boolean = true;\n iconView = 'apps';\n\n constructor(\n private store: Store,\n private router: Router,\n private modalCtrl: ModalController,\n private actions$: Actions,\n private popoverCtrl: PopoverController,\n private iziToast: IziToastService\n ) {\n this.start = 0;\n this.end = 20;\n }\n\n ngOnInit() {\n this.fetchMovies(this.start, this.end);\n // Check if we have movies in local storage.\n if (localStorage.getItem('@@STATE') !== 'undefined') {\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n console.log('state', state);\n }\n\n this.actions$.pipe(ofActionSuccessful(AddMovie)).subscribe({\n next: () => {\n this.modalCtrl.dismiss();\n this.iziToast.success('Add movie', 'Movie added successfully.');\n },\n error: (err) =>\n console.log(\n 'HomePage::ngOnInit ofActionSuccessful(AddMovie) | method called -> received error' +\n err\n )\n });\n\n this.actions$.pipe(ofActionSuccessful(EditMovie)).subscribe({\n next: () => {\n this.modalCtrl.dismiss();\n this.iziToast.success('Edit movie', 'Movie updated successfully.');\n },\n error: (err) =>\n console.log(\n 'HomePage::ngOnInit ofActionSuccessful(EditMovie) | method called -> received error' +\n err\n )\n });\n\n this.actions$.pipe(ofActionSuccessful(DeleteMovie)).subscribe({\n next: () => {\n this.iziToast.success('Delete movie', 'Movie deleted successfully.');\n },\n error: (err) =>\n console.log(\n 'HomePage::ngOnInit ofActionSuccessful(DeleteMovie) | method called -> received error' +\n err\n )\n });\n }\n\n fetchMovies(start: number, end: number) {\n console.log('HomePage::fetchMovies | method called', start, end);\n this.store\n .dispatch(new FetchMovies({ start: start, end: end }))\n .pipe(withLatestFrom(this.movies$))\n .subscribe({\n next: ([movies]) => {\n setTimeout(() => {\n this.showSkeleton = false;\n }, 2000);\n },\n error: (err) =>\n console.log(\n 'HomePage::fetchMovies() | method called -> received error' + err\n )\n });\n }\n\n viewMovieDetails(movie: Movie) {\n const movieDetailsURL = `/detail/${movie.id}`;\n this.router.navigate([movieDetailsURL]);\n }\n\n async presentModal(componentProps: any, component) {\n const modal = await this.modalCtrl.create({\n component: component,\n componentProps: componentProps\n });\n await modal.present();\n\n const { data } = await modal.onWillDismiss();\n if (data) {\n console.log('data', data);\n }\n }\n\n addMovie() {\n const componentProps = {\n modalProps: { title: 'Add Movie', buttonText: 'Add Movie' },\n option: 'add'\n };\n this.presentModal(componentProps, MovieModalComponent);\n }\n\n editMovie(movie: Movie) {\n const componentProps = {\n modalProps: {\n title: 'Edit Movie',\n buttonText: 'Edit Movie',\n movie: movie\n },\n option: 'edit'\n };\n this.presentModal(componentProps, MovieModalComponent);\n }\n\n deleteMovie(movie: Movie) {\n this.store.dispatch(new DeleteMovie(movie));\n }\n\n doInfinite(event: Event) {\n const customEvent = event as AsyncEvent;\n setTimeout(() => {\n customEvent.target.complete();\n this.showSkeleton = true;\n this.start = this.end;\n this.end += 20;\n this.showScrollTop = true;\n this.fetchMovies(this.start, this.end);\n }, 500);\n }\n\n async presentPopover(event: MouseEvent) {\n const popover = await this.popoverCtrl.create({\n component: FilterMoviePopoverComponent,\n event: event\n });\n\n await popover.present();\n\n const { data } = await popover.onWillDismiss();\n\n if (data) {\n console.log('data popover.onWillDismiss', data);\n }\n }\n\n scrollToTop() {\n this.content['nativeElement'].scrollToTop();\n }\n\n changeView() {\n console.log('HomePage::changeView() | method called');\n this.iconView = this.iconView === 'apps' ? 'list' : 'apps';\n }\n\n showFavoritesMovies() {\n console.log('HomePage::showFavoritesMovies() | method called');\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n console.log('state', state);\n const componentProps = {\n modalProps: {\n title: 'Favorites Movies',\n favoritesMovies: state.catalog.favorites\n }\n };\n this.presentModal(componentProps, FavoritesMoviesModalComponent);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/popovers/filter-movie.popover.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone-component",
+              "severity": 2,
+              "message": "The component `standalone` property should be set to `true`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferStandaloneComponent",
+              "endLine": 19,
+              "endColumn": 3,
+              "fix": {
+                "range": [
+                  403,
+                  403
+                ],
+                "text": "standalone: true,"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 19,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      74,
+                      403
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { PopoverController } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { Observable, Subscription } from 'rxjs';\nimport { FormBuilder, FormGroup, FormControl } from '@angular/forms';\nimport { FilterMovies, SaveFilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 16,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 16,
+              "endColumn": 43
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 18,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 18,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      20,
+                      570
+                    ],
+                    "text": ",\n OnInit,\n OnDestroy,\n NgZone\n} from '@angular/core';\nimport { PopoverController } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { Observable, Subscription } from 'rxjs';\nimport { FormBuilder, FormGroup, FormControl } from '@angular/forms';\nimport { FilterMovies, SaveFilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n selector: 'app-filter-movie-popover',\n templateUrl: 'filter-movie.popover.html',\n styleUrls: ['./filter-movie.popover.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import {\n Component,\n ViewEncapsulation,\n OnInit,\n OnDestroy,\n NgZone\n} from '@angular/core';\nimport { PopoverController } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { Observable, Subscription } from 'rxjs';\nimport { FormBuilder, FormGroup, FormControl } from '@angular/forms';\nimport { FilterMovies, SaveFilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n selector: 'app-filter-movie-popover',\n templateUrl: 'filter-movie.popover.html',\n styleUrls: ['./filter-movie.popover.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class FilterMoviePopoverComponent implements OnInit, OnDestroy {\n range: any = {\n lower: 1900,\n upper: new Date().getFullYear()\n };\n\n filter$: Observable<any>;\n filterSubscription: Subscription;\n\n filterForm: FormGroup;\n\n customPopoverOptions: any = {\n header: 'Genre',\n subHeader: 'Select movie genre'\n };\n\n genres = [\n { id: 1, name: 'Action', image: 'assets/movies-genres/action.png' },\n { id: 2, name: 'Comedy', image: 'assets/movies-genres/comedy.png' },\n { id: 3, name: 'Crime', image: 'assets/movies-genres/crime.png' },\n {\n id: 4,\n name: 'Documentary',\n image: 'assets/movies-genres/documentary.png'\n },\n { id: 5, name: 'Drama', image: 'assets/movies-genres/drama.png' },\n { id: 6, name: 'Fantasy', image: 'assets/movies-genres/fantasy.png' },\n { id: 7, name: 'Film noir', image: 'assets/movies-genres/film noir.png' },\n { id: 8, name: 'Horror', image: 'assets/movies-genres/horror.png' },\n { id: 9, name: 'Romance', image: 'assets/movies-genres/romance.png' },\n {\n id: 10,\n name: 'Science fiction',\n image: 'assets/movies-genres/science fiction.png'\n },\n { id: 11, name: 'Westerns', image: 'assets/movies-genres/westerns.png' }\n ];\n\n constructor(\n private popoverCtrl: PopoverController,\n private store: Store,\n private zone: NgZone,\n private formBuilder: FormBuilder\n ) {\n this.createForm();\n }\n\n createForm() {\n this.filterForm = this.formBuilder.group({\n rate: new FormControl(''),\n years: new FormControl(''),\n genre: new FormControl('')\n });\n }\n\n ngOnInit() {\n this.filter$ = this.store.select((state) => state.catalog.filter);\n this.filterSubscription = this.filter$.subscribe((filter) => {\n this.filterForm.setValue(filter);\n if (filter.genre === '') {\n this.filterForm.patchValue({ genre: 'Action' });\n }\n });\n }\n\n ngOnDestroy() {\n this.filterSubscription.unsubscribe();\n }\n\n filterMovies() {\n console.log(this.filterForm.value);\n this.store.dispatch([\n new FilterMovies(this.filterForm.value),\n new SaveFilterMovies(this.filterForm.value)\n ]);\n this.popoverCtrl.dismiss();\n }\n\n clearFilterMovies() {\n this.filterForm.patchValue({\n rate: 0,\n years: { lower: 1900, upper: new Date().getFullYear() },\n genre: ''\n });\n this.store.dispatch([\n new FilterMovies(this.filterForm.value),\n new SaveFilterMovies(this.filterForm.value)\n ]);\n this.popoverCtrl.dismiss();\n }\n\n onRatingChange(event) {\n this.filterForm.patchValue({ rate: event.detail });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/services/movies/movies-service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 9,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 9,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      353,
+                      353
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      353,
+                      353
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      353,
+                      353
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient, HttpHeaders } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { timeout, retryWhen, delay } from 'rxjs/operators';\nimport { v4 as uuid } from 'uuid';\nimport { Movie } from '@models/movie.model';\nimport { environment } from '@environments/environment';\n\n@Injectable()\nexport class MoviesService {\n private readonly URL_BASE: string = environment.API_URL_BASE;\n\n constructor(private http: HttpClient) {}\n\n getMovies(start: number, end: number): Observable<Movie[]> {\n return (\n this.http\n // Type-checking the response => .get<Movie[]>\n .get<Movie[]>(\n this.URL_BASE +\n `movies?_start=${start}&_end=${end}&_sort=year,title&_order=desc,asc`\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n getMovie(title: string): Observable<Movie> {\n return (\n this.http\n // Type-checking the response => .get<Movie>\n .get<Movie>(encodeURI(this.URL_BASE + `movies?title=${title}`))\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n addMovie(movie: Movie): Observable<Movie> {\n movie['id'] = uuid();\n\n const httpOptions = {\n headers: new HttpHeaders({\n 'Content-Type': 'application/json'\n })\n };\n\n return (\n this.http\n // Type-checking the response => .post<Movie>\n .post<Movie>(encodeURI(this.URL_BASE + `movies/`), movie, httpOptions)\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n editMovie(movie: Movie): Observable<Movie> {\n const httpOptions = {\n headers: new HttpHeaders({\n 'Content-Type': 'application/json'\n })\n };\n\n return (\n this.http\n // Type-checking the response => .post<Movie>\n .put<Movie>(\n encodeURI(this.URL_BASE + `movies/${movie['id']}`),\n movie,\n httpOptions\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n deleteMovie(movie: Movie): Observable<Movie> {\n return (\n this.http\n // Type-checking the response => .post<Movie>\n .delete<Movie>(encodeURI(this.URL_BASE + `movies/${movie['id']}`))\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n filterMovies(filters): Observable<Movie[]> {\n const strFilters = this.checkFilters(filters);\n console.log(\n this.URL_BASE +\n `movies${strFilters}_sort=year,title&_order=desc,asc&_limit=20`\n );\n return (\n this.http\n // Type-checking the response => .get<Movie[]>\n .get<Movie[]>(\n this.URL_BASE +\n `movies${strFilters}_sort=year,title&_order=desc,asc&_limit=20`\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n checkFilters(filters: any) {\n let strFilters = '';\n strFilters +=\n typeof filters['genre'] !== 'undefined' && filters['genre'] !== ''\n ? `?genre=${filters.genre}&`\n : '?';\n strFilters +=\n typeof filters['years'] !== 'undefined'\n ? `year_gte=${filters.years.lower}&year_lte=${filters.years.upper}&`\n : '';\n strFilters +=\n typeof filters['rate'] !== 'undefined' && filters['rate'] !== 0\n ? `rate=${filters.rate}&`\n : '';\n return strFilters;\n }\n\n searchMovies(queryText: string): Observable<Movie[]> {\n return (\n this.http\n // Type-checking the response => .get<Movie[]>\n .get<Movie[]>(this.URL_BASE + `movies?q=${queryText}&_limit=20`)\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/services/search-image/search-image-service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 6,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { timeout, retryWhen, delay } from 'rxjs/operators';\n\n@Injectable()\nexport class SearchImageService {\n private readonly URL_BASE: string =\n 'https://www.googleapis.com/customsearch/v1';\n private readonly API_KEY: string = 'AIzaSyCPqf8puyl9DyVFPy_KTAARdaBPRpfYHoA';\n private readonly CUSTOM_SEARCH_ENGINE_ID: string =\n '012020920993535583437:nqayyeenfrw';\n\n constructor(private http: HttpClient) {}\n\n searchImage(searchQuery: string): Observable<any> {\n return (\n this.http\n // https://www.googleapis.com/customsearch/v1?q=Mia%20Wasikowska&cx=012020920993535583437:nqayyeenfrw\n // &key=AIzaSyCPqf8puyl9DyVFPy_KTAARdaBPRpfYHoA&searchType=image&alt=json\n .get(\n encodeURI(\n this.URL_BASE +\n `?q=${searchQuery}&cx=${this.CUSTOM_SEARCH_ENGINE_ID}&key=${this.API_KEY}&searchType=image&alt=json`\n )\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/services/youtube-api/youtube-api-service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 6,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { timeout, retryWhen, delay } from 'rxjs/operators';\n\n@Injectable()\nexport class YoutubeApiService {\n private readonly URL_BASE: string =\n 'https://www.googleapis.com/youtube/v3/search';\n private readonly API_KEY: string = 'AIzaSyDxuxEANLFVy5q4sG1NrAUJNhoX6nW4VQ4';\n\n constructor(private http: HttpClient) {}\n\n searchMovieTrailer(movieTitle: string): Observable<any> {\n return this.http\n .get(\n encodeURI(\n this.URL_BASE +\n `?key=${this.API_KEY}&q=${movieTitle}&type=video&part=snippet,id&maxResults=5`\n )\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n );\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/store/state/movies.state.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 67,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 67,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      1404,
+                      1404
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      1404,
+                      1404
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      1404,
+                      1404
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { State, Action, StateContext, Selector, NgxsOnInit } from '@ngxs/store';\nimport { patch, append, removeItem, updateItem } from '@ngxs/store/operators';\nimport { tap, catchError } from 'rxjs/operators';\nimport { throwError } from 'rxjs';\nimport { Movie } from '@models/movie.model';\nimport {\n FetchMovies,\n AddMovie,\n EditMovie,\n DeleteMovie,\n FilterMovies,\n SaveFilterMovies,\n GetMovieTrailer,\n ClearMovies,\n LikeMovie,\n CommentMovie,\n FavoriteMovie,\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies,\n ClearState\n} from '@store/actions/movies.actions';\n\nimport { MoviesService } from '@services/movies/movies-service';\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { Injectable } from '@angular/core';\n\nexport class MoviesStateModel {\n movies: Movie[];\n movieForm: {\n model: Movie;\n dirty: boolean;\n status: string;\n errors: {};\n };\n filter: {\n genre: string;\n years: {\n lower: number;\n upper: number;\n };\n rate: number;\n };\n favorites: Movie[];\n}\n\n@State<MoviesStateModel>({\n name: 'catalog',\n defaults: {\n movies: [],\n movieForm: {\n model: null,\n dirty: false,\n status: '',\n errors: {}\n },\n filter: {\n genre: 'Action',\n years: {\n lower: 1900,\n upper: new Date().getFullYear()\n },\n rate: 0\n },\n favorites: []\n }\n})\n@Injectable()\nexport class MovieState implements NgxsOnInit {\n private readonly GENRES: string[] = [\n 'action',\n 'comedy',\n 'crime',\n 'documentary',\n 'drama',\n 'fantasy',\n 'film noir',\n 'horror',\n 'romance',\n 'science fiction',\n 'westerns',\n 'animation'\n ];\n\n constructor(\n private moviesService: MoviesService,\n private youtubeApiService: YoutubeApiService\n ) {}\n\n @Selector()\n static getMovies(state: MoviesStateModel) {\n return state.movies;\n }\n\n @Selector()\n static movieById(state: MoviesStateModel) {\n return (id: string) => {\n return state.movies.filter((movie) => movie.id === id)[0];\n };\n }\n\n ngxsOnInit(ctx: StateContext<MoviesStateModel>) {\n ctx.dispatch(new ClearState());\n }\n\n @Action(ClearState)\n clearState({ setState }: StateContext<MoviesStateModel>) {\n setState({\n movies: [],\n movieForm: {\n model: null,\n dirty: false,\n status: '',\n errors: {}\n },\n filter: {\n genre: 'Action',\n years: {\n lower: 1900,\n upper: new Date().getFullYear()\n },\n rate: 0\n },\n favorites: []\n });\n }\n\n @Action(FetchMovies, { cancelUncompleted: true })\n fetchMovies(\n { getState, setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n const { start, end } = payload;\n return this.moviesService.getMovies(start, end).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (movies) => {\n movies.forEach((movie) => {\n const genre = movie.genre.toLowerCase().split(',', 1)[0];\n if (this.GENRES.indexOf(genre) !== -1) {\n movie.genreImage = 'assets/movies-genres/' + genre + '.png';\n }\n });\n const state = getState();\n setState({\n ...state,\n movies: [...state.movies, ...movies]\n });\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(AddMovie)\n addMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n payload.poster =\n payload.poster === ''\n ? 'https://in.bmscdn.com/iedb/movies/images/website/poster/large/ela-cheppanu-et00016781-24-03-2017-18-31-40.jpg'\n : payload.poster;\n return this.moviesService.addMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: append([result])\n })\n );\n }\n })\n );\n }\n\n @Action(EditMovie)\n editMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.editMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: updateItem<Movie>(\n (movie) => movie.id === result.id,\n result\n )\n })\n );\n }\n })\n );\n }\n\n @Action(DeleteMovie)\n deleteMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.deleteMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: removeItem<Movie>((movie) => movie.id === payload.id)\n })\n );\n }\n })\n );\n }\n\n @Action(FilterMovies, { cancelUncompleted: true })\n filterMovies(\n { getState, setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n return this.moviesService.filterMovies(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n const state = getState();\n setState({\n ...state,\n movies: [...result]\n });\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(SaveFilterMovies)\n saveFilterMovies({ setState }: StateContext<MoviesStateModel>, { payload }) {\n setState(\n patch({\n filter: { ...payload }\n })\n );\n }\n\n @Action(GetMovieTrailer, { cancelUncompleted: true })\n getMovieTrailer(\n { getState, setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n return this.youtubeApiService.searchMovieTrailer(payload.movieTitle).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {},\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(ClearMovies)\n clearMovies({ getState, setState }: StateContext<MoviesStateModel>) {\n const state = getState();\n setState({\n ...state,\n movies: []\n });\n }\n\n @Action(LikeMovie)\n likeMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.editMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: updateItem<Movie>(\n (movie) => movie.id === result.id,\n result\n )\n })\n );\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(CommentMovie)\n commentMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.editMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: updateItem<Movie>(\n (movie) => movie.id === result.id,\n result\n )\n })\n );\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(FavoriteMovie)\n favoriteMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n setState(\n patch({\n favorites: append([payload])\n })\n );\n }\n\n @Action(DeleteFavoriteMovie)\n deleteFavoriteMovie(\n { setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n setState(\n patch({\n favorites: removeItem<Movie>((movie) => movie.id === payload.id)\n })\n );\n }\n\n @Action(DeleteAllFavoritesMovies)\n deleteAllFavoritesMovies({\n getState,\n setState\n }: StateContext<MoviesStateModel>) {\n const state = getState();\n setState({\n ...state,\n favorites: []\n });\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  },
+  "after": {
+    "angular-ionic-ngxs-movies": {
+      "recommended": [],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      37,
+                      78
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 7,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 7,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      233
+                    ],
+                    "text": " } from '@angular/core';\n\n@Component({\n standalone: true,selector: 'app-root',\n templateUrl: './app.component.html',\n styleUrls: ['./app.component.css'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation } from '@angular/core';\n\n@Component({\n standalone: true,selector: 'app-root',\n templateUrl: './app.component.html',\n styleUrls: ['./app.component.css'],\n encapsulation: ViewEncapsulation.None\n})\nexport class AppComponent {\n title = 'app';\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/components/genre-carousel/genre-carousel.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 10,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      159
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { Store } from '@ngxs/store';\nimport { FilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\nimport { Store } from '@ngxs/store';\nimport { FilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n standalone: true,selector: 'app-genre-carousel',\n templateUrl: './genre-carousel.component.html',\n styleUrls: ['./genre-carousel.component.css']\n})\nexport class GenreCarouselComponent {\n genres: any;\n filters: any = {\n years: {\n lower: 1900,\n upper: new Date().getFullYear()\n },\n genre: 'Action',\n rating: 0\n };\n selected: Number = -1;\n\n constructor(private store: Store) {\n this.genres = [\n { text: 'Science fiction', src: 'assets/movies-genres/image1.png' },\n { text: 'Westerns', src: 'assets/movies-genres/image2.png' },\n { text: 'Crime', src: 'assets/movies-genres/image3.png' },\n { text: 'Romance', src: 'assets/movies-genres/image4.png' },\n { text: 'Comedy', src: 'assets/movies-genres/image5.png' },\n { text: 'Drama', src: 'assets/movies-genres/image6.png' },\n { text: 'Cartoon', src: 'assets/movies-genres/image7.png' },\n { text: 'Action', src: 'assets/movies-genres/image8.png' },\n { text: 'Adventure', src: 'assets/movies-genres/image9.png' },\n { text: 'Thriller', src: 'assets/movies-genres/image10.png' },\n { text: 'Fantasy', src: 'assets/movies-genres/image11.png' },\n { text: 'Horror', src: 'assets/movies-genres/image12.png' }\n ];\n }\n\n selectGenre(genre, index) {\n console.log('GenreCarouselComponent::selectGenre() | method called', genre);\n this.selected = index;\n this.filters.genre = genre.text;\n this.store.dispatch([new FilterMovies(this.filters)]);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/comment-modal/comment.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 19,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      45,
+                      335
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\n\nimport { EditMovie } from '@store/actions/movies.actions';\nimport { Store } from '@ngxs/store';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 16,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 16,
+              "endColumn": 36
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 18,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 18,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      498
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\n\nimport { EditMovie } from '@store/actions/movies.actions';\nimport { Store } from '@ngxs/store';\n\n@Component({\n standalone: true,selector: 'app-comment-modal',\n templateUrl: 'comment.modal.html',\n styleUrls: ['./comment.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\n\nimport { EditMovie } from '@store/actions/movies.actions';\nimport { Store } from '@ngxs/store';\n\n@Component({\n standalone: true,selector: 'app-comment-modal',\n templateUrl: 'comment.modal.html',\n styleUrls: ['./comment.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class CommentModalComponent implements OnInit {\n commentForm: FormGroup;\n\n modal: any = {\n title: ''\n };\n\n constructor(\n private modalCtrl: ModalController,\n private formBuilder: FormBuilder,\n private navParams: NavParams,\n private store: Store\n ) {\n this.createForm();\n }\n\n createForm() {\n this.commentForm = this.formBuilder.group({\n comment: new FormControl('', Validators.required),\n rating: new FormControl('')\n });\n }\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n\n commentFormSubmit() {\n let comments;\n let movieToUpdate = { ...this.modal.movie };\n if (typeof this.modal.movie.comments === 'undefined') {\n comments = [];\n } else {\n comments = [...this.modal.movie.comments];\n }\n\n if (typeof this.modal.movie.rate === 'undefined') {\n movieToUpdate = {\n ...movieToUpdate,\n rate: this.commentForm.value.rating,\n numVotes: 1\n };\n } else {\n movieToUpdate = {\n ...movieToUpdate,\n numVotes: movieToUpdate.numVotes + 1,\n rate:\n (movieToUpdate.rate + this.commentForm.value.rating) /\n (movieToUpdate.numVotes + 1)\n };\n }\n\n comments.push(this.commentForm.value.comment);\n movieToUpdate.comments = comments;\n this.store.dispatch(new EditMovie(movieToUpdate));\n }\n\n onRatingChange(event) {\n this.commentForm.patchValue({ rating: event.detail });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/favorites-movies-modal/favorites.movies.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 13,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 18,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      45,
+                      389
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams, AlertController } from '@ionic/angular';\n\nimport { Store } from '@ngxs/store';\nimport { Movie } from '@models/movie.model';\n\nimport {\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies\n} from '@store/actions/movies.actions';\nimport { Router } from '@angular/router';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 15,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 15,
+              "endColumn": 45
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 17,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 17,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      579
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams, AlertController } from '@ionic/angular';\n\nimport { Store } from '@ngxs/store';\nimport { Movie } from '@models/movie.model';\n\nimport {\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies\n} from '@store/actions/movies.actions';\nimport { Router } from '@angular/router';\n\n@Component({\n standalone: true,selector: 'app-favorites-movies-modal',\n templateUrl: 'favorites.movies.modal.html',\n styleUrls: ['./favorites.movies.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams, AlertController } from '@ionic/angular';\n\nimport { Store } from '@ngxs/store';\nimport { Movie } from '@models/movie.model';\n\nimport {\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies\n} from '@store/actions/movies.actions';\nimport { Router } from '@angular/router';\n\n@Component({\n standalone: true,selector: 'app-favorites-movies-modal',\n templateUrl: 'favorites.movies.modal.html',\n styleUrls: ['./favorites.movies.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class FavoritesMoviesModalComponent implements OnInit {\n modal: any = {\n title: ''\n };\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams,\n private store: Store,\n private router: Router,\n private alertCtrl: AlertController\n ) {}\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n\n viewMovieDetails(movie: Movie) {\n const movieDetailsURL = `/detail/${movie.id}`;\n this.router.navigate([movieDetailsURL]);\n this.modalCtrl.dismiss();\n }\n\n deleteFavoriteMovie(movie: Movie) {\n console.log(\n 'FavoritesMoviesModalComponent::deleteFavoriteMovie() | method called'\n );\n this.store.dispatch(new DeleteFavoriteMovie(movie));\n this.modal.favoritesMovies = this.modal.favoritesMovies.filter(\n (m) => m.title !== movie.title\n );\n }\n\n deleteAll() {\n console.log('FavoritesMoviesModalComponent::deleteAll() | method called');\n this.modal.favoritesMovies = [];\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n state.catalog.favorites = [];\n this.store.dispatch(new DeleteAllFavoritesMovies());\n }\n\n async presentAlertConfirm() {\n const alert = await this.alertCtrl.create({\n header: 'Delete all favorites',\n message: 'Are you sure you want to delete all the favorites?',\n buttons: [\n {\n text: 'Cancel',\n role: 'cancel',\n cssClass: 'secondary'\n },\n {\n text: 'Okay',\n handler: () => {\n this.deleteAll();\n }\n }\n ]\n });\n\n await alert.present();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/movie-modal/movie.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 23,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 28,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      81,
+                      677
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { UpdateFormValue, UpdateFormStatus } from '@ngxs/form-plugin';\nimport { AddMovie, EditMovie } from '@store/actions/movies.actions';\nimport { Movie } from '@models/movie.model';\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\nimport { Observable } from 'rxjs';\nimport { FormErrorHandlerService } from '@services/form-error-hanlder/form-error-handler.service';\nimport { MovieForm } from '@models/form.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 25,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 25,
+              "endColumn": 34
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 27,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 27,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      20,
+                      834
+                    ],
+                    "text": ",\n OnInit,\n Renderer2,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { UpdateFormValue, UpdateFormStatus } from '@ngxs/form-plugin';\nimport { AddMovie, EditMovie } from '@store/actions/movies.actions';\nimport { Movie } from '@models/movie.model';\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\nimport { Observable } from 'rxjs';\nimport { FormErrorHandlerService } from '@services/form-error-hanlder/form-error-handler.service';\nimport { MovieForm } from '@models/form.model';\n\n@Component({\n standalone: true,selector: 'app-movie-modal',\n templateUrl: 'movie.modal.html',\n styleUrls: ['./movie.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n Component,\n ViewEncapsulation,\n OnInit,\n Renderer2,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { UpdateFormValue, UpdateFormStatus } from '@ngxs/form-plugin';\nimport { AddMovie, EditMovie } from '@store/actions/movies.actions';\nimport { Movie } from '@models/movie.model';\nimport {\n FormBuilder,\n FormGroup,\n FormControl,\n Validators\n} from '@angular/forms';\nimport { Observable } from 'rxjs';\nimport { FormErrorHandlerService } from '@services/form-error-hanlder/form-error-handler.service';\nimport { MovieForm } from '@models/form.model';\n\n@Component({\n standalone: true,selector: 'app-movie-modal',\n templateUrl: 'movie.modal.html',\n styleUrls: ['./movie.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class MovieModalComponent implements OnInit, AfterViewInit {\n modal: any = {\n title: '',\n buttonText: ''\n };\n\n movieForm: FormGroup;\n errorsForm: any = {};\n\n // Reads the name of the store from the store class.\n movieForm$: Observable<Movie[]>;\n\n genres = [\n { id: 1, name: 'Action', image: 'assets/movies-genres/action.png' },\n { id: 2, name: 'Comedy', image: 'assets/movies-genres/comedy.png' },\n { id: 3, name: 'Crime', image: 'assets/movies-genres/crime.png' },\n {\n id: 4,\n name: 'Documentary',\n image: 'assets/movies-genres/documentary.png'\n },\n { id: 5, name: 'Drama', image: 'assets/movies-genres/drama.png' },\n { id: 6, name: 'Fantasy', image: 'assets/movies-genres/fantasy.png' },\n { id: 7, name: 'Film noir', image: 'assets/movies-genres/film noir.png' },\n { id: 8, name: 'Horror', image: 'assets/movies-genres/horror.png' },\n { id: 9, name: 'Romance', image: 'assets/movies-genres/romance.png' },\n {\n id: 10,\n name: 'Science fiction',\n image: 'assets/movies-genres/science fiction.png'\n },\n { id: 11, name: 'Westerns', image: 'assets/movies-genres/westerns.png' }\n ];\n\n constructor(\n private formBuilder: FormBuilder,\n private modalCtrl: ModalController,\n public navParams: NavParams,\n private store: Store,\n private renderer: Renderer2,\n private formErrorHandler: FormErrorHandlerService\n ) {\n this.createForm();\n this.formErrorHandler.handleErrors(this.movieForm, this.errorsForm);\n }\n\n createForm() {\n this.movieForm = this.formBuilder.group<MovieForm>({\n id: new FormControl('', { nonNullable: true }),\n title: new FormControl('', {\n nonNullable: true,\n validators: [Validators.required]\n }),\n year: new FormControl(new Date().getFullYear(), {\n nonNullable: true,\n validators: [Validators.required]\n }),\n director: new FormControl('', { nonNullable: true }),\n cast: new FormControl('', { nonNullable: true }),\n genre: new FormControl('Action', { nonNullable: true }),\n notes: new FormControl('', { nonNullable: true }),\n poster: new FormControl('', { nonNullable: true })\n });\n\n this.movieForm$ = this.store.select((state) => state.catalog.movieForm);\n this.movieForm$.subscribe((data) => {\n if (data['model'] !== null && data['status'] === 'PENDING') {\n // Check if the user has added information about a movie but has not inserted it.\n this.movieForm.patchValue(data['model']);\n }\n });\n }\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n if (this.navParams.data.option === 'edit') {\n this.movieForm.patchValue(this.navParams.data.modalProps.movie);\n }\n }\n\n ngAfterViewInit() {\n const element = this.renderer.selectRootElement('#myInput');\n setTimeout(() => element.focus(), 3000);\n }\n\n dismiss(data?: any) {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n if (this.navParams.data.option === 'add') {\n this.store.dispatch([\n new UpdateFormValue({\n value: data,\n path: 'catalog.movieForm'\n }),\n new UpdateFormStatus({\n status: 'PENDING',\n path: 'catalog.movieForm'\n })\n ]);\n }\n this.modalCtrl.dismiss(data);\n }\n\n movieFormSubmit() {\n if (this.navParams.data.option === 'add') {\n this.store\n .dispatch(new AddMovie(this.movieForm.value))\n .subscribe(() => this.clearMovieForm());\n } else if (this.navParams.data.option === 'edit') {\n this.store.dispatch(new EditMovie(this.movieForm.value));\n }\n }\n\n clearMovieForm() {\n this.movieForm.reset();\n this.store.dispatch([\n new UpdateFormValue({\n value: <Movie>{},\n path: 'catalog.movieForm'\n }),\n new UpdateFormStatus({\n status: '',\n path: 'catalog.movieForm'\n })\n ]);\n }\n\n takePicture() {\n console.log('takePicture');\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/show-actors-modal/show.actors.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 9,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 14,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      78,
+                      329
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { SearchImageService } from '@services/search-image/search-image-service';\n\nimport { LoaderService } from '@services/loader/loader.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 11,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 11,
+              "endColumn": 40
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 13,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 13,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      51,
+                      504
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { SearchImageService } from '@services/search-image/search-image-service';\n\nimport { LoaderService } from '@services/loader/loader.service';\n\n@Component({\n standalone: true,selector: 'app-show-actors-modal',\n templateUrl: 'show.actors.modal.html',\n styleUrls: ['./show.actors.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { forkJoin } from 'rxjs';\nimport { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { SearchImageService } from '@services/search-image/search-image-service';\n\nimport { LoaderService } from '@services/loader/loader.service';\n\n@Component({\n standalone: true,selector: 'app-show-actors-modal',\n templateUrl: 'show.actors.modal.html',\n styleUrls: ['./show.actors.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class ShowActorsModalComponent implements OnInit {\n actors: any = [];\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams,\n private searchImageService: SearchImageService,\n private loaderService: LoaderService\n ) {\n console.log('ShowActorsModalComponent::constructor | method called');\n }\n\n ngOnInit() {\n console.log('ShowActorsModalComponent::ngOnInit | method called');\n\n this.loaderService.present('Please wait, loading actors...');\n let actors = this.navParams.data.modalProps.actors;\n actors = actors.split(',');\n\n forkJoin(\n actors.map((actor) => {\n // Code to use Google Custom Search Api.\n return this.searchImageService.searchImage(actor);\n })\n ).subscribe((results: any) => {\n if (results.length > 0) {\n results.map((result, index) => {\n this.actors.push({\n name: actors[index],\n image: result['items'][0].image.thumbnailLink\n });\n });\n this.loaderService.dismiss();\n }\n });\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/show-comments-modal/show.comments.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 9,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      45,
+                      147
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 6,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 6,
+              "endColumn": 42
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 8,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 8,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      18,
+                      328
+                    ],
+                    "text": ", OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\n@Component({\n standalone: true,selector: 'app-show-comments-modal',\n templateUrl: 'show.comments.modal.html',\n styleUrls: ['./show.comments.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewEncapsulation, OnInit } from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\n@Component({\n standalone: true,selector: 'app-show-comments-modal',\n templateUrl: 'show.comments.modal.html',\n styleUrls: ['./show.comments.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class ShowCommentsModalComponent implements OnInit {\n modal: any = {\n title: ''\n };\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams\n ) {}\n\n ngOnInit() {\n this.modal = { ...this.navParams.data.modalProps };\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.modalCtrl.dismiss();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/modals/youtube-modal/youtube.modal.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 11,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 16,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      68,
+                      229
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 13,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 13,
+              "endColumn": 36
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 15,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 15,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      20,
+                      392
+                    ],
+                    "text": ",\n OnInit,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n@Component({\n standalone: true,selector: 'app-youtube-modal',\n templateUrl: 'youtube.modal.html',\n styleUrls: ['./youtube.modal.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n Component,\n ViewEncapsulation,\n OnInit,\n AfterViewInit\n} from '@angular/core';\nimport { ModalController, NavParams } from '@ionic/angular';\n\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n@Component({\n standalone: true,selector: 'app-youtube-modal',\n templateUrl: 'youtube.modal.html',\n styleUrls: ['./youtube.modal.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class YoutubeModalComponent implements OnInit, AfterViewInit {\n item: any;\n\n constructor(\n private modalCtrl: ModalController,\n private navParams: NavParams\n ) {\n console.log('YoutubeModalComponent::constructor | method called');\n }\n\n ngOnInit() {\n console.log('YoutubeModalComponent::ngOnInit | method called');\n this.item = this.navParams.data.modalProps.item;\n }\n\n ngAfterViewInit() {\n this.initializeYoutubePlayerPluginWeb();\n }\n\n dismiss() {\n // Using the injected ModalController this page\n // can \"dismiss\" itself and pass back data.\n this.destroyYoutubePlayer();\n this.modalCtrl.dismiss();\n }\n\n async initializeYoutubePlayerPluginWeb() {\n const options = {\n playerId: this.item.id,\n playerSize: { width: 640, height: 360 },\n videoId: this.item.videoId\n };\n const result = await YoutubePlayer.initialize(options);\n console.log('playerReady', result);\n }\n\n async destroyYoutubePlayer() {\n const result = await YoutubePlayer.destroy(this.item.id);\n console.log('destroyYoutubePlayer', result);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/pages/detail/detail.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 36,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 41,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      48,
+                      1179
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\n// Ionic\nimport { ModalController } from '@ionic/angular';\n\n// Rxjs\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n// Third parties\nimport { Store } from '@ngxs/store';\nimport { Capacitor } from '@capacitor/core';\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n/* Project */\n\n// State\nimport { LikeMovie, FavoriteMovie } from '@store/actions/movies.actions';\nimport { MovieState } from '@store/state/movies.state';\n\n// Models | Interfaces\nimport { Movie } from '@models/movie.model';\n\n// Components\nimport { YoutubeModalComponent } from '@modals/youtube-modal/youtube.modal';\nimport { CommentModalComponent } from '@modals/comment-modal/comment.modal';\nimport { ShowCommentsModalComponent } from '@modals/show-comments-modal/show.comments.modal';\nimport { ShowActorsModalComponent } from '@modals/show-actors-modal/show.actors.modal';\n\n// Services\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 40,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 40,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      29,
+                      1328
+                    ],
+                    "text": " } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\n// Ionic\nimport { ModalController } from '@ionic/angular';\n\n// Rxjs\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n// Third parties\nimport { Store } from '@ngxs/store';\nimport { Capacitor } from '@capacitor/core';\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n/* Project */\n\n// State\nimport { LikeMovie, FavoriteMovie } from '@store/actions/movies.actions';\nimport { MovieState } from '@store/state/movies.state';\n\n// Models | Interfaces\nimport { Movie } from '@models/movie.model';\n\n// Components\nimport { YoutubeModalComponent } from '@modals/youtube-modal/youtube.modal';\nimport { CommentModalComponent } from '@modals/comment-modal/comment.modal';\nimport { ShowCommentsModalComponent } from '@modals/show-comments-modal/show.comments.modal';\nimport { ShowActorsModalComponent } from '@modals/show-actors-modal/show.actors.modal';\n\n// Services\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\n\n@Component({\n standalone: true,selector: 'app-page-detail',\n templateUrl: './detail.html',\n styleUrls: ['./detail.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "// Angular\nimport { Component, ViewEncapsulation } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\n\n// Ionic\nimport { ModalController } from '@ionic/angular';\n\n// Rxjs\nimport { Observable } from 'rxjs';\nimport { map } from 'rxjs/operators';\n\n// Third parties\nimport { Store } from '@ngxs/store';\nimport { Capacitor } from '@capacitor/core';\nimport { YoutubePlayer } from 'capacitor-youtube-player';\n\n/* Project */\n\n// State\nimport { LikeMovie, FavoriteMovie } from '@store/actions/movies.actions';\nimport { MovieState } from '@store/state/movies.state';\n\n// Models | Interfaces\nimport { Movie } from '@models/movie.model';\n\n// Components\nimport { YoutubeModalComponent } from '@modals/youtube-modal/youtube.modal';\nimport { CommentModalComponent } from '@modals/comment-modal/comment.modal';\nimport { ShowCommentsModalComponent } from '@modals/show-comments-modal/show.comments.modal';\nimport { ShowActorsModalComponent } from '@modals/show-actors-modal/show.actors.modal';\n\n// Services\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\n\n@Component({\n standalone: true,selector: 'app-page-detail',\n templateUrl: './detail.html',\n styleUrls: ['./detail.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class DetailComponent {\n currentYear = new Date().getFullYear();\n selectedMovie: Observable<Movie>;\n movie: Movie;\n\n constructor(\n private store: Store,\n private youtubeApiService: YoutubeApiService,\n private modalCtrl: ModalController,\n private activatedRoute: ActivatedRoute,\n private iziToast: IziToastService\n ) {}\n\n ionViewWillEnter() {\n const id = this.activatedRoute.snapshot.paramMap.get('id');\n this.getMovieDetails(id);\n }\n\n getMovieDetails(id: string) {\n this.selectedMovie = this.store\n .select(MovieState.movieById)\n .pipe(map((filterFn) => filterFn(id)));\n this.selectedMovie.subscribe((movie) => {\n this.movie = movie;\n });\n }\n\n watchTrailer() {\n console.log('DetailsPage::watchTrailer | method called');\n\n // Code to use Youtube Api Service: providers/youtube-api-service.ts\n this.youtubeApiService.searchMovieTrailer(this.movie.title).subscribe({\n next: (result) => {\n if (result.items.length > 0) {\n const { videoId } = result.items[0].id;\n this.movie.videoId = videoId;\n\n // Code to use capacitor-youtube-player plugin.\n console.log(\n 'DetailsPage::watchTrailer -> platform: ' + Capacitor.platform\n );\n if (Capacitor.getPlatform() === 'web') {\n const componentProps = { modalProps: { item: this.movie } };\n this.presentModal(componentProps, YoutubeModalComponent);\n } else {\n // Native\n this.testYoutubePlayerPlugin();\n }\n\n /bin /run /sbin if (Capacitor.getPlatform() === 'web') {\n window.open('https://www.youtube.com/watch?v=' + videoId);\n } else { // TODO: Use capacitor-youtube-player plugin.\n window.open('https://www.youtube.com/watch?v=' + videoId, '_blank');\n }\n */\n }\n },\n error: (error) => {\n this.iziToast.show(\n 'Watch Trailer',\n 'Sorry, an error has occurred.',\n 'red',\n 'ico-error',\n 'assets/avatar.png'\n );\n }\n });\n }\n\n async presentModal(componentProps: any, component) {\n console.log(\n 'DetailsPage::presentModal | method called -> movie',\n this.movie\n );\n // const componentProps = { modalProps: { item: this.movie}};\n const modal = await this.modalCtrl.create({\n component: component,\n componentProps: componentProps\n });\n await modal.present();\n\n const { data } = await modal.onWillDismiss();\n if (data) {\n console.log('data', data);\n }\n }\n\n async testYoutubePlayerPlugin() {\n const options = {\n playerSize: { width: 640, height: 360 },\n videoId: this.movie.videoId\n };\n const playerReady = await YoutubePlayer.initialize(options);\n }\n\n onClickLike() {\n console.log('DetailsPage::onClickLike');\n if (typeof this.movie.likes === 'undefined') {\n this.movie.likes = 0;\n }\n this.movie.likes += 1;\n this.store.dispatch(new LikeMovie(this.movie));\n }\n\n onClickComment() {\n console.log('DetailsPage::onClickComment');\n const componentProps = {\n modalProps: { title: 'Comment', movie: this.movie }\n };\n this.presentModal(componentProps, CommentModalComponent);\n }\n\n onClickShowComment() {\n console.log('DetailsPage::onClickShowComment');\n const componentProps = {\n modalProps: { title: 'Comments', movie: this.movie }\n };\n this.presentModal(componentProps, ShowCommentsModalComponent);\n }\n\n onClickFavorite() {\n console.log('DetailsPage::onClickFavorite');\n\n if (typeof localStorage.getItem('@@STATE') !== 'undefined') {\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n const favorites = state.catalog.favorites;\n\n if (typeof favorites !== 'undefined') {\n const condition = (item) => item.title === this.movie.title;\n if (!favorites.some(condition)) {\n this.store.dispatch(new FavoriteMovie(this.movie)).subscribe(() => {\n this.iziToast.success('Favorite movie', 'Favorite Movie added.');\n });\n } else {\n this.iziToast.show(\n 'Favorite movie',\n 'The movie has already been added.',\n 'red',\n 'ico-error',\n 'assets/avatar.png'\n );\n }\n }\n }\n }\n\n onClickShare() {\n console.log('DetailsPage::onClickShare');\n if (navigator['share']) {\n navigator['share']({\n title: 'WebShare API Demo',\n url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'\n })\n .then(() => {\n console.log('Thanks for sharing!');\n })\n .catch(console.error);\n } else {\n // fallback\n }\n }\n\n showActors() {\n console.log('DetailsPage::showActors | method called');\n const componentProps = { modalProps: { actors: this.movie.cast } };\n this.presentModal(componentProps, ShowActorsModalComponent);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/pages/home/home.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 40,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 45,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      89,
+                      1015
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Ionic\nimport {\n ModalController,\n PopoverController,\n IonInfiniteScroll,\n IonContent\n} from '@ionic/angular';\n\n// Rx\nimport { Observable } from 'rxjs';\nimport { withLatestFrom } from 'rxjs/operators';\n\n// Third parties\nimport { Store, Select, Actions, ofActionSuccessful } from '@ngxs/store';\n\n// Project\nimport {\n FetchMovies,\n DeleteMovie,\n AddMovie,\n EditMovie\n} from '@store/actions/movies.actions';\nimport { MovieModalComponent } from '@modals/movie-modal/movie.modal';\nimport { FavoritesMoviesModalComponent } from '@modals/favorites-movies-modal/favorites.movies.modal';\nimport { FilterMoviePopoverComponent } from '@popovers/filter-movie.popover';\nimport { Movie } from '@models/movie.model';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\nimport { AsyncEvent } from '@models/custom-event.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 44,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 44,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      31,
+                      1158
+                    ],
+                    "text": ",\n OnInit,\n ViewChild,\n ElementRef\n} from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Ionic\nimport {\n ModalController,\n PopoverController,\n IonInfiniteScroll,\n IonContent\n} from '@ionic/angular';\n\n// Rx\nimport { Observable } from 'rxjs';\nimport { withLatestFrom } from 'rxjs/operators';\n\n// Third parties\nimport { Store, Select, Actions, ofActionSuccessful } from '@ngxs/store';\n\n// Project\nimport {\n FetchMovies,\n DeleteMovie,\n AddMovie,\n EditMovie\n} from '@store/actions/movies.actions';\nimport { MovieModalComponent } from '@modals/movie-modal/movie.modal';\nimport { FavoritesMoviesModalComponent } from '@modals/favorites-movies-modal/favorites.movies.modal';\nimport { FilterMoviePopoverComponent } from '@popovers/filter-movie.popover';\nimport { Movie } from '@models/movie.model';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\nimport { AsyncEvent } from '@models/custom-event.model';\n\n@Component({\n standalone: true,selector: 'app-page-home',\n templateUrl: './home.html',\n styleUrls: ['./home.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "// Angular\nimport {\n Component,\n ViewEncapsulation,\n OnInit,\n ViewChild,\n ElementRef\n} from '@angular/core';\nimport { Router } from '@angular/router';\n\n// Ionic\nimport {\n ModalController,\n PopoverController,\n IonInfiniteScroll,\n IonContent\n} from '@ionic/angular';\n\n// Rx\nimport { Observable } from 'rxjs';\nimport { withLatestFrom } from 'rxjs/operators';\n\n// Third parties\nimport { Store, Select, Actions, ofActionSuccessful } from '@ngxs/store';\n\n// Project\nimport {\n FetchMovies,\n DeleteMovie,\n AddMovie,\n EditMovie\n} from '@store/actions/movies.actions';\nimport { MovieModalComponent } from '@modals/movie-modal/movie.modal';\nimport { FavoritesMoviesModalComponent } from '@modals/favorites-movies-modal/favorites.movies.modal';\nimport { FilterMoviePopoverComponent } from '@popovers/filter-movie.popover';\nimport { Movie } from '@models/movie.model';\nimport { IziToastService } from '@services/izi-toast/izi-toast.service';\nimport { AsyncEvent } from '@models/custom-event.model';\n\n@Component({\n standalone: true,selector: 'app-page-home',\n templateUrl: './home.html',\n styleUrls: ['./home.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class HomeComponent implements OnInit {\n @ViewChild('infiniteScroll', { read: ElementRef, static: true })\n infiniteScroll: IonInfiniteScroll;\n @ViewChild(IonContent, { read: ElementRef, static: true })\n content: IonContent;\n\n // Reads the name of the store from the store class.\n @Select((state) => state.catalog.movies) movies$: Observable<Movie[]>;\n\n currentYear = new Date().getFullYear();\n start: number;\n end: number;\n showScrollTop: Boolean = false;\n showSkeleton: Boolean = true;\n iconView = 'apps';\n\n constructor(\n private store: Store,\n private router: Router,\n private modalCtrl: ModalController,\n private actions$: Actions,\n private popoverCtrl: PopoverController,\n private iziToast: IziToastService\n ) {\n this.start = 0;\n this.end = 20;\n }\n\n ngOnInit() {\n this.fetchMovies(this.start, this.end);\n // Check if we have movies in local storage.\n if (localStorage.getItem('@@STATE') !== 'undefined') {\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n console.log('state', state);\n }\n\n this.actions$.pipe(ofActionSuccessful(AddMovie)).subscribe({\n next: () => {\n this.modalCtrl.dismiss();\n this.iziToast.success('Add movie', 'Movie added successfully.');\n },\n error: (err) =>\n console.log(\n 'HomePage::ngOnInit ofActionSuccessful(AddMovie) | method called -> received error' +\n err\n )\n });\n\n this.actions$.pipe(ofActionSuccessful(EditMovie)).subscribe({\n next: () => {\n this.modalCtrl.dismiss();\n this.iziToast.success('Edit movie', 'Movie updated successfully.');\n },\n error: (err) =>\n console.log(\n 'HomePage::ngOnInit ofActionSuccessful(EditMovie) | method called -> received error' +\n err\n )\n });\n\n this.actions$.pipe(ofActionSuccessful(DeleteMovie)).subscribe({\n next: () => {\n this.iziToast.success('Delete movie', 'Movie deleted successfully.');\n },\n error: (err) =>\n console.log(\n 'HomePage::ngOnInit ofActionSuccessful(DeleteMovie) | method called -> received error' +\n err\n )\n });\n }\n\n fetchMovies(start: number, end: number) {\n console.log('HomePage::fetchMovies | method called', start, end);\n this.store\n .dispatch(new FetchMovies({ start: start, end: end }))\n .pipe(withLatestFrom(this.movies$))\n .subscribe({\n next: ([movies]) => {\n setTimeout(() => {\n this.showSkeleton = false;\n }, 2000);\n },\n error: (err) =>\n console.log(\n 'HomePage::fetchMovies() | method called -> received error' + err\n )\n });\n }\n\n viewMovieDetails(movie: Movie) {\n const movieDetailsURL = `/detail/${movie.id}`;\n this.router.navigate([movieDetailsURL]);\n }\n\n async presentModal(componentProps: any, component) {\n const modal = await this.modalCtrl.create({\n component: component,\n componentProps: componentProps\n });\n await modal.present();\n\n const { data } = await modal.onWillDismiss();\n if (data) {\n console.log('data', data);\n }\n }\n\n addMovie() {\n const componentProps = {\n modalProps: { title: 'Add Movie', buttonText: 'Add Movie' },\n option: 'add'\n };\n this.presentModal(componentProps, MovieModalComponent);\n }\n\n editMovie(movie: Movie) {\n const componentProps = {\n modalProps: {\n title: 'Edit Movie',\n buttonText: 'Edit Movie',\n movie: movie\n },\n option: 'edit'\n };\n this.presentModal(componentProps, MovieModalComponent);\n }\n\n deleteMovie(movie: Movie) {\n this.store.dispatch(new DeleteMovie(movie));\n }\n\n doInfinite(event: Event) {\n const customEvent = event as AsyncEvent;\n setTimeout(() => {\n customEvent.target.complete();\n this.showSkeleton = true;\n this.start = this.end;\n this.end += 20;\n this.showScrollTop = true;\n this.fetchMovies(this.start, this.end);\n }, 500);\n }\n\n async presentPopover(event: MouseEvent) {\n const popover = await this.popoverCtrl.create({\n component: FilterMoviePopoverComponent,\n event: event\n });\n\n await popover.present();\n\n const { data } = await popover.onWillDismiss();\n\n if (data) {\n console.log('data popover.onWillDismiss', data);\n }\n }\n\n scrollToTop() {\n this.content['nativeElement'].scrollToTop();\n }\n\n changeView() {\n console.log('HomePage::changeView() | method called');\n this.iconView = this.iconView === 'apps' ? 'list' : 'apps';\n }\n\n showFavoritesMovies() {\n console.log('HomePage::showFavoritesMovies() | method called');\n const state = JSON.parse(localStorage.getItem('@@STATE'));\n console.log('state', state);\n const componentProps = {\n modalProps: {\n title: 'Favorites Movies',\n favoritesMovies: state.catalog.favorites\n }\n };\n this.presentModal(componentProps, FavoritesMoviesModalComponent);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/popovers/filter-movie.popover.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 19,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      74,
+                      403
+                    ],
+                    "text": ", ChangeDetectionStrategy\n} from '@angular/core';\nimport { PopoverController } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { Observable, Subscription } from 'rxjs';\nimport { FormBuilder, FormGroup, FormControl } from '@angular/forms';\nimport { FilterMovies, SaveFilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/relative-url-prefix",
+              "severity": 2,
+              "message": "The ./ and ../ prefix is standard syntax for relative URLs. (https://angular.io/styleguide#style-05-04)",
+              "line": 16,
+              "column": 16,
+              "nodeType": "Literal",
+              "messageId": "relativeUrlPrefix",
+              "endLine": 16,
+              "endColumn": 43
+            },
+            {
+              "ruleId": "@angular-eslint/use-component-view-encapsulation",
+              "severity": 2,
+              "message": "Using `ViewEncapsulation.None` makes your styles global, which may have an unintended effect",
+              "line": 18,
+              "column": 36,
+              "nodeType": "Identifier",
+              "messageId": "useComponentViewEncapsulation",
+              "endLine": 18,
+              "endColumn": 40,
+              "suggestions": [
+                {
+                  "messageId": "suggestRemoveViewEncapsulationNone",
+                  "fix": {
+                    "range": [
+                      20,
+                      587
+                    ],
+                    "text": ",\n OnInit,\n OnDestroy,\n NgZone\n} from '@angular/core';\nimport { PopoverController } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { Observable, Subscription } from 'rxjs';\nimport { FormBuilder, FormGroup, FormControl } from '@angular/forms';\nimport { FilterMovies, SaveFilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n standalone: true,selector: 'app-filter-movie-popover',\n templateUrl: 'filter-movie.popover.html',\n styleUrls: ['./filter-movie.popover.scss'],\n "
+                  },
+                  "desc": "Remove `ViewEncapsulation.None`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n Component,\n ViewEncapsulation,\n OnInit,\n OnDestroy,\n NgZone\n} from '@angular/core';\nimport { PopoverController } from '@ionic/angular';\nimport { Store } from '@ngxs/store';\nimport { Observable, Subscription } from 'rxjs';\nimport { FormBuilder, FormGroup, FormControl } from '@angular/forms';\nimport { FilterMovies, SaveFilterMovies } from '@store/actions/movies.actions';\n\n@Component({\n standalone: true,selector: 'app-filter-movie-popover',\n templateUrl: 'filter-movie.popover.html',\n styleUrls: ['./filter-movie.popover.scss'],\n encapsulation: ViewEncapsulation.None\n})\nexport class FilterMoviePopoverComponent implements OnInit, OnDestroy {\n range: any = {\n lower: 1900,\n upper: new Date().getFullYear()\n };\n\n filter$: Observable<any>;\n filterSubscription: Subscription;\n\n filterForm: FormGroup;\n\n customPopoverOptions: any = {\n header: 'Genre',\n subHeader: 'Select movie genre'\n };\n\n genres = [\n { id: 1, name: 'Action', image: 'assets/movies-genres/action.png' },\n { id: 2, name: 'Comedy', image: 'assets/movies-genres/comedy.png' },\n { id: 3, name: 'Crime', image: 'assets/movies-genres/crime.png' },\n {\n id: 4,\n name: 'Documentary',\n image: 'assets/movies-genres/documentary.png'\n },\n { id: 5, name: 'Drama', image: 'assets/movies-genres/drama.png' },\n { id: 6, name: 'Fantasy', image: 'assets/movies-genres/fantasy.png' },\n { id: 7, name: 'Film noir', image: 'assets/movies-genres/film noir.png' },\n { id: 8, name: 'Horror', image: 'assets/movies-genres/horror.png' },\n { id: 9, name: 'Romance', image: 'assets/movies-genres/romance.png' },\n {\n id: 10,\n name: 'Science fiction',\n image: 'assets/movies-genres/science fiction.png'\n },\n { id: 11, name: 'Westerns', image: 'assets/movies-genres/westerns.png' }\n ];\n\n constructor(\n private popoverCtrl: PopoverController,\n private store: Store,\n private zone: NgZone,\n private formBuilder: FormBuilder\n ) {\n this.createForm();\n }\n\n createForm() {\n this.filterForm = this.formBuilder.group({\n rate: new FormControl(''),\n years: new FormControl(''),\n genre: new FormControl('')\n });\n }\n\n ngOnInit() {\n this.filter$ = this.store.select((state) => state.catalog.filter);\n this.filterSubscription = this.filter$.subscribe((filter) => {\n this.filterForm.setValue(filter);\n if (filter.genre === '') {\n this.filterForm.patchValue({ genre: 'Action' });\n }\n });\n }\n\n ngOnDestroy() {\n this.filterSubscription.unsubscribe();\n }\n\n filterMovies() {\n console.log(this.filterForm.value);\n this.store.dispatch([\n new FilterMovies(this.filterForm.value),\n new SaveFilterMovies(this.filterForm.value)\n ]);\n this.popoverCtrl.dismiss();\n }\n\n clearFilterMovies() {\n this.filterForm.patchValue({\n rate: 0,\n years: { lower: 1900, upper: new Date().getFullYear() },\n genre: ''\n });\n this.store.dispatch([\n new FilterMovies(this.filterForm.value),\n new SaveFilterMovies(this.filterForm.value)\n ]);\n this.popoverCtrl.dismiss();\n }\n\n onRatingChange(event) {\n this.filterForm.patchValue({ rate: event.detail });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/services/movies/movies-service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 9,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 9,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      353,
+                      353
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      353,
+                      353
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      353,
+                      353
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient, HttpHeaders } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { timeout, retryWhen, delay } from 'rxjs/operators';\nimport { v4 as uuid } from 'uuid';\nimport { Movie } from '@models/movie.model';\nimport { environment } from '@environments/environment';\n\n@Injectable()\nexport class MoviesService {\n private readonly URL_BASE: string = environment.API_URL_BASE;\n\n constructor(private http: HttpClient) {}\n\n getMovies(start: number, end: number): Observable<Movie[]> {\n return (\n this.http\n // Type-checking the response => .get<Movie[]>\n .get<Movie[]>(\n this.URL_BASE +\n `movies?_start=${start}&_end=${end}&_sort=year,title&_order=desc,asc`\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n getMovie(title: string): Observable<Movie> {\n return (\n this.http\n // Type-checking the response => .get<Movie>\n .get<Movie>(encodeURI(this.URL_BASE + `movies?title=${title}`))\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n addMovie(movie: Movie): Observable<Movie> {\n movie['id'] = uuid();\n\n const httpOptions = {\n headers: new HttpHeaders({\n 'Content-Type': 'application/json'\n })\n };\n\n return (\n this.http\n // Type-checking the response => .post<Movie>\n .post<Movie>(encodeURI(this.URL_BASE + `movies/`), movie, httpOptions)\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n editMovie(movie: Movie): Observable<Movie> {\n const httpOptions = {\n headers: new HttpHeaders({\n 'Content-Type': 'application/json'\n })\n };\n\n return (\n this.http\n // Type-checking the response => .post<Movie>\n .put<Movie>(\n encodeURI(this.URL_BASE + `movies/${movie['id']}`),\n movie,\n httpOptions\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n deleteMovie(movie: Movie): Observable<Movie> {\n return (\n this.http\n // Type-checking the response => .post<Movie>\n .delete<Movie>(encodeURI(this.URL_BASE + `movies/${movie['id']}`))\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n filterMovies(filters): Observable<Movie[]> {\n const strFilters = this.checkFilters(filters);\n console.log(\n this.URL_BASE +\n `movies${strFilters}_sort=year,title&_order=desc,asc&_limit=20`\n );\n return (\n this.http\n // Type-checking the response => .get<Movie[]>\n .get<Movie[]>(\n this.URL_BASE +\n `movies${strFilters}_sort=year,title&_order=desc,asc&_limit=20`\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n\n checkFilters(filters: any) {\n let strFilters = '';\n strFilters +=\n typeof filters['genre'] !== 'undefined' && filters['genre'] !== ''\n ? `?genre=${filters.genre}&`\n : '?';\n strFilters +=\n typeof filters['years'] !== 'undefined'\n ? `year_gte=${filters.years.lower}&year_lte=${filters.years.upper}&`\n : '';\n strFilters +=\n typeof filters['rate'] !== 'undefined' && filters['rate'] !== 0\n ? `rate=${filters.rate}&`\n : '';\n return strFilters;\n }\n\n searchMovies(queryText: string): Observable<Movie[]> {\n return (\n this.http\n // Type-checking the response => .get<Movie[]>\n .get<Movie[]>(this.URL_BASE + `movies?q=${queryText}&_limit=20`)\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/services/search-image/search-image-service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 6,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { timeout, retryWhen, delay } from 'rxjs/operators';\n\n@Injectable()\nexport class SearchImageService {\n private readonly URL_BASE: string =\n 'https://www.googleapis.com/customsearch/v1';\n private readonly API_KEY: string = 'AIzaSyCPqf8puyl9DyVFPy_KTAARdaBPRpfYHoA';\n private readonly CUSTOM_SEARCH_ENGINE_ID: string =\n '012020920993535583437:nqayyeenfrw';\n\n constructor(private http: HttpClient) {}\n\n searchImage(searchQuery: string): Observable<any> {\n return (\n this.http\n // https://www.googleapis.com/customsearch/v1?q=Mia%20Wasikowska&cx=012020920993535583437:nqayyeenfrw\n // &key=AIzaSyCPqf8puyl9DyVFPy_KTAARdaBPRpfYHoA&searchType=image&alt=json\n .get(\n encodeURI(\n this.URL_BASE +\n `?q=${searchQuery}&cx=${this.CUSTOM_SEARCH_ENGINE_ID}&key=${this.API_KEY}&searchType=image&alt=json`\n )\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n )\n );\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/services/youtube-api/youtube-api-service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 6,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      203,
+                      203
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { timeout, retryWhen, delay } from 'rxjs/operators';\n\n@Injectable()\nexport class YoutubeApiService {\n private readonly URL_BASE: string =\n 'https://www.googleapis.com/youtube/v3/search';\n private readonly API_KEY: string = 'AIzaSyDxuxEANLFVy5q4sG1NrAUJNhoX6nW4VQ4';\n\n constructor(private http: HttpClient) {}\n\n searchMovieTrailer(movieTitle: string): Observable<any> {\n return this.http\n .get(\n encodeURI(\n this.URL_BASE +\n `?key=${this.API_KEY}&q=${movieTitle}&type=video&part=snippet,id&maxResults=5`\n )\n )\n .pipe(\n retryWhen((error) => error.pipe(delay(500))),\n timeout(5000)\n );\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-ionic-ngxs-movies/src/app/store/state/movies.state.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 67,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 67,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      1404,
+                      1404
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      1404,
+                      1404
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      1404,
+                      1404
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { State, Action, StateContext, Selector, NgxsOnInit } from '@ngxs/store';\nimport { patch, append, removeItem, updateItem } from '@ngxs/store/operators';\nimport { tap, catchError } from 'rxjs/operators';\nimport { throwError } from 'rxjs';\nimport { Movie } from '@models/movie.model';\nimport {\n FetchMovies,\n AddMovie,\n EditMovie,\n DeleteMovie,\n FilterMovies,\n SaveFilterMovies,\n GetMovieTrailer,\n ClearMovies,\n LikeMovie,\n CommentMovie,\n FavoriteMovie,\n DeleteFavoriteMovie,\n DeleteAllFavoritesMovies,\n ClearState\n} from '@store/actions/movies.actions';\n\nimport { MoviesService } from '@services/movies/movies-service';\nimport { YoutubeApiService } from '@services/youtube-api/youtube-api-service';\nimport { Injectable } from '@angular/core';\n\nexport class MoviesStateModel {\n movies: Movie[];\n movieForm: {\n model: Movie;\n dirty: boolean;\n status: string;\n errors: {};\n };\n filter: {\n genre: string;\n years: {\n lower: number;\n upper: number;\n };\n rate: number;\n };\n favorites: Movie[];\n}\n\n@State<MoviesStateModel>({\n name: 'catalog',\n defaults: {\n movies: [],\n movieForm: {\n model: null,\n dirty: false,\n status: '',\n errors: {}\n },\n filter: {\n genre: 'Action',\n years: {\n lower: 1900,\n upper: new Date().getFullYear()\n },\n rate: 0\n },\n favorites: []\n }\n})\n@Injectable()\nexport class MovieState implements NgxsOnInit {\n private readonly GENRES: string[] = [\n 'action',\n 'comedy',\n 'crime',\n 'documentary',\n 'drama',\n 'fantasy',\n 'film noir',\n 'horror',\n 'romance',\n 'science fiction',\n 'westerns',\n 'animation'\n ];\n\n constructor(\n private moviesService: MoviesService,\n private youtubeApiService: YoutubeApiService\n ) {}\n\n @Selector()\n static getMovies(state: MoviesStateModel) {\n return state.movies;\n }\n\n @Selector()\n static movieById(state: MoviesStateModel) {\n return (id: string) => {\n return state.movies.filter((movie) => movie.id === id)[0];\n };\n }\n\n ngxsOnInit(ctx: StateContext<MoviesStateModel>) {\n ctx.dispatch(new ClearState());\n }\n\n @Action(ClearState)\n clearState({ setState }: StateContext<MoviesStateModel>) {\n setState({\n movies: [],\n movieForm: {\n model: null,\n dirty: false,\n status: '',\n errors: {}\n },\n filter: {\n genre: 'Action',\n years: {\n lower: 1900,\n upper: new Date().getFullYear()\n },\n rate: 0\n },\n favorites: []\n });\n }\n\n @Action(FetchMovies, { cancelUncompleted: true })\n fetchMovies(\n { getState, setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n const { start, end } = payload;\n return this.moviesService.getMovies(start, end).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (movies) => {\n movies.forEach((movie) => {\n const genre = movie.genre.toLowerCase().split(',', 1)[0];\n if (this.GENRES.indexOf(genre) !== -1) {\n movie.genreImage = 'assets/movies-genres/' + genre + '.png';\n }\n });\n const state = getState();\n setState({\n ...state,\n movies: [...state.movies, ...movies]\n });\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(AddMovie)\n addMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n payload.poster =\n payload.poster === ''\n ? 'https://in.bmscdn.com/iedb/movies/images/website/poster/large/ela-cheppanu-et00016781-24-03-2017-18-31-40.jpg'\n : payload.poster;\n return this.moviesService.addMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: append([result])\n })\n );\n }\n })\n );\n }\n\n @Action(EditMovie)\n editMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.editMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: updateItem<Movie>(\n (movie) => movie.id === result.id,\n result\n )\n })\n );\n }\n })\n );\n }\n\n @Action(DeleteMovie)\n deleteMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.deleteMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: removeItem<Movie>((movie) => movie.id === payload.id)\n })\n );\n }\n })\n );\n }\n\n @Action(FilterMovies, { cancelUncompleted: true })\n filterMovies(\n { getState, setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n return this.moviesService.filterMovies(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n const state = getState();\n setState({\n ...state,\n movies: [...result]\n });\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(SaveFilterMovies)\n saveFilterMovies({ setState }: StateContext<MoviesStateModel>, { payload }) {\n setState(\n patch({\n filter: { ...payload }\n })\n );\n }\n\n @Action(GetMovieTrailer, { cancelUncompleted: true })\n getMovieTrailer(\n { getState, setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n return this.youtubeApiService.searchMovieTrailer(payload.movieTitle).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {},\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(ClearMovies)\n clearMovies({ getState, setState }: StateContext<MoviesStateModel>) {\n const state = getState();\n setState({\n ...state,\n movies: []\n });\n }\n\n @Action(LikeMovie)\n likeMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.editMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: updateItem<Movie>(\n (movie) => movie.id === result.id,\n result\n )\n })\n );\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(CommentMovie)\n commentMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n return this.moviesService.editMovie(payload).pipe(\n catchError((x, caught) => {\n return throwError(() => new Error(x));\n }),\n tap({\n next: (result) => {\n setState(\n patch({\n movies: updateItem<Movie>(\n (movie) => movie.id === result.id,\n result\n )\n })\n );\n },\n error: (error) => {\n console.log('error', error.message);\n }\n })\n );\n }\n\n @Action(FavoriteMovie)\n favoriteMovie({ setState }: StateContext<MoviesStateModel>, { payload }) {\n setState(\n patch({\n favorites: append([payload])\n })\n );\n }\n\n @Action(DeleteFavoriteMovie)\n deleteFavoriteMovie(\n { setState }: StateContext<MoviesStateModel>,\n { payload }\n ) {\n setState(\n patch({\n favorites: removeItem<Movie>((movie) => movie.id === payload.id)\n })\n );\n }\n\n @Action(DeleteAllFavoritesMovies)\n deleteAllFavoritesMovies({\n getState,\n setState\n }: StateContext<MoviesStateModel>) {\n const state = getState();\n setState({\n ...state,\n favorites: []\n });\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  }
+}

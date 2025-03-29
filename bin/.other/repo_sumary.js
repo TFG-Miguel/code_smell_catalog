@@ -1,7 +1,4 @@
 const fs = require("fs");
-const path = "../../analisys/repos/angular-calendar.lint.all"
-
-fs.readdir()
 
 
 const reportFile = "eslint-report.json";

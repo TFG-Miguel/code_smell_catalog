@@ -1,0 +1,1195 @@
+{
+  "repo": {
+    "HEAD": {
+      "commit": "457d54dfcbf003a5db11b3ff79046cd99e0d3d9e",
+      "author": "migudel",
+      "date": "Sat Mar 29 20:36:42 2025 +0100",
+      "message": "INICIO DE PRUEBAS"
+    },
+    "url": "https://github.com/scttcper/ngx-toastr"
+  },
+  "before": {
+    "ngx-toastr": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/bootstrap.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 36,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 36,
+              "endColumn": 28
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[bootstrap-toast-component]',\n template: `\n <div class=\"toast\" role=\"alert\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"toast-header\">\n <strong class=\"me-auto\">{{ title || 'default header' }}</strong>\n <button\n type=\"button\"\n class=\"btn-close\"\n aria-label=\"Close\"\n *ngIf=\"options.closeButton\"\n (click)=\"remove()\"\n ></button>\n </div>\n <div class=\"toast-body\">\n <div\n role=\"alert\"\n [attr.aria-label]=\"message\"\n >\n {{ message || 'default message' }}\n </div>\n <div class=\"mt-2 pt-2 border-top\">\n <button type=\"button\" class=\"btn btn-secondary btn-sm\" (click)=\"handleClick($event)\">\n {{ undoString }}\n </button>\n </div>\n </div>\n </div>\n `,\n preserveWhitespaces: false,\n})\nexport class BootstrapToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n // Demo click handler\n handleClick(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/notyf.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 86,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 86,
+              "endColumn": 24
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger,\n} from '@angular/animations';\nimport { Component } from '@angular/core';\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: 'notyf-toast-component',\n styles: [],\n template: `\n <div class=\"notyf__toast notyf__toast--success notyf__toast\">\n <div class=\"notyf__wrapper\">\n <div class=\"notyf__icon\">\n <i class=\"notyf__icon--success\" style=\"color: rgb(61, 199, 99);\"></i>\n </div>\n <div class=\"notyf__message\">{{ title }} {{ message }}</div>\n </div>\n <div\n class=\"notyf__ripple\"\n style=\"background-color: rgb(61, 199, 99);\"\n ></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n transition(\n 'inactive => active',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 0,\n bottom: '-15px',\n 'max-height': 0,\n 'max-width': 0,\n 'margin-top': 0,\n }),\n style({\n opacity: 0.8,\n bottom: '-3px',\n }),\n style({\n opacity: 1,\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ]),\n ),\n ),\n state(\n 'active',\n style({\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ),\n transition(\n 'active => removed',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 1,\n transform: 'translateY(0)'\n }),\n style({\n opacity: 0,\n transform: 'translateY(25%)'\n }),\n ]),\n ),\n ),\n ]),\n ],\n})\nexport class NotyfToast extends Toast {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/pink.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 96,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 96,
+              "endColumn": 23
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[pink-toast-component]',\n styles: [`\n :host {\n background-color: #FF69B4;\n position: relative;\n overflow: hidden;\n margin: 0 0 6px;\n padding: 10px 10px 10px 10px;\n width: 300px;\n border-radius: 3px 3px 3px 3px;\n color: #FFFFFF;\n pointer-events: all;\n cursor: pointer;\n }\n .btn-pink {\n -webkit-backface-visibility: hidden;\n -webkit-transform: translateZ(0);\n }\n `],\n template: `\n <div class=\"row\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"col-9\">\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }}\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n </div>\n <div class=\"col-3 text-right\">\n <a *ngIf=\"!options.closeButton\" class=\"btn btn-pink btn-sm\" (click)=\"action($event)\">\n {{ undoString }}\n </a>\n <a *ngIf=\"options.closeButton\" (click)=\"remove()\" class=\"btn btn-pink btn-sm\">\n close\n </a>\n </div>\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({\n opacity: 0,\n })),\n transition('inactive => active', animate('400ms ease-out', keyframes([\n style({\n transform: 'translate3d(100%, 0, 0) skewX(-30deg)',\n opacity: 0,\n }),\n style({\n transform: 'skewX(20deg)',\n opacity: 1,\n }),\n style({\n transform: 'skewX(-5deg)',\n opacity: 1,\n }),\n style({\n transform: 'none',\n opacity: 1,\n }),\n ]))),\n transition('active => removed', animate('400ms ease-out', keyframes([\n style({\n opacity: 1,\n }),\n style({\n transform: 'translate3d(100%, 0, 0) skewX(30deg)',\n opacity: 0,\n }),\n ]))),\n ]),\n ],\n preserveWhitespaces: false,\n})\nexport class PinkToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n action(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast-noanimation.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 47,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 47,
+              "endColumn": 30
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { NgIf } from '@angular/common';\nimport { ChangeDetectionStrategy, ModuleWithProviders, signal } from '@angular/core';\nimport {\n ApplicationRef,\n Component,\n HostBinding,\n HostListener,\n NgModule,\n OnDestroy,\n} from '@angular/core';\n\nimport { Subscription } from 'rxjs';\n\nimport {\n DefaultNoComponentGlobalConfig,\n GlobalConfig,\n IndividualConfig,\n ToastPackage,\n TOAST_CONFIG,\n} from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ToastNoAnimation implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle() {\n if (this.state() === 'inactive') {\n return 'none';\n }\n\n return null;\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n state = signal('inactive');\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected appRef: ApplicationRef,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${\n toastPackage.config.toastClass\n }`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.set('active');\n if (!(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') && this.options.timeOut) {\n this.timeout = setTimeout(() => {\n this.remove();\n }, this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n if (this.options.onActivateTick) {\n this.appRef.tick();\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.set('active');\n\n this.options.timeOut = this.originalTimeout;\n this.timeout = setTimeout(() => this.remove(), this.originalTimeout);\n this.hideTime = new Date().getTime() + (this.originalTimeout || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.set('removed');\n this.timeout = setTimeout(() =>\n this.toastrService.remove(this.toastPackage.toastId),\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state() === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state() === 'removed'\n ) {\n return;\n }\n this.timeout = setTimeout(\n () => this.remove(),\n this.options.extendedTimeOut,\n );\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n}\n\nexport const DefaultNoAnimationsGlobalConfig: GlobalConfig = {\n ...DefaultNoComponentGlobalConfig,\n toastComponent: ToastNoAnimation,\n};\n\n@NgModule({\n imports: [ToastNoAnimation],\n exports: [ToastNoAnimation],\n})\nexport class ToastNoAnimationModule {\n static forRoot(config: Partial<GlobalConfig> = {}): ModuleWithProviders<ToastNoAnimationModule> {\n return {\n ngModule: ToastNoAnimationModule,\n providers: [\n {\n provide: TOAST_CONFIG,\n useValue: {\n default: DefaultNoAnimationsGlobalConfig,\n config,\n },\n },\n ],\n };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 57,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 57,
+              "endColumn": 19
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport {\n ChangeDetectionStrategy,\n Component,\n HostBinding,\n HostListener,\n NgZone,\n OnDestroy,\n WritableSignal,\n signal,\n} from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport { Subscription } from 'rxjs';\nimport { IndividualConfig, ToastPackage } from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n state('active', style({ opacity: 1 })),\n state('removed', style({ opacity: 0 })),\n transition('inactive => active', animate('{{ easeTime }}ms {{ easing }}')),\n transition('active => removed', animate('{{ easeTime }}ms {{ easing }}')),\n ]),\n ],\n preserveWhitespaces: false,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class Toast<ConfigPayload = any> implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig<ConfigPayload>;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n state: WritableSignal<{\n value: 'inactive' | 'active' | 'removed';\n params: { easeTime: number | string; easing: string };\n }>;\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n @HostBinding('@flyInOut') get _state() {\n return this.state();\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle(): string | undefined {\n if (this.state().value === 'inactive') {\n return 'none';\n }\n\n return;\n }\n\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected ngZone?: NgZone,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${toastPackage.config.toastClass}`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n this.state = signal({\n value: 'inactive',\n params: {\n easeTime: this.toastPackage.config.easeTime,\n easing: 'ease-in',\n },\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.update(state => ({ ...state, value: 'active' }));\n if (\n !(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') &&\n this.options.timeOut\n ) {\n this.outsideTimeout(() => this.remove(), this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.update(state => ({ ...state, value: 'active' }));\n\n this.outsideTimeout(() => this.remove(), this.originalTimeout);\n this.options.timeOut = this.originalTimeout;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state().value === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.update(state => ({ ...state, value: 'removed' }));\n this.outsideTimeout(\n () => this.toastrService.remove(this.toastPackage.toastId),\n +this.toastPackage.config.easeTime,\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state().value === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state().value === 'removed') {\n return;\n }\n\n if (this.options.disableTimeOut !== 'extendedTimeOut') {\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state().value === 'removed'\n ) {\n return;\n }\n this.outsideTimeout(() => this.remove(), this.options.extendedTimeOut);\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n outsideTimeout(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.timeout = setTimeout(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.timeout = setTimeout(() => func(), timeout);\n }\n }\n\n outsideInterval(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.intervalId = setInterval(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.intervalId = setInterval(() => func(), timeout);\n }\n }\n\n private runInsideAngular(func: () => any) {\n if (this.ngZone) {\n this.ngZone.run(() => func());\n } else {\n func();\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 10,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-root',\n template: `\n <app-header></app-header>\n <app-home></app-home>\n <app-footer></app-footer>\n`,\n})\nexport class AppComponent {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/app.module.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 23,
+              "column": 5,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 23,
+              "endColumn": 19,
+              "fix": {
+                "range": [
+                  896,
+                  925
+                ],
+                "text": "BootstrapToast,\n PinkToast"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 32,
+              "column": 5,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 32,
+              "endColumn": 28,
+              "fix": {
+                "range": [
+                  1045,
+                  1085
+                ],
+                "text": "BrowserAnimationsModule,\n FormsModule"
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { NgModule, provideExperimentalZonelessChangeDetection } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { GhButtonModule } from '@ctrl/ngx-github-buttons';\n\nimport { ToastNoAnimationModule, ToastContainerDirective } from '../lib/public_api';\n\nimport { AppComponent } from './app.component';\nimport { FooterComponent } from './footer/footer.component';\nimport { HeaderComponent } from './header/header.component';\nimport { HomeComponent } from './home/home.component';\nimport { NotyfToast } from './notyf.toast';\nimport { PinkToast } from './pink.toast';\nimport { BootstrapToast } from './bootstrap.toast';\nimport { provideToastr } from '../lib/toastr/toast.provider';\n\n@NgModule({\n declarations: [\n AppComponent,\n PinkToast,\n BootstrapToast,\n NotyfToast,\n FooterComponent,\n HeaderComponent,\n HomeComponent,\n ],\n imports: [\n BrowserModule,\n FormsModule,\n BrowserAnimationsModule,\n ToastNoAnimationModule,\n ToastContainerDirective,\n GhButtonModule,\n ],\n providers: [provideToastr(), provideExperimentalZonelessChangeDetection()],\n bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/bootstrap.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 35,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      132
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (25). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 7,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 33,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 36,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 36,
+              "endColumn": 28
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[bootstrap-toast-component]',\n template: `\n <div class=\"toast\" role=\"alert\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"toast-header\">\n <strong class=\"me-auto\">{{ title || 'default header' }}</strong>\n <button\n type=\"button\"\n class=\"btn-close\"\n aria-label=\"Close\"\n *ngIf=\"options.closeButton\"\n (click)=\"remove()\"\n ></button>\n </div>\n <div class=\"toast-body\">\n <div\n role=\"alert\"\n [attr.aria-label]=\"message\"\n >\n {{ message || 'default message' }}\n </div>\n <div class=\"mt-2 pt-2 border-top\">\n <button type=\"button\" class=\"btn btn-secondary btn-sm\" (click)=\"handleClick($event)\">\n {{ undoString }}\n </button>\n </div>\n </div>\n </div>\n `,\n preserveWhitespaces: false,\n})\nexport class BootstrapToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n // Demo click handler\n handleClick(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/footer/footer.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 25,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      27,
+                      68
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (7). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 5,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 13,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`styles` has too many lines (7). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 14,
+              "column": 11,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 24,
+              "endColumn": 4
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, VERSION } from '@angular/core';\n\n@Component({\n selector: 'app-footer',\n template: `\n <footer class=\"footer mb-4 mt-5\">\n Angular {{ version }}\n <br>\n <a href=\"https://github.com/scttcper/ngx-toastr/blob/master/LICENSE\">MIT license</a>\n -\n <a href=\"https://github.com/scttcper/ngx-toastr\">Source</a>\n </footer>\n `,\n styles: [\n `\n .footer {\n line-height: 2;\n text-align: center;\n font-size: 11px;\n font-family: var(--font-family-monospace);\n color: #999;\n }\n `,\n ],\n})\nexport class FooterComponent {\n version = VERSION.full;\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/header/header.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (5). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 5,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 11,
+              "endColumn": 4
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-header',\n template: `\n <header class=\"header mt-5 text-center\">\n <h1>Angular Toastr</h1>\n <p style=\"color: #777\" class=\"mb-1\">Easy Toasts for Angular</p>\n <gh-button user=\"scttcper\" repo=\"ngx-toastr\" [count]=\"true\"></gh-button>\n </header>\n `,\n})\nexport class HeaderComponent {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/home/home.component.spec.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/sort-ngmodule-metadata-arrays",
+              "severity": 2,
+              "message": "`NgModule` metadata arrays should be sorted in ASC alphabetical order",
+              "line": 129,
+              "column": 29,
+              "nodeType": "Identifier",
+              "messageId": "sortNgmoduleMetadataArrays",
+              "endLine": 129,
+              "endColumn": 39,
+              "fix": {
+                "range": [
+                  4790,
+                  4811
+                ],
+                "text": "NotyfToast, PinkToast"
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { TestBed, waitForAsync } from '@angular/core/testing';\nimport { FormsModule } from '@angular/forms';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\nimport { Toast } from '../../lib/public_api';\nimport { ActiveToast, ToastrModule } from '../../lib/public_api';\nimport { NotyfToast } from '../notyf.toast';\nimport { PinkToast } from '../pink.toast';\nimport { HomeComponent } from './home.component';\n\ndescribe('AppComponent', () => {\n beforeEach(() => {\n TestBed.configureTestingModule({\n imports: [\n ToastrModule.forRoot({\n timeOut: 800,\n progressBar: true,\n onActivateTick: true,\n enableHtml: true,\n }),\n FormsModule,\n BrowserAnimationsModule,\n AppTestModule,\n ],\n declarations: [HomeComponent],\n }).compileComponents();\n });\n\n it('should create the app', waitForAsync(() => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n expect(app).toBeTruthy();\n }));\n it('should trigger onShown', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<Toast> = app.openToast();\n expect(opened).toBeDefined();\n opened.onShown.toPromise().then(() => {\n done();\n });\n });\n it('should trigger onHidden', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<Toast> = app.openToast();\n expect(opened.portal).toBeDefined();\n opened.onHidden.toPromise().then(() => {\n done();\n });\n });\n it('should trigger onTap', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<Toast> = app.openToast();\n expect(opened.portal).toBeDefined();\n opened.onTap.toPromise().then(() => {\n done();\n });\n opened.portal.instance.tapToast();\n });\n it('should extend life on mouseover and exit', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<Toast> = app.openToast();\n opened.portal.instance.stickAround();\n opened.portal.instance.delayedHideToast();\n expect(opened.portal.instance.options.timeOut).toBe(1000);\n done();\n });\n it('should keep on mouse exit with extended timeout 0', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n app.options.extendedTimeOut = 0;\n const opened: ActiveToast<Toast> = app.openToast();\n opened.portal.instance.stickAround();\n opened.portal.instance.delayedHideToast();\n expect(opened.portal.instance.options.timeOut).toBe(0);\n done();\n });\n it('should trigger onShown for openPinkToast', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<PinkToast> = app.openPinkToast();\n expect(opened.portal).toBeDefined();\n opened.onShown.toPromise().then(() => {\n done();\n });\n });\n it('should trigger onHidden for openPinkToast', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<PinkToast> = app.openPinkToast();\n expect(opened.portal).toBeDefined();\n opened.onHidden.toPromise().then(() => {\n done();\n });\n });\n it('should trigger onShown for openNotyf', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<NotyfToast> = app.openNotyf();\n expect(opened.portal).toBeDefined();\n opened.onShown.toPromise().then(() => {\n done();\n });\n });\n it('should trigger onHidden for openNotyf', done => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<NotyfToast> = app.openNotyf();\n expect(opened.portal).toBeDefined();\n opened.onHidden.toPromise().then(() => {\n done();\n });\n });\n it('should have defined componentInstance', waitForAsync(() => {\n const fixture = TestBed.createComponent(HomeComponent);\n const app = fixture.debugElement.componentInstance;\n const opened: ActiveToast<Toast> = app.openToast();\n expect(opened.toastRef.componentInstance).toBeDefined();\n }));\n});\n\n@NgModule({\n imports: [CommonModule, ToastrModule],\n declarations: [PinkToast, NotyfToast],\n})\nclass AppTestModule {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/notyf.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 12,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 85,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      124,
+                      237
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (12). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 15,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 28,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`animations` has too many lines (53). Maximum allowed is 15 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 29,
+              "column": 15,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 84,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 86,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 86,
+              "endColumn": 24
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger,\n} from '@angular/animations';\nimport { Component } from '@angular/core';\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: 'notyf-toast-component',\n styles: [],\n template: `\n <div class=\"notyf__toast notyf__toast--success notyf__toast\">\n <div class=\"notyf__wrapper\">\n <div class=\"notyf__icon\">\n <i class=\"notyf__icon--success\" style=\"color: rgb(61, 199, 99);\"></i>\n </div>\n <div class=\"notyf__message\">{{ title }} {{ message }}</div>\n </div>\n <div\n class=\"notyf__ripple\"\n style=\"background-color: rgb(61, 199, 99);\"\n ></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n transition(\n 'inactive => active',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 0,\n bottom: '-15px',\n 'max-height': 0,\n 'max-width': 0,\n 'margin-top': 0,\n }),\n style({\n opacity: 0.8,\n bottom: '-3px',\n }),\n style({\n opacity: 1,\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ]),\n ),\n ),\n state(\n 'active',\n style({\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ),\n transition(\n 'active => removed',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 1,\n transform: 'translateY(0)'\n }),\n style({\n opacity: 0,\n transform: 'translateY(25%)'\n }),\n ]),\n ),\n ),\n ]),\n ],\n})\nexport class NotyfToast extends Toast {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/pink.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 13,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 95,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      123,
+                      237
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`styles` has too many lines (16). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 15,
+              "column": 11,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 32,
+              "endColumn": 5
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (25). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 33,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 59,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`animations` has too many lines (31). Maximum allowed is 15 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 60,
+              "column": 15,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 93,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 96,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 96,
+              "endColumn": 23
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 5,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[pink-toast-component]',\n styles: [`\n :host {\n background-color: #FF69B4;\n position: relative;\n overflow: hidden;\n margin: 0 0 6px;\n padding: 10px 10px 10px 10px;\n width: 300px;\n border-radius: 3px 3px 3px 3px;\n color: #FFFFFF;\n pointer-events: all;\n cursor: pointer;\n }\n .btn-pink {\n -webkit-backface-visibility: hidden;\n -webkit-transform: translateZ(0);\n }\n `],\n template: `\n <div class=\"row\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"col-9\">\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }}\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n </div>\n <div class=\"col-3 text-right\">\n <a *ngIf=\"!options.closeButton\" class=\"btn btn-pink btn-sm\" (click)=\"action($event)\">\n {{ undoString }}\n </a>\n <a *ngIf=\"options.closeButton\" (click)=\"remove()\" class=\"btn btn-pink btn-sm\">\n close\n </a>\n </div>\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({\n opacity: 0,\n })),\n transition('inactive => active', animate('400ms ease-out', keyframes([\n style({\n transform: 'translate3d(100%, 0, 0) skewX(-30deg)',\n opacity: 0,\n }),\n style({\n transform: 'skewX(20deg)',\n opacity: 1,\n }),\n style({\n transform: 'skewX(-5deg)',\n opacity: 1,\n }),\n style({\n transform: 'none',\n opacity: 1,\n }),\n ]))),\n transition('active => removed', animate('400ms ease-out', keyframes([\n style({\n opacity: 1,\n }),\n style({\n transform: 'translate3d(100%, 0, 0) skewX(30deg)',\n opacity: 0,\n }),\n ]))),\n ]),\n ],\n preserveWhitespaces: false,\n})\nexport class PinkToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n action(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast-noanimation.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (16). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 25,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 42,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 47,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 47,
+              "endColumn": 30
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { NgIf } from '@angular/common';\nimport { ChangeDetectionStrategy, ModuleWithProviders, signal } from '@angular/core';\nimport {\n ApplicationRef,\n Component,\n HostBinding,\n HostListener,\n NgModule,\n OnDestroy,\n} from '@angular/core';\n\nimport { Subscription } from 'rxjs';\n\nimport {\n DefaultNoComponentGlobalConfig,\n GlobalConfig,\n IndividualConfig,\n ToastPackage,\n TOAST_CONFIG,\n} from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ToastNoAnimation implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle() {\n if (this.state() === 'inactive') {\n return 'none';\n }\n\n return null;\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n state = signal('inactive');\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected appRef: ApplicationRef,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${\n toastPackage.config.toastClass\n }`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.set('active');\n if (!(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') && this.options.timeOut) {\n this.timeout = setTimeout(() => {\n this.remove();\n }, this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n if (this.options.onActivateTick) {\n this.appRef.tick();\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.set('active');\n\n this.options.timeOut = this.originalTimeout;\n this.timeout = setTimeout(() => this.remove(), this.originalTimeout);\n this.hideTime = new Date().getTime() + (this.originalTimeout || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.set('removed');\n this.timeout = setTimeout(() =>\n this.toastrService.remove(this.toastPackage.toastId),\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state() === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state() === 'removed'\n ) {\n return;\n }\n this.timeout = setTimeout(\n () => this.remove(),\n this.options.extendedTimeOut,\n );\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n}\n\nexport const DefaultNoAnimationsGlobalConfig: GlobalConfig = {\n ...DefaultNoComponentGlobalConfig,\n toastComponent: ToastNoAnimation,\n};\n\n@NgModule({\n imports: [ToastNoAnimation],\n exports: [ToastNoAnimation],\n})\nexport class ToastNoAnimationModule {\n static forRoot(config: Partial<GlobalConfig> = {}): ModuleWithProviders<ToastNoAnimationModule> {\n return {\n ngModule: ToastNoAnimationModule,\n providers: [\n {\n provide: TOAST_CONFIG,\n useValue: {\n default: DefaultNoAnimationsGlobalConfig,\n config,\n },\n },\n ],\n };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (16). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 25,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 42,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 57,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 57,
+              "endColumn": 19
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport {\n ChangeDetectionStrategy,\n Component,\n HostBinding,\n HostListener,\n NgZone,\n OnDestroy,\n WritableSignal,\n signal,\n} from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport { Subscription } from 'rxjs';\nimport { IndividualConfig, ToastPackage } from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n state('active', style({ opacity: 1 })),\n state('removed', style({ opacity: 0 })),\n transition('inactive => active', animate('{{ easeTime }}ms {{ easing }}')),\n transition('active => removed', animate('{{ easeTime }}ms {{ easing }}')),\n ]),\n ],\n preserveWhitespaces: false,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class Toast<ConfigPayload = any> implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig<ConfigPayload>;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n state: WritableSignal<{\n value: 'inactive' | 'active' | 'removed';\n params: { easeTime: number | string; easing: string };\n }>;\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n @HostBinding('@flyInOut') get _state() {\n return this.state();\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle(): string | undefined {\n if (this.state().value === 'inactive') {\n return 'none';\n }\n\n return;\n }\n\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected ngZone?: NgZone,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${toastPackage.config.toastClass}`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n this.state = signal({\n value: 'inactive',\n params: {\n easeTime: this.toastPackage.config.easeTime,\n easing: 'ease-in',\n },\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.update(state => ({ ...state, value: 'active' }));\n if (\n !(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') &&\n this.options.timeOut\n ) {\n this.outsideTimeout(() => this.remove(), this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.update(state => ({ ...state, value: 'active' }));\n\n this.outsideTimeout(() => this.remove(), this.originalTimeout);\n this.options.timeOut = this.originalTimeout;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state().value === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.update(state => ({ ...state, value: 'removed' }));\n this.outsideTimeout(\n () => this.toastrService.remove(this.toastPackage.toastId),\n +this.toastPackage.config.easeTime,\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state().value === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state().value === 'removed') {\n return;\n }\n\n if (this.options.disableTimeOut !== 'extendedTimeOut') {\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state().value === 'removed'\n ) {\n return;\n }\n this.outsideTimeout(() => this.remove(), this.options.extendedTimeOut);\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n outsideTimeout(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.timeout = setTimeout(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.timeout = setTimeout(() => func(), timeout);\n }\n }\n\n outsideInterval(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.intervalId = setInterval(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.intervalId = setInterval(() => func(), timeout);\n }\n }\n\n private runInsideAngular(func: () => any) {\n if (this.ngZone) {\n this.ngZone.run(() => func());\n } else {\n func();\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  },
+  "after": {
+    "ngx-toastr": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/bootstrap.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 36,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 36,
+              "endColumn": 28
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[bootstrap-toast-component]',\n template: `\n <div class=\"toast\" role=\"alert\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"toast-header\">\n <strong class=\"me-auto\">{{ title || 'default header' }}</strong>\n <button\n type=\"button\"\n class=\"btn-close\"\n aria-label=\"Close\"\n *ngIf=\"options.closeButton\"\n (click)=\"remove()\"\n ></button>\n </div>\n <div class=\"toast-body\">\n <div\n role=\"alert\"\n [attr.aria-label]=\"message\"\n >\n {{ message || 'default message' }}\n </div>\n <div class=\"mt-2 pt-2 border-top\">\n <button type=\"button\" class=\"btn btn-secondary btn-sm\" (click)=\"handleClick($event)\">\n {{ undoString }}\n </button>\n </div>\n </div>\n </div>\n `,\n preserveWhitespaces: false,\n})\nexport class BootstrapToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n // Demo click handler\n handleClick(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/notyf.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 86,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 86,
+              "endColumn": 24
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger,\n} from '@angular/animations';\nimport { Component } from '@angular/core';\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: 'notyf-toast-component',\n styles: [],\n template: `\n <div class=\"notyf__toast notyf__toast--success notyf__toast\">\n <div class=\"notyf__wrapper\">\n <div class=\"notyf__icon\">\n <i class=\"notyf__icon--success\" style=\"color: rgb(61, 199, 99);\"></i>\n </div>\n <div class=\"notyf__message\">{{ title }} {{ message }}</div>\n </div>\n <div\n class=\"notyf__ripple\"\n style=\"background-color: rgb(61, 199, 99);\"\n ></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n transition(\n 'inactive => active',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 0,\n bottom: '-15px',\n 'max-height': 0,\n 'max-width': 0,\n 'margin-top': 0,\n }),\n style({\n opacity: 0.8,\n bottom: '-3px',\n }),\n style({\n opacity: 1,\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ]),\n ),\n ),\n state(\n 'active',\n style({\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ),\n transition(\n 'active => removed',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 1,\n transform: 'translateY(0)'\n }),\n style({\n opacity: 0,\n transform: 'translateY(25%)'\n }),\n ]),\n ),\n ),\n ]),\n ],\n})\nexport class NotyfToast extends Toast {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/pink.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 96,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 96,
+              "endColumn": 23
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[pink-toast-component]',\n styles: [`\n :host {\n background-color: #FF69B4;\n position: relative;\n overflow: hidden;\n margin: 0 0 6px;\n padding: 10px 10px 10px 10px;\n width: 300px;\n border-radius: 3px 3px 3px 3px;\n color: #FFFFFF;\n pointer-events: all;\n cursor: pointer;\n }\n .btn-pink {\n -webkit-backface-visibility: hidden;\n -webkit-transform: translateZ(0);\n }\n `],\n template: `\n <div class=\"row\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"col-9\">\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }}\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n </div>\n <div class=\"col-3 text-right\">\n <a *ngIf=\"!options.closeButton\" class=\"btn btn-pink btn-sm\" (click)=\"action($event)\">\n {{ undoString }}\n </a>\n <a *ngIf=\"options.closeButton\" (click)=\"remove()\" class=\"btn btn-pink btn-sm\">\n close\n </a>\n </div>\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({\n opacity: 0,\n })),\n transition('inactive => active', animate('400ms ease-out', keyframes([\n style({\n transform: 'translate3d(100%, 0, 0) skewX(-30deg)',\n opacity: 0,\n }),\n style({\n transform: 'skewX(20deg)',\n opacity: 1,\n }),\n style({\n transform: 'skewX(-5deg)',\n opacity: 1,\n }),\n style({\n transform: 'none',\n opacity: 1,\n }),\n ]))),\n transition('active => removed', animate('400ms ease-out', keyframes([\n style({\n opacity: 1,\n }),\n style({\n transform: 'translate3d(100%, 0, 0) skewX(30deg)',\n opacity: 0,\n }),\n ]))),\n ]),\n ],\n preserveWhitespaces: false,\n})\nexport class PinkToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n action(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast-noanimation.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 47,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 47,
+              "endColumn": 30
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { NgIf } from '@angular/common';\nimport { ChangeDetectionStrategy, ModuleWithProviders, signal } from '@angular/core';\nimport {\n ApplicationRef,\n Component,\n HostBinding,\n HostListener,\n NgModule,\n OnDestroy,\n} from '@angular/core';\n\nimport { Subscription } from 'rxjs';\n\nimport {\n DefaultNoComponentGlobalConfig,\n GlobalConfig,\n IndividualConfig,\n ToastPackage,\n TOAST_CONFIG,\n} from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ToastNoAnimation implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle() {\n if (this.state() === 'inactive') {\n return 'none';\n }\n\n return null;\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n state = signal('inactive');\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected appRef: ApplicationRef,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${\n toastPackage.config.toastClass\n }`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.set('active');\n if (!(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') && this.options.timeOut) {\n this.timeout = setTimeout(() => {\n this.remove();\n }, this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n if (this.options.onActivateTick) {\n this.appRef.tick();\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.set('active');\n\n this.options.timeOut = this.originalTimeout;\n this.timeout = setTimeout(() => this.remove(), this.originalTimeout);\n this.hideTime = new Date().getTime() + (this.originalTimeout || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.set('removed');\n this.timeout = setTimeout(() =>\n this.toastrService.remove(this.toastPackage.toastId),\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state() === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state() === 'removed'\n ) {\n return;\n }\n this.timeout = setTimeout(\n () => this.remove(),\n this.options.extendedTimeOut,\n );\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n}\n\nexport const DefaultNoAnimationsGlobalConfig: GlobalConfig = {\n ...DefaultNoComponentGlobalConfig,\n toastComponent: ToastNoAnimation,\n};\n\n@NgModule({\n imports: [ToastNoAnimation],\n exports: [ToastNoAnimation],\n})\nexport class ToastNoAnimationModule {\n static forRoot(config: Partial<GlobalConfig> = {}): ModuleWithProviders<ToastNoAnimationModule> {\n return {\n ngModule: ToastNoAnimationModule,\n providers: [\n {\n provide: TOAST_CONFIG,\n useValue: {\n default: DefaultNoAnimationsGlobalConfig,\n config,\n },\n },\n ],\n };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 57,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 57,
+              "endColumn": 19
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport {\n ChangeDetectionStrategy,\n Component,\n HostBinding,\n HostListener,\n NgZone,\n OnDestroy,\n WritableSignal,\n signal,\n} from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport { Subscription } from 'rxjs';\nimport { IndividualConfig, ToastPackage } from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n state('active', style({ opacity: 1 })),\n state('removed', style({ opacity: 0 })),\n transition('inactive => active', animate('{{ easeTime }}ms {{ easing }}')),\n transition('active => removed', animate('{{ easeTime }}ms {{ easing }}')),\n ]),\n ],\n preserveWhitespaces: false,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class Toast<ConfigPayload = any> implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig<ConfigPayload>;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n state: WritableSignal<{\n value: 'inactive' | 'active' | 'removed';\n params: { easeTime: number | string; easing: string };\n }>;\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n @HostBinding('@flyInOut') get _state() {\n return this.state();\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle(): string | undefined {\n if (this.state().value === 'inactive') {\n return 'none';\n }\n\n return;\n }\n\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected ngZone?: NgZone,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${toastPackage.config.toastClass}`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n this.state = signal({\n value: 'inactive',\n params: {\n easeTime: this.toastPackage.config.easeTime,\n easing: 'ease-in',\n },\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.update(state => ({ ...state, value: 'active' }));\n if (\n !(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') &&\n this.options.timeOut\n ) {\n this.outsideTimeout(() => this.remove(), this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.update(state => ({ ...state, value: 'active' }));\n\n this.outsideTimeout(() => this.remove(), this.originalTimeout);\n this.options.timeOut = this.originalTimeout;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state().value === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.update(state => ({ ...state, value: 'removed' }));\n this.outsideTimeout(\n () => this.toastrService.remove(this.toastPackage.toastId),\n +this.toastPackage.config.easeTime,\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state().value === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state().value === 'removed') {\n return;\n }\n\n if (this.options.disableTimeOut !== 'extendedTimeOut') {\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state().value === 'removed'\n ) {\n return;\n }\n this.outsideTimeout(() => this.remove(), this.options.extendedTimeOut);\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n outsideTimeout(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.timeout = setTimeout(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.timeout = setTimeout(() => func(), timeout);\n }\n }\n\n outsideInterval(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.intervalId = setInterval(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.intervalId = setInterval(() => func(), timeout);\n }\n }\n\n private runInsideAngular(func: () => any) {\n if (this.ngZone) {\n this.ngZone.run(() => func());\n } else {\n func();\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 10,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-root',\n template: `\n <app-header></app-header>\n <app-home></app-home>\n <app-footer></app-footer>\n`,\n})\nexport class AppComponent {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/bootstrap.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 35,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      132
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (25). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 7,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 33,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 36,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 36,
+              "endColumn": 28
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[bootstrap-toast-component]',\n template: `\n <div class=\"toast\" role=\"alert\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"toast-header\">\n <strong class=\"me-auto\">{{ title || 'default header' }}</strong>\n <button\n type=\"button\"\n class=\"btn-close\"\n aria-label=\"Close\"\n *ngIf=\"options.closeButton\"\n (click)=\"remove()\"\n ></button>\n </div>\n <div class=\"toast-body\">\n <div\n role=\"alert\"\n [attr.aria-label]=\"message\"\n >\n {{ message || 'default message' }}\n </div>\n <div class=\"mt-2 pt-2 border-top\">\n <button type=\"button\" class=\"btn btn-secondary btn-sm\" (click)=\"handleClick($event)\">\n {{ undoString }}\n </button>\n </div>\n </div>\n </div>\n `,\n preserveWhitespaces: false,\n})\nexport class BootstrapToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n // Demo click handler\n handleClick(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/footer/footer.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 25,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      27,
+                      68
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (7). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 5,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 13,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`styles` has too many lines (7). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 14,
+              "column": 11,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 24,
+              "endColumn": 4
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, VERSION } from '@angular/core';\n\n@Component({\n selector: 'app-footer',\n template: `\n <footer class=\"footer mb-4 mt-5\">\n Angular {{ version }}\n <br>\n <a href=\"https://github.com/scttcper/ngx-toastr/blob/master/LICENSE\">MIT license</a>\n -\n <a href=\"https://github.com/scttcper/ngx-toastr\">Source</a>\n </footer>\n `,\n styles: [\n `\n .footer {\n line-height: 2;\n text-align: center;\n font-size: 11px;\n font-family: var(--font-family-monospace);\n color: #999;\n }\n `,\n ],\n})\nexport class FooterComponent {\n version = VERSION.full;\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/header/header.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (5). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 5,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 11,
+              "endColumn": 4
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-header',\n template: `\n <header class=\"header mt-5 text-center\">\n <h1>Angular Toastr</h1>\n <p style=\"color: #777\" class=\"mb-1\">Easy Toasts for Angular</p>\n <gh-button user=\"scttcper\" repo=\"ngx-toastr\" [count]=\"true\"></gh-button>\n </header>\n `,\n})\nexport class HeaderComponent {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/notyf.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 12,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 85,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      124,
+                      237
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (12). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 15,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 28,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`animations` has too many lines (53). Maximum allowed is 15 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 29,
+              "column": 15,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 84,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 86,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 86,
+              "endColumn": 24
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger,\n} from '@angular/animations';\nimport { Component } from '@angular/core';\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: 'notyf-toast-component',\n styles: [],\n template: `\n <div class=\"notyf__toast notyf__toast--success notyf__toast\">\n <div class=\"notyf__wrapper\">\n <div class=\"notyf__icon\">\n <i class=\"notyf__icon--success\" style=\"color: rgb(61, 199, 99);\"></i>\n </div>\n <div class=\"notyf__message\">{{ title }} {{ message }}</div>\n </div>\n <div\n class=\"notyf__ripple\"\n style=\"background-color: rgb(61, 199, 99);\"\n ></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n transition(\n 'inactive => active',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 0,\n bottom: '-15px',\n 'max-height': 0,\n 'max-width': 0,\n 'margin-top': 0,\n }),\n style({\n opacity: 0.8,\n bottom: '-3px',\n }),\n style({\n opacity: 1,\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ]),\n ),\n ),\n state(\n 'active',\n style({\n bottom: '0',\n 'max-height': '200px',\n 'margin-top': '12px',\n 'max-width': '400px',\n }),\n ),\n transition(\n 'active => removed',\n animate(\n '300ms ease-out',\n keyframes([\n style({\n opacity: 1,\n transform: 'translateY(0)'\n }),\n style({\n opacity: 0,\n transform: 'translateY(25%)'\n }),\n ]),\n ),\n ),\n ]),\n ],\n})\nexport class NotyfToast extends Toast {}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/app/pink.toast.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 13,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 95,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      123,
+                      237
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`styles` has too many lines (16). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 15,
+              "column": 11,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 32,
+              "endColumn": 5
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (25). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 33,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 59,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`animations` has too many lines (31). Maximum allowed is 15 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 60,
+              "column": 15,
+              "nodeType": "ArrayExpression",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 93,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 96,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 96,
+              "endColumn": 23
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 5,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n keyframes,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport { Component } from '@angular/core';\n\nimport { Toast, ToastrService, ToastPackage } from '../lib/public_api';\n\n@Component({\n selector: '[pink-toast-component]',\n styles: [`\n :host {\n background-color: #FF69B4;\n position: relative;\n overflow: hidden;\n margin: 0 0 6px;\n padding: 10px 10px 10px 10px;\n width: 300px;\n border-radius: 3px 3px 3px 3px;\n color: #FFFFFF;\n pointer-events: all;\n cursor: pointer;\n }\n .btn-pink {\n -webkit-backface-visibility: hidden;\n -webkit-transform: translateZ(0);\n }\n `],\n template: `\n <div class=\"row\" [style.display]=\"state().value === 'inactive' ? 'none' : ''\">\n <div class=\"col-9\">\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }}\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n </div>\n <div class=\"col-3 text-right\">\n <a *ngIf=\"!options.closeButton\" class=\"btn btn-pink btn-sm\" (click)=\"action($event)\">\n {{ undoString }}\n </a>\n <a *ngIf=\"options.closeButton\" (click)=\"remove()\" class=\"btn btn-pink btn-sm\">\n close\n </a>\n </div>\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({\n opacity: 0,\n })),\n transition('inactive => active', animate('400ms ease-out', keyframes([\n style({\n transform: 'translate3d(100%, 0, 0) skewX(-30deg)',\n opacity: 0,\n }),\n style({\n transform: 'skewX(20deg)',\n opacity: 1,\n }),\n style({\n transform: 'skewX(-5deg)',\n opacity: 1,\n }),\n style({\n transform: 'none',\n opacity: 1,\n }),\n ]))),\n transition('active => removed', animate('400ms ease-out', keyframes([\n style({\n opacity: 1,\n }),\n style({\n transform: 'translate3d(100%, 0, 0) skewX(30deg)',\n opacity: 0,\n }),\n ]))),\n ]),\n ],\n preserveWhitespaces: false,\n})\nexport class PinkToast extends Toast {\n // used for demo purposes\n undoString = 'undo';\n\n action(event: Event) {\n event.stopPropagation();\n this.undoString = 'undid';\n this.toastPackage.triggerAction();\n return false;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast-noanimation.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (16). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 25,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 42,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 47,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 47,
+              "endColumn": 30
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { NgIf } from '@angular/common';\nimport { ChangeDetectionStrategy, ModuleWithProviders, signal } from '@angular/core';\nimport {\n ApplicationRef,\n Component,\n HostBinding,\n HostListener,\n NgModule,\n OnDestroy,\n} from '@angular/core';\n\nimport { Subscription } from 'rxjs';\n\nimport {\n DefaultNoComponentGlobalConfig,\n GlobalConfig,\n IndividualConfig,\n ToastPackage,\n TOAST_CONFIG,\n} from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class ToastNoAnimation implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle() {\n if (this.state() === 'inactive') {\n return 'none';\n }\n\n return null;\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n state = signal('inactive');\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected appRef: ApplicationRef,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${\n toastPackage.config.toastClass\n }`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.set('active');\n if (!(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') && this.options.timeOut) {\n this.timeout = setTimeout(() => {\n this.remove();\n }, this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n if (this.options.onActivateTick) {\n this.appRef.tick();\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.set('active');\n\n this.options.timeOut = this.originalTimeout;\n this.timeout = setTimeout(() => this.remove(), this.originalTimeout);\n this.hideTime = new Date().getTime() + (this.originalTimeout || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.set('removed');\n this.timeout = setTimeout(() =>\n this.toastrService.remove(this.toastPackage.toastId),\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state() === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state() === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state() === 'removed'\n ) {\n return;\n }\n this.timeout = setTimeout(\n () => this.remove(),\n this.options.extendedTimeOut,\n );\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.intervalId = setInterval(() => this.updateProgress(), 10);\n }\n }\n}\n\nexport const DefaultNoAnimationsGlobalConfig: GlobalConfig = {\n ...DefaultNoComponentGlobalConfig,\n toastComponent: ToastNoAnimation,\n};\n\n@NgModule({\n imports: [ToastNoAnimation],\n exports: [ToastNoAnimation],\n})\nexport class ToastNoAnimationModule {\n static forRoot(config: Partial<GlobalConfig> = {}): ModuleWithProviders<ToastNoAnimationModule> {\n return {\n ngModule: ToastNoAnimationModule,\n providers: [\n {\n provide: TOAST_CONFIG,\n useValue: {\n default: DefaultNoAnimationsGlobalConfig,\n config,\n },\n },\n ],\n };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/ngx-toastr/src/lib/toastr/toast.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/component-max-inline-declarations",
+              "severity": 2,
+              "message": "`template` has too many lines (16). Maximum allowed is 3 (https://angular.io/guide/styleguide#style-05-04)",
+              "line": 25,
+              "column": 13,
+              "nodeType": "TemplateLiteral",
+              "messageId": "componentMaxInlineDeclarations",
+              "endLine": 42,
+              "endColumn": 4
+            },
+            {
+              "ruleId": "@angular-eslint/component-class-suffix",
+              "severity": 2,
+              "message": "Component class names should end with one of these suffixes: \"Component\" (https://angular.io/styleguide#style-02-03)",
+              "line": 57,
+              "column": 14,
+              "nodeType": "Identifier",
+              "messageId": "componentClassSuffix",
+              "endLine": 57,
+              "endColumn": 19
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n animate,\n state,\n style,\n transition,\n trigger\n} from '@angular/animations';\nimport {\n ChangeDetectionStrategy,\n Component,\n HostBinding,\n HostListener,\n NgZone,\n OnDestroy,\n WritableSignal,\n signal,\n} from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport { Subscription } from 'rxjs';\nimport { IndividualConfig, ToastPackage } from './toastr-config';\nimport { ToastrService } from './toastr.service';\n\n@Component({\n selector: '[toast-component]',\n template: `\n <button *ngIf=\"options.closeButton\" (click)=\"remove()\" type=\"button\" class=\"toast-close-button\" aria-label=\"Close\">\n <span aria-hidden=\"true\">&times;</span>\n </button>\n <div *ngIf=\"title\" [class]=\"options.titleClass\" [attr.aria-label]=\"title\">\n {{ title }} <ng-container *ngIf=\"duplicatesCount\">[{{ duplicatesCount + 1 }}]</ng-container>\n </div>\n <div *ngIf=\"message && options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [innerHTML]=\"message\">\n </div>\n <div *ngIf=\"message && !options.enableHtml\" role=\"alert\"\n [class]=\"options.messageClass\" [attr.aria-label]=\"message\">\n {{ message }}\n </div>\n <div *ngIf=\"options.progressBar\">\n <div class=\"toast-progress\" [style.width]=\"width() + '%'\"></div>\n </div>\n `,\n animations: [\n trigger('flyInOut', [\n state('inactive', style({ opacity: 0 })),\n state('active', style({ opacity: 1 })),\n state('removed', style({ opacity: 0 })),\n transition('inactive => active', animate('{{ easeTime }}ms {{ easing }}')),\n transition('active => removed', animate('{{ easeTime }}ms {{ easing }}')),\n ]),\n ],\n preserveWhitespaces: false,\n standalone: true,\n imports: [NgIf],\n changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class Toast<ConfigPayload = any> implements OnDestroy {\n message?: string | null;\n title?: string;\n options: IndividualConfig<ConfigPayload>;\n duplicatesCount!: number;\n originalTimeout: number;\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var width of progress bar */\n width = signal(-1);\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var a combination of toast type and options.toastClass */\n @HostBinding('class') toastClasses = '';\n\n state: WritableSignal<{\n value: 'inactive' | 'active' | 'removed';\n params: { easeTime: number | string; easing: string };\n }>;\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var controls animation */\n @HostBinding('@flyInOut') get _state() {\n return this.state();\n }\n\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var hides component when waiting to be displayed */\n @HostBinding('style.display')\n get displayStyle(): string | undefined {\n if (this.state().value === 'inactive') {\n return 'none';\n }\n\n return;\n }\n\n private timeout: any;\n private intervalId: any;\n private hideTime!: number;\n private sub: Subscription;\n private sub1: Subscription;\n private sub2: Subscription;\n private sub3: Subscription;\n\n constructor(\n protected toastrService: ToastrService,\n public toastPackage: ToastPackage,\n protected ngZone?: NgZone,\n ) {\n this.message = toastPackage.message;\n this.title = toastPackage.title;\n this.options = toastPackage.config;\n this.originalTimeout = toastPackage.config.timeOut;\n this.toastClasses = `${toastPackage.toastType} ${toastPackage.config.toastClass}`;\n this.sub = toastPackage.toastRef.afterActivate().subscribe(() => {\n this.activateToast();\n });\n this.sub1 = toastPackage.toastRef.manualClosed().subscribe(() => {\n this.remove();\n });\n this.sub2 = toastPackage.toastRef.timeoutReset().subscribe(() => {\n this.resetTimeout();\n });\n this.sub3 = toastPackage.toastRef.countDuplicate().subscribe(count => {\n this.duplicatesCount = count;\n });\n this.state = signal({\n value: 'inactive',\n params: {\n easeTime: this.toastPackage.config.easeTime,\n easing: 'ease-in',\n },\n });\n }\n ngOnDestroy() {\n this.sub.unsubscribe();\n this.sub1.unsubscribe();\n this.sub2.unsubscribe();\n this.sub3.unsubscribe();\n clearInterval(this.intervalId);\n clearTimeout(this.timeout);\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json activates toast and sets timeout\n */\n activateToast() {\n this.state.update(state => ({ ...state, value: 'active' }));\n if (\n !(this.options.disableTimeOut === true || this.options.disableTimeOut === 'timeOut') &&\n this.options.timeOut\n ) {\n this.outsideTimeout(() => this.remove(), this.options.timeOut);\n this.hideTime = new Date().getTime() + this.options.timeOut;\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n }\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json updates progress bar width\n */\n updateProgress() {\n if (this.width() === 0 || this.width() === 100 || !this.options.timeOut) {\n return;\n }\n const now = new Date().getTime();\n const remaining = this.hideTime - now;\n this.width.set((remaining / this.options.timeOut) angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json 100);\n if (this.options.progressAnimation === 'increasing') {\n this.width.update(width => 100 - width);\n }\n if (this.width() <= 0) {\n this.width.set(0);\n }\n if (this.width() >= 100) {\n this.width.set(100);\n }\n }\n\n resetTimeout() {\n clearTimeout(this.timeout);\n clearInterval(this.intervalId);\n this.state.update(state => ({ ...state, value: 'active' }));\n\n this.outsideTimeout(() => this.remove(), this.originalTimeout);\n this.options.timeOut = this.originalTimeout;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n /bin /run /sbin angular.json karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended misc ngx-toastr.report.json node_modules package.json package-lock.json README.md src tsconfig.app.json tsconfig.json tsconfig.spec.json vercel.json tells toastrService to remove this toast after animation time\n */\n remove() {\n if (this.state().value === 'removed') {\n return;\n }\n clearTimeout(this.timeout);\n this.state.update(state => ({ ...state, value: 'removed' }));\n this.outsideTimeout(\n () => this.toastrService.remove(this.toastPackage.toastId),\n +this.toastPackage.config.easeTime,\n );\n }\n @HostListener('click')\n tapToast() {\n if (this.state().value === 'removed') {\n return;\n }\n this.toastPackage.triggerTap();\n if (this.options.tapToDismiss) {\n this.remove();\n }\n }\n @HostListener('mouseenter')\n stickAround() {\n if (this.state().value === 'removed') {\n return;\n }\n\n if (this.options.disableTimeOut !== 'extendedTimeOut') {\n clearTimeout(this.timeout);\n this.options.timeOut = 0;\n this.hideTime = 0;\n\n // disable progressBar\n clearInterval(this.intervalId);\n this.width.set(0);\n }\n }\n @HostListener('mouseleave')\n delayedHideToast() {\n if (\n (this.options.disableTimeOut === true || this.options.disableTimeOut === 'extendedTimeOut') ||\n this.options.extendedTimeOut === 0 ||\n this.state().value === 'removed'\n ) {\n return;\n }\n this.outsideTimeout(() => this.remove(), this.options.extendedTimeOut);\n this.options.timeOut = this.options.extendedTimeOut;\n this.hideTime = new Date().getTime() + (this.options.timeOut || 0);\n this.width.set(-1);\n if (this.options.progressBar) {\n this.outsideInterval(() => this.updateProgress(), 10);\n }\n }\n\n outsideTimeout(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.timeout = setTimeout(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.timeout = setTimeout(() => func(), timeout);\n }\n }\n\n outsideInterval(func: () => any, timeout: number) {\n if (this.ngZone) {\n this.ngZone.runOutsideAngular(\n () =>\n (this.intervalId = setInterval(\n () => this.runInsideAngular(func),\n timeout\n ))\n );\n } else {\n this.intervalId = setInterval(() => func(), timeout);\n }\n }\n\n private runInsideAngular(func: () => any) {\n if (this.ngZone) {\n this.ngZone.run(() => func());\n } else {\n func();\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  }
+}

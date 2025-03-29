@@ -1,0 +1,875 @@
+{
+  "repo": {
+    "HEAD": {
+      "commit": "2b8bba0c7431482afd733ea2c4aeec366457a7c3",
+      "author": "migudel",
+      "date": "Sat Mar 29 20:41:25 2025 +0100",
+      "message": "INICIO DE PRUEBAS"
+    },
+    "url": "https://github.com/Ismaestro/angular-example-app"
+  },
+  "before": {
+    "angularexampleapp": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/components/theme-button/theme-button.component.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/prefer-nullish-coalescing",
+              "message": "Definition for rule '@typescript-eslint/prefer-nullish-coalescing' was not found.",
+              "line": 40,
+              "column": 7,
+              "endLine": 40,
+              "endColumn": 79,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n ChangeDetectionStrategy,\n Component,\n CUSTOM_ELEMENTS_SCHEMA,\n effect,\n inject,\n} from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthenticationService } from '~features/authentication/services/authentication.service';\nimport { Theme, ThemeManagerService } from '~core/services/theme-manager.service';\n\nimport '@shoelace-style/shoelace/dist/components/button/button.js';\nimport '@shoelace-style/shoelace/dist/components/icon/icon.js';\n\n@Component({\n selector: 'app-theme-button',\n templateUrl: './theme-button.component.html',\n standalone: true,\n changeDetection: ChangeDetectionStrategy.OnPush,\n schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class ThemeButtonComponent {\n private readonly authenticationService = inject(AuthenticationService);\n private readonly themeManagerService = inject(ThemeManagerService);\n\n readonly router = inject(Router);\n readonly Theme = Theme;\n\n isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n themeSelected = this.themeManagerService.getThemeFromLocalStorageValue();\n\n constructor() {\n effect(() => {\n this.isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n });\n }\n\n toggleTheme() {\n this.themeSelected =\n // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing\n this.themeManagerService.getThemeFromLocalStorageValue() === Theme.DARK ||\n this.themeSelected === null\n ? Theme.LIGHT\n : Theme.DARK;\n this.themeManagerService.setTheme(this.themeSelected);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-checkbox-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlCheckboxControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlCheckboxControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.checked]': 'checked()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlCheckboxControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: boolean) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly checked = model(false);\n\n writeValue(value: boolean): void {\n this.checked.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { checked } = this.el.nativeElement;\n this.onChangeFn(checked);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-select-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlSelectControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlSelectControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.value]': 'value()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlSelectControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: unknown) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly value = model('');\n\n writeValue(value: string): void {\n this.value.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { value } = this.el.nativeElement;\n this.onChangeFn(value);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/alert.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/consistent-type-imports",
+              "message": "Definition for rule '@typescript-eslint/consistent-type-imports' was not found.",
+              "line": 1,
+              "column": 1,
+              "endLine": 1,
+              "endColumn": 71,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport { Injectable, Renderer2, RendererFactory2 } from '@angular/core';\n\nenum AlertType {\n SUCCESS = 'success',\n ERROR = 'error',\n}\n\ntype Alert = {\n message: string;\n type: AlertType;\n hasCountdown?: boolean;\n duration?: number;\n};\n\n@Injectable({\n providedIn: 'root',\n})\nexport class AlertService {\n private readonly renderer: Renderer2;\n\n constructor(rendererFactory: RendererFactory2) {\n this.renderer = rendererFactory.createRenderer(null, null);\n }\n\n createSuccessAlert(message: string) {\n this.createAlert({ message, type: AlertType.SUCCESS, duration: 7000, hasCountdown: true });\n }\n\n createErrorAlert(message: string) {\n this.createAlert({ message, type: AlertType.ERROR });\n }\n\n private createAlert(alert: Alert): void {\n const alertElement = this.createAlertElement(alert);\n const container = document.body;\n this.renderer.appendChild(container, alertElement);\n alertElement.toast();\n }\n\n private createAlertElement(alert: Alert): HTMLElement & { toast: () => void } {\n const alertElement = this.renderer.createElement('sl-alert');\n alertElement.classList.add(`alert--${alert.type}`);\n this.renderer.setAttribute(alertElement, 'closable', '');\n this.renderer.setAttribute(alertElement, 'variant', alert.type);\n if (alert.duration) {\n this.renderer.setAttribute(alertElement, 'duration', alert.duration.toString());\n }\n if (alert.hasCountdown) {\n this.renderer.setAttribute(alertElement, 'countdown', 'rtl');\n }\n this.renderer.setProperty(alertElement, 'innerHTML', alert.message);\n return alertElement as HTMLElement & { toast: () => void };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/cookie-consent.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/max-params",
+              "message": "Definition for rule '@typescript-eslint/max-params' was not found.",
+              "line": 5,
+              "column": 3,
+              "endLine": 5,
+              "endColumn": 60,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'camelcase').",
+              "line": 46,
+              "column": 11,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  1223,
+                  1252
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 1,
+          "source": "import { inject, Injectable } from '@angular/core';\nimport { LOCAL_STORAGE } from '~core/providers/local-storage';\n\ndeclare const window: Window &\n // eslint-disable-next-line @typescript-eslint/max-params\n typeof globalThis & { gtag?: (a: string, b: string, o: object) => void };\n\nconst CONSENT_COOKIE_KEY = 'isCookiesConsentAccepted';\nconst CONSENT_COOKIE_VALUE = 'true';\n\nexport enum ConsentState {\n DENIED = 'denied',\n GRANTED = 'granted',\n}\n\n@Injectable({\n providedIn: 'root',\n})\nexport class CookieConsentService {\n private readonly localStorage: Storage | null = inject(LOCAL_STORAGE);\n\n setCookieConsent(state: ConsentState): boolean {\n if (!this.setConsentInLocalStorage()) {\n return false;\n }\n return this.updateGtagConsent(state);\n }\n\n getCookieState(): boolean {\n return this.localStorage?.getItem(CONSENT_COOKIE_KEY) === CONSENT_COOKIE_VALUE;\n }\n\n private setConsentInLocalStorage(): boolean {\n try {\n this.localStorage?.setItem(CONSENT_COOKIE_KEY, CONSENT_COOKIE_VALUE);\n return true;\n } catch {\n return false;\n }\n }\n\n private updateGtagConsent(state: ConsentState): boolean {\n try {\n if (window.gtag) {\n const consentOptions = {\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var eslint-disable camelcase*/\n ad_user_data: state,\n ad_personalization: state,\n ad_storage: state,\n analytics_storage: state,\n };\n\n if (state === ConsentState.DENIED) {\n window.gtag('consent', 'default', {\n ...consentOptions,\n wait_for_update: 500,\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var eslint-enable camelcase*/\n });\n } else {\n window.gtag('consent', 'update', {\n ...consentOptions,\n });\n }\n }\n return true;\n } catch {\n return false;\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/crop-image.service.ts",
+          "messages": [
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'max-statements').",
+              "line": 48,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  1498,
+                  1540
+                ],
+                "text": " "
+              }
+            },
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'max-lines-per-function').",
+              "line": 72,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  2250,
+                  2300
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 2,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 2,
+          "source": "import { Injectable } from '@angular/core';\n\n@Injectable({\n providedIn: 'root',\n})\nexport class CropImageService {\n async getCroppedImageURL(canvas: HTMLCanvasElement, imageUrl: string): Promise<string> {\n return new Promise((resolve, reject) => {\n const context = canvas.getContext('2d', { willReadFrequently: true });\n if (!context) {\n reject(new Error('Canvas context not found'));\n return;\n }\n\n const image = new Image();\n image.crossOrigin = 'Anonymous';\n image.src = imageUrl;\n image.addEventListener('load', () => {\n canvas.width = image.width;\n canvas.height = image.height;\n context.drawImage(image, 0, 0);\n const croppedImageUrl = this.cropImageToFitContent({ context, image, canvas });\n resolve(croppedImageUrl);\n });\n\n image.addEventListener('error', () => {\n reject(new Error('Image failed to load'));\n });\n });\n }\n\n private cropImageToFitContent({\n context,\n image,\n canvas,\n }: {\n context: CanvasRenderingContext2D;\n image: HTMLImageElement;\n canvas: HTMLCanvasElement;\n }): string {\n const imageData = context.getImageData(0, 0, canvas.width, canvas.height);\n const { top, bottom, left, right } = this.findCropBoundaries(imageData, canvas);\n const croppedWidth = Math.max(right - left, 1);\n const croppedHeight = Math.max(bottom - top, 1);\n return this.createCroppedImage({ image, left, top, croppedWidth, croppedHeight });\n }\n\n // eslint-disable-next-line max-statements\n private findCropBoundaries(imageData: ImageData, canvas: HTMLCanvasElement) {\n let bottom = 0,\n left = canvas.width,\n right = 0,\n top = canvas.height;\n\n for (let row = 0; row < canvas.height; row++) {\n for (let column = 0; column < canvas.width; column++) {\n const index = (row angular-example-app.report.json angular.json CHANGELOG.md commitlint.config.js e2e _eslint.config.js eslint.config.js eslint.config.mjs karma.conf.js lint.after.all lint.after.recommended lint.before.all lint.before.recommended node_modules package.json package-lock.json playwright.config.ts public README.md src tsconfig.app.json tsconfig.eslint.json tsconfig.json tsconfig.spec.json canvas.width + column) angular-example-app.report.json angular.json CHANGELOG.md commitlint.config.js e2e _eslint.config.js eslint.config.js eslint.config.mjs karma.conf.js lint.after.all lint.after.recommended lint.before.all lint.before.recommended node_modules package.json package-lock.json playwright.config.ts public README.md src tsconfig.app.json tsconfig.eslint.json tsconfig.json tsconfig.spec.json 4;\n const alpha = imageData.data[index + 3];\n if (alpha > 0) {\n // Update boundaries for non-transparent pixel\n top = Math.min(top, row);\n bottom = Math.max(bottom, row);\n left = Math.min(left, column);\n right = Math.max(right, column);\n }\n }\n }\n\n return { top, bottom, left, right };\n }\n\n // eslint-disable-next-line max-lines-per-function\n private createCroppedImage({\n image,\n left,\n top,\n croppedWidth,\n croppedHeight,\n }: {\n image: HTMLImageElement;\n left: number;\n top: number;\n croppedWidth: number;\n croppedHeight: number;\n }): string {\n const croppedCanvas = document.createElement('canvas');\n const croppedContext = croppedCanvas.getContext('2d');\n if (!croppedContext) {\n return '';\n }\n croppedCanvas.width = croppedWidth;\n croppedCanvas.height = croppedHeight;\n\n croppedContext.drawImage(\n image,\n left,\n top,\n croppedWidth,\n croppedHeight,\n 0,\n 0,\n croppedWidth,\n croppedHeight,\n );\n\n return croppedCanvas.toDataURL();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/features/pokemon/pages/pokemon-detail/pokemon-detail.component.ts",
+          "messages": [
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from '@angular-eslint/prefer-signals').",
+              "line": 39,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  1701,
+                  1759
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 1,
+          "source": "import type { OnInit } from '@angular/core';\nimport {\n ChangeDetectionStrategy,\n ChangeDetectorRef,\n Component,\n CUSTOM_ELEMENTS_SCHEMA,\n DestroyRef,\n inject,\n signal,\n} from '@angular/core';\nimport { PokemonService } from '~features/pokemon/services/pokemon.service';\nimport type { Pokemon } from '~features/pokemon/types/pokemon.type';\nimport type { ParamMap } from '@angular/router';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { PokemonBattlefieldComponent } from '~features/pokemon/components/pokemon-battlefield/pokemon-battlefield.component';\nimport { PokedexComponent } from '~features/pokemon/components/pokedex/pokedex.component';\nimport { BattleEvent } from '~features/pokemon/components/pokedex/enums/pokedex-action.enum';\nimport { translations } from '../../../../../locale/translations';\nimport { AlertService } from '~core/services/alert.service';\nimport { ROOT_URLS } from '~core/constants/urls.constants';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\n\n@Component({\n selector: 'app-pokemon-detail',\n templateUrl: './pokemon-detail.component.html',\n styleUrl: './pokemon-detail.component.scss',\n changeDetection: ChangeDetectionStrategy.OnPush,\n schemas: [CUSTOM_ELEMENTS_SCHEMA],\n imports: [PokemonBattlefieldComponent, PokedexComponent],\n})\nexport class PokemonDetailComponent implements OnInit {\n private readonly changeDetectorRef = inject(ChangeDetectorRef);\n readonly router = inject(Router);\n private readonly destroyRef = inject(DestroyRef);\n private readonly activatedRoute = inject(ActivatedRoute);\n private readonly pokemonService = inject(PokemonService);\n private readonly alertService = inject(AlertService);\n\n // eslint-disable-next-line @angular-eslint/prefer-signals\n pokemonBattleEvent = signal(BattleEvent.POKEMON_LOADED);\n\n pokemon!: Pokemon;\n\n ngOnInit() {\n this.activatedRoute.paramMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({\n next: (parameterMap) => {\n this.handleRouteChange(parameterMap);\n },\n });\n }\n\n private handleRouteChange(parameterMap: ParamMap) {\n const pokemonId = parameterMap.get('pokemonId');\n if (pokemonId) {\n this.loadPokemonData(pokemonId);\n }\n }\n\n private loadPokemonData(pokemonId: string) {\n this.pokemonService\n .getPokemon(pokemonId)\n .pipe(takeUntilDestroyed(this.destroyRef))\n .subscribe({\n next: (pokemon) => {\n this.pokemon = pokemon;\n this.pokemonBattleEvent.set(BattleEvent.RESET_BATTLE);\n this.changeDetectorRef.markForCheck();\n },\n error: () => {\n this.alertService.createErrorAlert(translations.pokemonNotFoundError);\n void this.router.navigate([ROOT_URLS.error404]);\n },\n });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/main.ts",
+          "messages": [
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'no-console').",
+              "line": 10,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  443,
+                  481
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 1,
+          "source": "/// <reference types=\"@angular/localize\" />\nimport { bootstrapApplication } from '@angular/platform-browser';\nimport { AppComponent } from './app/app.component';\nimport { appConfig } from './app/app.config';\nimport { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';\n\nsetBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/');\n\nbootstrapApplication(AppComponent, appConfig).catch((error) => {\n // eslint-disable-next-line no-console\n console.error(error);\n});\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/components/theme-button/theme-button.component.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/prefer-nullish-coalescing",
+              "message": "Definition for rule '@typescript-eslint/prefer-nullish-coalescing' was not found.",
+              "line": 40,
+              "column": 7,
+              "endLine": 40,
+              "endColumn": 79,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n ChangeDetectionStrategy,\n Component,\n CUSTOM_ELEMENTS_SCHEMA,\n effect,\n inject,\n} from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthenticationService } from '~features/authentication/services/authentication.service';\nimport { Theme, ThemeManagerService } from '~core/services/theme-manager.service';\n\nimport '@shoelace-style/shoelace/dist/components/button/button.js';\nimport '@shoelace-style/shoelace/dist/components/icon/icon.js';\n\n@Component({\n selector: 'app-theme-button',\n templateUrl: './theme-button.component.html',\n standalone: true,\n changeDetection: ChangeDetectionStrategy.OnPush,\n schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class ThemeButtonComponent {\n private readonly authenticationService = inject(AuthenticationService);\n private readonly themeManagerService = inject(ThemeManagerService);\n\n readonly router = inject(Router);\n readonly Theme = Theme;\n\n isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n themeSelected = this.themeManagerService.getThemeFromLocalStorageValue();\n\n constructor() {\n effect(() => {\n this.isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n });\n }\n\n toggleTheme() {\n this.themeSelected =\n // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing\n this.themeManagerService.getThemeFromLocalStorageValue() === Theme.DARK ||\n this.themeSelected === null\n ? Theme.LIGHT\n : Theme.DARK;\n this.themeManagerService.setTheme(this.themeSelected);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-checkbox-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlCheckboxControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlCheckboxControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.checked]': 'checked()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlCheckboxControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: boolean) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly checked = model(false);\n\n writeValue(value: boolean): void {\n this.checked.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { checked } = this.el.nativeElement;\n this.onChangeFn(checked);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-select-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlSelectControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlSelectControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.value]': 'value()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlSelectControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: unknown) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly value = model('');\n\n writeValue(value: string): void {\n this.value.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { value } = this.el.nativeElement;\n this.onChangeFn(value);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/alert.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/consistent-type-imports",
+              "message": "Definition for rule '@typescript-eslint/consistent-type-imports' was not found.",
+              "line": 1,
+              "column": 1,
+              "endLine": 1,
+              "endColumn": 71,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport { Injectable, Renderer2, RendererFactory2 } from '@angular/core';\n\nenum AlertType {\n SUCCESS = 'success',\n ERROR = 'error',\n}\n\ntype Alert = {\n message: string;\n type: AlertType;\n hasCountdown?: boolean;\n duration?: number;\n};\n\n@Injectable({\n providedIn: 'root',\n})\nexport class AlertService {\n private readonly renderer: Renderer2;\n\n constructor(rendererFactory: RendererFactory2) {\n this.renderer = rendererFactory.createRenderer(null, null);\n }\n\n createSuccessAlert(message: string) {\n this.createAlert({ message, type: AlertType.SUCCESS, duration: 7000, hasCountdown: true });\n }\n\n createErrorAlert(message: string) {\n this.createAlert({ message, type: AlertType.ERROR });\n }\n\n private createAlert(alert: Alert): void {\n const alertElement = this.createAlertElement(alert);\n const container = document.body;\n this.renderer.appendChild(container, alertElement);\n alertElement.toast();\n }\n\n private createAlertElement(alert: Alert): HTMLElement & { toast: () => void } {\n const alertElement = this.renderer.createElement('sl-alert');\n alertElement.classList.add(`alert--${alert.type}`);\n this.renderer.setAttribute(alertElement, 'closable', '');\n this.renderer.setAttribute(alertElement, 'variant', alert.type);\n if (alert.duration) {\n this.renderer.setAttribute(alertElement, 'duration', alert.duration.toString());\n }\n if (alert.hasCountdown) {\n this.renderer.setAttribute(alertElement, 'countdown', 'rtl');\n }\n this.renderer.setProperty(alertElement, 'innerHTML', alert.message);\n return alertElement as HTMLElement & { toast: () => void };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/cookie-consent.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/max-params",
+              "message": "Definition for rule '@typescript-eslint/max-params' was not found.",
+              "line": 5,
+              "column": 3,
+              "endLine": 5,
+              "endColumn": 60,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'camelcase').",
+              "line": 46,
+              "column": 11,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  1223,
+                  1252
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 1,
+          "source": "import { inject, Injectable } from '@angular/core';\nimport { LOCAL_STORAGE } from '~core/providers/local-storage';\n\ndeclare const window: Window &\n // eslint-disable-next-line @typescript-eslint/max-params\n typeof globalThis & { gtag?: (a: string, b: string, o: object) => void };\n\nconst CONSENT_COOKIE_KEY = 'isCookiesConsentAccepted';\nconst CONSENT_COOKIE_VALUE = 'true';\n\nexport enum ConsentState {\n DENIED = 'denied',\n GRANTED = 'granted',\n}\n\n@Injectable({\n providedIn: 'root',\n})\nexport class CookieConsentService {\n private readonly localStorage: Storage | null = inject(LOCAL_STORAGE);\n\n setCookieConsent(state: ConsentState): boolean {\n if (!this.setConsentInLocalStorage()) {\n return false;\n }\n return this.updateGtagConsent(state);\n }\n\n getCookieState(): boolean {\n return this.localStorage?.getItem(CONSENT_COOKIE_KEY) === CONSENT_COOKIE_VALUE;\n }\n\n private setConsentInLocalStorage(): boolean {\n try {\n this.localStorage?.setItem(CONSENT_COOKIE_KEY, CONSENT_COOKIE_VALUE);\n return true;\n } catch {\n return false;\n }\n }\n\n private updateGtagConsent(state: ConsentState): boolean {\n try {\n if (window.gtag) {\n const consentOptions = {\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var eslint-disable camelcase*/\n ad_user_data: state,\n ad_personalization: state,\n ad_storage: state,\n analytics_storage: state,\n };\n\n if (state === ConsentState.DENIED) {\n window.gtag('consent', 'default', {\n ...consentOptions,\n wait_for_update: 500,\n /bin /boot /cdrom /dev /etc /home /lib /lib32 /lib64 /libx32 /lost+found /media /mnt /opt /proc /root /run /sbin /snap /srv /swapfile /sys /tmp /usr /var eslint-enable camelcase*/\n });\n } else {\n window.gtag('consent', 'update', {\n ...consentOptions,\n });\n }\n }\n return true;\n } catch {\n return false;\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/crop-image.service.ts",
+          "messages": [
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'max-statements').",
+              "line": 48,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  1498,
+                  1540
+                ],
+                "text": " "
+              }
+            },
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'max-lines-per-function').",
+              "line": 72,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  2250,
+                  2300
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 2,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 2,
+          "source": "import { Injectable } from '@angular/core';\n\n@Injectable({\n providedIn: 'root',\n})\nexport class CropImageService {\n async getCroppedImageURL(canvas: HTMLCanvasElement, imageUrl: string): Promise<string> {\n return new Promise((resolve, reject) => {\n const context = canvas.getContext('2d', { willReadFrequently: true });\n if (!context) {\n reject(new Error('Canvas context not found'));\n return;\n }\n\n const image = new Image();\n image.crossOrigin = 'Anonymous';\n image.src = imageUrl;\n image.addEventListener('load', () => {\n canvas.width = image.width;\n canvas.height = image.height;\n context.drawImage(image, 0, 0);\n const croppedImageUrl = this.cropImageToFitContent({ context, image, canvas });\n resolve(croppedImageUrl);\n });\n\n image.addEventListener('error', () => {\n reject(new Error('Image failed to load'));\n });\n });\n }\n\n private cropImageToFitContent({\n context,\n image,\n canvas,\n }: {\n context: CanvasRenderingContext2D;\n image: HTMLImageElement;\n canvas: HTMLCanvasElement;\n }): string {\n const imageData = context.getImageData(0, 0, canvas.width, canvas.height);\n const { top, bottom, left, right } = this.findCropBoundaries(imageData, canvas);\n const croppedWidth = Math.max(right - left, 1);\n const croppedHeight = Math.max(bottom - top, 1);\n return this.createCroppedImage({ image, left, top, croppedWidth, croppedHeight });\n }\n\n // eslint-disable-next-line max-statements\n private findCropBoundaries(imageData: ImageData, canvas: HTMLCanvasElement) {\n let bottom = 0,\n left = canvas.width,\n right = 0,\n top = canvas.height;\n\n for (let row = 0; row < canvas.height; row++) {\n for (let column = 0; column < canvas.width; column++) {\n const index = (row angular-example-app.report.json angular.json CHANGELOG.md commitlint.config.js e2e _eslint.config.js eslint.config.js eslint.config.mjs karma.conf.js lint.after.all lint.after.recommended lint.before.all lint.before.recommended node_modules package.json package-lock.json playwright.config.ts public README.md src tsconfig.app.json tsconfig.eslint.json tsconfig.json tsconfig.spec.json canvas.width + column) angular-example-app.report.json angular.json CHANGELOG.md commitlint.config.js e2e _eslint.config.js eslint.config.js eslint.config.mjs karma.conf.js lint.after.all lint.after.recommended lint.before.all lint.before.recommended node_modules package.json package-lock.json playwright.config.ts public README.md src tsconfig.app.json tsconfig.eslint.json tsconfig.json tsconfig.spec.json 4;\n const alpha = imageData.data[index + 3];\n if (alpha > 0) {\n // Update boundaries for non-transparent pixel\n top = Math.min(top, row);\n bottom = Math.max(bottom, row);\n left = Math.min(left, column);\n right = Math.max(right, column);\n }\n }\n }\n\n return { top, bottom, left, right };\n }\n\n // eslint-disable-next-line max-lines-per-function\n private createCroppedImage({\n image,\n left,\n top,\n croppedWidth,\n croppedHeight,\n }: {\n image: HTMLImageElement;\n left: number;\n top: number;\n croppedWidth: number;\n croppedHeight: number;\n }): string {\n const croppedCanvas = document.createElement('canvas');\n const croppedContext = croppedCanvas.getContext('2d');\n if (!croppedContext) {\n return '';\n }\n croppedCanvas.width = croppedWidth;\n croppedCanvas.height = croppedHeight;\n\n croppedContext.drawImage(\n image,\n left,\n top,\n croppedWidth,\n croppedHeight,\n 0,\n 0,\n croppedWidth,\n croppedHeight,\n );\n\n return croppedCanvas.toDataURL();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/features/pokemon/pages/pokemon-detail/pokemon-detail.component.ts",
+          "messages": [
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from '@angular-eslint/prefer-signals').",
+              "line": 39,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  1701,
+                  1759
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 1,
+          "source": "import type { OnInit } from '@angular/core';\nimport {\n ChangeDetectionStrategy,\n ChangeDetectorRef,\n Component,\n CUSTOM_ELEMENTS_SCHEMA,\n DestroyRef,\n inject,\n signal,\n} from '@angular/core';\nimport { PokemonService } from '~features/pokemon/services/pokemon.service';\nimport type { Pokemon } from '~features/pokemon/types/pokemon.type';\nimport type { ParamMap } from '@angular/router';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { PokemonBattlefieldComponent } from '~features/pokemon/components/pokemon-battlefield/pokemon-battlefield.component';\nimport { PokedexComponent } from '~features/pokemon/components/pokedex/pokedex.component';\nimport { BattleEvent } from '~features/pokemon/components/pokedex/enums/pokedex-action.enum';\nimport { translations } from '../../../../../locale/translations';\nimport { AlertService } from '~core/services/alert.service';\nimport { ROOT_URLS } from '~core/constants/urls.constants';\nimport { takeUntilDestroyed } from '@angular/core/rxjs-interop';\n\n@Component({\n selector: 'app-pokemon-detail',\n templateUrl: './pokemon-detail.component.html',\n styleUrl: './pokemon-detail.component.scss',\n changeDetection: ChangeDetectionStrategy.OnPush,\n schemas: [CUSTOM_ELEMENTS_SCHEMA],\n imports: [PokemonBattlefieldComponent, PokedexComponent],\n})\nexport class PokemonDetailComponent implements OnInit {\n private readonly changeDetectorRef = inject(ChangeDetectorRef);\n readonly router = inject(Router);\n private readonly destroyRef = inject(DestroyRef);\n private readonly activatedRoute = inject(ActivatedRoute);\n private readonly pokemonService = inject(PokemonService);\n private readonly alertService = inject(AlertService);\n\n // eslint-disable-next-line @angular-eslint/prefer-signals\n pokemonBattleEvent = signal(BattleEvent.POKEMON_LOADED);\n\n pokemon!: Pokemon;\n\n ngOnInit() {\n this.activatedRoute.paramMap.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({\n next: (parameterMap) => {\n this.handleRouteChange(parameterMap);\n },\n });\n }\n\n private handleRouteChange(parameterMap: ParamMap) {\n const pokemonId = parameterMap.get('pokemonId');\n if (pokemonId) {\n this.loadPokemonData(pokemonId);\n }\n }\n\n private loadPokemonData(pokemonId: string) {\n this.pokemonService\n .getPokemon(pokemonId)\n .pipe(takeUntilDestroyed(this.destroyRef))\n .subscribe({\n next: (pokemon) => {\n this.pokemon = pokemon;\n this.pokemonBattleEvent.set(BattleEvent.RESET_BATTLE);\n this.changeDetectorRef.markForCheck();\n },\n error: () => {\n this.alertService.createErrorAlert(translations.pokemonNotFoundError);\n void this.router.navigate([ROOT_URLS.error404]);\n },\n });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/main.ts",
+          "messages": [
+            {
+              "ruleId": null,
+              "message": "Unused eslint-disable directive (no problems were reported from 'no-console').",
+              "line": 10,
+              "column": 3,
+              "severity": 1,
+              "nodeType": null,
+              "fix": {
+                "range": [
+                  443,
+                  481
+                ],
+                "text": " "
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 1,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 1,
+          "source": "/// <reference types=\"@angular/localize\" />\nimport { bootstrapApplication } from '@angular/platform-browser';\nimport { AppComponent } from './app/app.component';\nimport { appConfig } from './app/app.config';\nimport { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';\n\nsetBasePath('https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.17.1/cdn/');\n\nbootstrapApplication(AppComponent, appConfig).catch((error) => {\n // eslint-disable-next-line no-console\n console.error(error);\n});\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  },
+  "after": {
+    "angularexampleapp": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/components/theme-button/theme-button.component.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/prefer-nullish-coalescing",
+              "message": "Definition for rule '@typescript-eslint/prefer-nullish-coalescing' was not found.",
+              "line": 40,
+              "column": 7,
+              "endLine": 40,
+              "endColumn": 79,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n ChangeDetectionStrategy,\n Component,\n CUSTOM_ELEMENTS_SCHEMA,\n effect,\n inject,\n} from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthenticationService } from '~features/authentication/services/authentication.service';\nimport { Theme, ThemeManagerService } from '~core/services/theme-manager.service';\n\nimport '@shoelace-style/shoelace/dist/components/button/button.js';\nimport '@shoelace-style/shoelace/dist/components/icon/icon.js';\n\n@Component({\n selector: 'app-theme-button',\n templateUrl: './theme-button.component.html',\n standalone: true,\n changeDetection: ChangeDetectionStrategy.OnPush,\n schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class ThemeButtonComponent {\n private readonly authenticationService = inject(AuthenticationService);\n private readonly themeManagerService = inject(ThemeManagerService);\n\n readonly router = inject(Router);\n readonly Theme = Theme;\n\n isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n themeSelected = this.themeManagerService.getThemeFromLocalStorageValue();\n\n constructor() {\n effect(() => {\n this.isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n });\n }\n\n toggleTheme() {\n this.themeSelected =\n // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing\n this.themeManagerService.getThemeFromLocalStorageValue() === Theme.DARK ||\n this.themeSelected === null\n ? Theme.LIGHT\n : Theme.DARK;\n this.themeManagerService.setTheme(this.themeSelected);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-checkbox-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlCheckboxControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlCheckboxControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.checked]': 'checked()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlCheckboxControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: boolean) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly checked = model(false);\n\n writeValue(value: boolean): void {\n this.checked.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { checked } = this.el.nativeElement;\n this.onChangeFn(checked);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-select-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlSelectControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlSelectControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.value]': 'value()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlSelectControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: unknown) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly value = model('');\n\n writeValue(value: string): void {\n this.value.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { value } = this.el.nativeElement;\n this.onChangeFn(value);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/alert.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/consistent-type-imports",
+              "message": "Definition for rule '@typescript-eslint/consistent-type-imports' was not found.",
+              "line": 1,
+              "column": 1,
+              "endLine": 1,
+              "endColumn": 71,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport { Injectable, Renderer2, RendererFactory2 } from '@angular/core';\n\nenum AlertType {\n SUCCESS = 'success',\n ERROR = 'error',\n}\n\ntype Alert = {\n message: string;\n type: AlertType;\n hasCountdown?: boolean;\n duration?: number;\n};\n\n@Injectable({\n providedIn: 'root',\n})\nexport class AlertService {\n private readonly renderer: Renderer2;\n\n constructor(rendererFactory: RendererFactory2) {\n this.renderer = rendererFactory.createRenderer(null, null);\n }\n\n createSuccessAlert(message: string) {\n this.createAlert({ message, type: AlertType.SUCCESS, duration: 7000, hasCountdown: true });\n }\n\n createErrorAlert(message: string) {\n this.createAlert({ message, type: AlertType.ERROR });\n }\n\n private createAlert(alert: Alert): void {\n const alertElement = this.createAlertElement(alert);\n const container = document.body;\n this.renderer.appendChild(container, alertElement);\n alertElement.toast();\n }\n\n private createAlertElement(alert: Alert): HTMLElement & { toast: () => void } {\n const alertElement = this.renderer.createElement('sl-alert');\n alertElement.classList.add(`alert--${alert.type}`);\n this.renderer.setAttribute(alertElement, 'closable', '');\n this.renderer.setAttribute(alertElement, 'variant', alert.type);\n if (alert.duration) {\n this.renderer.setAttribute(alertElement, 'duration', alert.duration.toString());\n }\n if (alert.hasCountdown) {\n this.renderer.setAttribute(alertElement, 'countdown', 'rtl');\n }\n this.renderer.setProperty(alertElement, 'innerHTML', alert.message);\n return alertElement as HTMLElement & { toast: () => void };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/cookie-consent.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/max-params",
+              "message": "Definition for rule '@typescript-eslint/max-params' was not found.",
+              "line": 5,
+              "column": 3,
+              "endLine": 5,
+              "endColumn": 60,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { inject, Injectable } from '@angular/core';\nimport { LOCAL_STORAGE } from '~core/providers/local-storage';\n\ndeclare const window: Window &\n // eslint-disable-next-line @typescript-eslint/max-params\n typeof globalThis & { gtag?: (a: string, b: string, o: object) => void };\n\nconst CONSENT_COOKIE_KEY = 'isCookiesConsentAccepted';\nconst CONSENT_COOKIE_VALUE = 'true';\n\nexport enum ConsentState {\n DENIED = 'denied',\n GRANTED = 'granted',\n}\n\n@Injectable({\n providedIn: 'root',\n})\nexport class CookieConsentService {\n private readonly localStorage: Storage | null = inject(LOCAL_STORAGE);\n\n setCookieConsent(state: ConsentState): boolean {\n if (!this.setConsentInLocalStorage()) {\n return false;\n }\n return this.updateGtagConsent(state);\n }\n\n getCookieState(): boolean {\n return this.localStorage?.getItem(CONSENT_COOKIE_KEY) === CONSENT_COOKIE_VALUE;\n }\n\n private setConsentInLocalStorage(): boolean {\n try {\n this.localStorage?.setItem(CONSENT_COOKIE_KEY, CONSENT_COOKIE_VALUE);\n return true;\n } catch {\n return false;\n }\n }\n\n private updateGtagConsent(state: ConsentState): boolean {\n try {\n if (window.gtag) {\n const consentOptions = {\n \n ad_user_data: state,\n ad_personalization: state,\n ad_storage: state,\n analytics_storage: state,\n };\n\n if (state === ConsentState.DENIED) {\n window.gtag('consent', 'default', {\n ...consentOptions,\n wait_for_update: 500,\n \n });\n } else {\n window.gtag('consent', 'update', {\n ...consentOptions,\n });\n }\n }\n return true;\n } catch {\n return false;\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/components/theme-button/theme-button.component.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/prefer-nullish-coalescing",
+              "message": "Definition for rule '@typescript-eslint/prefer-nullish-coalescing' was not found.",
+              "line": 40,
+              "column": 7,
+              "endLine": 40,
+              "endColumn": 79,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import {\n ChangeDetectionStrategy,\n Component,\n CUSTOM_ELEMENTS_SCHEMA,\n effect,\n inject,\n} from '@angular/core';\nimport { Router } from '@angular/router';\nimport { AuthenticationService } from '~features/authentication/services/authentication.service';\nimport { Theme, ThemeManagerService } from '~core/services/theme-manager.service';\n\nimport '@shoelace-style/shoelace/dist/components/button/button.js';\nimport '@shoelace-style/shoelace/dist/components/icon/icon.js';\n\n@Component({\n selector: 'app-theme-button',\n templateUrl: './theme-button.component.html',\n standalone: true,\n changeDetection: ChangeDetectionStrategy.OnPush,\n schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class ThemeButtonComponent {\n private readonly authenticationService = inject(AuthenticationService);\n private readonly themeManagerService = inject(ThemeManagerService);\n\n readonly router = inject(Router);\n readonly Theme = Theme;\n\n isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n themeSelected = this.themeManagerService.getThemeFromLocalStorageValue();\n\n constructor() {\n effect(() => {\n this.isUserLoggedIn = this.authenticationService.isUserLoggedIn();\n });\n }\n\n toggleTheme() {\n this.themeSelected =\n // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing\n this.themeManagerService.getThemeFromLocalStorageValue() === Theme.DARK ||\n this.themeSelected === null\n ? Theme.LIGHT\n : Theme.DARK;\n this.themeManagerService.setTheme(this.themeSelected);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-checkbox-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlCheckboxControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlCheckboxControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.checked]': 'checked()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlCheckboxControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: boolean) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly checked = model(false);\n\n writeValue(value: boolean): void {\n this.checked.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { checked } = this.el.nativeElement;\n this.onChangeFn(checked);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/directives/sl-select-control.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-unused-vars",
+              "message": "Definition for rule '@typescript-eslint/no-unused-vars' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 101,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-empty-function",
+              "message": "Definition for rule '@typescript-eslint/no-empty-function' was not found.",
+              "line": 26,
+              "column": 3,
+              "endLine": 26,
+              "endColumn": 67,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, ElementRef, inject, model } from '@angular/core';\nimport type { ControlValueAccessor } from '@angular/forms';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n selector: '[appSlSelectControl]',\n providers: [\n {\n provide: NG_VALUE_ACCESSOR,\n useExisting: AppSlSelectControlDirective,\n multi: true,\n },\n ],\n standalone: true,\n host: {\n '[attr.value]': 'value()',\n '(sl-change)': 'onSlChange()',\n },\n})\nexport class AppSlSelectControlDirective implements ControlValueAccessor {\n private readonly el = inject(ElementRef);\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/no-unused-vars\n private onChangeFn = (value: unknown) => {};\n\n // eslint-disable-next-line @typescript-eslint/no-empty-function\n private onTouchedFn = () => {};\n\n readonly value = model('');\n\n writeValue(value: string): void {\n this.value.set(value);\n }\n\n registerOnChange(function_: () => void): void {\n this.onChangeFn = function_;\n }\n\n registerOnTouched(function_: () => void): void {\n this.onTouchedFn = function_;\n }\n\n onSlChange(): void {\n const { value } = this.el.nativeElement;\n this.onChangeFn(value);\n this.onTouchedFn();\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/alert.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/consistent-type-imports",
+              "message": "Definition for rule '@typescript-eslint/consistent-type-imports' was not found.",
+              "line": 1,
+              "column": 1,
+              "endLine": 1,
+              "endColumn": 71,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "// eslint-disable-next-line @typescript-eslint/consistent-type-imports\nimport { Injectable, Renderer2, RendererFactory2 } from '@angular/core';\n\nenum AlertType {\n SUCCESS = 'success',\n ERROR = 'error',\n}\n\ntype Alert = {\n message: string;\n type: AlertType;\n hasCountdown?: boolean;\n duration?: number;\n};\n\n@Injectable({\n providedIn: 'root',\n})\nexport class AlertService {\n private readonly renderer: Renderer2;\n\n constructor(rendererFactory: RendererFactory2) {\n this.renderer = rendererFactory.createRenderer(null, null);\n }\n\n createSuccessAlert(message: string) {\n this.createAlert({ message, type: AlertType.SUCCESS, duration: 7000, hasCountdown: true });\n }\n\n createErrorAlert(message: string) {\n this.createAlert({ message, type: AlertType.ERROR });\n }\n\n private createAlert(alert: Alert): void {\n const alertElement = this.createAlertElement(alert);\n const container = document.body;\n this.renderer.appendChild(container, alertElement);\n alertElement.toast();\n }\n\n private createAlertElement(alert: Alert): HTMLElement & { toast: () => void } {\n const alertElement = this.renderer.createElement('sl-alert');\n alertElement.classList.add(`alert--${alert.type}`);\n this.renderer.setAttribute(alertElement, 'closable', '');\n this.renderer.setAttribute(alertElement, 'variant', alert.type);\n if (alert.duration) {\n this.renderer.setAttribute(alertElement, 'duration', alert.duration.toString());\n }\n if (alert.hasCountdown) {\n this.renderer.setAttribute(alertElement, 'countdown', 'rtl');\n }\n this.renderer.setProperty(alertElement, 'innerHTML', alert.message);\n return alertElement as HTMLElement & { toast: () => void };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/angular-example-app/src/app/core/services/cookie-consent.service.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/max-params",
+              "message": "Definition for rule '@typescript-eslint/max-params' was not found.",
+              "line": 5,
+              "column": 3,
+              "endLine": 5,
+              "endColumn": 60,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { inject, Injectable } from '@angular/core';\nimport { LOCAL_STORAGE } from '~core/providers/local-storage';\n\ndeclare const window: Window &\n // eslint-disable-next-line @typescript-eslint/max-params\n typeof globalThis & { gtag?: (a: string, b: string, o: object) => void };\n\nconst CONSENT_COOKIE_KEY = 'isCookiesConsentAccepted';\nconst CONSENT_COOKIE_VALUE = 'true';\n\nexport enum ConsentState {\n DENIED = 'denied',\n GRANTED = 'granted',\n}\n\n@Injectable({\n providedIn: 'root',\n})\nexport class CookieConsentService {\n private readonly localStorage: Storage | null = inject(LOCAL_STORAGE);\n\n setCookieConsent(state: ConsentState): boolean {\n if (!this.setConsentInLocalStorage()) {\n return false;\n }\n return this.updateGtagConsent(state);\n }\n\n getCookieState(): boolean {\n return this.localStorage?.getItem(CONSENT_COOKIE_KEY) === CONSENT_COOKIE_VALUE;\n }\n\n private setConsentInLocalStorage(): boolean {\n try {\n this.localStorage?.setItem(CONSENT_COOKIE_KEY, CONSENT_COOKIE_VALUE);\n return true;\n } catch {\n return false;\n }\n }\n\n private updateGtagConsent(state: ConsentState): boolean {\n try {\n if (window.gtag) {\n const consentOptions = {\n \n ad_user_data: state,\n ad_personalization: state,\n ad_storage: state,\n analytics_storage: state,\n };\n\n if (state === ConsentState.DENIED) {\n window.gtag('consent', 'default', {\n ...consentOptions,\n wait_for_update: 500,\n \n });\n } else {\n window.gtag('consent', 'update', {\n ...consentOptions,\n });\n }\n }\n return true;\n } catch {\n return false;\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  }
+}

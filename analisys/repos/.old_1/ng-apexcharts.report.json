@@ -1,0 +1,325 @@
+{
+  "repo": {
+    "HEAD": {
+      "commit": "2bd2f266decca12d913da91eea8506870bb8aa52",
+      "author": "migudel",
+      "date": "Sat Mar 29 20:48:01 2025 +0100",
+      "message": "INICIO DE PRUEBAS"
+    },
+    "url": "https://github.com/apexcharts/ng-apexcharts"
+  },
+  "before": {
+    "ng-apexcharts-demo": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/app/app.component.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<apx-chart\n #chart\n [series]=\"form.value.series | series : form.value.type\"\n [xaxis]=\"{ categories: form.value.xaxis }\"\n [chart]=\"{\n height: form.value.height,\n type: form.value.type,\n zoom: {\n enabled: false\n },\n shadow: {\n enabled: true,\n color: '#000',\n top: 18,\n left: 7,\n blur: 10,\n opacity: 1\n }\n }\"\n [title]=\"{ text: form.value.title }\"\n [autoUpdateSeries]=\"false\"\n (chartReady)=\"onChartReady($event)\"\n></apx-chart>\n\n<form [formGroup]=\"form\" [class.tes]=\"changeDet()\">\n Title: <input type=\"text\" formControlName=\"title\" /><br />\n Height: <input type=\"number\" formControlName=\"height\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n <option value=\"radar\">Radar</option>\n </select>\n\n <h3>Values</h3>\n <button (click)=\"addSeries()\">Add series</button>\n <button (click)=\"addValue()\">Add value</button>\n\n <div>\n <div style=\"width: 80%; display: inline-block\" formArrayName=\"series\">\n <h4>Data</h4>\n\n <div\n *ngFor=\"let series of series.controls; let i = index\"\n style=\"width: 20%; display: inline-block\"\n >\n <div [formGroupName]=\"i\">\n Name: <input type=\"text\" formControlName=\"name\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n </select>\n\n <div formArrayName=\"data\">\n <div\n *ngFor=\"\n let alias of form.get('series').controls[i].get('data')\n .controls;\n let y = index\n \"\n >\n <label>\n Value: <input type=\"number\" [formControlName]=\"y\" />\n </label>\n </div>\n </div>\n </div>\n </div>\n </div>\n\n <div formArrayName=\"xaxis\" style=\"width: 20%; display: inline-block\">\n <h4>XAxis</h4>\n <div *ngFor=\"let alias of xaxis.controls; let i = index\">\n <label>\n Value:\n <input type=\"text\" [formControlName]=\"i\" />\n </label>\n </div>\n </div>\n </div>\n</form>\n\n{{ form.value | json }}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/index.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<!doctype html>\n<html lang=\"en\">\n<head>\n <meta charset=\"utf-8\">\n <title>NgApexchartsDemo</title>\n <base href=\"/\">\n\n <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n</head>\n<body>\n <app-root></app-root>\n</body>\n</html>\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/app/app.component.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<apx-chart\n #chart\n [series]=\"form.value.series | series : form.value.type\"\n [xaxis]=\"{ categories: form.value.xaxis }\"\n [chart]=\"{\n height: form.value.height,\n type: form.value.type,\n zoom: {\n enabled: false\n },\n shadow: {\n enabled: true,\n color: '#000',\n top: 18,\n left: 7,\n blur: 10,\n opacity: 1\n }\n }\"\n [title]=\"{ text: form.value.title }\"\n [autoUpdateSeries]=\"false\"\n (chartReady)=\"onChartReady($event)\"\n></apx-chart>\n\n<form [formGroup]=\"form\" [class.tes]=\"changeDet()\">\n Title: <input type=\"text\" formControlName=\"title\" /><br />\n Height: <input type=\"number\" formControlName=\"height\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n <option value=\"radar\">Radar</option>\n </select>\n\n <h3>Values</h3>\n <button (click)=\"addSeries()\">Add series</button>\n <button (click)=\"addValue()\">Add value</button>\n\n <div>\n <div style=\"width: 80%; display: inline-block\" formArrayName=\"series\">\n <h4>Data</h4>\n\n <div\n *ngFor=\"let series of series.controls; let i = index\"\n style=\"width: 20%; display: inline-block\"\n >\n <div [formGroupName]=\"i\">\n Name: <input type=\"text\" formControlName=\"name\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n </select>\n\n <div formArrayName=\"data\">\n <div\n *ngFor=\"\n let alias of form.get('series').controls[i].get('data')\n .controls;\n let y = index\n \"\n >\n <label>\n Value: <input type=\"number\" [formControlName]=\"y\" />\n </label>\n </div>\n </div>\n </div>\n </div>\n </div>\n\n <div formArrayName=\"xaxis\" style=\"width: 20%; display: inline-block\">\n <h4>XAxis</h4>\n <div *ngFor=\"let alias of xaxis.controls; let i = index\">\n <label>\n Value:\n <input type=\"text\" [formControlName]=\"i\" />\n </label>\n </div>\n </div>\n </div>\n</form>\n\n{{ form.value | json }}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 25,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      29,
+                      347
+                    ],
+                    "text": ", ChangeDetectionStrategy } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport {\n FormsModule,\n ReactiveFormsModule,\n UntypedFormArray,\n UntypedFormControl,\n UntypedFormGroup,\n} from \"@angular/forms\";\nimport { ChartComponent } from \"ng-apexcharts\";\n\nimport { SeriesPipe } from \"./series.pipe\";\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/consistent-component-styles",
+              "severity": 2,
+              "message": "Use `styleUrl` instead of `styleUrls` for a single stylesheet",
+              "line": 17,
+              "column": 5,
+              "nodeType": "Property",
+              "messageId": "useStyleUrl",
+              "endLine": 17,
+              "endColumn": 40,
+              "fix": {
+                "range": [
+                  414,
+                  449
+                ],
+                "text": "styleUrl: \"./app.component.less\""
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use the `viewChild` function instead of the `ViewChild` decorator",
+              "line": 27,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferQuerySignals",
+              "endLine": 27,
+              "endColumn": 40
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewChild } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport {\n FormsModule,\n ReactiveFormsModule,\n UntypedFormArray,\n UntypedFormControl,\n UntypedFormGroup,\n} from \"@angular/forms\";\nimport { ChartComponent } from \"ng-apexcharts\";\n\nimport { SeriesPipe } from \"./series.pipe\";\n\n@Component({\n selector: \"app-root\",\n templateUrl: \"./app.component.html\",\n styleUrls: [\"./app.component.less\"],\n imports: [\n CommonModule,\n FormsModule,\n ReactiveFormsModule,\n ChartComponent,\n SeriesPipe,\n ]\n})\nexport class AppComponent {\n @ViewChild(\"chart\", { static: true }) chart: ChartComponent;\n\n form: UntypedFormGroup;\n\n public get series() {\n return this.form.get(\"series\") as UntypedFormArray;\n }\n\n public get xaxis() {\n return this.form.get(\"xaxis\") as UntypedFormArray;\n }\n private det = 0;\n changeDet(): boolean {\n console.log(`change${this.det++}`);\n return false;\n }\n\n constructor() {\n this.form = new UntypedFormGroup({\n title: new UntypedFormControl(\"Basic Chart\"),\n type: new UntypedFormControl(\"line\"),\n height: new UntypedFormControl(350),\n series: new UntypedFormArray([\n new UntypedFormGroup({\n name: new UntypedFormControl(\"Series\"),\n type: new UntypedFormControl(\"line\"),\n data: new UntypedFormArray([\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n ]),\n }),\n ]),\n xaxis: new UntypedFormArray([\n new UntypedFormControl(\"Jan\"),\n new UntypedFormControl(\"Feb\"),\n new UntypedFormControl(\"Mar\"),\n new UntypedFormControl(\"Apr\"),\n ]),\n });\n }\n\n addValue() {\n (<UntypedFormArray>this.form.get(\"series\")).controls.forEach((c) => {\n (<UntypedFormArray>c.get(\"data\")).push(\n new UntypedFormControl(this.getRandomArbitrary(0, 100))\n );\n });\n (<UntypedFormArray>this.form.get(\"xaxis\")).push(\n new UntypedFormControl(\"Jan\")\n );\n }\n\n addSeries() {\n (<UntypedFormArray>this.form.get(\"series\")).push(\n new UntypedFormGroup({\n name: new UntypedFormControl(\"Series\"),\n type: new UntypedFormControl(\"line\"),\n data: new UntypedFormArray([\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n ]),\n })\n );\n }\n\n onChartReady(event: any) {\n console.log(\"Chart ready\", event);\n }\n\n private getRandomArbitrary(min, max) {\n return Math.random() angular.json LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-apexcharts.report.json node_modules package.json package-lock.json projects README.md server.ts src tsconfig.app.json tsconfig.json yarn.lock (max - min) + min;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/index.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<!doctype html>\n<html lang=\"en\">\n<head>\n <meta charset=\"utf-8\">\n <title>NgApexchartsDemo</title>\n <base href=\"/\">\n\n <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n</head>\n<body>\n <app-root></app-root>\n</body>\n</html>\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "ng-apexcharts": {
+      "recommended": [],
+      "all": []
+    }
+  },
+  "after": {
+    "ng-apexcharts-demo": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/app/app.component.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<apx-chart\n #chart\n [series]=\"form.value.series | series : form.value.type\"\n [xaxis]=\"{ categories: form.value.xaxis }\"\n [chart]=\"{\n height: form.value.height,\n type: form.value.type,\n zoom: {\n enabled: false\n },\n shadow: {\n enabled: true,\n color: '#000',\n top: 18,\n left: 7,\n blur: 10,\n opacity: 1\n }\n }\"\n [title]=\"{ text: form.value.title }\"\n [autoUpdateSeries]=\"false\"\n (chartReady)=\"onChartReady($event)\"\n></apx-chart>\n\n<form [formGroup]=\"form\" [class.tes]=\"changeDet()\">\n Title: <input type=\"text\" formControlName=\"title\" /><br />\n Height: <input type=\"number\" formControlName=\"height\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n <option value=\"radar\">Radar</option>\n </select>\n\n <h3>Values</h3>\n <button (click)=\"addSeries()\">Add series</button>\n <button (click)=\"addValue()\">Add value</button>\n\n <div>\n <div style=\"width: 80%; display: inline-block\" formArrayName=\"series\">\n <h4>Data</h4>\n\n <div\n *ngFor=\"let series of series.controls; let i = index\"\n style=\"width: 20%; display: inline-block\"\n >\n <div [formGroupName]=\"i\">\n Name: <input type=\"text\" formControlName=\"name\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n </select>\n\n <div formArrayName=\"data\">\n <div\n *ngFor=\"\n let alias of form.get('series').controls[i].get('data')\n .controls;\n let y = index\n \"\n >\n <label>\n Value: <input type=\"number\" [formControlName]=\"y\" />\n </label>\n </div>\n </div>\n </div>\n </div>\n </div>\n\n <div formArrayName=\"xaxis\" style=\"width: 20%; display: inline-block\">\n <h4>XAxis</h4>\n <div *ngFor=\"let alias of xaxis.controls; let i = index\">\n <label>\n Value:\n <input type=\"text\" [formControlName]=\"i\" />\n </label>\n </div>\n </div>\n </div>\n</form>\n\n{{ form.value | json }}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/index.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<!doctype html>\n<html lang=\"en\">\n<head>\n <meta charset=\"utf-8\">\n <title>NgApexchartsDemo</title>\n <base href=\"/\">\n\n <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n</head>\n<body>\n <app-root></app-root>\n</body>\n</html>\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/app/app.component.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<apx-chart\n #chart\n [series]=\"form.value.series | series : form.value.type\"\n [xaxis]=\"{ categories: form.value.xaxis }\"\n [chart]=\"{\n height: form.value.height,\n type: form.value.type,\n zoom: {\n enabled: false\n },\n shadow: {\n enabled: true,\n color: '#000',\n top: 18,\n left: 7,\n blur: 10,\n opacity: 1\n }\n }\"\n [title]=\"{ text: form.value.title }\"\n [autoUpdateSeries]=\"false\"\n (chartReady)=\"onChartReady($event)\"\n></apx-chart>\n\n<form [formGroup]=\"form\" [class.tes]=\"changeDet()\">\n Title: <input type=\"text\" formControlName=\"title\" /><br />\n Height: <input type=\"number\" formControlName=\"height\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n <option value=\"radar\">Radar</option>\n </select>\n\n <h3>Values</h3>\n <button (click)=\"addSeries()\">Add series</button>\n <button (click)=\"addValue()\">Add value</button>\n\n <div>\n <div style=\"width: 80%; display: inline-block\" formArrayName=\"series\">\n <h4>Data</h4>\n\n <div\n *ngFor=\"let series of series.controls; let i = index\"\n style=\"width: 20%; display: inline-block\"\n >\n <div [formGroupName]=\"i\">\n Name: <input type=\"text\" formControlName=\"name\" /><br />\n Type:\n <select formControlName=\"type\">\n <option value=\"line\">Line</option>\n <option value=\"area\">Area</option>\n <option value=\"bar\">Bar</option>\n </select>\n\n <div formArrayName=\"data\">\n <div\n *ngFor=\"\n let alias of form.get('series').controls[i].get('data')\n .controls;\n let y = index\n \"\n >\n <label>\n Value: <input type=\"number\" [formControlName]=\"y\" />\n </label>\n </div>\n </div>\n </div>\n </div>\n </div>\n\n <div formArrayName=\"xaxis\" style=\"width: 20%; display: inline-block\">\n <h4>XAxis</h4>\n <div *ngFor=\"let alias of xaxis.controls; let i = index\">\n <label>\n Value:\n <input type=\"text\" [formControlName]=\"i\" />\n </label>\n </div>\n </div>\n </div>\n</form>\n\n{{ form.value | json }}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 14,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 25,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      29,
+                      347
+                    ],
+                    "text": ", ChangeDetectionStrategy } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport {\n FormsModule,\n ReactiveFormsModule,\n UntypedFormArray,\n UntypedFormControl,\n UntypedFormGroup,\n} from \"@angular/forms\";\nimport { ChartComponent } from \"ng-apexcharts\";\n\nimport { SeriesPipe } from \"./series.pipe\";\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use the `viewChild` function instead of the `ViewChild` decorator",
+              "line": 27,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferQuerySignals",
+              "endLine": 27,
+              "endColumn": 40
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ViewChild } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\nimport {\n FormsModule,\n ReactiveFormsModule,\n UntypedFormArray,\n UntypedFormControl,\n UntypedFormGroup,\n} from \"@angular/forms\";\nimport { ChartComponent } from \"ng-apexcharts\";\n\nimport { SeriesPipe } from \"./series.pipe\";\n\n@Component({\n selector: \"app-root\",\n templateUrl: \"./app.component.html\",\n styleUrl: \"./app.component.less\",\n imports: [\n CommonModule,\n FormsModule,\n ReactiveFormsModule,\n ChartComponent,\n SeriesPipe,\n ]\n})\nexport class AppComponent {\n @ViewChild(\"chart\", { static: true }) chart: ChartComponent;\n\n form: UntypedFormGroup;\n\n public get series() {\n return this.form.get(\"series\") as UntypedFormArray;\n }\n\n public get xaxis() {\n return this.form.get(\"xaxis\") as UntypedFormArray;\n }\n private det = 0;\n changeDet(): boolean {\n console.log(`change${this.det++}`);\n return false;\n }\n\n constructor() {\n this.form = new UntypedFormGroup({\n title: new UntypedFormControl(\"Basic Chart\"),\n type: new UntypedFormControl(\"line\"),\n height: new UntypedFormControl(350),\n series: new UntypedFormArray([\n new UntypedFormGroup({\n name: new UntypedFormControl(\"Series\"),\n type: new UntypedFormControl(\"line\"),\n data: new UntypedFormArray([\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n ]),\n }),\n ]),\n xaxis: new UntypedFormArray([\n new UntypedFormControl(\"Jan\"),\n new UntypedFormControl(\"Feb\"),\n new UntypedFormControl(\"Mar\"),\n new UntypedFormControl(\"Apr\"),\n ]),\n });\n }\n\n addValue() {\n (<UntypedFormArray>this.form.get(\"series\")).controls.forEach((c) => {\n (<UntypedFormArray>c.get(\"data\")).push(\n new UntypedFormControl(this.getRandomArbitrary(0, 100))\n );\n });\n (<UntypedFormArray>this.form.get(\"xaxis\")).push(\n new UntypedFormControl(\"Jan\")\n );\n }\n\n addSeries() {\n (<UntypedFormArray>this.form.get(\"series\")).push(\n new UntypedFormGroup({\n name: new UntypedFormControl(\"Series\"),\n type: new UntypedFormControl(\"line\"),\n data: new UntypedFormArray([\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n new UntypedFormControl(this.getRandomArbitrary(0, 100)),\n ]),\n })\n );\n }\n\n onChartReady(event: any) {\n console.log(\"Chart ready\", event);\n }\n\n private getRandomArbitrary(min, max) {\n return Math.random() angular.json LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-apexcharts.report.json node_modules package.json package-lock.json projects README.md server.ts src tsconfig.app.json tsconfig.json yarn.lock (max - min) + min;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/ng-apexcharts/src/index.html",
+          "messages": [
+            {
+              "ruleId": null,
+              "fatal": true,
+              "severity": 2,
+              "message": "Parsing error: Unexpected token <",
+              "line": 1,
+              "column": 1,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 1,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "<!doctype html>\n<html lang=\"en\">\n<head>\n <meta charset=\"utf-8\">\n <title>NgApexchartsDemo</title>\n <base href=\"/\">\n\n <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\n</head>\n<body>\n <app-root></app-root>\n</body>\n</html>\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "ng-apexcharts": {
+      "recommended": [],
+      "all": []
+    }
+  }
+}

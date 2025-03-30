@@ -1,0 +1,2493 @@
+{
+  "repo": {
+    "HEAD": {
+      "commit": "64a8ed9eb474c08896cbc6b436a810739c6a534e",
+      "author": "DavideViolante",
+      "date": "Wed Jan 22 09:38:49 2025 +0100",
+      "message": "chore(deps): upgrade to angular v19"
+    },
+    "url": "https://github.com/DavideViolante/Angular-Full-Stack"
+  },
+  "before": {
+    "angular2-full-stack": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/about/about.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  166,
+                  183
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-about',\n templateUrl: './about.component.html',\n styleUrls: ['./about.component.scss'],\n standalone: false\n})\nexport class AboutComponent {\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/account/account.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 10,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 10,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  367,
+                  384
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n selector: 'app-account',\n templateUrl: './account.component.html',\n standalone: false\n})\nexport class AccountComponent implements OnInit {\n\n user: User = new User();\n isLoading = true;\n\n constructor(private auth: AuthService,\n public toast: ToastComponent,\n private userService: UserService) { }\n\n ngOnInit(): void {\n this.getUser();\n }\n\n getUser(): void {\n this.userService.getUser(this.auth.currentUser).subscribe({\n next: data => this.user = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n save(user: User): void {\n this.userService.editUser(user).subscribe({\n next: () => {\n this.toast.setMessage('Account settings saved!', 'success');\n this.auth.currentUser = user;\n this.auth.isAdmin = user.role === 'admin';\n },\n error: error => console.log(error)\n });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/add-cat-form/add-cat-form.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  467,
+                  484
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\nimport { UntypedFormGroup, UntypedFormControl, Validators, UntypedFormBuilder } from '@angular/forms';\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n selector: 'app-add-cat-form',\n templateUrl: './add-cat-form.component.html',\n styleUrls: ['./add-cat-form.component.scss'],\n standalone: false\n})\n\nexport class AddCatFormComponent {\n @Input() cats: Cat[] = [];\n\n addCatForm: UntypedFormGroup;\n name = new UntypedFormControl('', Validators.required);\n age = new UntypedFormControl('', Validators.required);\n weight = new UntypedFormControl('', Validators.required);\n\n constructor(private catService: CatService,\n private formBuilder: UntypedFormBuilder,\n public toast: ToastComponent) {\n this.addCatForm = this.formBuilder.group({\n name: this.name,\n age: this.age,\n weight: this.weight\n });\n }\n\n addCat(): void {\n this.catService.addCat(this.addCatForm.value).subscribe({\n next: res => {\n this.cats.push(res);\n this.addCatForm.reset();\n this.toast.setMessage('Item added successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/admin/admin.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  364,
+                  381
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\n\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n selector: 'app-admin',\n templateUrl: './admin.component.html',\n standalone: false\n})\nexport class AdminComponent implements OnInit {\n\n users: User[] = [];\n isLoading = true;\n\n constructor(public auth: AuthService,\n public toast: ToastComponent,\n private userService: UserService) { }\n\n ngOnInit(): void {\n this.getUsers();\n }\n\n getUsers(): void {\n this.userService.getUsers().subscribe({\n next: data => this.users = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n deleteUser(user: User): void {\n if (window.confirm('Are you sure you want to delete ' + user.username + '?')) {\n this.userService.deleteUser(user).subscribe({\n next: () => this.toast.setMessage('User deleted successfully.', 'success'),\n error: error => console.log(error),\n complete: () => this.getUsers()\n });\n }\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  214,
+                  231
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';\nimport { AuthService } from './services/auth.service';\n\n@Component({\n selector: 'app-root',\n templateUrl: './app.component.html',\n standalone: false\n})\nexport class AppComponent implements AfterViewChecked {\n\n constructor(public auth: AuthService,\n private changeDetector: ChangeDetectorRef) { }\n\n // This fixes: https://github.com/DavideViolante/Angular-Full-Stack/issues/105\n ngAfterViewChecked(): void {\n this.changeDetector.detectChanges();\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/cats/cats.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  342,
+                  359
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\n\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n selector: 'app-cats',\n templateUrl: './cats.component.html',\n styleUrls: ['./cats.component.scss'],\n standalone: false\n})\nexport class CatsComponent implements OnInit {\n\n cat = new Cat();\n cats: Cat[] = [];\n isLoading = true;\n isEditing = false;\n\n constructor(private catService: CatService,\n public toast: ToastComponent) { }\n\n ngOnInit(): void {\n this.getCats();\n }\n\n getCats(): void {\n this.catService.getCats().subscribe({\n next: data => this.cats = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n enableEditing(cat: Cat): void {\n this.isEditing = true;\n this.cat = cat;\n }\n\n cancelEditing(): void {\n this.isEditing = false;\n this.cat = new Cat();\n this.toast.setMessage('Item editing cancelled.', 'warning');\n // reload the cats to reset the editing\n this.getCats();\n }\n\n editCat(cat: Cat): void {\n this.catService.editCat(cat).subscribe({\n next: () => {\n this.isEditing = false;\n this.cat = cat;\n this.toast.setMessage('Item edited successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n\n deleteCat(cat: Cat): void {\n if (window.confirm('Are you sure you want to permanently delete this item?')) {\n this.catService.deleteCat(cat).subscribe({\n next: () => {\n this.cats = this.cats.filter(elem => elem._id !== cat._id);\n this.toast.setMessage('Item deleted successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/login/login.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  401,
+                  418
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { AuthService } from '../services/auth.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n selector: 'app-login',\n templateUrl: './login.component.html',\n standalone: false\n})\nexport class LoginComponent implements OnInit {\n\n loginForm: UntypedFormGroup;\n email = new UntypedFormControl('', [\n Validators.email,\n Validators.required,\n Validators.minLength(3),\n Validators.maxLength(100)\n ]);\n password = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(6)\n ]);\n\n constructor(private auth: AuthService,\n private formBuilder: UntypedFormBuilder,\n private router: Router,\n public toast: ToastComponent) {\n this.loginForm = this.formBuilder.group({\n email: this.email,\n password: this.password\n });\n }\n\n ngOnInit(): void {\n if (this.auth.loggedIn) {\n this.router.navigate(['/']);\n }\n }\n\n setClassEmail(): object {\n return { 'has-danger': !this.email.pristine && !this.email.valid };\n }\n\n setClassPassword(): object {\n return { 'has-danger': !this.password.pristine && !this.password.valid };\n }\n\n login(): void {\n this.auth.login(this.loginForm.value);\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/logout/logout.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  165,
+                  182
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { AuthService } from '../services/auth.service';\n\n@Component({\n selector: 'app-logout',\n template: '',\n standalone: false\n})\nexport class LogoutComponent implements OnInit {\n\n constructor(private auth: AuthService) { }\n\n ngOnInit(): void {\n this.auth.logout();\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/not-found/not-found.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 6,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 6,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  133,
+                  150
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-not-found',\n templateUrl: './not-found.component.html',\n standalone: false\n})\nexport class NotFoundComponent {\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/register/register.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  399,
+                  416
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { UserService } from '../services/user.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n selector: 'app-register',\n templateUrl: './register.component.html',\n standalone: false\n})\nexport class RegisterComponent {\n\n registerForm: UntypedFormGroup;\n username = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(2),\n Validators.maxLength(30),\n Validators.pattern('[a-zA-Z0-9_-\\\\s]*')\n ]);\n email = new UntypedFormControl('', [\n Validators.email,\n Validators.required,\n Validators.minLength(3),\n Validators.maxLength(100)\n ]);\n password = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(6)\n ]);\n role = new UntypedFormControl('', [\n Validators.required\n ]);\n\n constructor(private formBuilder: UntypedFormBuilder,\n private router: Router,\n public toast: ToastComponent,\n private userService: UserService) {\n this.registerForm = this.formBuilder.group({\n username: this.username,\n email: this.email,\n password: this.password,\n role: this.role\n });\n }\n\n setClassUsername(): object {\n return { 'has-danger': !this.username.pristine && !this.username.valid };\n }\n\n setClassEmail(): object {\n return { 'has-danger': !this.email.pristine && !this.email.valid };\n }\n\n setClassPassword(): object {\n return { 'has-danger': !this.password.pristine && !this.password.valid };\n }\n\n register(): void {\n this.userService.register(this.registerForm.value).subscribe({\n next: () => {\n this.toast.setMessage('You successfully registered!', 'success');\n this.router.navigate(['/login']);\n },\n error: () => this.toast.setMessage('Email already exists', 'danger')\n });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/shared/loading/loading.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 6,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 6,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  136,
+                  153
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\n\n@Component({\n selector: 'app-loading',\n templateUrl: './loading.component.html',\n standalone: false\n})\nexport class LoadingComponent {\n @Input() condition = false;\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/shared/toast/toast.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  173,
+                  190
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\n\n@Component({\n selector: 'app-toast',\n templateUrl: './toast.component.html',\n styleUrls: ['./toast.component.scss'],\n standalone: false\n})\nexport class ToastComponent {\n @Input() message = { body: '', type: '' };\n existingTimeout = 0;\n\n setMessage(body: string, type: string, time = 3000): void {\n if (this.existingTimeout) {\n clearTimeout(this.existingTimeout);\n }\n this.message.body = body;\n this.message.type = type;\n this.existingTimeout = window.setTimeout(() => this.message.body = '', time);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/server/models/user.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 10,
+              "column": 3,
+              "endLine": 10,
+              "endColumn": 65,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-this-alias",
+              "message": "Definition for rule '@typescript-eslint/no-this-alias' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 36,
+              "column": 1,
+              "endLine": 36,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { compare, genSalt, hash } from 'bcryptjs';\nimport { model, Schema } from 'mongoose';\n\ninterface IUser {\n username: string;\n email: string;\n password: string;\n role: string;\n isModified(password: string): boolean;\n // eslint-disable-next-line @typescript-eslint/no-explicit-any\n comparePassword(password: string, callback: (err: any, isMatch: boolean) => void): boolean;\n}\n\nconst userSchema = new Schema<IUser>({\n email: { type: String, unique: true, lowercase: true, trim: true },\n username: String,\n password: String,\n role: String\n});\n\n// Before saving the user, hash the password\nuserSchema.pre<IUser>('save', function(next): void {\n // eslint-disable-next-line @typescript-eslint/no-this-alias\n const user = this;\n if (!user.isModified('password')) { return next(); }\n genSalt(10, (err, salt) => {\n if (err) { return next(err); }\n hash(user.password, salt, (error, hashedPassword) => {\n if (error) { return next(error); }\n user.password = hashedPassword;\n next();\n });\n });\n});\n\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\nuserSchema.methods.comparePassword = function(candidatePassword: string, callback: any): void {\n compare(candidatePassword, this.password, (err, isMatch) => {\n if (err) { return callback(err); }\n callback(null, isMatch);\n });\n};\n\n// Omit the password when returning a user\nuserSchema.set('toJSON', {\n transform: (doc, ret) => {\n delete ret.password;\n return ret;\n }\n});\n\nconst User = model<IUser>('User', userSchema);\n\nexport type { IUser };\nexport default User;\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/about/about.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/consistent-component-styles",
+              "severity": 2,
+              "message": "Use `styleUrl` instead of `styleUrls` for a single stylesheet",
+              "line": 6,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "useStyleUrl",
+              "endLine": 6,
+              "endColumn": 40,
+              "fix": {
+                "range": [
+                  125,
+                  162
+                ],
+                "text": "styleUrl: './about.component.scss'"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  166,
+                  183
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-about',\n templateUrl: './about.component.html',\n styleUrls: ['./about.component.scss'],\n standalone: false\n})\nexport class AboutComponent {\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/account/account.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 11,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      297
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 10,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 10,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  367,
+                  384
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n selector: 'app-account',\n templateUrl: './account.component.html',\n standalone: false\n})\nexport class AccountComponent implements OnInit {\n\n user: User = new User();\n isLoading = true;\n\n constructor(private auth: AuthService,\n public toast: ToastComponent,\n private userService: UserService) { }\n\n ngOnInit(): void {\n this.getUser();\n }\n\n getUser(): void {\n this.userService.getUser(this.auth.currentUser).subscribe({\n next: data => this.user = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n save(user: User): void {\n this.userService.editUser(user).subscribe({\n next: () => {\n this.toast.setMessage('Account settings saved!', 'success');\n this.auth.currentUser = user;\n this.auth.isAdmin = user.role === 'admin';\n },\n error: error => console.log(error)\n });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/add-cat-form/add-cat-form.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      339
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { UntypedFormGroup, UntypedFormControl, Validators, UntypedFormBuilder } from '@angular/forms';\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/consistent-component-styles",
+              "severity": 2,
+              "message": "Use `styleUrl` instead of `styleUrls` for a single stylesheet",
+              "line": 10,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "useStyleUrl",
+              "endLine": 10,
+              "endColumn": 47,
+              "fix": {
+                "range": [
+                  419,
+                  463
+                ],
+                "text": "styleUrl: './add-cat-form.component.scss'"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  467,
+                  484
+                ],
+                "text": ""
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 15,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 15,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\nimport { UntypedFormGroup, UntypedFormControl, Validators, UntypedFormBuilder } from '@angular/forms';\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n selector: 'app-add-cat-form',\n templateUrl: './add-cat-form.component.html',\n styleUrls: ['./add-cat-form.component.scss'],\n standalone: false\n})\n\nexport class AddCatFormComponent {\n @Input() cats: Cat[] = [];\n\n addCatForm: UntypedFormGroup;\n name = new UntypedFormControl('', Validators.required);\n age = new UntypedFormControl('', Validators.required);\n weight = new UntypedFormControl('', Validators.required);\n\n constructor(private catService: CatService,\n private formBuilder: UntypedFormBuilder,\n public toast: ToastComponent) {\n this.addCatForm = this.formBuilder.group({\n name: this.name,\n age: this.age,\n weight: this.weight\n });\n }\n\n addCat(): void {\n this.catService.addCat(this.addCatForm.value).subscribe({\n next: res => {\n this.cats.push(res);\n this.addCatForm.reset();\n this.toast.setMessage('Item added successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/admin/admin.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 8,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      298
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  364,
+                  381
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\n\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n selector: 'app-admin',\n templateUrl: './admin.component.html',\n standalone: false\n})\nexport class AdminComponent implements OnInit {\n\n users: User[] = [];\n isLoading = true;\n\n constructor(public auth: AuthService,\n public toast: ToastComponent,\n private userService: UserService) { }\n\n ngOnInit(): void {\n this.getUsers();\n }\n\n getUsers(): void {\n this.userService.getUsers().subscribe({\n next: data => this.users = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n deleteUser(user: User): void {\n if (window.confirm('Are you sure you want to delete ' + user.username + '?')) {\n this.userService.deleteUser(user).subscribe({\n next: () => this.toast.setMessage('User deleted successfully.', 'success'),\n error: error => console.log(error),\n complete: () => this.getUsers()\n });\n }\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      55,
+                      151
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { AuthService } from './services/auth.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  214,
+                  231
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';\nimport { AuthService } from './services/auth.service';\n\n@Component({\n selector: 'app-root',\n templateUrl: './app.component.html',\n standalone: false\n})\nexport class AppComponent implements AfterViewChecked {\n\n constructor(public auth: AuthService,\n private changeDetector: ChangeDetectorRef) { }\n\n // This fixes: https://github.com/DavideViolante/Angular-Full-Stack/issues/105\n ngAfterViewChecked(): void {\n this.changeDetector.detectChanges();\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/cats/cats.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      238
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/consistent-component-styles",
+              "severity": 2,
+              "message": "Use `styleUrl` instead of `styleUrls` for a single stylesheet",
+              "line": 10,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "useStyleUrl",
+              "endLine": 10,
+              "endColumn": 39,
+              "fix": {
+                "range": [
+                  302,
+                  338
+                ],
+                "text": "styleUrl: './cats.component.scss'"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  342,
+                  359
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\n\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n selector: 'app-cats',\n templateUrl: './cats.component.html',\n styleUrls: ['./cats.component.scss'],\n standalone: false\n})\nexport class CatsComponent implements OnInit {\n\n cat = new Cat();\n cats: Cat[] = [];\n isLoading = true;\n isEditing = false;\n\n constructor(private catService: CatService,\n public toast: ToastComponent) { }\n\n ngOnInit(): void {\n this.getCats();\n }\n\n getCats(): void {\n this.catService.getCats().subscribe({\n next: data => this.cats = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n enableEditing(cat: Cat): void {\n this.isEditing = true;\n this.cat = cat;\n }\n\n cancelEditing(): void {\n this.isEditing = false;\n this.cat = new Cat();\n this.toast.setMessage('Item editing cancelled.', 'warning');\n // reload the cats to reset the editing\n this.getCats();\n }\n\n editCat(cat: Cat): void {\n this.catService.editCat(cat).subscribe({\n next: () => {\n this.isEditing = false;\n this.cat = cat;\n this.toast.setMessage('Item edited successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n\n deleteCat(cat: Cat): void {\n if (window.confirm('Are you sure you want to permanently delete this item?')) {\n this.catService.deleteCat(cat).subscribe({\n next: () => {\n this.cats = this.cats.filter(elem => elem._id !== cat._id);\n this.toast.setMessage('Item deleted successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/login/login.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 8,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      335
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { AuthService } from '../services/auth.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  401,
+                  418
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { AuthService } from '../services/auth.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n selector: 'app-login',\n templateUrl: './login.component.html',\n standalone: false\n})\nexport class LoginComponent implements OnInit {\n\n loginForm: UntypedFormGroup;\n email = new UntypedFormControl('', [\n Validators.email,\n Validators.required,\n Validators.minLength(3),\n Validators.maxLength(100)\n ]);\n password = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(6)\n ]);\n\n constructor(private auth: AuthService,\n private formBuilder: UntypedFormBuilder,\n private router: Router,\n public toast: ToastComponent) {\n this.loginForm = this.formBuilder.group({\n email: this.email,\n password: this.password\n });\n }\n\n ngOnInit(): void {\n if (this.auth.loggedIn) {\n this.router.navigate(['/']);\n }\n }\n\n setClassEmail(): object {\n return { 'has-danger': !this.email.pristine && !this.email.valid };\n }\n\n setClassPassword(): object {\n return { 'has-danger': !this.password.pristine && !this.password.valid };\n }\n\n login(): void {\n this.auth.login(this.loginForm.value);\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/logout/logout.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      123
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { AuthService } from '../services/auth.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  165,
+                  182
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { AuthService } from '../services/auth.service';\n\n@Component({\n selector: 'app-logout',\n template: '',\n standalone: false\n})\nexport class LogoutComponent implements OnInit {\n\n constructor(private auth: AuthService) { }\n\n ngOnInit(): void {\n this.auth.logout();\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/not-found/not-found.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 7,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 6,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 6,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  133,
+                  150
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-not-found',\n templateUrl: './not-found.component.html',\n standalone: false\n})\nexport class NotFoundComponent {\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/register/register.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 8,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      327
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { UserService } from '../services/user.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 11,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 11,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  399,
+                  416
+                ],
+                "text": ""
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { UserService } from '../services/user.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n selector: 'app-register',\n templateUrl: './register.component.html',\n standalone: false\n})\nexport class RegisterComponent {\n\n registerForm: UntypedFormGroup;\n username = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(2),\n Validators.maxLength(30),\n Validators.pattern('[a-zA-Z0-9_-\\\\s]*')\n ]);\n email = new UntypedFormControl('', [\n Validators.email,\n Validators.required,\n Validators.minLength(3),\n Validators.maxLength(100)\n ]);\n password = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(6)\n ]);\n role = new UntypedFormControl('', [\n Validators.required\n ]);\n\n constructor(private formBuilder: UntypedFormBuilder,\n private router: Router,\n public toast: ToastComponent,\n private userService: UserService) {\n this.registerForm = this.formBuilder.group({\n username: this.username,\n email: this.email,\n password: this.password,\n role: this.role\n });\n }\n\n setClassUsername(): object {\n return { 'has-danger': !this.username.pristine && !this.username.valid };\n }\n\n setClassEmail(): object {\n return { 'has-danger': !this.email.pristine && !this.email.valid };\n }\n\n setClassPassword(): object {\n return { 'has-danger': !this.password.pristine && !this.password.valid };\n }\n\n register(): void {\n this.userService.register(this.registerForm.value).subscribe({\n next: () => {\n this.toast.setMessage('You successfully registered!', 'success');\n this.router.navigate(['/login']);\n },\n error: () => this.toast.setMessage('Email already exists', 'danger')\n });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/auth-guard-admin.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 5,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\n\nimport { AuthService } from './auth.service';\n\n@Injectable()\nexport class AuthGuardAdmin {\n\n constructor(public auth: AuthService) {}\n\n canActivate(): boolean {\n return this.auth.isAdmin;\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/auth-guard-login.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 5,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\n\nimport { AuthService } from './auth.service';\n\n@Injectable()\nexport class AuthGuardLogin {\n\n constructor(public auth: AuthService) {}\n\n canActivate(): boolean {\n return this.auth.loggedIn;\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/auth.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 10,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 10,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      320,
+                      320
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      320,
+                      320
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      320,
+                      320
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { Router } from '@angular/router';\n\nimport { JwtHelperService } from '@auth0/angular-jwt';\n\nimport { UserService } from './user.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { User } from '../shared/models/user.model';\n\n@Injectable()\nexport class AuthService {\n loggedIn = false;\n isAdmin = false;\n\n currentUser: User = new User();\n\n constructor(private userService: UserService,\n private router: Router,\n private jwtHelper: JwtHelperService,\n public toast: ToastComponent) {\n const token = localStorage.getItem('token');\n if (token) {\n const decodedUser = this.decodeUserFromToken(token);\n this.setCurrentUser(decodedUser);\n }\n }\n\n login(emailAndPassword: { email: string; password: string }): void {\n this.userService.login(emailAndPassword).subscribe({\n next: res => {\n localStorage.setItem('token', res.token);\n const decodedUser = this.decodeUserFromToken(res.token);\n this.setCurrentUser(decodedUser);\n this.loggedIn = true;\n this.router.navigate(['/']);\n },\n error: () => this.toast.setMessage('Invalid email or password!', 'danger')\n });\n }\n\n logout(): void {\n localStorage.removeItem('token');\n this.loggedIn = false;\n this.isAdmin = false;\n this.currentUser = new User();\n this.router.navigate(['/']);\n }\n\n decodeUserFromToken(token: string): object {\n return this.jwtHelper.decodeToken(token).user;\n }\n\n setCurrentUser(decodedUser: User): void {\n this.loggedIn = true;\n this.currentUser._id = decodedUser._id;\n this.currentUser.username = decodedUser.username;\n this.currentUser.role = decodedUser.role;\n this.isAdmin = decodedUser.role === 'admin';\n delete decodedUser.role;\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/cat.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 7,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      194,
+                      194
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      194,
+                      194
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      194,
+                      194
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { Cat } from '../shared/models/cat.model';\n\n@Injectable()\nexport class CatService {\n\n constructor(private http: HttpClient) { }\n\n getCats(): Observable<Cat[]> {\n return this.http.get<Cat[]>('/api/cats');\n }\n\n countCats(): Observable<number> {\n return this.http.get<number>('/api/cats/count');\n }\n\n addCat(cat: Cat): Observable<Cat> {\n return this.http.post<Cat>('/api/cat', cat);\n }\n\n getCat(cat: Cat): Observable<Cat> {\n return this.http.get<Cat>(`/api/cat/${cat._id}`);\n }\n\n editCat(cat: Cat): Observable<string> {\n return this.http.put(`/api/cat/${cat._id}`, cat, { responseType: 'text' });\n }\n\n deleteCat(cat: Cat): Observable<string> {\n return this.http.delete(`/api/cat/${cat._id}`, { responseType: 'text' });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/user.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 7,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      196,
+                      196
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      196,
+                      196
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      196,
+                      196
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { User } from '../shared/models/user.model';\n\n@Injectable()\nexport class UserService {\n\n constructor(private http: HttpClient) { }\n\n register(user: User): Observable<User> {\n return this.http.post<User>('/api/user', user);\n }\n\n login(credentials: { email: string; password: string }): Observable<{ token: string }> {\n return this.http.post<{ token: string }>('/api/login', credentials);\n }\n\n getUsers(): Observable<User[]> {\n return this.http.get<User[]>('/api/users');\n }\n\n countUsers(): Observable<number> {\n return this.http.get<number>('/api/users/count');\n }\n\n addUser(user: User): Observable<User> {\n return this.http.post<User>('/api/user', user);\n }\n\n getUser(user: User): Observable<User> {\n return this.http.get<User>(`/api/user/${user._id}`);\n }\n\n editUser(user: User): Observable<string> {\n return this.http.put(`/api/user/${user._id}`, user, { responseType: 'text' });\n }\n\n deleteUser(user: User): Observable<string> {\n return this.http.delete(`/api/user/${user._id}`, { responseType: 'text' });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/shared/loading/loading.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 7,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      66
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 6,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 6,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  136,
+                  153
+                ],
+                "text": ""
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 9,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 9,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\n\n@Component({\n selector: 'app-loading',\n templateUrl: './loading.component.html',\n standalone: false\n})\nexport class LoadingComponent {\n @Input() condition = false;\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/shared/toast/toast.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      66
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/consistent-component-styles",
+              "severity": 2,
+              "message": "Use `styleUrl` instead of `styleUrls` for a single stylesheet",
+              "line": 6,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "useStyleUrl",
+              "endLine": 6,
+              "endColumn": 40,
+              "fix": {
+                "range": [
+                  132,
+                  169
+                ],
+                "text": "styleUrl: './toast.component.scss'"
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-standalone",
+              "severity": 2,
+              "message": "Components, Directives and Pipes should not opt out of standalone",
+              "line": 7,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "preferStandalone",
+              "endLine": 7,
+              "endColumn": 20,
+              "fix": {
+                "range": [
+                  173,
+                  190
+                ],
+                "text": ""
+              }
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 10,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 10,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 2,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\n\n@Component({\n selector: 'app-toast',\n templateUrl: './toast.component.html',\n styleUrls: ['./toast.component.scss'],\n standalone: false\n})\nexport class ToastComponent {\n @Input() message = { body: '', type: '' };\n existingTimeout = 0;\n\n setMessage(body: string, type: string, time = 3000): void {\n if (this.existingTimeout) {\n clearTimeout(this.existingTimeout);\n }\n this.message.body = body;\n this.message.type = type;\n this.existingTimeout = window.setTimeout(() => this.message.body = '', time);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/server/models/user.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 10,
+              "column": 3,
+              "endLine": 10,
+              "endColumn": 65,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-this-alias",
+              "message": "Definition for rule '@typescript-eslint/no-this-alias' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 36,
+              "column": 1,
+              "endLine": 36,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { compare, genSalt, hash } from 'bcryptjs';\nimport { model, Schema } from 'mongoose';\n\ninterface IUser {\n username: string;\n email: string;\n password: string;\n role: string;\n isModified(password: string): boolean;\n // eslint-disable-next-line @typescript-eslint/no-explicit-any\n comparePassword(password: string, callback: (err: any, isMatch: boolean) => void): boolean;\n}\n\nconst userSchema = new Schema<IUser>({\n email: { type: String, unique: true, lowercase: true, trim: true },\n username: String,\n password: String,\n role: String\n});\n\n// Before saving the user, hash the password\nuserSchema.pre<IUser>('save', function(next): void {\n // eslint-disable-next-line @typescript-eslint/no-this-alias\n const user = this;\n if (!user.isModified('password')) { return next(); }\n genSalt(10, (err, salt) => {\n if (err) { return next(err); }\n hash(user.password, salt, (error, hashedPassword) => {\n if (error) { return next(error); }\n user.password = hashedPassword;\n next();\n });\n });\n});\n\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\nuserSchema.methods.comparePassword = function(candidatePassword: string, callback: any): void {\n compare(candidatePassword, this.password, (err, isMatch) => {\n if (err) { return callback(err); }\n callback(null, isMatch);\n });\n};\n\n// Omit the password when returning a user\nuserSchema.set('toJSON', {\n transform: (doc, ret) => {\n delete ret.password;\n return ret;\n }\n});\n\nconst User = model<IUser>('User', userSchema);\n\nexport type { IUser };\nexport default User;\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  },
+  "after": {
+    "angular2-full-stack": {
+      "recommended": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/server/models/user.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 10,
+              "column": 3,
+              "endLine": 10,
+              "endColumn": 65,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-this-alias",
+              "message": "Definition for rule '@typescript-eslint/no-this-alias' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 36,
+              "column": 1,
+              "endLine": 36,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { compare, genSalt, hash } from 'bcryptjs';\nimport { model, Schema } from 'mongoose';\n\ninterface IUser {\n username: string;\n email: string;\n password: string;\n role: string;\n isModified(password: string): boolean;\n // eslint-disable-next-line @typescript-eslint/no-explicit-any\n comparePassword(password: string, callback: (err: any, isMatch: boolean) => void): boolean;\n}\n\nconst userSchema = new Schema<IUser>({\n email: { type: String, unique: true, lowercase: true, trim: true },\n username: String,\n password: String,\n role: String\n});\n\n// Before saving the user, hash the password\nuserSchema.pre<IUser>('save', function(next): void {\n // eslint-disable-next-line @typescript-eslint/no-this-alias\n const user = this;\n if (!user.isModified('password')) { return next(); }\n genSalt(10, (err, salt) => {\n if (err) { return next(err); }\n hash(user.password, salt, (error, hashedPassword) => {\n if (error) { return next(error); }\n user.password = hashedPassword;\n next();\n });\n });\n});\n\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\nuserSchema.methods.comparePassword = function(candidatePassword: string, callback: any): void {\n compare(candidatePassword, this.password, (err, isMatch) => {\n if (err) { return callback(err); }\n callback(null, isMatch);\n });\n};\n\n// Omit the password when returning a user\nuserSchema.set('toJSON', {\n transform: (doc, ret) => {\n delete ret.password;\n return ret;\n }\n});\n\nconst User = model<IUser>('User', userSchema);\n\nexport type { IUser };\nexport default User;\n",
+          "usedDeprecatedRules": []
+        }
+      ],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/about/about.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-about',\n templateUrl: './about.component.html',\n styleUrl: './about.component.scss',\n \n})\nexport class AboutComponent {\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/account/account.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 11,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      297
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n selector: 'app-account',\n templateUrl: './account.component.html',\n \n})\nexport class AccountComponent implements OnInit {\n\n user: User = new User();\n isLoading = true;\n\n constructor(private auth: AuthService,\n public toast: ToastComponent,\n private userService: UserService) { }\n\n ngOnInit(): void {\n this.getUser();\n }\n\n getUser(): void {\n this.userService.getUser(this.auth.currentUser).subscribe({\n next: data => this.user = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n save(user: User): void {\n this.userService.editUser(user).subscribe({\n next: () => {\n this.toast.setMessage('Account settings saved!', 'success');\n this.auth.currentUser = user;\n this.auth.isAdmin = user.role === 'admin';\n },\n error: error => console.log(error)\n });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/add-cat-form/add-cat-form.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      339
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { UntypedFormGroup, UntypedFormControl, Validators, UntypedFormBuilder } from '@angular/forms';\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 15,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 15,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\nimport { UntypedFormGroup, UntypedFormControl, Validators, UntypedFormBuilder } from '@angular/forms';\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n selector: 'app-add-cat-form',\n templateUrl: './add-cat-form.component.html',\n styleUrl: './add-cat-form.component.scss',\n \n})\n\nexport class AddCatFormComponent {\n @Input() cats: Cat[] = [];\n\n addCatForm: UntypedFormGroup;\n name = new UntypedFormControl('', Validators.required);\n age = new UntypedFormControl('', Validators.required);\n weight = new UntypedFormControl('', Validators.required);\n\n constructor(private catService: CatService,\n private formBuilder: UntypedFormBuilder,\n public toast: ToastComponent) {\n this.addCatForm = this.formBuilder.group({\n name: this.name,\n age: this.age,\n weight: this.weight\n });\n }\n\n addCat(): void {\n this.catService.addCat(this.addCatForm.value).subscribe({\n next: res => {\n this.cats.push(res);\n this.addCatForm.reset();\n this.toast.setMessage('Item added successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/admin/admin.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 8,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      298
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\n\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { AuthService } from '../services/auth.service';\nimport { UserService } from '../services/user.service';\nimport { User } from '../shared/models/user.model';\n\n@Component({\n selector: 'app-admin',\n templateUrl: './admin.component.html',\n \n})\nexport class AdminComponent implements OnInit {\n\n users: User[] = [];\n isLoading = true;\n\n constructor(public auth: AuthService,\n public toast: ToastComponent,\n private userService: UserService) { }\n\n ngOnInit(): void {\n this.getUsers();\n }\n\n getUsers(): void {\n this.userService.getUsers().subscribe({\n next: data => this.users = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n deleteUser(user: User): void {\n if (window.confirm('Are you sure you want to delete ' + user.username + '?')) {\n this.userService.deleteUser(user).subscribe({\n next: () => this.toast.setMessage('User deleted successfully.', 'success'),\n error: error => console.log(error),\n complete: () => this.getUsers()\n });\n }\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      55,
+                      151
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { AuthService } from './services/auth.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { AfterViewChecked, ChangeDetectorRef, Component } from '@angular/core';\nimport { AuthService } from './services/auth.service';\n\n@Component({\n selector: 'app-root',\n templateUrl: './app.component.html',\n \n})\nexport class AppComponent implements AfterViewChecked {\n\n constructor(public auth: AuthService,\n private changeDetector: ChangeDetectorRef) { }\n\n // This fixes: https://github.com/DavideViolante/Angular-Full-Stack/issues/105\n ngAfterViewChecked(): void {\n this.changeDetector.detectChanges();\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/cats/cats.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      238
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\n\nimport { CatService } from '../services/cat.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { Cat } from '../shared/models/cat.model';\n\n@Component({\n selector: 'app-cats',\n templateUrl: './cats.component.html',\n styleUrl: './cats.component.scss',\n \n})\nexport class CatsComponent implements OnInit {\n\n cat = new Cat();\n cats: Cat[] = [];\n isLoading = true;\n isEditing = false;\n\n constructor(private catService: CatService,\n public toast: ToastComponent) { }\n\n ngOnInit(): void {\n this.getCats();\n }\n\n getCats(): void {\n this.catService.getCats().subscribe({\n next: data => this.cats = data,\n error: error => console.log(error),\n complete: () => this.isLoading = false\n });\n }\n\n enableEditing(cat: Cat): void {\n this.isEditing = true;\n this.cat = cat;\n }\n\n cancelEditing(): void {\n this.isEditing = false;\n this.cat = new Cat();\n this.toast.setMessage('Item editing cancelled.', 'warning');\n // reload the cats to reset the editing\n this.getCats();\n }\n\n editCat(cat: Cat): void {\n this.catService.editCat(cat).subscribe({\n next: () => {\n this.isEditing = false;\n this.cat = cat;\n this.toast.setMessage('Item edited successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n\n deleteCat(cat: Cat): void {\n if (window.confirm('Are you sure you want to permanently delete this item?')) {\n this.catService.deleteCat(cat).subscribe({\n next: () => {\n this.cats = this.cats.filter(elem => elem._id !== cat._id);\n this.toast.setMessage('Item deleted successfully.', 'success');\n },\n error: error => console.log(error)\n });\n }\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/login/login.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 8,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      335
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { AuthService } from '../services/auth.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { AuthService } from '../services/auth.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n selector: 'app-login',\n templateUrl: './login.component.html',\n \n})\nexport class LoginComponent implements OnInit {\n\n loginForm: UntypedFormGroup;\n email = new UntypedFormControl('', [\n Validators.email,\n Validators.required,\n Validators.minLength(3),\n Validators.maxLength(100)\n ]);\n password = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(6)\n ]);\n\n constructor(private auth: AuthService,\n private formBuilder: UntypedFormBuilder,\n private router: Router,\n public toast: ToastComponent) {\n this.loginForm = this.formBuilder.group({\n email: this.email,\n password: this.password\n });\n }\n\n ngOnInit(): void {\n if (this.auth.loggedIn) {\n this.router.navigate(['/']);\n }\n }\n\n setClassEmail(): object {\n return { 'has-danger': !this.email.pristine && !this.email.valid };\n }\n\n setClassPassword(): object {\n return { 'has-danger': !this.password.pristine && !this.password.valid };\n }\n\n login(): void {\n this.auth.login(this.loginForm.value);\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/logout/logout.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      26,
+                      123
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { AuthService } from '../services/auth.service';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, OnInit } from '@angular/core';\nimport { AuthService } from '../services/auth.service';\n\n@Component({\n selector: 'app-logout',\n template: '',\n \n})\nexport class LogoutComponent implements OnInit {\n\n constructor(private auth: AuthService) { }\n\n ngOnInit(): void {\n this.auth.logout();\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/not-found/not-found.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 7,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      59
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\n\n@Component({\n selector: 'app-not-found',\n templateUrl: './not-found.component.html',\n \n})\nexport class NotFoundComponent {\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/register/register.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 8,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 12,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      327
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { UserService } from '../services/user.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';\n\nimport { UserService } from '../services/user.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\n\n@Component({\n selector: 'app-register',\n templateUrl: './register.component.html',\n \n})\nexport class RegisterComponent {\n\n registerForm: UntypedFormGroup;\n username = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(2),\n Validators.maxLength(30),\n Validators.pattern('[a-zA-Z0-9_-\\\\s]*')\n ]);\n email = new UntypedFormControl('', [\n Validators.email,\n Validators.required,\n Validators.minLength(3),\n Validators.maxLength(100)\n ]);\n password = new UntypedFormControl('', [\n Validators.required,\n Validators.minLength(6)\n ]);\n role = new UntypedFormControl('', [\n Validators.required\n ]);\n\n constructor(private formBuilder: UntypedFormBuilder,\n private router: Router,\n public toast: ToastComponent,\n private userService: UserService) {\n this.registerForm = this.formBuilder.group({\n username: this.username,\n email: this.email,\n password: this.password,\n role: this.role\n });\n }\n\n setClassUsername(): object {\n return { 'has-danger': !this.username.pristine && !this.username.valid };\n }\n\n setClassEmail(): object {\n return { 'has-danger': !this.email.pristine && !this.email.valid };\n }\n\n setClassPassword(): object {\n return { 'has-danger': !this.password.pristine && !this.password.valid };\n }\n\n register(): void {\n this.userService.register(this.registerForm.value).subscribe({\n next: () => {\n this.toast.setMessage('You successfully registered!', 'success');\n this.router.navigate(['/login']);\n },\n error: () => this.toast.setMessage('Email already exists', 'danger')\n });\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/auth-guard-admin.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 5,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\n\nimport { AuthService } from './auth.service';\n\n@Injectable()\nexport class AuthGuardAdmin {\n\n constructor(public auth: AuthService) {}\n\n canActivate(): boolean {\n return this.auth.isAdmin;\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/auth-guard-login.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 5,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      104,
+                      104
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\n\nimport { AuthService } from './auth.service';\n\n@Injectable()\nexport class AuthGuardLogin {\n\n constructor(public auth: AuthService) {}\n\n canActivate(): boolean {\n return this.auth.loggedIn;\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/auth.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 10,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 10,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      320,
+                      320
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      320,
+                      320
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      320,
+                      320
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { Router } from '@angular/router';\n\nimport { JwtHelperService } from '@auth0/angular-jwt';\n\nimport { UserService } from './user.service';\nimport { ToastComponent } from '../shared/toast/toast.component';\nimport { User } from '../shared/models/user.model';\n\n@Injectable()\nexport class AuthService {\n loggedIn = false;\n isAdmin = false;\n\n currentUser: User = new User();\n\n constructor(private userService: UserService,\n private router: Router,\n private jwtHelper: JwtHelperService,\n public toast: ToastComponent) {\n const token = localStorage.getItem('token');\n if (token) {\n const decodedUser = this.decodeUserFromToken(token);\n this.setCurrentUser(decodedUser);\n }\n }\n\n login(emailAndPassword: { email: string; password: string }): void {\n this.userService.login(emailAndPassword).subscribe({\n next: res => {\n localStorage.setItem('token', res.token);\n const decodedUser = this.decodeUserFromToken(res.token);\n this.setCurrentUser(decodedUser);\n this.loggedIn = true;\n this.router.navigate(['/']);\n },\n error: () => this.toast.setMessage('Invalid email or password!', 'danger')\n });\n }\n\n logout(): void {\n localStorage.removeItem('token');\n this.loggedIn = false;\n this.isAdmin = false;\n this.currentUser = new User();\n this.router.navigate(['/']);\n }\n\n decodeUserFromToken(token: string): object {\n return this.jwtHelper.decodeToken(token).user;\n }\n\n setCurrentUser(decodedUser: User): void {\n this.loggedIn = true;\n this.currentUser._id = decodedUser._id;\n this.currentUser.username = decodedUser.username;\n this.currentUser.role = decodedUser.role;\n this.isAdmin = decodedUser.role === 'admin';\n delete decodedUser.role;\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/cat.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 7,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      194,
+                      194
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      194,
+                      194
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      194,
+                      194
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { Cat } from '../shared/models/cat.model';\n\n@Injectable()\nexport class CatService {\n\n constructor(private http: HttpClient) { }\n\n getCats(): Observable<Cat[]> {\n return this.http.get<Cat[]>('/api/cats');\n }\n\n countCats(): Observable<number> {\n return this.http.get<number>('/api/cats/count');\n }\n\n addCat(cat: Cat): Observable<Cat> {\n return this.http.post<Cat>('/api/cat', cat);\n }\n\n getCat(cat: Cat): Observable<Cat> {\n return this.http.get<Cat>(`/api/cat/${cat._id}`);\n }\n\n editCat(cat: Cat): Observable<string> {\n return this.http.put(`/api/cat/${cat._id}`, cat, { responseType: 'text' });\n }\n\n deleteCat(cat: Cat): Observable<string> {\n return this.http.delete(`/api/cat/${cat._id}`, { responseType: 'text' });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/services/user.service.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/use-injectable-provided-in",
+              "severity": 2,
+              "message": "The `providedIn` property is mandatory for `Injectables`",
+              "line": 7,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "useInjectableProvidedIn",
+              "endLine": 7,
+              "endColumn": 14,
+              "suggestions": [
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      196,
+                      196
+                    ],
+                    "text": "{providedIn: 'any'}"
+                  },
+                  "data": {
+                    "injector": "any"
+                  },
+                  "desc": "Use `providedIn: 'any'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      196,
+                      196
+                    ],
+                    "text": "{providedIn: 'platform'}"
+                  },
+                  "data": {
+                    "injector": "platform"
+                  },
+                  "desc": "Use `providedIn: 'platform'`"
+                },
+                {
+                  "messageId": "suggestInjector",
+                  "fix": {
+                    "range": [
+                      196,
+                      196
+                    ],
+                    "text": "{providedIn: 'root'}"
+                  },
+                  "data": {
+                    "injector": "root"
+                  },
+                  "desc": "Use `providedIn: 'root'`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Observable } from 'rxjs';\n\nimport { User } from '../shared/models/user.model';\n\n@Injectable()\nexport class UserService {\n\n constructor(private http: HttpClient) { }\n\n register(user: User): Observable<User> {\n return this.http.post<User>('/api/user', user);\n }\n\n login(credentials: { email: string; password: string }): Observable<{ token: string }> {\n return this.http.post<{ token: string }>('/api/login', credentials);\n }\n\n getUsers(): Observable<User[]> {\n return this.http.get<User[]>('/api/users');\n }\n\n countUsers(): Observable<number> {\n return this.http.get<number>('/api/users/count');\n }\n\n addUser(user: User): Observable<User> {\n return this.http.post<User>('/api/user', user);\n }\n\n getUser(user: User): Observable<User> {\n return this.http.get<User>(`/api/user/${user._id}`);\n }\n\n editUser(user: User): Observable<string> {\n return this.http.put(`/api/user/${user._id}`, user, { responseType: 'text' });\n }\n\n deleteUser(user: User): Observable<string> {\n return this.http.delete(`/api/user/${user._id}`, { responseType: 'text' });\n }\n\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/shared/loading/loading.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 7,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      66
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 9,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 9,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\n\n@Component({\n selector: 'app-loading',\n templateUrl: './loading.component.html',\n \n})\nexport class LoadingComponent {\n @Input() condition = false;\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/client/app/shared/toast/toast.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 3,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      66
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 10,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 10,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\n\n@Component({\n selector: 'app-toast',\n templateUrl: './toast.component.html',\n styleUrl: './toast.component.scss',\n \n})\nexport class ToastComponent {\n @Input() message = { body: '', type: '' };\n existingTimeout = 0;\n\n setMessage(body: string, type: string, time = 3000): void {\n if (this.existingTimeout) {\n clearTimeout(this.existingTimeout);\n }\n this.message.body = body;\n this.message.type = type;\n this.existingTimeout = window.setTimeout(() => this.message.body = '', time);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/propios/Angular-Full-Stack/server/models/user.ts",
+          "messages": [
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 10,
+              "column": 3,
+              "endLine": 10,
+              "endColumn": 65,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-this-alias",
+              "message": "Definition for rule '@typescript-eslint/no-this-alias' was not found.",
+              "line": 23,
+              "column": 3,
+              "endLine": 23,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            },
+            {
+              "ruleId": "@typescript-eslint/no-explicit-any",
+              "message": "Definition for rule '@typescript-eslint/no-explicit-any' was not found.",
+              "line": 36,
+              "column": 1,
+              "endLine": 36,
+              "endColumn": 63,
+              "severity": 2,
+              "nodeType": null
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { compare, genSalt, hash } from 'bcryptjs';\nimport { model, Schema } from 'mongoose';\n\ninterface IUser {\n username: string;\n email: string;\n password: string;\n role: string;\n isModified(password: string): boolean;\n // eslint-disable-next-line @typescript-eslint/no-explicit-any\n comparePassword(password: string, callback: (err: any, isMatch: boolean) => void): boolean;\n}\n\nconst userSchema = new Schema<IUser>({\n email: { type: String, unique: true, lowercase: true, trim: true },\n username: String,\n password: String,\n role: String\n});\n\n// Before saving the user, hash the password\nuserSchema.pre<IUser>('save', function(next): void {\n // eslint-disable-next-line @typescript-eslint/no-this-alias\n const user = this;\n if (!user.isModified('password')) { return next(); }\n genSalt(10, (err, salt) => {\n if (err) { return next(err); }\n hash(user.password, salt, (error, hashedPassword) => {\n if (error) { return next(error); }\n user.password = hashedPassword;\n next();\n });\n });\n});\n\n// eslint-disable-next-line @typescript-eslint/no-explicit-any\nuserSchema.methods.comparePassword = function(candidatePassword: string, callback: any): void {\n compare(candidatePassword, this.password, (err, isMatch) => {\n if (err) { return callback(err); }\n callback(null, isMatch);\n });\n};\n\n// Omit the password when returning a user\nuserSchema.set('toJSON', {\n transform: (doc, ret) => {\n delete ret.password;\n return ret;\n }\n});\n\nconst User = model<IUser>('User', userSchema);\n\nexport type { IUser };\nexport default User;\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  }
+}

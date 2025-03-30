@@ -1,0 +1,4454 @@
+{
+  "repos": {
+    "ng-apexcharts": {
+      "projects": {
+        "ng-apexcharts-demo": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        },
+        "ng-apexcharts": {
+          "before": {},
+          "after": {}
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "8e4f59daece2bbe9605dbdef25488983beb31f85",
+        "author": "Juned Chhipa",
+        "date": "Wed Mar 19 14:42:20 2025 +0530",
+        "message": "Merge remote-tracking branch 'refs/remotes/origin/master'"
+      },
+      "url": "https://github.com/apexcharts/ng-apexcharts"
+    },
+    "mean": {
+      "projects": {
+        "mean": {
+          "before": {
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "5c12e1303c911345f17229ce0b5efbfd3e0a32df",
+        "author": "Bob Conan",
+        "date": "Thu Nov 7 16:59:52 2024 -0600",
+        "message": "Update README.md, fix typos (#2073)"
+      },
+      "url": "https://github.com/linnovate/mean"
+    },
+    "angular-16-crud-example": {
+      "projects": {
+        "angular-16-crud": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "e760ebb02fd950b478b0fa863e767b672929b10d",
+        "author": "tienbku",
+        "date": "Thu May 25 15:57:13 2023 +0700",
+        "message": "first commit"
+      },
+      "url": "https://github.com/bezkoder/angular-16-crud-example"
+    },
+    "QuickApp": {
+      "projects": {
+        "quickapp.client": {
+          "before": {
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 19
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/no-forward-ref": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 19
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/no-forward-ref": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 7
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 19
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/no-forward-ref": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 7
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 19
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/no-forward-ref": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "435f959f6d3ef510fef831e64cb6ebe03494a944",
+        "author": "Ebenezer Monney",
+        "date": "Sun Dec 1 13:21:23 2024 +0000",
+        "message": "removed stylePreprocessorOptions from test config"
+      },
+      "url": "https://github.com/emonney/QuickApp"
+    },
+    "ng-three-template": {
+      "projects": {
+        "ng-three-template": {
+          "before": {
+            "@angular-eslint/no-empty-lifecycle-method": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/no-empty-lifecycle-method": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/no-empty-lifecycle-method": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 7
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/no-empty-lifecycle-method": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 7
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "31fec97f2b3a25561f68b845a3aa63b64b4c70c2",
+        "author": "JohnnyDevNull",
+        "date": "Thu May 2 12:10:19 2024 +0200",
+        "message": "Update README.md"
+      },
+      "url": "https://github.com/JohnnyDevNull/ng-three-template"
+    },
+    "gojs-angular-basic": {
+      "projects": {
+        "first-app": {
+          "before": {
+            "@angular-eslint/use-lifecycle-interface": {
+              "recommended": {
+                "warnings": 1,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/no-output-on-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          },
+          "after": {
+            "@angular-eslint/no-output-on-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/use-lifecycle-interface": {
+            "recommended": {
+              "warnings": 1,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/no-output-on-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        },
+        "after": {
+          "@angular-eslint/no-output-on-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "6662f0a49e70f94c5705521dffa1af845256726f",
+        "author": "Simon Sarris",
+        "date": "Fri Jan 31 10:42:13 2025 -0500",
+        "message": "corrected inspector"
+      },
+      "url": "https://github.com/NorthwoodsSoftware/gojs-angular-basic"
+    },
+    "angular-ionic-ngxs-movies": {
+      "projects": {
+        "angular-ionic-ngxs-movies": {
+          "before": {
+            "@angular-eslint/prefer-standalone-component": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 11
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 11
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 10
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/sort-ngmodule-metadata-arrays": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/relative-url-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 11
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 10
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/relative-url-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-standalone-component": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 11
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 11
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 10
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/sort-ngmodule-metadata-arrays": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/relative-url-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 7
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 11
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 10
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/relative-url-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 7
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "8f02cdce74b58725f3010362e926a38688cf48f2",
+        "author": "Adrián Brito Pacheco",
+        "date": "Thu Feb 8 22:43:28 2024 +0000",
+        "message": "Merge pull request #98 from abritopach/develop"
+      },
+      "url": "https://github.com/abritopach/angular-ionic-ngxs-movies"
+    },
+    "angular-17-crud-example": {
+      "projects": {
+        "angular-17-crud": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "c0af324c915716b34f61ae10acae98092ec8570a",
+        "author": "tienbku",
+        "date": "Sun Feb 4 15:39:28 2024 +0700",
+        "message": "update references"
+      },
+      "url": "https://github.com/bezkoder/angular-17-crud-example"
+    },
+    "angular-basics-project": {
+      "projects": {
+        "shopping-cart": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": true,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": true,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "504cab8f87defbbaf6462988956b8176861ba802",
+        "author": "akotech",
+        "date": "Sun Oct 24 18:47:33 2021 +0200",
+        "message": "update playlist link"
+      },
+      "url": "https://github.com/ako-tech/angular-basics-project"
+    },
+    "Angular-Full-Stack": {
+      "projects": {
+        "angular2-full-stack": {
+          "before": {
+            "@angular-eslint/prefer-standalone": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 12
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 12
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 12
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 12
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-standalone": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 12
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 12
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 12
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 4
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 12
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "64a8ed9eb474c08896cbc6b436a810739c6a534e",
+        "author": "DavideViolante",
+        "date": "Wed Jan 22 09:38:49 2025 +0100",
+        "message": "chore(deps): upgrade to angular v19"
+      },
+      "url": "https://github.com/DavideViolante/Angular-Full-Stack"
+    },
+    "play-scala-angular-seed": {
+      "projects": {
+        "scala-play-angular-seed": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "814ab8bc3a2002edcf71952c7aed7eaf635a54b4",
+        "author": "Matthias Kurz",
+        "date": "Thu Mar 13 23:39:41 2025 +0100",
+        "message": "Merge pull request #88 from scala-steward/update/play-filters-helpers-3.0.7"
+      },
+      "url": "https://github.com/playframework/play-scala-angular-seed"
+    },
+    "angular-realworld-example-app": {
+      "projects": {
+        "angular-conduit": {
+          "before": {
+            "@angular-eslint/directive-selector": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/no-output-native": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 16
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 9
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/no-duplicates-in-metadata-arrays": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/directive-selector": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/no-output-native": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 16
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 9
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/no-duplicates-in-metadata-arrays": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/directive-selector": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/no-output-native": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 16
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 9
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/no-duplicates-in-metadata-arrays": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/directive-selector": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/no-output-native": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 16
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 9
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/no-duplicates-in-metadata-arrays": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "2555e2f86dd85f6b9e3a34e720bb46689c8646f8",
+        "author": "Gerome Grignon",
+        "date": "Mon Dec 9 09:26:42 2024 +0100",
+        "message": "remove demo link"
+      },
+      "url": "https://github.com/gothinkster/angular-realworld-example-app"
+    },
+    "angular-example-app": {
+      "projects": {
+        "angularexampleapp": {
+          "before": {
+            "@angular-eslint/runtime-localize": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 21
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/runtime-localize": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 21
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/runtime-localize": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 21
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/runtime-localize": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 21
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "b43fcab316a8a4c87549eca67a8b7d915f850434",
+        "author": "ismaestro",
+        "date": "Sat Feb 1 07:47:16 2025 +0100",
+        "message": "fix(tools): solve stylelint issues"
+      },
+      "url": "https://github.com/Ismaestro/angular-example-app"
+    },
+    "angular-gridster2": {
+      "projects": {
+        "gridster-app": {
+          "before": {
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 25
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          },
+          "after": {
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 25
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        },
+        "angular-gridster2": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/sort-lifecycle-methods": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/sort-lifecycle-methods": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 28
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/sort-lifecycle-methods": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        },
+        "after": {
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 28
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/sort-lifecycle-methods": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": true
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "59e2b0de4dc71983f874e208f3466ba6ebb3fac4",
+        "author": "Tiberiu Zuld",
+        "date": "Thu Dec 5 09:26:29 2024 +0200",
+        "message": "chore: fix npm repository url"
+      },
+      "url": "https://github.com/tiberiuzuld/angular-gridster2"
+    },
+    "ngx-quill": {
+      "projects": {
+        "ngx-quill": {
+          "before": {
+            "@angular-eslint/no-output-on-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 9
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 9
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/component-selector": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/no-output-on-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 9
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 9
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/component-selector": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/no-output-on-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 9
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 9
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/component-selector": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/no-output-on-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 9
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 9
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/component-selector": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "9623a9d10a290ac95ad881c726370060826bee7b",
+        "author": "migudel",
+        "date": "Sat Mar 29 20:35:43 2025 +0100",
+        "message": "INICIO DE PRUEBAS"
+      },
+      "url": "https://github.com/KillerCodeMonkey/ngx-quill"
+    },
+    "ngx-toastr": {
+      "projects": {
+        "ngx-toastr": {
+          "before": {
+            "@angular-eslint/component-class-suffix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/sort-ngmodule-metadata-arrays": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 11
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/component-class-suffix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 5
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 11
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/component-class-suffix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/sort-ngmodule-metadata-arrays": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 11
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/component-class-suffix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 5
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 11
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "e688d8039158bc83a9fe4ac08589f2ab8c550466",
+        "author": "Chris Barr",
+        "date": "Tue Aug 27 17:04:26 2024 -0400",
+        "message": "docs: fix demo to show progress for pink toast (#1023)"
+      },
+      "url": "https://github.com/scttcper/ngx-toastr"
+    },
+    "angular-fontawesome": {
+      "projects": {
+        "angular-fontawesome": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 37
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/no-lifecycle-call": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/sort-lifecycle-methods": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 37
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/no-lifecycle-call": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/sort-lifecycle-methods": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 2
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        },
+        "demo": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": true,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 10
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 37
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/no-lifecycle-call": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/sort-lifecycle-methods": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": true,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 10
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 37
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/no-lifecycle-call": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/sort-lifecycle-methods": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 2
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "88ea9db3780a4a86d34f69920105166d914497ea",
+        "author": "Yaroslav Admin",
+        "date": "Thu Nov 21 00:00:00 2024 +0100",
+        "message": "Release 1.0.0"
+      },
+      "url": "https://github.com/FortAwesome/angular-fontawesome"
+    },
+    "angular-calendar": {
+      "projects": {
+        "demos": {
+          "before": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 17
+              },
+              "fixable": true,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 12
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/relative-url-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 43
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 11
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          },
+          "after": {
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 4
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-component-view-encapsulation": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 12
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/relative-url-prefix": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 42
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 11
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 7
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": true
+            }
+          }
+        },
+        "angular-calendar": {
+          "before": {
+            "@angular-eslint/no-host-metadata-property": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-component-selector": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 20
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 17
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 149
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 26
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/sort-lifecycle-methods": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/consistent-component-styles": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": true,
+              "has_suggestion": false
+            }
+          },
+          "after": {
+            "@angular-eslint/no-host-metadata-property": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 1
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/use-component-selector": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-on-push-component-change-detection": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 20
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/use-injectable-provided-in": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 6
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/component-max-inline-declarations": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 17
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-signals": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 149
+              },
+              "fixable": false,
+              "has_suggestion": false
+            },
+            "@angular-eslint/prefer-output-readonly": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 26
+              },
+              "fixable": false,
+              "has_suggestion": true
+            },
+            "@angular-eslint/sort-lifecycle-methods": {
+              "recommended": {
+                "warnings": 0,
+                "errors": 0
+              },
+              "all": {
+                "warnings": 0,
+                "errors": 3
+              },
+              "fixable": false,
+              "has_suggestion": false
+            }
+          }
+        }
+      },
+      "total": {
+        "before": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 24
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 18
+            },
+            "fixable": true,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 12
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 156
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/relative-url-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 43
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 28
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 13
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 29
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/no-host-metadata-property": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-component-selector": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/sort-lifecycle-methods": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        },
+        "after": {
+          "@angular-eslint/prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 24
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 12
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 156
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/relative-url-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 42
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 28
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 13
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 29
+            },
+            "fixable": false,
+            "has_suggestion": true
+          },
+          "@angular-eslint/no-host-metadata-property": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 1
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/use-component-selector": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 6
+            },
+            "fixable": false,
+            "has_suggestion": false
+          },
+          "@angular-eslint/sort-lifecycle-methods": {
+            "recommended": {
+              "warnings": 0,
+              "errors": 0
+            },
+            "all": {
+              "warnings": 0,
+              "errors": 3
+            },
+            "fixable": false,
+            "has_suggestion": false
+          }
+        }
+      },
+      "HEAD": {
+        "commit": "987fa74220e84d85265b01e53e248932ad1a3da6",
+        "author": "Matt Lewis",
+        "date": "Wed Aug 21 18:37:18 2024 +0100",
+        "message": "chore: update angular.json config"
+      },
+      "url": "https://github.com/mattlewis92/angular-calendar"
+    }
+  },
+  "total": {
+    "before": {
+      "@angular-eslint/prefer-on-push-component-change-detection": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 122
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/consistent-component-styles": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 45
+        },
+        "fixable": true,
+        "has_suggestion": false
+      },
+      "@angular-eslint/prefer-signals": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 217
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/use-injectable-provided-in": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 31
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/no-forward-ref": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-empty-lifecycle-method": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/use-component-view-encapsulation": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 57
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/use-lifecycle-interface": {
+        "recommended": {
+          "warnings": 1,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": true,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-output-on-prefix": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 11
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 11
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/prefer-output-readonly": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 37
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/prefer-standalone-component": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 11
+        },
+        "fixable": true,
+        "has_suggestion": false
+      },
+      "@angular-eslint/sort-ngmodule-metadata-arrays": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 9
+        },
+        "fixable": true,
+        "has_suggestion": false
+      },
+      "@angular-eslint/relative-url-prefix": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 50
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/prefer-standalone": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 12
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 12
+        },
+        "fixable": true,
+        "has_suggestion": false
+      },
+      "@angular-eslint/directive-selector": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-output-native": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 2
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 2
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/component-max-inline-declarations": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 45
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-duplicates-in-metadata-arrays": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/runtime-localize": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 21
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/sort-lifecycle-methods": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 7
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/component-selector": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 3
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 3
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/component-class-suffix": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-lifecycle-call": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-host-metadata-property": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/use-component-selector": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 6
+        },
+        "fixable": false,
+        "has_suggestion": false
+      }
+    },
+    "after": {
+      "@angular-eslint/prefer-on-push-component-change-detection": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 122
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/prefer-signals": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 217
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/use-injectable-provided-in": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 31
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/no-forward-ref": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-empty-lifecycle-method": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/use-component-view-encapsulation": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 57
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/no-output-on-prefix": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 11
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 11
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/prefer-output-readonly": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 37
+        },
+        "fixable": false,
+        "has_suggestion": true
+      },
+      "@angular-eslint/relative-url-prefix": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 49
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/directive-selector": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-output-native": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 2
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 2
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/component-max-inline-declarations": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 45
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-duplicates-in-metadata-arrays": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/runtime-localize": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 21
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/sort-lifecycle-methods": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 7
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/component-selector": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 3
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 3
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/component-class-suffix": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 5
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-lifecycle-call": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/no-host-metadata-property": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 1
+        },
+        "fixable": false,
+        "has_suggestion": false
+      },
+      "@angular-eslint/use-component-selector": {
+        "recommended": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "all": {
+          "warnings": 0,
+          "errors": 6
+        },
+        "fixable": false,
+        "has_suggestion": false
+      }
+    }
+  }
+}

@@ -108,7 +108,7 @@ Object.entries(require(SOURCE)).forEach(
 );
 result.total = getTotalReport(result.repos);
 fs.writeFileSync(
-  path.join(OUTPUT_DIR, OUTPUT_NAME + ".json"),
+  path.join(path.dirname(SOURCE), OUTPUT_NAME + ".json"),
   JSON.stringify(result, null, 2)
 );
 

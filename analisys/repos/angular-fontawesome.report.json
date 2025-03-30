@@ -1,0 +1,1735 @@
+{
+  "repo": {
+    "HEAD": {
+      "commit": "88ea9db3780a4a86d34f69920105166d914497ea",
+      "author": "Yaroslav Admin",
+      "date": "Thu Nov 21 00:00:00 2024 +0100",
+      "message": "Release 1.0.0"
+    },
+    "url": "https://github.com/FortAwesome/angular-fontawesome"
+  },
+  "before": {
+    "angular-fontawesome": {
+      "recommended": [],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/icon/duotone-icon.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 9,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      273
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { IconDefinition as CoreIconDefinition, IconParams } from '@fortawesome/fontawesome-svg-core';\nimport { IconDefinition, IconProp } from '../types';\nimport { FaIconComponent } from './icon.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 18,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 18,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 26,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 26,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 34,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 34,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 42,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 42,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 50,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 50,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 6,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\nimport { IconDefinition as CoreIconDefinition, IconParams } from '@fortawesome/fontawesome-svg-core';\nimport { IconDefinition, IconProp } from '../types';\nimport { FaIconComponent } from './icon.component';\n\n@Component({\n selector: 'fa-duotone-icon',\n template: ``,\n})\nexport class FaDuotoneIconComponent extends FaIconComponent {\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Swap the default opacity of each duotone icon’s layers. This will make an\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock icon’s primary layer have the default opacity of 40% rather than its\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock secondary layer.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default false\n */\n @Input() swapOpacity?: 'true' | 'false' | boolean;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the opacity of the primary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Valid values are in range [0, 1.0].\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default 1.0\n */\n @Input() primaryOpacity?: string | number;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the opacity of the secondary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Valid values are in range [0, 1.0].\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default 0.4\n */\n @Input() secondaryOpacity?: string | number;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the color of the primary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Accepts any valid CSS color value.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default CSS inherited color\n */\n @Input() primaryColor?: string;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the color of the secondary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Accepts any valid CSS color value.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default CSS inherited color\n */\n @Input() secondaryColor?: string;\n\n protected findIconDefinition(i: IconProp | IconDefinition): CoreIconDefinition | null {\n const definition = super.findIconDefinition(i);\n\n if (definition != null && !Array.isArray(definition.icon[4])) {\n throw new Error(\n 'The specified icon does not appear to be a Duotone icon. ' +\n 'Check that you specified the correct style: ' +\n `<fa-duotone-icon [icon]=\"['fad', '${definition.iconName}']\"></fa-duotone-icon> ` +\n `or use: <fa-icon icon=\"${definition.iconName}\"></fa-icon> instead.`,\n );\n }\n\n return definition;\n }\n\n protected buildParams(): IconParams {\n const params = super.buildParams();\n\n if (this.swapOpacity === true || this.swapOpacity === 'true') {\n if (Array.isArray(params.classes)) {\n params.classes.push('fa-swap-opacity');\n } else if (typeof params.classes === 'string') {\n params.classes = [params.classes, 'fa-swap-opacity'];\n } else {\n params.classes = ['fa-swap-opacity'];\n }\n }\n\n if (params.styles == null) {\n params.styles = {};\n }\n if (this.primaryOpacity != null) {\n params.styles['--fa-primary-opacity'] = this.primaryOpacity.toString();\n }\n if (this.secondaryOpacity != null) {\n params.styles['--fa-secondary-opacity'] = this.secondaryOpacity.toString();\n }\n if (this.primaryColor != null) {\n params.styles['--fa-primary-color'] = this.primaryColor;\n }\n if (this.secondaryColor != null) {\n params.styles['--fa-secondary-color'] = this.secondaryColor;\n }\n\n return params;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/icon/icon.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 29,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 36,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      126,
+                      1184
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FaSymbol,\n FlipProp,\n icon,\n IconDefinition as CoreIconDefinition,\n IconParams,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { FaIconLibrary } from '../icon-library';\nimport { faWarnIfIconDefinitionMissing } from '../shared/errors/warn-if-icon-html-missing';\nimport { faWarnIfIconSpecMissing } from '../shared/errors/warn-if-icon-spec-missing';\nimport { AnimationProp, FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { faNormalizeIconSpec } from '../shared/utils/normalize-icon-spec.util';\nimport { FaStackItemSizeDirective } from '../stack/stack-item-size.directive';\nimport { FaStackComponent } from '../stack/stack.component';\nimport { IconDefinition, IconProp } from '../types';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 38,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 38,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 46,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 46,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 54,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 54,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 56,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 56,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 57,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 57,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 58,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 58,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 59,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 59,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 60,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 60,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 61,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 61,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 62,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 62,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 63,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 63,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 64,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 64,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 65,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 65,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 72,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 72,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/no-lifecycle-call",
+              "severity": 2,
+              "message": "Avoid explicit calls to lifecycle methods",
+              "line": 118,
+              "column": 5,
+              "nodeType": "CallExpression",
+              "messageId": "noLifecycleCall",
+              "endLine": 118,
+              "endColumn": 25
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 16,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport { Component, HostBinding, inject, Input, OnChanges, Optional, SimpleChanges } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FaSymbol,\n FlipProp,\n icon,\n IconDefinition as CoreIconDefinition,\n IconParams,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { FaIconLibrary } from '../icon-library';\nimport { faWarnIfIconDefinitionMissing } from '../shared/errors/warn-if-icon-html-missing';\nimport { faWarnIfIconSpecMissing } from '../shared/errors/warn-if-icon-spec-missing';\nimport { AnimationProp, FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { faNormalizeIconSpec } from '../shared/utils/normalize-icon-spec.util';\nimport { FaStackItemSizeDirective } from '../stack/stack-item-size.directive';\nimport { FaStackComponent } from '../stack/stack.component';\nimport { IconDefinition, IconProp } from '../types';\n\n@Component({\n selector: 'fa-icon',\n template: ``,\n host: {\n class: 'ng-fa-icon',\n '[attr.title]': 'title',\n },\n})\nexport class FaIconComponent implements OnChanges {\n @Input() icon: IconProp;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Specify a title for the icon.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock This text will be displayed in a tooltip on hover and presented to the\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock screen readers.\n */\n @Input() title?: string;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Icon animation.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Most of the animations are only available when using Font Awesome 6. With\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Font Awesome 5, only 'spin' and 'spin-pulse' are supported.\n */\n @Input() animation?: AnimationProp;\n\n @Input() mask?: IconProp;\n @Input() flip?: FlipProp;\n @Input() size?: SizeProp;\n @Input() pull?: PullProp;\n @Input() border?: boolean;\n @Input() inverse?: boolean;\n @Input() symbol?: FaSymbol;\n @Input() rotate?: RotateProp | string;\n @Input() fixedWidth?: boolean;\n @Input() transform?: string | Transform;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Specify the `role` attribute for the rendered <svg> element.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default 'img'\n */\n @Input() a11yRole: string;\n\n @HostBinding('innerHTML') renderedIconHTML: SafeHtml;\n\n private document = inject(DOCUMENT);\n\n constructor(\n private sanitizer: DomSanitizer,\n private config: FaConfig,\n private iconLibrary: FaIconLibrary,\n @Optional() private stackItem: FaStackItemSizeDirective,\n @Optional() stack: FaStackComponent,\n ) {\n if (stack != null && stackItem == null) {\n console.error(\n 'FontAwesome: fa-icon and fa-duotone-icon elements must specify stackItemSize attribute when wrapped into ' +\n 'fa-stack. Example: <fa-icon stackItemSize=\"2x\"></fa-icon>.',\n );\n }\n }\n\n ngOnChanges(changes: SimpleChanges): void {\n if (this.icon == null && this.config.fallbackIcon == null) {\n faWarnIfIconSpecMissing();\n return;\n }\n\n if (changes) {\n const iconDefinition = this.findIconDefinition(this.icon ?? this.config.fallbackIcon);\n if (iconDefinition != null) {\n const params = this.buildParams();\n ensureCss(this.document, this.config);\n const renderedIcon = icon(iconDefinition, params);\n this.renderedIconHTML = this.sanitizer.bypassSecurityTrustHtml(renderedIcon.html.join('\\n'));\n }\n }\n }\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Programmatically trigger rendering of the icon.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock This method is useful, when creating {@link FaIconComponent} dynamically or\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock changing its inputs programmatically as in these cases icon won't be\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock re-rendered automatically.\n */\n render() {\n this.ngOnChanges({});\n }\n\n protected findIconDefinition(i: IconProp | IconDefinition): CoreIconDefinition | null {\n const lookup = faNormalizeIconSpec(i, this.config.defaultPrefix);\n if ('icon' in lookup) {\n return lookup as CoreIconDefinition;\n }\n\n const definition = this.iconLibrary.getIconDefinition(lookup.prefix, lookup.iconName);\n if (definition != null) {\n return definition as CoreIconDefinition;\n }\n\n faWarnIfIconDefinitionMissing(lookup);\n return null;\n }\n\n protected buildParams(): IconParams {\n const classOpts: FaProps = {\n flip: this.flip,\n animation: this.animation,\n border: this.border,\n inverse: this.inverse,\n size: this.size || null,\n pull: this.pull || null,\n rotate: this.rotate || null,\n fixedWidth: typeof this.fixedWidth === 'boolean' ? this.fixedWidth : this.config.fixedWidth,\n stackItemSize: this.stackItem != null ? this.stackItem.stackItemSize : null,\n };\n\n const parsedTransform = typeof this.transform === 'string' ? parse.transform(this.transform) : this.transform;\n\n const styles: Styles = {};\n if (classOpts.rotate != null && !isKnownRotateValue(classOpts.rotate)) {\n styles['--fa-rotate-angle'] = `${classOpts.rotate}`;\n }\n\n return {\n title: this.title,\n transform: parsedTransform,\n classes: faClassList(classOpts),\n mask: this.mask != null ? this.findIconDefinition(this.mask) : null,\n symbol: this.symbol,\n attributes: {\n role: this.a11yRole,\n },\n styles,\n };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/layers/layers-counter.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 10,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 16,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      126,
+                      538
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport { counter, CounterParams } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 18,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 18,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 19,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 19,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 20,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 20,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport { Component, HostBinding, inject, Input, OnChanges, Optional, SimpleChanges } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport { counter, CounterParams } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n selector: 'fa-layers-counter',\n template: '',\n host: {\n class: 'ng-fa-layers-counter',\n },\n})\nexport class FaLayersCounterComponent implements OnChanges {\n @Input() content: string;\n @Input() title?: string;\n @Input() position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';\n\n @HostBinding('innerHTML') renderedHTML: SafeHtml;\n\n private document = inject(DOCUMENT);\n private config = inject(FaConfig);\n\n constructor(\n @Optional() private parent: FaLayersComponent,\n private sanitizer: DomSanitizer,\n ) {\n faWarnIfParentNotExist(this.parent, 'FaLayersComponent', this.constructor.name);\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if (changes) {\n const params = this.buildParams();\n this.updateContent(params);\n }\n }\n\n protected buildParams(): CounterParams {\n return {\n title: this.title,\n classes: this.position != null ? [`fa-layers-${this.position}`] : undefined,\n };\n }\n\n private updateContent(params: CounterParams) {\n ensureCss(this.document, this.config);\n this.renderedHTML = this.sanitizer.bypassSecurityTrustHtml(counter(this.content || '', params).html.join(''));\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/layers/layers-text.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 22,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 28,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      126,
+                      757
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FlipProp,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n text,\n TextParams,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 30,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 30,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 31,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 31,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 32,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 32,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 33,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 33,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 34,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 34,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 35,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 35,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 36,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 36,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 37,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 37,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 38,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 38,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 39,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 39,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 11,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport { Component, HostBinding, inject, Input, OnChanges, Optional, SimpleChanges } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FlipProp,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n text,\n TextParams,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n selector: 'fa-layers-text',\n template: '',\n host: {\n class: 'ng-fa-layers-text',\n },\n})\nexport class FaLayersTextComponent implements OnChanges {\n @Input() content: string;\n @Input() title?: string;\n @Input() flip?: FlipProp;\n @Input() size?: SizeProp;\n @Input() pull?: PullProp;\n @Input() border?: boolean;\n @Input() inverse?: boolean;\n @Input() rotate?: RotateProp | string;\n @Input() fixedWidth?: boolean;\n @Input() transform?: string | Transform;\n\n @HostBinding('innerHTML') renderedHTML: SafeHtml;\n\n private document = inject(DOCUMENT);\n private config = inject(FaConfig);\n\n constructor(\n @Optional() private parent: FaLayersComponent,\n private sanitizer: DomSanitizer,\n ) {\n faWarnIfParentNotExist(this.parent, 'FaLayersComponent', this.constructor.name);\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if (changes) {\n const params = this.buildParams();\n this.updateContent(params);\n }\n }\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Updating params by component props.\n */\n protected buildParams(): TextParams {\n const classOpts: FaProps = {\n flip: this.flip,\n border: this.border,\n inverse: this.inverse,\n size: this.size || null,\n pull: this.pull || null,\n rotate: this.rotate || null,\n fixedWidth: this.fixedWidth,\n };\n\n const parsedTransform = typeof this.transform === 'string' ? parse.transform(this.transform) : this.transform;\n\n const styles: Styles = {};\n if (classOpts.rotate != null && !isKnownRotateValue(classOpts.rotate)) {\n styles['--fa-rotate-angle'] = `${classOpts.rotate}`;\n }\n\n return {\n transform: parsedTransform,\n classes: faClassList(classOpts),\n title: this.title,\n styles,\n };\n }\n\n private updateContent(params: TextParams) {\n ensureCss(this.document, this.config);\n this.renderedHTML = this.sanitizer.bypassSecurityTrustHtml(text(this.content || '', params).html.join('\\n'));\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/layers/layers.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 20,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 23,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      165,
+                      387
+                    ],
+                    "text": ", ChangeDetectionStrategy,\n} from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { ensureCss } from '../shared/utils/css';\n\n/**\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Fontawesome layers.\n */\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 25,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 25,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 27,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 27,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/sort-lifecycle-methods",
+              "severity": 2,
+              "message": "Lifecycle Methods are not declared in order of execution",
+              "line": 43,
+              "column": 3,
+              "nodeType": "Identifier",
+              "messageId": "lifecycleMethodsNotSorted",
+              "endLine": 43,
+              "endColumn": 14
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport {\n Component,\n ElementRef,\n HostBinding,\n inject,\n Input,\n OnChanges,\n OnInit,\n Renderer2,\n SimpleChanges,\n} from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { ensureCss } from '../shared/utils/css';\n\n/**\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Fontawesome layers.\n */\n@Component({\n selector: 'fa-layers',\n template: `<ng-content></ng-content>`,\n})\nexport class FaLayersComponent implements OnInit, OnChanges {\n @Input() size?: SizeProp;\n\n @Input() @HostBinding('class.fa-fw') fixedWidth?: boolean;\n\n private document = inject(DOCUMENT);\n\n constructor(\n private renderer: Renderer2,\n private elementRef: ElementRef,\n private config: FaConfig,\n ) {}\n\n ngOnInit() {\n this.renderer.addClass(this.elementRef.nativeElement, 'fa-layers');\n ensureCss(this.document, this.config);\n this.fixedWidth = typeof this.fixedWidth === 'boolean' ? this.fixedWidth : this.config.fixedWidth;\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if ('size' in changes) {\n if (changes.size.currentValue != null) {\n this.renderer.addClass(this.elementRef.nativeElement, `fa-${changes.size.currentValue}`);\n }\n if (changes.size.previousValue != null) {\n this.renderer.removeClass(this.elementRef.nativeElement, `fa-${changes.size.previousValue}`);\n }\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/stack/stack-item-size.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 14,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 14,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 19,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 19,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [
+            {
+              "ruleId": "@angular-eslint/directive-selector",
+              "severity": 2,
+              "message": "The selector should start with one of these prefixes: \"fa\" (https://angular.dev/style-guide#style-02-08)",
+              "line": 7,
+              "column": 13,
+              "nodeType": "Literal",
+              "messageId": "prefixFailure",
+              "endLine": 7,
+              "endColumn": 68,
+              "suppressions": [
+                {
+                  "kind": "directive",
+                  "justification": ""
+                }
+              ]
+            }
+          ],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\nimport { FaStackComponent } from './stack.component';\n\n@Directive({\n // eslint-disable-next-line @angular-eslint/directive-selector\n selector: 'fa-icon[stackItemSize],fa-duotone-icon[stackItemSize]',\n})\nexport class FaStackItemSizeDirective implements OnChanges {\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Specify whether icon inside {@link FaStackComponent} should be rendered in\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock regular size (1x) or as a larger icon (2x).\n */\n @Input() stackItemSize: '1x' | '2x' = '1x';\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @internal\n */\n @Input() size?: SizeProp;\n\n ngOnChanges(changes: SimpleChanges) {\n if ('size' in changes) {\n throw new Error(\n 'fa-icon is not allowed to customize size when used inside fa-stack. ' +\n 'Set size on the enclosing fa-stack instead: <fa-stack size=\"4x\">...</fa-stack>.',\n );\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/stack/stack.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 7,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      82,
+                      185
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 15,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 15,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/sort-lifecycle-methods",
+              "severity": 2,
+              "message": "Lifecycle Methods are not declared in order of execution",
+              "line": 26,
+              "column": 3,
+              "nodeType": "Identifier",
+              "messageId": "lifecycleMethodsNotSorted",
+              "endLine": 26,
+              "endColumn": 14
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\n\n@Component({\n selector: 'fa-stack',\n template: `<ng-content></ng-content>`,\n})\nexport class FaStackComponent implements OnInit, OnChanges {\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Size of the stacked icon.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Note that stacked icon is by default 2 times bigger, than non-stacked icon.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock You'll need to set size using custom CSS to align stacked icon with a\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock simple one. E.g. `fa-stack { font-size: 0.5em; }`.\n */\n @Input() size?: SizeProp;\n\n constructor(\n private renderer: Renderer2,\n private elementRef: ElementRef,\n ) {}\n\n ngOnInit() {\n this.renderer.addClass(this.elementRef.nativeElement, 'fa-stack');\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if ('size' in changes) {\n if (changes.size.currentValue != null) {\n this.renderer.addClass(this.elementRef.nativeElement, `fa-${changes.size.currentValue}`);\n }\n if (changes.size.previousValue != null) {\n this.renderer.removeClass(this.elementRef.nativeElement, `fa-${changes.size.previousValue}`);\n }\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "demo": {
+      "recommended": [],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/alternate-prefix.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 10,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      240
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaConfig, FaIconComponent, FaIconLibrary } from '@fortawesome/angular-fontawesome';\nimport { faBellSlash, faHandPaper, faUser } from '@fortawesome/free-regular-svg-icons';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { FaConfig, FaIconComponent, FaIconLibrary } from '@fortawesome/angular-fontawesome';\nimport { faBellSlash, faHandPaper, faUser } from '@fortawesome/free-regular-svg-icons';\n\n@Component({\n selector: 'app-alternate-prefix',\n imports: [FaIconComponent],\n templateUrl: './alternate-prefix.component.html',\n providers: [FaConfig],\n})\nexport class AlternatePrefixComponent {\n constructor(faConfig: FaConfig, library: FaIconLibrary) {\n // Setting the defaultPrefix to far\n faConfig.defaultPrefix = 'far';\n // Adding dynamic icons to library for use\n library.addIcons(faUser, faHandPaper, faBellSlash);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 24,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 29,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      65,
+                      625
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaConfig, FaIconLibrary, FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';\nimport { faFlag, faUser as regularUser } from '@fortawesome/free-regular-svg-icons';\nimport {\n faAdjust,\n faBatteryQuarter,\n faBell,\n faCircle,\n faCoffee,\n faCog,\n faEllipsisH,\n faFighterJet,\n faFlag as solidFlag,\n faHeart,\n faMagic,\n faSpinner,\n faSquare,\n faTimes,\n faUser,\n} from '@fortawesome/free-solid-svg-icons';\nimport { AlternatePrefixComponent } from './alternate-prefix.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/consistent-component-styles",
+              "severity": 2,
+              "message": "Use `styleUrl` instead of `styleUrls` for a single stylesheet",
+              "line": 28,
+              "column": 3,
+              "nodeType": "Property",
+              "messageId": "useStyleUrl",
+              "endLine": 28,
+              "endColumn": 38,
+              "fix": {
+                "range": [
+                  759,
+                  794
+                ],
+                "text": "styleUrl: './app.component.scss'"
+              }
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 1,
+          "fixableWarningCount": 0,
+          "source": "import { DecimalPipe } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FaConfig, FaIconLibrary, FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';\nimport { faFlag, faUser as regularUser } from '@fortawesome/free-regular-svg-icons';\nimport {\n faAdjust,\n faBatteryQuarter,\n faBell,\n faCircle,\n faCoffee,\n faCog,\n faEllipsisH,\n faFighterJet,\n faFlag as solidFlag,\n faHeart,\n faMagic,\n faSpinner,\n faSquare,\n faTimes,\n faUser,\n} from '@fortawesome/free-solid-svg-icons';\nimport { AlternatePrefixComponent } from './alternate-prefix.component';\n\n@Component({\n selector: 'app-root',\n imports: [DecimalPipe, FontAwesomeModule, AlternatePrefixComponent],\n templateUrl: './app.component.html',\n styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {\n faBell = faBell;\n faCog = faCog;\n faFlag = faFlag;\n solidFlag = solidFlag;\n faTimes = faTimes;\n faMagic = faMagic;\n faAdjust = faAdjust;\n faCircle = faCircle;\n faCoffee = faCoffee;\n faSquare = faSquare;\n regularUser = regularUser;\n faEllipsisH = faEllipsisH;\n faFighterJet = faFighterJet;\n faBatteryQuarter = faBatteryQuarter;\n faHeart = faHeart;\n faSpinner = faSpinner;\n faDummy: IconDefinition = {\n prefix: 'fad',\n iconName: 'dummy',\n icon: [512, 512, [], '', ['M50 50 H412 V250 H50 Z', 'M50 262 H412 V462 H50 Z']],\n };\n\n notificationsCounter = 1000;\n isAnimated = true;\n magicLevel = 0;\n\n selectedPosition: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';\n\n constructor(library: FaIconLibrary, faConfig: FaConfig) {\n // Notice that we're adding two different icon objects to the library.\n // Each of them within their respective icon npm packages are exported as faUser,\n // but we've renamed the second one in order to disambiguate the two objects within\n // this JavaScript module. Internally, these objects are different, even though they have the same iconName.\n // They have different prefixes: faUser has a prefix of fas, since it came from free-solid-svg-icons;\n // regularUser has a prefix of far, since it came from free-regular-svg-icons.\n // And of course, they also have different SVG content, resulting in different appearances.\n // So they really are totally different icons. However, they share the same iconName: user.\n // So in the template, the only way to reference the non-default (fas) icon is to either\n // use the array syntax that specifies [prefix, iconName], like this:\n //\n // <fa-icon [icon]=\"['far','user']\"></fa-icon>\n //\n // Or we could make the regularUser object available to the template and simply\n // reference it as an object, like this:\n //\n // <fa-icon [icon]=\"regularUser\"></fa-icon>\n //\n // You don't specify the prefix in that case, because the icon object knows its own prefix.\n library.addIcons(faUser, regularUser);\n faConfig.fallbackIcon = faMagic;\n }\n\n onChange(event: any) {\n this.selectedPosition = event.target.value;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/testing/explicit-reference.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 9,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      187
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\nimport { faUser } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\nimport { faUser } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n selector: 'app-explicit-reference',\n imports: [FaIconComponent],\n template: '<fa-icon [icon]=\"faUser\"></fa-icon>',\n})\nexport class ExplicitReferenceComponent {\n faUser = faUser;\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/testing/icon-library.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      127
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\n\n@Component({\n selector: 'app-regular-icon-library',\n imports: [FaIconComponent],\n template: '<fa-icon icon=\"user\"></fa-icon>',\n})\nexport class IconLibraryComponent {}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  },
+  "after": {
+    "angular-fontawesome": {
+      "recommended": [],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/icon/duotone-icon.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 6,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 9,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      25,
+                      273
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { IconDefinition as CoreIconDefinition, IconParams } from '@fortawesome/fontawesome-svg-core';\nimport { IconDefinition, IconProp } from '../types';\nimport { FaIconComponent } from './icon.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 18,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 18,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 26,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 26,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 34,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 34,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 42,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 42,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 50,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 50,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 6,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, Input } from '@angular/core';\nimport { IconDefinition as CoreIconDefinition, IconParams } from '@fortawesome/fontawesome-svg-core';\nimport { IconDefinition, IconProp } from '../types';\nimport { FaIconComponent } from './icon.component';\n\n@Component({\n selector: 'fa-duotone-icon',\n template: ``,\n})\nexport class FaDuotoneIconComponent extends FaIconComponent {\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Swap the default opacity of each duotone icon’s layers. This will make an\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock icon’s primary layer have the default opacity of 40% rather than its\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock secondary layer.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default false\n */\n @Input() swapOpacity?: 'true' | 'false' | boolean;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the opacity of the primary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Valid values are in range [0, 1.0].\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default 1.0\n */\n @Input() primaryOpacity?: string | number;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the opacity of the secondary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Valid values are in range [0, 1.0].\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default 0.4\n */\n @Input() secondaryOpacity?: string | number;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the color of the primary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Accepts any valid CSS color value.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default CSS inherited color\n */\n @Input() primaryColor?: string;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Customize the color of the secondary icon layer.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Accepts any valid CSS color value.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default CSS inherited color\n */\n @Input() secondaryColor?: string;\n\n protected findIconDefinition(i: IconProp | IconDefinition): CoreIconDefinition | null {\n const definition = super.findIconDefinition(i);\n\n if (definition != null && !Array.isArray(definition.icon[4])) {\n throw new Error(\n 'The specified icon does not appear to be a Duotone icon. ' +\n 'Check that you specified the correct style: ' +\n `<fa-duotone-icon [icon]=\"['fad', '${definition.iconName}']\"></fa-duotone-icon> ` +\n `or use: <fa-icon icon=\"${definition.iconName}\"></fa-icon> instead.`,\n );\n }\n\n return definition;\n }\n\n protected buildParams(): IconParams {\n const params = super.buildParams();\n\n if (this.swapOpacity === true || this.swapOpacity === 'true') {\n if (Array.isArray(params.classes)) {\n params.classes.push('fa-swap-opacity');\n } else if (typeof params.classes === 'string') {\n params.classes = [params.classes, 'fa-swap-opacity'];\n } else {\n params.classes = ['fa-swap-opacity'];\n }\n }\n\n if (params.styles == null) {\n params.styles = {};\n }\n if (this.primaryOpacity != null) {\n params.styles['--fa-primary-opacity'] = this.primaryOpacity.toString();\n }\n if (this.secondaryOpacity != null) {\n params.styles['--fa-secondary-opacity'] = this.secondaryOpacity.toString();\n }\n if (this.primaryColor != null) {\n params.styles['--fa-primary-color'] = this.primaryColor;\n }\n if (this.secondaryColor != null) {\n params.styles['--fa-secondary-color'] = this.secondaryColor;\n }\n\n return params;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/icon/icon.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 29,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 36,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      126,
+                      1184
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FaSymbol,\n FlipProp,\n icon,\n IconDefinition as CoreIconDefinition,\n IconParams,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { FaIconLibrary } from '../icon-library';\nimport { faWarnIfIconDefinitionMissing } from '../shared/errors/warn-if-icon-html-missing';\nimport { faWarnIfIconSpecMissing } from '../shared/errors/warn-if-icon-spec-missing';\nimport { AnimationProp, FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { faNormalizeIconSpec } from '../shared/utils/normalize-icon-spec.util';\nimport { FaStackItemSizeDirective } from '../stack/stack-item-size.directive';\nimport { FaStackComponent } from '../stack/stack.component';\nimport { IconDefinition, IconProp } from '../types';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 38,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 38,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 46,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 46,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 54,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 54,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 56,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 56,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 57,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 57,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 58,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 58,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 59,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 59,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 60,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 60,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 61,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 61,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 62,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 62,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 63,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 63,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 64,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 64,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 65,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 65,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 72,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 72,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/no-lifecycle-call",
+              "severity": 2,
+              "message": "Avoid explicit calls to lifecycle methods",
+              "line": 118,
+              "column": 5,
+              "nodeType": "CallExpression",
+              "messageId": "noLifecycleCall",
+              "endLine": 118,
+              "endColumn": 25
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 16,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport { Component, HostBinding, inject, Input, OnChanges, Optional, SimpleChanges } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FaSymbol,\n FlipProp,\n icon,\n IconDefinition as CoreIconDefinition,\n IconParams,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { FaIconLibrary } from '../icon-library';\nimport { faWarnIfIconDefinitionMissing } from '../shared/errors/warn-if-icon-html-missing';\nimport { faWarnIfIconSpecMissing } from '../shared/errors/warn-if-icon-spec-missing';\nimport { AnimationProp, FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { faNormalizeIconSpec } from '../shared/utils/normalize-icon-spec.util';\nimport { FaStackItemSizeDirective } from '../stack/stack-item-size.directive';\nimport { FaStackComponent } from '../stack/stack.component';\nimport { IconDefinition, IconProp } from '../types';\n\n@Component({\n selector: 'fa-icon',\n template: ``,\n host: {\n class: 'ng-fa-icon',\n '[attr.title]': 'title',\n },\n})\nexport class FaIconComponent implements OnChanges {\n @Input() icon: IconProp;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Specify a title for the icon.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock This text will be displayed in a tooltip on hover and presented to the\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock screen readers.\n */\n @Input() title?: string;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Icon animation.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Most of the animations are only available when using Font Awesome 6. With\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Font Awesome 5, only 'spin' and 'spin-pulse' are supported.\n */\n @Input() animation?: AnimationProp;\n\n @Input() mask?: IconProp;\n @Input() flip?: FlipProp;\n @Input() size?: SizeProp;\n @Input() pull?: PullProp;\n @Input() border?: boolean;\n @Input() inverse?: boolean;\n @Input() symbol?: FaSymbol;\n @Input() rotate?: RotateProp | string;\n @Input() fixedWidth?: boolean;\n @Input() transform?: string | Transform;\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Specify the `role` attribute for the rendered <svg> element.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @default 'img'\n */\n @Input() a11yRole: string;\n\n @HostBinding('innerHTML') renderedIconHTML: SafeHtml;\n\n private document = inject(DOCUMENT);\n\n constructor(\n private sanitizer: DomSanitizer,\n private config: FaConfig,\n private iconLibrary: FaIconLibrary,\n @Optional() private stackItem: FaStackItemSizeDirective,\n @Optional() stack: FaStackComponent,\n ) {\n if (stack != null && stackItem == null) {\n console.error(\n 'FontAwesome: fa-icon and fa-duotone-icon elements must specify stackItemSize attribute when wrapped into ' +\n 'fa-stack. Example: <fa-icon stackItemSize=\"2x\"></fa-icon>.',\n );\n }\n }\n\n ngOnChanges(changes: SimpleChanges): void {\n if (this.icon == null && this.config.fallbackIcon == null) {\n faWarnIfIconSpecMissing();\n return;\n }\n\n if (changes) {\n const iconDefinition = this.findIconDefinition(this.icon ?? this.config.fallbackIcon);\n if (iconDefinition != null) {\n const params = this.buildParams();\n ensureCss(this.document, this.config);\n const renderedIcon = icon(iconDefinition, params);\n this.renderedIconHTML = this.sanitizer.bypassSecurityTrustHtml(renderedIcon.html.join('\\n'));\n }\n }\n }\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Programmatically trigger rendering of the icon.\n angular-fontawesome.report.json angular.json ng-package.json package.json tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock This method is useful, when creating {@link FaIconComponent} dynamically or\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock changing its inputs programmatically as in these cases icon won't be\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock re-rendered automatically.\n */\n render() {\n this.ngOnChanges({});\n }\n\n protected findIconDefinition(i: IconProp | IconDefinition): CoreIconDefinition | null {\n const lookup = faNormalizeIconSpec(i, this.config.defaultPrefix);\n if ('icon' in lookup) {\n return lookup as CoreIconDefinition;\n }\n\n const definition = this.iconLibrary.getIconDefinition(lookup.prefix, lookup.iconName);\n if (definition != null) {\n return definition as CoreIconDefinition;\n }\n\n faWarnIfIconDefinitionMissing(lookup);\n return null;\n }\n\n protected buildParams(): IconParams {\n const classOpts: FaProps = {\n flip: this.flip,\n animation: this.animation,\n border: this.border,\n inverse: this.inverse,\n size: this.size || null,\n pull: this.pull || null,\n rotate: this.rotate || null,\n fixedWidth: typeof this.fixedWidth === 'boolean' ? this.fixedWidth : this.config.fixedWidth,\n stackItemSize: this.stackItem != null ? this.stackItem.stackItemSize : null,\n };\n\n const parsedTransform = typeof this.transform === 'string' ? parse.transform(this.transform) : this.transform;\n\n const styles: Styles = {};\n if (classOpts.rotate != null && !isKnownRotateValue(classOpts.rotate)) {\n styles['--fa-rotate-angle'] = `${classOpts.rotate}`;\n }\n\n return {\n title: this.title,\n transform: parsedTransform,\n classes: faClassList(classOpts),\n mask: this.mask != null ? this.findIconDefinition(this.mask) : null,\n symbol: this.symbol,\n attributes: {\n role: this.a11yRole,\n },\n styles,\n };\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/layers/layers-counter.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 10,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 16,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      126,
+                      538
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport { counter, CounterParams } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 18,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 18,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 19,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 19,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 20,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 20,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport { Component, HostBinding, inject, Input, OnChanges, Optional, SimpleChanges } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport { counter, CounterParams } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n selector: 'fa-layers-counter',\n template: '',\n host: {\n class: 'ng-fa-layers-counter',\n },\n})\nexport class FaLayersCounterComponent implements OnChanges {\n @Input() content: string;\n @Input() title?: string;\n @Input() position?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';\n\n @HostBinding('innerHTML') renderedHTML: SafeHtml;\n\n private document = inject(DOCUMENT);\n private config = inject(FaConfig);\n\n constructor(\n @Optional() private parent: FaLayersComponent,\n private sanitizer: DomSanitizer,\n ) {\n faWarnIfParentNotExist(this.parent, 'FaLayersComponent', this.constructor.name);\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if (changes) {\n const params = this.buildParams();\n this.updateContent(params);\n }\n }\n\n protected buildParams(): CounterParams {\n return {\n title: this.title,\n classes: this.position != null ? [`fa-layers-${this.position}`] : undefined,\n };\n }\n\n private updateContent(params: CounterParams) {\n ensureCss(this.document, this.config);\n this.renderedHTML = this.sanitizer.bypassSecurityTrustHtml(counter(this.content || '', params).html.join(''));\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/layers/layers-text.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 22,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 28,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      126,
+                      757
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FlipProp,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n text,\n TextParams,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 30,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 30,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 31,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 31,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 32,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 32,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 33,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 33,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 34,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 34,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 35,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 35,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 36,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 36,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 37,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 37,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 38,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 38,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 39,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 39,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 11,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport { Component, HostBinding, inject, Input, OnChanges, Optional, SimpleChanges } from '@angular/core';\nimport { DomSanitizer, SafeHtml } from '@angular/platform-browser';\nimport {\n FlipProp,\n parse,\n PullProp,\n RotateProp,\n SizeProp,\n Styles,\n text,\n TextParams,\n Transform,\n} from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { faWarnIfParentNotExist } from '../shared/errors/warn-if-parent-not-exist';\nimport { FaProps } from '../shared/models/props.model';\nimport { faClassList, isKnownRotateValue } from '../shared/utils/classlist.util';\nimport { ensureCss } from '../shared/utils/css';\nimport { FaLayersComponent } from './layers.component';\n\n@Component({\n selector: 'fa-layers-text',\n template: '',\n host: {\n class: 'ng-fa-layers-text',\n },\n})\nexport class FaLayersTextComponent implements OnChanges {\n @Input() content: string;\n @Input() title?: string;\n @Input() flip?: FlipProp;\n @Input() size?: SizeProp;\n @Input() pull?: PullProp;\n @Input() border?: boolean;\n @Input() inverse?: boolean;\n @Input() rotate?: RotateProp | string;\n @Input() fixedWidth?: boolean;\n @Input() transform?: string | Transform;\n\n @HostBinding('innerHTML') renderedHTML: SafeHtml;\n\n private document = inject(DOCUMENT);\n private config = inject(FaConfig);\n\n constructor(\n @Optional() private parent: FaLayersComponent,\n private sanitizer: DomSanitizer,\n ) {\n faWarnIfParentNotExist(this.parent, 'FaLayersComponent', this.constructor.name);\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if (changes) {\n const params = this.buildParams();\n this.updateContent(params);\n }\n }\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Updating params by component props.\n */\n protected buildParams(): TextParams {\n const classOpts: FaProps = {\n flip: this.flip,\n border: this.border,\n inverse: this.inverse,\n size: this.size || null,\n pull: this.pull || null,\n rotate: this.rotate || null,\n fixedWidth: this.fixedWidth,\n };\n\n const parsedTransform = typeof this.transform === 'string' ? parse.transform(this.transform) : this.transform;\n\n const styles: Styles = {};\n if (classOpts.rotate != null && !isKnownRotateValue(classOpts.rotate)) {\n styles['--fa-rotate-angle'] = `${classOpts.rotate}`;\n }\n\n return {\n transform: parsedTransform,\n classes: faClassList(classOpts),\n title: this.title,\n styles,\n };\n }\n\n private updateContent(params: TextParams) {\n ensureCss(this.document, this.config);\n this.renderedHTML = this.sanitizer.bypassSecurityTrustHtml(text(this.content || '', params).html.join('\\n'));\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/layers/layers.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 20,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 23,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      165,
+                      387
+                    ],
+                    "text": ", ChangeDetectionStrategy,\n} from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { ensureCss } from '../shared/utils/css';\n\n/**\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Fontawesome layers.\n */\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 25,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 25,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 27,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 27,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/sort-lifecycle-methods",
+              "severity": 2,
+              "message": "Lifecycle Methods are not declared in order of execution",
+              "line": 43,
+              "column": 3,
+              "nodeType": "Identifier",
+              "messageId": "lifecycleMethodsNotSorted",
+              "endLine": 43,
+              "endColumn": 14
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 4,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DOCUMENT } from '@angular/common';\nimport {\n Component,\n ElementRef,\n HostBinding,\n inject,\n Input,\n OnChanges,\n OnInit,\n Renderer2,\n SimpleChanges,\n} from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\nimport { FaConfig } from '../config';\nimport { ensureCss } from '../shared/utils/css';\n\n/**\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Fontawesome layers.\n */\n@Component({\n selector: 'fa-layers',\n template: `<ng-content></ng-content>`,\n})\nexport class FaLayersComponent implements OnInit, OnChanges {\n @Input() size?: SizeProp;\n\n @Input() @HostBinding('class.fa-fw') fixedWidth?: boolean;\n\n private document = inject(DOCUMENT);\n\n constructor(\n private renderer: Renderer2,\n private elementRef: ElementRef,\n private config: FaConfig,\n ) {}\n\n ngOnInit() {\n this.renderer.addClass(this.elementRef.nativeElement, 'fa-layers');\n ensureCss(this.document, this.config);\n this.fixedWidth = typeof this.fixedWidth === 'boolean' ? this.fixedWidth : this.config.fixedWidth;\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if ('size' in changes) {\n if (changes.size.currentValue != null) {\n this.renderer.addClass(this.elementRef.nativeElement, `fa-${changes.size.currentValue}`);\n }\n if (changes.size.previousValue != null) {\n this.renderer.removeClass(this.elementRef.nativeElement, `fa-${changes.size.previousValue}`);\n }\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/stack/stack-item-size.directive.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 14,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 14,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 19,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 19,
+              "endColumn": 11
+            }
+          ],
+          "suppressedMessages": [
+            {
+              "ruleId": "@angular-eslint/directive-selector",
+              "severity": 2,
+              "message": "The selector should start with one of these prefixes: \"fa\" (https://angular.dev/style-guide#style-02-08)",
+              "line": 7,
+              "column": 13,
+              "nodeType": "Literal",
+              "messageId": "prefixFailure",
+              "endLine": 7,
+              "endColumn": 68,
+              "suppressions": [
+                {
+                  "kind": "directive",
+                  "justification": ""
+                }
+              ]
+            }
+          ],
+          "errorCount": 2,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\nimport { FaStackComponent } from './stack.component';\n\n@Directive({\n // eslint-disable-next-line @angular-eslint/directive-selector\n selector: 'fa-icon[stackItemSize],fa-duotone-icon[stackItemSize]',\n})\nexport class FaStackItemSizeDirective implements OnChanges {\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Specify whether icon inside {@link FaStackComponent} should be rendered in\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock regular size (1x) or as a larger icon (2x).\n */\n @Input() stackItemSize: '1x' | '2x' = '1x';\n\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock @internal\n */\n @Input() size?: SizeProp;\n\n ngOnChanges(changes: SimpleChanges) {\n if ('size' in changes) {\n throw new Error(\n 'fa-icon is not allowed to customize size when used inside fa-stack. ' +\n 'Set size on the enclosing fa-stack instead: <fa-stack size=\"4x\">...</fa-stack>.',\n );\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/src/lib/stack/stack.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 7,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      82,
+                      185
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            },
+            {
+              "ruleId": "@angular-eslint/prefer-signals",
+              "severity": 2,
+              "message": "Use `InputSignal`s (e.g. via `input()`) for Component input properties rather than the legacy `@Input()` decorator",
+              "line": 15,
+              "column": 3,
+              "nodeType": "Decorator",
+              "messageId": "preferInputSignals",
+              "endLine": 15,
+              "endColumn": 11
+            },
+            {
+              "ruleId": "@angular-eslint/sort-lifecycle-methods",
+              "severity": 2,
+              "message": "Lifecycle Methods are not declared in order of execution",
+              "line": 26,
+              "column": 3,
+              "nodeType": "Identifier",
+              "messageId": "lifecycleMethodsNotSorted",
+              "endLine": 26,
+              "endColumn": 14
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 3,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges } from '@angular/core';\nimport { SizeProp } from '@fortawesome/fontawesome-svg-core';\n\n@Component({\n selector: 'fa-stack',\n template: `<ng-content></ng-content>`,\n})\nexport class FaStackComponent implements OnInit, OnChanges {\n /bin /run /sbin angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Size of the stacked icon.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock Note that stacked icon is by default 2 times bigger, than non-stacked icon.\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock You'll need to set size using custom CSS to align stacked icon with a\n angular-fontawesome.report.json angular.json CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPER.md docs karma.conf.js LICENSE lint.after.all lint.after.recommended lint.before.all lint.before.recommended ng-package.json node_modules package.json projects README.md src tasks testing tsconfig.json tsconfig.lib.json tsconfig.lib.prod.json tsconfig.spec.json UPGRADING.md yarn.lock simple one. E.g. `fa-stack { font-size: 0.5em; }`.\n */\n @Input() size?: SizeProp;\n\n constructor(\n private renderer: Renderer2,\n private elementRef: ElementRef,\n ) {}\n\n ngOnInit() {\n this.renderer.addClass(this.elementRef.nativeElement, 'fa-stack');\n }\n\n ngOnChanges(changes: SimpleChanges) {\n if ('size' in changes) {\n if (changes.size.currentValue != null) {\n this.renderer.addClass(this.elementRef.nativeElement, `fa-${changes.size.currentValue}`);\n }\n if (changes.size.previousValue != null) {\n this.renderer.removeClass(this.elementRef.nativeElement, `fa-${changes.size.previousValue}`);\n }\n }\n }\n}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "demo": {
+      "recommended": [],
+      "all": [
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/alternate-prefix.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 10,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      240
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaConfig, FaIconComponent, FaIconLibrary } from '@fortawesome/angular-fontawesome';\nimport { faBellSlash, faHandPaper, faUser } from '@fortawesome/free-regular-svg-icons';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { FaConfig, FaIconComponent, FaIconLibrary } from '@fortawesome/angular-fontawesome';\nimport { faBellSlash, faHandPaper, faUser } from '@fortawesome/free-regular-svg-icons';\n\n@Component({\n selector: 'app-alternate-prefix',\n imports: [FaIconComponent],\n templateUrl: './alternate-prefix.component.html',\n providers: [FaConfig],\n})\nexport class AlternatePrefixComponent {\n constructor(faConfig: FaConfig, library: FaIconLibrary) {\n // Setting the defaultPrefix to far\n faConfig.defaultPrefix = 'far';\n // Adding dynamic icons to library for use\n library.addIcons(faUser, faHandPaper, faBellSlash);\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/app.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 24,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 29,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      65,
+                      625
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaConfig, FaIconLibrary, FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';\nimport { faFlag, faUser as regularUser } from '@fortawesome/free-regular-svg-icons';\nimport {\n faAdjust,\n faBatteryQuarter,\n faBell,\n faCircle,\n faCoffee,\n faCog,\n faEllipsisH,\n faFighterJet,\n faFlag as solidFlag,\n faHeart,\n faMagic,\n faSpinner,\n faSquare,\n faTimes,\n faUser,\n} from '@fortawesome/free-solid-svg-icons';\nimport { AlternatePrefixComponent } from './alternate-prefix.component';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { DecimalPipe } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { FaConfig, FaIconLibrary, FontAwesomeModule, IconDefinition } from '@fortawesome/angular-fontawesome';\nimport { faFlag, faUser as regularUser } from '@fortawesome/free-regular-svg-icons';\nimport {\n faAdjust,\n faBatteryQuarter,\n faBell,\n faCircle,\n faCoffee,\n faCog,\n faEllipsisH,\n faFighterJet,\n faFlag as solidFlag,\n faHeart,\n faMagic,\n faSpinner,\n faSquare,\n faTimes,\n faUser,\n} from '@fortawesome/free-solid-svg-icons';\nimport { AlternatePrefixComponent } from './alternate-prefix.component';\n\n@Component({\n selector: 'app-root',\n imports: [DecimalPipe, FontAwesomeModule, AlternatePrefixComponent],\n templateUrl: './app.component.html',\n styleUrl: './app.component.scss',\n})\nexport class AppComponent {\n faBell = faBell;\n faCog = faCog;\n faFlag = faFlag;\n solidFlag = solidFlag;\n faTimes = faTimes;\n faMagic = faMagic;\n faAdjust = faAdjust;\n faCircle = faCircle;\n faCoffee = faCoffee;\n faSquare = faSquare;\n regularUser = regularUser;\n faEllipsisH = faEllipsisH;\n faFighterJet = faFighterJet;\n faBatteryQuarter = faBatteryQuarter;\n faHeart = faHeart;\n faSpinner = faSpinner;\n faDummy: IconDefinition = {\n prefix: 'fad',\n iconName: 'dummy',\n icon: [512, 512, [], '', ['M50 50 H412 V250 H50 Z', 'M50 262 H412 V462 H50 Z']],\n };\n\n notificationsCounter = 1000;\n isAnimated = true;\n magicLevel = 0;\n\n selectedPosition: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left';\n\n constructor(library: FaIconLibrary, faConfig: FaConfig) {\n // Notice that we're adding two different icon objects to the library.\n // Each of them within their respective icon npm packages are exported as faUser,\n // but we've renamed the second one in order to disambiguate the two objects within\n // this JavaScript module. Internally, these objects are different, even though they have the same iconName.\n // They have different prefixes: faUser has a prefix of fas, since it came from free-solid-svg-icons;\n // regularUser has a prefix of far, since it came from free-regular-svg-icons.\n // And of course, they also have different SVG content, resulting in different appearances.\n // So they really are totally different icons. However, they share the same iconName: user.\n // So in the template, the only way to reference the non-default (fas) icon is to either\n // use the array syntax that specifies [prefix, iconName], like this:\n //\n // <fa-icon [icon]=\"['far','user']\"></fa-icon>\n //\n // Or we could make the regularUser object available to the template and simply\n // reference it as an object, like this:\n //\n // <fa-icon [icon]=\"regularUser\"></fa-icon>\n //\n // You don't specify the prefix in that case, because the icon object knows its own prefix.\n library.addIcons(faUser, regularUser);\n faConfig.fallbackIcon = faMagic;\n }\n\n onChange(event: any) {\n this.selectedPosition = event.target.value;\n }\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/testing/explicit-reference.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 5,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 9,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      187
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\nimport { faUser } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\nimport { faUser } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n selector: 'app-explicit-reference',\n imports: [FaIconComponent],\n template: '<fa-icon [icon]=\"faUser\"></fa-icon>',\n})\nexport class ExplicitReferenceComponent {\n faUser = faUser;\n}\n",
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "/home/migudel/Documentos/TFG/repos/articulo/angular-fontawesome/projects/demo/src/app/testing/icon-library.component.ts",
+          "messages": [
+            {
+              "ruleId": "@angular-eslint/prefer-on-push-component-change-detection",
+              "severity": 2,
+              "message": "The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`",
+              "line": 4,
+              "column": 1,
+              "nodeType": "Decorator",
+              "messageId": "preferOnPushComponentChangeDetection",
+              "endLine": 8,
+              "endColumn": 3,
+              "suggestions": [
+                {
+                  "messageId": "suggestAddChangeDetectionOnPush",
+                  "fix": {
+                    "range": [
+                      18,
+                      127
+                    ],
+                    "text": ", ChangeDetectionStrategy } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\n\n@Component({\n changeDetection: ChangeDetectionStrategy.OnPush,"
+                  },
+                  "desc": "Add `ChangeDetectionStrategy.OnPush`"
+                }
+              ]
+            }
+          ],
+          "suppressedMessages": [],
+          "errorCount": 1,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "source": "import { Component } from '@angular/core';\nimport { FaIconComponent } from '@fortawesome/angular-fontawesome';\n\n@Component({\n selector: 'app-regular-icon-library',\n imports: [FaIconComponent],\n template: '<fa-icon icon=\"user\"></fa-icon>',\n})\nexport class IconLibraryComponent {}\n",
+          "usedDeprecatedRules": []
+        }
+      ]
+    }
+  }
+}

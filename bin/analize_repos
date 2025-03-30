@@ -104,10 +104,14 @@ function generate_report() {
 
 pwd=$PWD
 # Recorremos todos los repositorios
+i=0
+total=$( ls -d "$REPOS_DIR"/*/*/ | wc -l )
 for repo in "$REPOS_DIR"/*/*/; do
   if [ -d "$repo" ]; then
     repo_name=$(echo $repo | awk -F'/' '{print $(NF-1)}')
     repo_source=$(echo $repo | awk -F'/' '{print $(NF-2)}')
+    i=$(( $i + 1 ))
+    printf "[ %02d / %02d ] " $i $total
     echo "Processing repo: $repo_name [$repo_source] ($repo)"
 
     # Acceder al repositorio

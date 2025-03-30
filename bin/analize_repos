@@ -3,29 +3,30 @@
 # Check the args
 if [ "$#" -lt 2 ] && { [[ -z "$REPOS" ]] || [[ -z "$ANALISYS_REPO" ]]; }; then
   echo "Usage: $0 <repos_dir> <reports_dir>"
+  echo "Also if you want execute"
   exit 1
 fi
 
-NODE_REPORT=$ANALISYS_BIN/report.js
+NODE_REPORT=$ANALISYS_BIN/gen_report.js
 
-if [ ! -e "$ANALISYS_BIN/automate.sh" ]; then
+if [ ! -e "$ANALISYS_BIN/analize_repos" ]; then
   echo "No bin found for analisys. Please found the code_smell_catalog repo and execute \`source setup\` on it"
-  return -1
+  exit -1
 elif [[ ! -e "$NODE_REPORT" ]]; then
-  echo "report.js node program not found"
-  return -1
+  echo "Report js program not found"
+  exit -1
 fi
 
 # Dir args
 REPOS_DIR="${1:-$REPOS}"           # Dir which contains the repos files
 REPORTS_DIR="${2:-$ANALISYS_REPO}" # Dir in which will be save the final report
-REPORT_FILE="${3:-report.json}"
 resBR=lint.before.recommended
 resBA=lint.before.all
 resAR=lint.after.recommended
 resAA=lint.after.all
 json_tmp=/tmp/tmp_json.json
 json_tmp2=/tmp/tmp_json2.json
+report_name=automatic.report
 
 # Change the Angular-ESlint rules scope, by default try to change recommended to all, if -i is pressent in second arg it's inverted
 function change_mode() {
@@ -44,7 +45,7 @@ function change_mode() {
     preffix="plugin:@angular-eslint/"
     pattern="s|${preffix}${src}|${preffix}${dest}|"
   else
-    preffix="..angular.config.ts"
+    preffix="..angular.configs.ts"
     pattern="s|${preffix}${src^}|${preffix}${dest^}|"
   fi
 
@@ -55,7 +56,7 @@ function change_mode() {
 function generate_report() {
   # Get the last commit data on JSON format
   local url_repo=$(git config --get remote.origin.url)
-  local data_repo=$(git log -1 --pretty=format:'{"commit": "%H", "author": "%an", "date": "%ad", "message": "%s"}')
+  local data_repo=$(git log --skip=1 -1 --pretty=format:'{"commit": "%H", "author": "%an", "date": "%ad", "message": "%s"}')
   local json_file_tmp=/tmp/tmp.report.json
 
   jq -cn \
@@ -75,7 +76,7 @@ function generate_report() {
       mode=$(echo "$file" | cut -d '.' -f 3)
 
       cat "$file" | while IFS= read -r lining && IFS= read -r json_content; do
-        echo $json_content > $json_file_tmp
+        echo $json_content >$json_file_tmp
         project_name=$(echo $lining | sed 's/Linting \"\(.*\)\".../\1/')
 
         # echo name=$project_name when=$when mode=$mode
@@ -193,7 +194,7 @@ for repo in "$REPOS_DIR"/*/*/; do
     # Generar el reporte con el programa Node.js
     # generate_report | jq
     REPORT_FILE="$repo_name.report.json"
-    generate_report  >$REPORT_FILE
+    generate_report >$REPORT_FILE
     # generate_report > "$repo_name.report.json" 2>&1
 
     echo -e "Generating report for the repo $repo_name [$PWD/$REPORT_FILE]\n\n"
@@ -217,7 +218,7 @@ for report_file in $(find . -type f -name "*.report.json"); do
     '. += { ($repo) : $report }' >$json_tmp2
   cp $json_tmp2 $json_tmp
 done
-dest_file=$REPORTS_DIR/$REPORT_FILE
+dest_file=$REPORTS_DIR/automatic.report.only_repos.json
 cp $json_tmp $dest_file
-echo "Global json report saved in $dest_file"
-# node $NODE_REPORT $REPORTS_DIR/$REPORT_FILE
+echo -e "\nGlobal json report saved in $dest_file"
+node $NODE_REPORT $dest_file $RESULT_DIR

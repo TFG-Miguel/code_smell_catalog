@@ -1,6 +1,5 @@
-const mock = require("./report.json");
 const fs = require("fs");
-const { genMarkdownReport } = require("./markdown");
+const { genMarkdownReport } = require("./utils/markdown");
 const path = require("path");
 
 /**
@@ -32,7 +31,7 @@ function getProjectReport(project, filterFn = (item) => true) {
               fixable: !!fix,
               has_suggestion: suggestions?.length > 0,
             };
-            ruleReport[mode][type] += 1;
+            ruleReport[mode][type]++;
             result[ruleId] = ruleReport;
           }
         });
@@ -47,17 +46,17 @@ function getProjectReport(project, filterFn = (item) => true) {
  * @returns
  */
 function genRepoReport(data) {
-  const repo = {};
-  Object.entries(data).forEach(([when, projects]) => {
-    repo[when] = { projects: {} };
-    Object.entries(projects).forEach(([name, project]) => {
-      repo[when].projects[name] = getProjectReport(project);
+  const repo = { projects: {}, total: {}, ...data.repo };
+  ["before", "after"].forEach((when) => {
+    Object.entries(data[when]).forEach(([name, project]) => {
+      if (!repo.projects[name]) repo.projects[name] = {};
+      repo.projects[name][when] = getProjectReport(project);
     });
     const total = {};
-    Object.values(repo[when].projects).forEach((project) => {
-      Object.entries(project).forEach((rule) => updateTotal(rule, total));
+    Object.values(repo.projects).forEach((project) => {
+      Object.entries(project[when]).forEach((rule) => updateTotal(rule, total));
     });
-    repo[when].total = total;
+    repo.total[when] = total;
   });
   return repo;
 }
@@ -89,9 +88,9 @@ function updateTotal(
 function getTotalReport(report) {
   const result = {};
   Object.entries(report).forEach(([repoName, repo]) => {
-    Object.entries(repo).forEach(([when, report]) => {
+    ["before", "after"].forEach((when) => {
       if (!result[when]) result[when] = {};
-      Object.entries(report.total).forEach((rule) => {
+      Object.entries(repo.total[when]).forEach((rule) => {
         result[when] = updateTotal(rule, result[when] ?? {});
       });
     });
@@ -100,18 +99,20 @@ function getTotalReport(report) {
 }
 
 const SOURCE = process.argv[2] ?? "./report.json";
-const OUTPUT_NAME = "report.tmp.verify.v1";
-const OUTPUT_DIR = path.dirname(SOURCE);
+const OUTPUT_DIR = process.argv[3] ?? path.dirname(SOURCE);
+const OUTPUT_NAME = "automatic.report.analyze";
 
-const result = {projects:{}};
+const result = { repos: {} };
 Object.entries(require(SOURCE)).forEach(
-  ([nameRepo, repo]) => (result.projects[nameRepo] = genRepoReport(repo))
+  ([nameRepo, repo]) => (result.repos[nameRepo] = genRepoReport(repo))
 );
-result.total = getTotalReport(result);
+result.total = getTotalReport(result.repos);
 fs.writeFileSync(
   path.join(OUTPUT_DIR, OUTPUT_NAME + ".json"),
   JSON.stringify(result, null, 2)
 );
 
 let m = genMarkdownReport(result);
-fs.writeFileSync(path.join(OUTPUT_DIR, OUTPUT_NAME + ".md"), m);
+const DEST_FILE = path.join(OUTPUT_DIR, OUTPUT_NAME + ".md");
+fs.writeFileSync(DEST_FILE, m);
+console.log(`✅ Saved in file ${DEST_FILE}`);

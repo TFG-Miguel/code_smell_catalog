@@ -4,7 +4,7 @@ export REPO=$PWD
 export ANALISYS=$REPO/analisys
 export ANALISYS_BIN=$REPO/bin
 export ANALISYS_REPO=$ANALISYS/repos
-[ ! -d  "$ANALISYS_REPO" ] && mkdir -p $ANALISYS_REPO
+[ ! -d "$ANALISYS_REPO" ] && mkdir -p $ANALISYS_REPO
 export RESULT_DIR=$PWD/result
 export PATH=$ANALISYS_BIN:$PATH
-echo "Now, go to the dir in which you have all the cloned repos and execute \`export REPOS=\$PWD\`"
+echo -e "Now, go to the dir in which you have all the cloned repos and execute \`export REPOS=\$PWD\`\n\nAfter that, you will be able to execute the command \`analize_repos\`"

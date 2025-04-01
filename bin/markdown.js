@@ -41,7 +41,7 @@ function genMarkdownRepoTable(
             ? TABLE_ENTRIES.filter(({ name }) => !/.*<br>.*<br>.*/.test(name))
             : TABLE_ENTRIES)
         )
-      : `\n> [!WARNING]\n\n> ${noEntryMessage}`) + "\n\n"
+      : `\n> [!WARNING]\n> ${noEntryMessage}`) + "\n\n"
   );
 }
 
@@ -87,7 +87,7 @@ function genMarkdownReport(data, mode) {
     markdown += "### Which projects has rules\n";
     Object.entries(data.projects_with_rules).forEach(([rule, files]) => {
       markdown += `<details>\n<summary>${rule}</summary>\n\n`;
-      files.forEach(({project, warnings, errors}) => {
+      files.forEach(({ project, warnings, errors }) => {
         markdown += `- ${project.join(" -> ")} \\[W:${warnings} E:${errors}]\n`;
       });
       markdown += "</details>\n\n";

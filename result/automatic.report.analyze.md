@@ -39,7 +39,7 @@
 
 ## Symbols
 
-> [!INFO]
+> [!NOTE]
 > Symbols meaning
 > - 💥 = errors
 > - ⚠️ = warnings
@@ -342,7 +342,6 @@
 
 
 > [!WARNING]
-
 > The project pass linting
 
 

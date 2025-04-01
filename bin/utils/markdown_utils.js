@@ -19,7 +19,7 @@ const SYMBOLS = {
 };
 
 exports.SYMBOLS_DESCRIPTION =
-  "> [!INFO]\n> Symbols meaning\n" +
+  "> [!NOTE]\n> Symbols meaning\n" +
   Object.entries(SYMBOLS)
     .map(([name, symbol]) => `> - ${symbol} = ${name}`)
     .join("\n") +

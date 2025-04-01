@@ -164,17 +164,13 @@ function analyze_report(source, { name, dir }) {
   );
   // Generate and save the visual report (markdown)
   let markdown_report = genMarkdownReport(result);
-  const destFile = path.join(dir, name, "README.md");
-  const destDir = path.dirname(destFile);
-  if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir);
-  }
+  const destFile = path.join(dir, name + ".md");
   fs.writeFileSync(destFile, markdown_report);
   console.log(`✅ Saved in file ${destFile}`);
 }
 
 const SOURCE = process.argv[2] ?? "./report.json";
 const OUTPUT_DIR = process.argv[3] ?? path.dirname(SOURCE);
-const OUTPUT_NAME = "automatic_report";
+const OUTPUT_NAME = "automatic.report.analyze";
 
 analyze_report(SOURCE, { name: OUTPUT_NAME, dir: OUTPUT_DIR });

@@ -18,6 +18,7 @@ const SYMBOLS = {
   test: "🧪",
 };
 
+exports.SYMBOLS = SYMBOLS
 exports.SYMBOLS_DESCRIPTION =
   "> [!NOTE]\n> Symbols meaning\n" +
   Object.entries(SYMBOLS)

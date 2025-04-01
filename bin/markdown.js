@@ -1,4 +1,5 @@
 const {
+  SYMBOLS,
   SYMBOLS_DESCRIPTION,
   sortFn,
   RULES,
@@ -88,7 +89,7 @@ function genMarkdownReport(data, mode) {
     Object.entries(data.projects_with_rules).forEach(([rule, files]) => {
       markdown += `<details>\n<summary>${rule}</summary>\n\n`;
       files.forEach(({ project, warnings, errors }) => {
-        markdown += `- ${project.join(" -> ")} \\[W:${warnings} E:${errors}]\n`;
+        markdown += `- ${project.join(" -> ")} \\[${SYMBOLS.warnings}:${warnings} ${SYMBOLS.errors}:${errors}]\n`;
       });
       markdown += "</details>\n\n";
     });

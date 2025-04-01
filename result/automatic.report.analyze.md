@@ -90,218 +90,218 @@
 <details>
 <summary>prefer-on-push-component-change-detection</summary>
 
-- ng-apexcharts -> ng-apexcharts-demo \[W:0 E:1]
-- mean -> mean \[W:0 E:6]
-- angular-16-crud-example -> angular-16-crud \[W:0 E:4]
-- QuickApp -> quickapp.client \[W:0 E:19]
-- gojs-angular-basic -> first-app \[W:0 E:3]
-- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:11]
-- angular-17-crud-example -> angular-17-crud \[W:0 E:4]
-- angular-basics-project -> shopping-cart \[W:0 E:1]
-- Angular-Full-Stack -> angular2-full-stack \[W:0 E:12]
-- play-scala-angular-seed -> scala-play-angular-seed \[W:0 E:2]
-- angular-realworld-example-app -> angular-conduit \[W:0 E:16]
-- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
-- ngx-quill -> ngx-quill \[W:0 E:3]
-- ngx-toastr -> ngx-toastr \[W:0 E:6]
-- angular-fontawesome -> angular-fontawesome \[W:0 E:6]
-- angular-fontawesome -> demo \[W:0 E:4]
-- angular-calendar -> demos \[W:0 E:4]
-- angular-calendar -> angular-calendar \[W:0 E:20]
+- ng-apexcharts -> ng-apexcharts-demo \[⚠️:0 💥:1]
+- mean -> mean \[⚠️:0 💥:6]
+- angular-16-crud-example -> angular-16-crud \[⚠️:0 💥:4]
+- QuickApp -> quickapp.client \[⚠️:0 💥:19]
+- gojs-angular-basic -> first-app \[⚠️:0 💥:3]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[⚠️:0 💥:11]
+- angular-17-crud-example -> angular-17-crud \[⚠️:0 💥:4]
+- angular-basics-project -> shopping-cart \[⚠️:0 💥:1]
+- Angular-Full-Stack -> angular2-full-stack \[⚠️:0 💥:12]
+- play-scala-angular-seed -> scala-play-angular-seed \[⚠️:0 💥:2]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:16]
+- angular-gridster2 -> angular-gridster2 \[⚠️:0 💥:3]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:3]
+- ngx-toastr -> ngx-toastr \[⚠️:0 💥:6]
+- angular-fontawesome -> angular-fontawesome \[⚠️:0 💥:6]
+- angular-fontawesome -> demo \[⚠️:0 💥:4]
+- angular-calendar -> demos \[⚠️:0 💥:4]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:20]
 </details>
 
 <details>
 <summary>consistent-component-styles</summary>
 
-- ng-apexcharts -> ng-apexcharts-demo \[W:0 E:1]
-- mean -> mean \[W:0 E:5]
-- angular-16-crud-example -> angular-16-crud \[W:0 E:4]
-- gojs-angular-basic -> first-app \[W:0 E:2]
-- angular-17-crud-example -> angular-17-crud \[W:0 E:3]
-- angular-basics-project -> shopping-cart \[W:0 E:1]
-- Angular-Full-Stack -> angular2-full-stack \[W:0 E:4]
-- play-scala-angular-seed -> scala-play-angular-seed \[W:0 E:2]
-- angular-realworld-example-app -> angular-conduit \[W:0 E:1]
-- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
-- ngx-quill -> ngx-quill \[W:0 E:3]
-- angular-fontawesome -> demo \[W:0 E:1]
-- angular-calendar -> demos \[W:0 E:17]
-- angular-calendar -> angular-calendar \[W:0 E:1]
+- ng-apexcharts -> ng-apexcharts-demo \[⚠️:0 💥:1]
+- mean -> mean \[⚠️:0 💥:5]
+- angular-16-crud-example -> angular-16-crud \[⚠️:0 💥:4]
+- gojs-angular-basic -> first-app \[⚠️:0 💥:2]
+- angular-17-crud-example -> angular-17-crud \[⚠️:0 💥:3]
+- angular-basics-project -> shopping-cart \[⚠️:0 💥:1]
+- Angular-Full-Stack -> angular2-full-stack \[⚠️:0 💥:4]
+- play-scala-angular-seed -> scala-play-angular-seed \[⚠️:0 💥:2]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:1]
+- angular-gridster2 -> angular-gridster2 \[⚠️:0 💥:3]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:3]
+- angular-fontawesome -> demo \[⚠️:0 💥:1]
+- angular-calendar -> demos \[⚠️:0 💥:17]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:1]
 </details>
 
 <details>
 <summary>prefer-signals</summary>
 
-- ng-apexcharts -> ng-apexcharts-demo \[W:0 E:1]
-- mean -> mean \[W:0 E:1]
-- angular-16-crud-example -> angular-16-crud \[W:0 E:2]
-- ng-three-template -> ng-three-template \[W:0 E:1]
-- gojs-angular-basic -> first-app \[W:0 E:5]
-- angular-17-crud-example -> angular-17-crud \[W:0 E:2]
-- Angular-Full-Stack -> angular2-full-stack \[W:0 E:3]
-- angular-realworld-example-app -> angular-conduit \[W:0 E:9]
-- ngx-quill -> ngx-quill \[W:0 E:2]
-- angular-fontawesome -> angular-fontawesome \[W:0 E:37]
-- angular-calendar -> demos \[W:0 E:7]
-- angular-calendar -> angular-calendar \[W:0 E:149]
+- ng-apexcharts -> ng-apexcharts-demo \[⚠️:0 💥:1]
+- mean -> mean \[⚠️:0 💥:1]
+- angular-16-crud-example -> angular-16-crud \[⚠️:0 💥:2]
+- ng-three-template -> ng-three-template \[⚠️:0 💥:1]
+- gojs-angular-basic -> first-app \[⚠️:0 💥:5]
+- angular-17-crud-example -> angular-17-crud \[⚠️:0 💥:2]
+- Angular-Full-Stack -> angular2-full-stack \[⚠️:0 💥:3]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:9]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:2]
+- angular-fontawesome -> angular-fontawesome \[⚠️:0 💥:37]
+- angular-calendar -> demos \[⚠️:0 💥:7]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:149]
 </details>
 
 <details>
 <summary>use-injectable-provided-in</summary>
 
-- mean -> mean \[W:0 E:1]
-- QuickApp -> quickapp.client \[W:0 E:7]
-- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:4]
-- Angular-Full-Stack -> angular2-full-stack \[W:0 E:5]
-- play-scala-angular-seed -> scala-play-angular-seed \[W:0 E:1]
-- angular-calendar -> demos \[W:0 E:7]
-- angular-calendar -> angular-calendar \[W:0 E:6]
+- mean -> mean \[⚠️:0 💥:1]
+- QuickApp -> quickapp.client \[⚠️:0 💥:7]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[⚠️:0 💥:4]
+- Angular-Full-Stack -> angular2-full-stack \[⚠️:0 💥:5]
+- play-scala-angular-seed -> scala-play-angular-seed \[⚠️:0 💥:1]
+- angular-calendar -> demos \[⚠️:0 💥:7]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:6]
 </details>
 
 <details>
 <summary>no-forward-ref</summary>
 
-- QuickApp -> quickapp.client \[W:0 E:1]
-- ngx-quill -> ngx-quill \[W:0 E:2]
+- QuickApp -> quickapp.client \[⚠️:0 💥:1]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:2]
 </details>
 
 <details>
 <summary>no-empty-lifecycle-method</summary>
 
-- ng-three-template -> ng-three-template \[W:0 E:5]
+- ng-three-template -> ng-three-template \[⚠️:0 💥:5]
 </details>
 
 <details>
 <summary>use-component-view-encapsulation</summary>
 
-- ng-three-template -> ng-three-template \[W:0 E:7]
-- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:10]
-- angular-gridster2 -> gridster-app \[W:0 E:25]
-- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
-- ngx-quill -> ngx-quill \[W:0 E:2]
-- angular-calendar -> demos \[W:0 E:12]
+- ng-three-template -> ng-three-template \[⚠️:0 💥:7]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[⚠️:0 💥:10]
+- angular-gridster2 -> gridster-app \[⚠️:0 💥:25]
+- angular-gridster2 -> angular-gridster2 \[⚠️:0 💥:3]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:2]
+- angular-calendar -> demos \[⚠️:0 💥:12]
 </details>
 
 <details>
 <summary>use-lifecycle-interface</summary>
 
-- gojs-angular-basic -> first-app \[W:0 E:1]
+- gojs-angular-basic -> first-app \[⚠️:0 💥:1]
 </details>
 
 <details>
 <summary>no-output-on-prefix</summary>
 
-- gojs-angular-basic -> first-app \[W:0 E:2]
-- ngx-quill -> ngx-quill \[W:0 E:9]
+- gojs-angular-basic -> first-app \[⚠️:0 💥:2]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:9]
 </details>
 
 <details>
 <summary>prefer-output-readonly</summary>
 
-- gojs-angular-basic -> first-app \[W:0 E:2]
-- angular-realworld-example-app -> angular-conduit \[W:0 E:3]
-- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
-- ngx-quill -> ngx-quill \[W:0 E:9]
-- angular-calendar -> demos \[W:0 E:3]
-- angular-calendar -> angular-calendar \[W:0 E:26]
+- gojs-angular-basic -> first-app \[⚠️:0 💥:2]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:3]
+- angular-gridster2 -> angular-gridster2 \[⚠️:0 💥:3]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:9]
+- angular-calendar -> demos \[⚠️:0 💥:3]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:26]
 </details>
 
 <details>
 <summary>prefer-standalone-component</summary>
 
-- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:11]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[⚠️:0 💥:11]
 </details>
 
 <details>
 <summary>sort-ngmodule-metadata-arrays</summary>
 
-- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:6]
-- ngx-toastr -> ngx-toastr \[W:0 E:3]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[⚠️:0 💥:6]
+- ngx-toastr -> ngx-toastr \[⚠️:0 💥:3]
 </details>
 
 <details>
 <summary>relative-url-prefix</summary>
 
-- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:7]
-- angular-calendar -> demos \[W:0 E:43]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[⚠️:0 💥:7]
+- angular-calendar -> demos \[⚠️:0 💥:43]
 </details>
 
 <details>
 <summary>prefer-standalone</summary>
 
-- Angular-Full-Stack -> angular2-full-stack \[W:0 E:12]
+- Angular-Full-Stack -> angular2-full-stack \[⚠️:0 💥:12]
 </details>
 
 <details>
 <summary>directive-selector</summary>
 
-- angular-realworld-example-app -> angular-conduit \[W:0 E:1]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:1]
 </details>
 
 <details>
 <summary>no-output-native</summary>
 
-- angular-realworld-example-app -> angular-conduit \[W:0 E:2]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:2]
 </details>
 
 <details>
 <summary>component-max-inline-declarations</summary>
 
-- angular-realworld-example-app -> angular-conduit \[W:0 E:6]
-- ngx-quill -> ngx-quill \[W:0 E:2]
-- ngx-toastr -> ngx-toastr \[W:0 E:11]
-- angular-calendar -> demos \[W:0 E:11]
-- angular-calendar -> angular-calendar \[W:0 E:17]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:6]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:2]
+- ngx-toastr -> ngx-toastr \[⚠️:0 💥:11]
+- angular-calendar -> demos \[⚠️:0 💥:11]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:17]
 </details>
 
 <details>
 <summary>no-duplicates-in-metadata-arrays</summary>
 
-- angular-realworld-example-app -> angular-conduit \[W:0 E:1]
+- angular-realworld-example-app -> angular-conduit \[⚠️:0 💥:1]
 </details>
 
 <details>
 <summary>runtime-localize</summary>
 
-- angular-example-app -> angularexampleapp \[W:0 E:21]
+- angular-example-app -> angularexampleapp \[⚠️:0 💥:21]
 </details>
 
 <details>
 <summary>sort-lifecycle-methods</summary>
 
-- angular-gridster2 -> angular-gridster2 \[W:0 E:2]
-- angular-fontawesome -> angular-fontawesome \[W:0 E:2]
-- angular-calendar -> angular-calendar \[W:0 E:3]
+- angular-gridster2 -> angular-gridster2 \[⚠️:0 💥:2]
+- angular-fontawesome -> angular-fontawesome \[⚠️:0 💥:2]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:3]
 </details>
 
 <details>
 <summary>component-selector</summary>
 
-- ngx-quill -> ngx-quill \[W:0 E:3]
+- ngx-quill -> ngx-quill \[⚠️:0 💥:3]
 </details>
 
 <details>
 <summary>component-class-suffix</summary>
 
-- ngx-toastr -> ngx-toastr \[W:0 E:5]
+- ngx-toastr -> ngx-toastr \[⚠️:0 💥:5]
 </details>
 
 <details>
 <summary>no-lifecycle-call</summary>
 
-- angular-fontawesome -> angular-fontawesome \[W:0 E:1]
+- angular-fontawesome -> angular-fontawesome \[⚠️:0 💥:1]
 </details>
 
 <details>
 <summary>no-host-metadata-property</summary>
 
-- angular-calendar -> angular-calendar \[W:0 E:1]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:1]
 </details>
 
 <details>
 <summary>use-component-selector</summary>
 
-- angular-calendar -> angular-calendar \[W:0 E:6]
+- angular-calendar -> angular-calendar \[⚠️:0 💥:6]
 </details>
 
 

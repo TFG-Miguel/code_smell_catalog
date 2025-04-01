@@ -1,151 +1,308 @@
-# 📑 Angular ESLint Rules Analysis Report 
+# 📑 Angular ESLint RULES Analysis Report 
 
 ## Index
+<details><summary>Index</summary>
 
 - [Global](#global)
-	- [Before](#📊-before)
-	- [After](#📊-after)
 - [Repositories Report](#repositories-report)
-	- [ng-apexcharts](#🖊️-ng-apexcharts)
-		- [Total](#🧮-total)
-			- [Before](#📊-before)
-			- [After](#f09f938a-after-1)
-		- [ng-apexcharts-demo](#💻-ng-apexcharts-demo)
-			- [Before](#f09f938a-before-2)
-			- [After](#f09f938a-after-2)
-		- [ng-apexcharts](#💻-ng-apexcharts)
-			- [Before](#f09f938a-before-3)
-			- [After](#f09f938a-after-3)
-	- [mean](#🖊️-mean)
-		- [Before](#f09f938a-before-4)
-		- [After](#f09f938a-after-4)
-	- [angular-16-crud-example](#🖊️-angular-16-crud-example)
-		- [Before](#f09f938a-before-5)
-		- [After](#f09f938a-after-5)
-	- [QuickApp](#🖊️-quickapp)
-		- [Before](#f09f938a-before-6)
-		- [After](#f09f938a-after-6)
-	- [ng-three-template](#🖊️-ng-three-template)
-		- [Before](#f09f938a-before-7)
-		- [After](#f09f938a-after-7)
-	- [gojs-angular-basic](#🖊️-gojs-angular-basic)
-		- [Before](#f09f938a-before-8)
-		- [After](#f09f938a-after-8)
-	- [angular-ionic-ngxs-movies](#🖊️-angular-ionic-ngxs-movies)
-		- [Before](#f09f938a-before-9)
-		- [After](#f09f938a-after-9)
-	- [angular-17-crud-example](#🖊️-angular-17-crud-example)
-		- [Before](#f09f938a-before-10)
-		- [After](#f09f938a-after-10)
-	- [angular-basics-project](#🖊️-angular-basics-project)
-		- [Before](#f09f938a-before-11)
-		- [After](#f09f938a-after-11)
-	- [Angular-Full-Stack](#🖊️-angular-full-stack)
-		- [Before](#f09f938a-before-12)
-		- [After](#f09f938a-after-12)
-	- [play-scala-angular-seed](#🖊️-play-scala-angular-seed)
-		- [Before](#f09f938a-before-13)
-		- [After](#f09f938a-after-13)
-	- [angular-realworld-example-app](#🖊️-angular-realworld-example-app)
-		- [Before](#f09f938a-before-14)
-		- [After](#f09f938a-after-14)
-	- [angular-example-app](#🖊️-angular-example-app)
-		- [Before](#f09f938a-before-15)
-		- [After](#f09f938a-after-15)
-	- [angular-gridster2](#🖊️-angular-gridster2)
-		- [Total](#f09fa7ae-total-1)
-			- [Before](#f09f938a-before-16)
-			- [After](#f09f938a-after-16)
-		- [gridster-app](#💻-gridster-app)
-			- [Before](#f09f938a-before-17)
-			- [After](#f09f938a-after-17)
-		- [angular-gridster2](#💻-angular-gridster2)
-			- [Before](#f09f938a-before-18)
-			- [After](#f09f938a-after-18)
-	- [ngx-quill](#🖊️-ngx-quill)
-		- [Before](#f09f938a-before-19)
-		- [After](#f09f938a-after-19)
-	- [ngx-toastr](#🖊️-ngx-toastr)
-		- [Before](#f09f938a-before-20)
-		- [After](#f09f938a-after-20)
-	- [angular-fontawesome](#🖊️-angular-fontawesome)
-		- [Total](#f09fa7ae-total-2)
-			- [Before](#f09f938a-before-21)
-			- [After](#f09f938a-after-21)
-		- [angular-fontawesome](#💻-angular-fontawesome)
-			- [Before](#f09f938a-before-22)
-			- [After](#f09f938a-after-22)
-		- [demo](#💻-demo)
-			- [Before](#f09f938a-before-23)
-			- [After](#f09f938a-after-23)
-	- [angular-calendar](#🖊️-angular-calendar)
-		- [Total](#f09fa7ae-total-3)
-			- [Before](#f09f938a-before-24)
-			- [After](#f09f938a-after-24)
-		- [demos](#💻-demos)
-			- [Before](#f09f938a-before-25)
-			- [After](#f09f938a-after-25)
-		- [angular-calendar](#💻-angular-calendar)
-			- [Before](#f09f938a-before-26)
-			- [After](#f09f938a-after-26)
+	- [ng-apexcharts](#-ng-apexcharts)
+		- [Total](#-total)
+		- [ng-apexcharts-demo](#-ng-apexcharts-demo)
+		- [ng-apexcharts](#-ng-apexcharts)
+	- [mean](#-mean)
+	- [angular-16-crud-example](#-angular-16-crud-example)
+	- [QuickApp](#-quickapp)
+	- [ng-three-template](#-ng-three-template)
+	- [gojs-angular-basic](#-gojs-angular-basic)
+	- [angular-ionic-ngxs-movies](#-angular-ionic-ngxs-movies)
+	- [angular-17-crud-example](#-angular-17-crud-example)
+	- [angular-basics-project](#-angular-basics-project)
+	- [Angular-Full-Stack](#-angular-full-stack)
+	- [play-scala-angular-seed](#-play-scala-angular-seed)
+	- [angular-realworld-example-app](#-angular-realworld-example-app)
+	- [angular-example-app](#-angular-example-app)
+	- [angular-gridster2](#-angular-gridster2)
+		- [Total](#-total-1)
+		- [gridster-app](#-gridster-app)
+		- [angular-gridster2](#-angular-gridster2)
+	- [ngx-quill](#-ngx-quill)
+	- [ngx-toastr](#-ngx-toastr)
+	- [angular-fontawesome](#-angular-fontawesome)
+		- [Total](#-total-2)
+		- [angular-fontawesome](#-angular-fontawesome)
+		- [demo](#-demo)
+	- [angular-calendar](#-angular-calendar)
+		- [Total](#-total-3)
+		- [demos](#-demos)
+		- [angular-calendar](#-angular-calendar)
+</details>
+
+## Symbols
+
+> [!INFO]
+> Symbols meaning
+> - 💥 = errors
+> - ⚠️ = warnings
+> - 🔧 = fixable
+> - ✅ = recommended
+> - 💡 = has_suggestions
+> - ❌ = not_found_in_angular_eslint_rules
+> - 📚 = docs
+> - 📄 = code
+> - 🧪 = test
+
 
 
 ## Global
 
-### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 217 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 122 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 57 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 50 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 45 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 45 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 37 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 31 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) `@angular-eslint/runtime-localize` | 0 | 0 | 0 | 21 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-standalone.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-standalone.ts) `@angular-eslint/prefer-standalone` | 0 | 12 | 0 | 12 | 🔧 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) `@angular-eslint/no-output-on-prefix` | 0 | 11 | 0 | 11 |  | ✅ |  |
-| ❌ ❌ `@angular-eslint/prefer-standalone-component` | 0 | 0 | 0 | 11 | ❌ | ❌ | ❌ |
-| ❌ ❌ `@angular-eslint/sort-ngmodule-metadata-arrays` | 0 | 0 | 0 | 9 | ❌ | ❌ | ❌ |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 7 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) `@angular-eslint/use-component-selector` | 0 | 0 | 0 | 6 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) `@angular-eslint/no-empty-lifecycle-method` | 0 | 5 | 0 | 5 |  | ✅ | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) `@angular-eslint/component-class-suffix` | 0 | 5 | 0 | 5 |  | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) `@angular-eslint/component-selector` | 0 | 3 | 0 | 3 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-native.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-native.ts) `@angular-eslint/no-output-native` | 0 | 2 | 0 | 2 |  | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) `@angular-eslint/no-forward-ref` | 0 | 0 | 0 | 1 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-lifecycle-interface.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-lifecycle-interface.ts) `@angular-eslint/use-lifecycle-interface` | 1 | 0 | 0 | 1 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/directive-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/directive-selector.ts) `@angular-eslint/directive-selector` | 0 | 1 | 0 | 1 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicates-in-metadata-arrays.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-duplicates-in-metadata-arrays.ts) `@angular-eslint/no-duplicates-in-metadata-arrays` | 0 | 0 | 0 | 1 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) `@angular-eslint/no-lifecycle-call` | 0 | 0 | 0 | 1 |  |  |  |
-| ❌ ❌ `@angular-eslint/no-host-metadata-property` | 0 | 1 | 0 | 1 | ❌ | ❌ | ❌ |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 219 | 🔧 |  |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 125 |  |  | 💡 |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 59 |  |  | 💡 |
+| relative-url-prefix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 50 |  |  |  |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 48 | 🔧 |  |  |
+| component-max-inline-declarations | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 47 |  |  |  |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 46 |  |  | 💡 |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 31 |  |  | 💡 |
+| runtime-localize | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 21 |  |  |  |
+| prefer-standalone | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-standalone.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-standalone.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-standalone) | 0 | 12 | 0 | 12 | 🔧 | ✅ |  |
+| no-output-on-prefix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-on-prefix) | 0 | 11 | 0 | 11 |  | ✅ |  |
+| prefer-standalone-component | ❌ | ❌ | ❌ | 0 | 0 | 0 | 11 | ❌ | ❌ | ❌ |
+| sort-ngmodule-metadata-arrays | ❌ | ❌ | ❌ | 0 | 0 | 0 | 9 | ❌ | ❌ | ❌ |
+| sort-lifecycle-methods | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 7 |  |  |  |
+| use-component-selector | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-selector) | 0 | 0 | 0 | 6 |  |  |  |
+| no-empty-lifecycle-method | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-empty-lifecycle-method) | 0 | 5 | 0 | 5 |  | ✅ | 💡 |
+| component-class-suffix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 5 | 0 | 5 |  | ✅ |  |
+| no-forward-ref | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-forward-ref) | 0 | 0 | 0 | 3 |  |  |  |
+| component-selector | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-selector) | 0 | 3 | 0 | 3 |  |  |  |
+| no-output-native | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-native.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-native.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-native) | 0 | 2 | 0 | 2 |  | ✅ |  |
+| use-lifecycle-interface | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-lifecycle-interface.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-lifecycle-interface.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-lifecycle-interface) | 1 | 0 | 0 | 1 | 🔧 |  |  |
+| directive-selector | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/directive-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/directive-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/directive-selector) | 0 | 1 | 0 | 1 |  |  |  |
+| no-duplicates-in-metadata-arrays | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicates-in-metadata-arrays.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-duplicates-in-metadata-arrays.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-duplicates-in-metadata-arrays) | 0 | 0 | 0 | 1 |  |  |  |
+| no-lifecycle-call | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-lifecycle-call) | 0 | 0 | 0 | 1 |  |  |  |
+| no-host-metadata-property | ❌ | ❌ | ❌ | 0 | 1 | 0 | 1 | ❌ | ❌ | ❌ |
 
 
-### 📊 After 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 122 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 57 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 49 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 45 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 37 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 31 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) `@angular-eslint/runtime-localize` | 0 | 0 | 0 | 21 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) `@angular-eslint/no-output-on-prefix` | 0 | 11 | 0 | 11 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 7 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) `@angular-eslint/use-component-selector` | 0 | 0 | 0 | 6 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) `@angular-eslint/no-empty-lifecycle-method` | 0 | 5 | 0 | 5 | ✅ | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) `@angular-eslint/component-class-suffix` | 0 | 5 | 0 | 5 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) `@angular-eslint/component-selector` | 0 | 3 | 0 | 3 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-native.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-native.ts) `@angular-eslint/no-output-native` | 0 | 2 | 0 | 2 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) `@angular-eslint/no-forward-ref` | 0 | 0 | 0 | 1 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/directive-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/directive-selector.ts) `@angular-eslint/directive-selector` | 0 | 1 | 0 | 1 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicates-in-metadata-arrays.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-duplicates-in-metadata-arrays.ts) `@angular-eslint/no-duplicates-in-metadata-arrays` | 0 | 0 | 0 | 1 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) `@angular-eslint/no-lifecycle-call` | 0 | 0 | 0 | 1 |  |  |
 
+### Which projects has rules
+<details>
+<summary>prefer-on-push-component-change-detection</summary>
+
+- ng-apexcharts -> ng-apexcharts-demo \[W:0 E:1]
+- mean -> mean \[W:0 E:6]
+- angular-16-crud-example -> angular-16-crud \[W:0 E:4]
+- QuickApp -> quickapp.client \[W:0 E:19]
+- gojs-angular-basic -> first-app \[W:0 E:3]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:11]
+- angular-17-crud-example -> angular-17-crud \[W:0 E:4]
+- angular-basics-project -> shopping-cart \[W:0 E:1]
+- Angular-Full-Stack -> angular2-full-stack \[W:0 E:12]
+- play-scala-angular-seed -> scala-play-angular-seed \[W:0 E:2]
+- angular-realworld-example-app -> angular-conduit \[W:0 E:16]
+- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
+- ngx-quill -> ngx-quill \[W:0 E:3]
+- ngx-toastr -> ngx-toastr \[W:0 E:6]
+- angular-fontawesome -> angular-fontawesome \[W:0 E:6]
+- angular-fontawesome -> demo \[W:0 E:4]
+- angular-calendar -> demos \[W:0 E:4]
+- angular-calendar -> angular-calendar \[W:0 E:20]
+</details>
+
+<details>
+<summary>consistent-component-styles</summary>
+
+- ng-apexcharts -> ng-apexcharts-demo \[W:0 E:1]
+- mean -> mean \[W:0 E:5]
+- angular-16-crud-example -> angular-16-crud \[W:0 E:4]
+- gojs-angular-basic -> first-app \[W:0 E:2]
+- angular-17-crud-example -> angular-17-crud \[W:0 E:3]
+- angular-basics-project -> shopping-cart \[W:0 E:1]
+- Angular-Full-Stack -> angular2-full-stack \[W:0 E:4]
+- play-scala-angular-seed -> scala-play-angular-seed \[W:0 E:2]
+- angular-realworld-example-app -> angular-conduit \[W:0 E:1]
+- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
+- ngx-quill -> ngx-quill \[W:0 E:3]
+- angular-fontawesome -> demo \[W:0 E:1]
+- angular-calendar -> demos \[W:0 E:17]
+- angular-calendar -> angular-calendar \[W:0 E:1]
+</details>
+
+<details>
+<summary>prefer-signals</summary>
+
+- ng-apexcharts -> ng-apexcharts-demo \[W:0 E:1]
+- mean -> mean \[W:0 E:1]
+- angular-16-crud-example -> angular-16-crud \[W:0 E:2]
+- ng-three-template -> ng-three-template \[W:0 E:1]
+- gojs-angular-basic -> first-app \[W:0 E:5]
+- angular-17-crud-example -> angular-17-crud \[W:0 E:2]
+- Angular-Full-Stack -> angular2-full-stack \[W:0 E:3]
+- angular-realworld-example-app -> angular-conduit \[W:0 E:9]
+- ngx-quill -> ngx-quill \[W:0 E:2]
+- angular-fontawesome -> angular-fontawesome \[W:0 E:37]
+- angular-calendar -> demos \[W:0 E:7]
+- angular-calendar -> angular-calendar \[W:0 E:149]
+</details>
+
+<details>
+<summary>use-injectable-provided-in</summary>
+
+- mean -> mean \[W:0 E:1]
+- QuickApp -> quickapp.client \[W:0 E:7]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:4]
+- Angular-Full-Stack -> angular2-full-stack \[W:0 E:5]
+- play-scala-angular-seed -> scala-play-angular-seed \[W:0 E:1]
+- angular-calendar -> demos \[W:0 E:7]
+- angular-calendar -> angular-calendar \[W:0 E:6]
+</details>
+
+<details>
+<summary>no-forward-ref</summary>
+
+- QuickApp -> quickapp.client \[W:0 E:1]
+- ngx-quill -> ngx-quill \[W:0 E:2]
+</details>
+
+<details>
+<summary>no-empty-lifecycle-method</summary>
+
+- ng-three-template -> ng-three-template \[W:0 E:5]
+</details>
+
+<details>
+<summary>use-component-view-encapsulation</summary>
+
+- ng-three-template -> ng-three-template \[W:0 E:7]
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:10]
+- angular-gridster2 -> gridster-app \[W:0 E:25]
+- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
+- ngx-quill -> ngx-quill \[W:0 E:2]
+- angular-calendar -> demos \[W:0 E:12]
+</details>
+
+<details>
+<summary>use-lifecycle-interface</summary>
+
+- gojs-angular-basic -> first-app \[W:0 E:1]
+</details>
+
+<details>
+<summary>no-output-on-prefix</summary>
+
+- gojs-angular-basic -> first-app \[W:0 E:2]
+- ngx-quill -> ngx-quill \[W:0 E:9]
+</details>
+
+<details>
+<summary>prefer-output-readonly</summary>
+
+- gojs-angular-basic -> first-app \[W:0 E:2]
+- angular-realworld-example-app -> angular-conduit \[W:0 E:3]
+- angular-gridster2 -> angular-gridster2 \[W:0 E:3]
+- ngx-quill -> ngx-quill \[W:0 E:9]
+- angular-calendar -> demos \[W:0 E:3]
+- angular-calendar -> angular-calendar \[W:0 E:26]
+</details>
+
+<details>
+<summary>prefer-standalone-component</summary>
+
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:11]
+</details>
+
+<details>
+<summary>sort-ngmodule-metadata-arrays</summary>
+
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:6]
+- ngx-toastr -> ngx-toastr \[W:0 E:3]
+</details>
+
+<details>
+<summary>relative-url-prefix</summary>
+
+- angular-ionic-ngxs-movies -> angular-ionic-ngxs-movies \[W:0 E:7]
+- angular-calendar -> demos \[W:0 E:43]
+</details>
+
+<details>
+<summary>prefer-standalone</summary>
+
+- Angular-Full-Stack -> angular2-full-stack \[W:0 E:12]
+</details>
+
+<details>
+<summary>directive-selector</summary>
+
+- angular-realworld-example-app -> angular-conduit \[W:0 E:1]
+</details>
+
+<details>
+<summary>no-output-native</summary>
+
+- angular-realworld-example-app -> angular-conduit \[W:0 E:2]
+</details>
+
+<details>
+<summary>component-max-inline-declarations</summary>
+
+- angular-realworld-example-app -> angular-conduit \[W:0 E:6]
+- ngx-quill -> ngx-quill \[W:0 E:2]
+- ngx-toastr -> ngx-toastr \[W:0 E:11]
+- angular-calendar -> demos \[W:0 E:11]
+- angular-calendar -> angular-calendar \[W:0 E:17]
+</details>
+
+<details>
+<summary>no-duplicates-in-metadata-arrays</summary>
+
+- angular-realworld-example-app -> angular-conduit \[W:0 E:1]
+</details>
+
+<details>
+<summary>runtime-localize</summary>
+
+- angular-example-app -> angularexampleapp \[W:0 E:21]
+</details>
+
+<details>
+<summary>sort-lifecycle-methods</summary>
+
+- angular-gridster2 -> angular-gridster2 \[W:0 E:2]
+- angular-fontawesome -> angular-fontawesome \[W:0 E:2]
+- angular-calendar -> angular-calendar \[W:0 E:3]
+</details>
+
+<details>
+<summary>component-selector</summary>
+
+- ngx-quill -> ngx-quill \[W:0 E:3]
+</details>
+
+<details>
+<summary>component-class-suffix</summary>
+
+- ngx-toastr -> ngx-toastr \[W:0 E:5]
+</details>
+
+<details>
+<summary>no-lifecycle-call</summary>
+
+- angular-fontawesome -> angular-fontawesome \[W:0 E:1]
+</details>
+
+<details>
+<summary>no-host-metadata-property</summary>
+
+- angular-calendar -> angular-calendar \[W:0 E:1]
+</details>
+
+<details>
+<summary>use-component-selector</summary>
+
+- angular-calendar -> angular-calendar \[W:0 E:6]
+</details>
 
 
 
@@ -160,53 +317,33 @@
 	- **Author**: Juned Chhipa
 	- **Message**: Merge remote-tracking branch 'refs/remotes/origin/master'
 	- **Date**: Wed Mar 19 14:42:20 2025 +0530
+
 #### 🧮 Total
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 1 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 1 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 1 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 1 | 🔧 |  |  |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 1 | 🔧 |  |  |
 
 
 
 
 #### 💻 ng-apexcharts-demo
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 1 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 1 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 🔧 |  |  |
 
 
 #### 💻 ng-apexcharts
 
-##### 📊 Before 
 
-> ⚠️ The project pass linting
+> [!WARNING]
 
-##### 📊 After 
-
-> ⚠️ The project pass linting
+> The project pass linting
 
 
 
@@ -219,22 +356,13 @@
 	- **Author**: Bob Conan
 	- **Message**: Update README.md, fix typos (#2073)
 	- **Date**: Thu Nov 7 16:59:52 2024 -0600
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 6 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 5 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 1 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 6 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 1 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 5 | 0 | 🔧 |  |  |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |  |  | 💡 |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 🔧 |  |  |
 
 
 
@@ -248,20 +376,12 @@
 	- **Author**: tienbku
 	- **Message**: first commit
 	- **Date**: Thu May 25 15:57:13 2023 +0700
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 4 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 2 | 🔧 |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 4 | 0 | 🔧 |  |  |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 🔧 |  |  |
 
 
 
@@ -275,22 +395,12 @@
 	- **Author**: Ebenezer Monney
 	- **Message**: removed stylePreprocessorOptions from test config
 	- **Date**: Sun Dec 1 13:21:23 2024 +0000
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 19 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 7 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) `@angular-eslint/no-forward-ref` | 0 | 0 | 0 | 1 |  |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 19 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 7 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) `@angular-eslint/no-forward-ref` | 0 | 0 | 0 | 1 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 19 | 0 | 19 |  |  | 💡 |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |  |  | 💡 |
+| no-forward-ref | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-forward-ref) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |  |  |
 
 
 
@@ -304,21 +414,12 @@
 	- **Author**: JohnnyDevNull
 	- **Message**: Update README.md
 	- **Date**: Thu May 2 12:10:19 2024 +0200
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 7 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) `@angular-eslint/no-empty-lifecycle-method` | 0 | 5 | 0 | 5 |  | ✅ | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 7 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) `@angular-eslint/no-empty-lifecycle-method` | 0 | 5 | 0 | 5 | ✅ | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |  |  | 💡 |
+| no-empty-lifecycle-method | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-empty-lifecycle-method) | 0 | 0 | 0 | 5 | 0 | 5 | 0 | 0 | 0 | 5 | 0 | 5 |  | ✅ | 💡 |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 🔧 |  |  |
 
 
 
@@ -332,25 +433,15 @@
 	- **Author**: Simon Sarris
 	- **Message**: corrected inspector
 	- **Date**: Fri Jan 31 10:42:13 2025 -0500
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 5 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 3 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) `@angular-eslint/no-output-on-prefix` | 0 | 2 | 0 | 2 |  | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 2 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 2 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-lifecycle-interface.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-lifecycle-interface.ts) `@angular-eslint/use-lifecycle-interface` | 1 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 3 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) `@angular-eslint/no-output-on-prefix` | 0 | 2 | 0 | 2 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 2 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 0 | 🔧 |  |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |
+| no-output-on-prefix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-on-prefix) | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  | ✅ |  |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 🔧 |  |  |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |  |  | 💡 |
+| use-lifecycle-interface | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-lifecycle-interface.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-lifecycle-interface.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-lifecycle-interface) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |
 
 
 
@@ -364,26 +455,15 @@
 	- **Author**: Adrián Brito Pacheco
 	- **Message**: Merge pull request #98 from abritopach/develop
 	- **Date**: Thu Feb 8 22:43:28 2024 +0000
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| ❌ ❌ `@angular-eslint/prefer-standalone-component` | 0 | 0 | 0 | 11 | ❌ | ❌ | ❌ |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 11 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 10 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 7 |  |  |  |
-| ❌ ❌ `@angular-eslint/sort-ngmodule-metadata-arrays` | 0 | 0 | 0 | 6 | ❌ | ❌ | ❌ |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 4 |  |  | 💡 |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 11 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 10 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 7 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 4 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-standalone-component | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 11 | 0 | ❌ | ❌ | ❌ |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 11 |  |  | 💡 |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 | 0 | 10 |  |  | 💡 |
+| relative-url-prefix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 |  |  |  |
+| sort-ngmodule-metadata-arrays | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 6 | 0 | ❌ | ❌ | ❌ |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |
 
 
 
@@ -397,20 +477,12 @@
 	- **Author**: tienbku
 	- **Message**: update references
 	- **Date**: Sun Feb 4 15:39:28 2024 +0700
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 3 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 2 | 🔧 |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 🔧 |  |  |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 🔧 |  |  |
 
 
 
@@ -424,19 +496,11 @@
 	- **Author**: akotech
 	- **Message**: update playlist link
 	- **Date**: Sun Oct 24 18:47:33 2021 +0200
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 1 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 1 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |
 
 
 
@@ -450,23 +514,14 @@
 	- **Author**: DavideViolante
 	- **Message**: chore(deps): upgrade to angular v19
 	- **Date**: Wed Jan 22 09:38:49 2025 +0100
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-standalone.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-standalone.ts) `@angular-eslint/prefer-standalone` | 0 | 12 | 0 | 12 | 🔧 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 12 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 5 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 4 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 3 | 🔧 |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 12 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 5 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-standalone | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-standalone.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-standalone.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-standalone) | 0 | 0 | 0 | 12 | 12 | 0 | 0 | 0 | 0 | 12 | 12 | 0 | 🔧 | ✅ |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |  |  | 💡 |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 5 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 4 | 0 | 🔧 |  |  |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 🔧 |  |  |
 
 
 
@@ -480,21 +535,12 @@
 	- **Author**: Matthias Kurz
 	- **Message**: Merge pull request #88 from scala-steward/update/play-filters-helpers-3.0.7
 	- **Date**: Thu Mar 13 23:39:41 2025 +0100
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 2 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 2 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 1 |  |  | 💡 |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 2 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 1 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 🔧 |  |  |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |  |  | 💡 |
 
 
 
@@ -508,30 +554,17 @@
 	- **Author**: Gerome Grignon
 	- **Message**: remove demo link
 	- **Date**: Mon Dec 9 09:26:42 2024 +0100
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 16 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 9 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 6 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-native.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-native.ts) `@angular-eslint/no-output-native` | 0 | 2 | 0 | 2 |  | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/directive-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/directive-selector.ts) `@angular-eslint/directive-selector` | 0 | 1 | 0 | 1 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicates-in-metadata-arrays.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-duplicates-in-metadata-arrays.ts) `@angular-eslint/no-duplicates-in-metadata-arrays` | 0 | 0 | 0 | 1 |  |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 16 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 6 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-native.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-native.ts) `@angular-eslint/no-output-native` | 0 | 2 | 0 | 2 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/directive-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/directive-selector.ts) `@angular-eslint/directive-selector` | 0 | 1 | 0 | 1 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicates-in-metadata-arrays.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-duplicates-in-metadata-arrays.ts) `@angular-eslint/no-duplicates-in-metadata-arrays` | 0 | 0 | 0 | 1 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 16 | 0 | 16 |  |  | 💡 |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | 0 | 🔧 |  |  |
+| component-max-inline-declarations | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 0 |  |  |  |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |
+| no-output-native | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-native.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-native.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-native) | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  | ✅ |  |
+| directive-selector | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/directive-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/directive-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/directive-selector) | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |  |  |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |
+| no-duplicates-in-metadata-arrays | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicates-in-metadata-arrays.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-duplicates-in-metadata-arrays.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-duplicates-in-metadata-arrays) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |  |  |
 
 
 
@@ -545,18 +578,10 @@
 	- **Author**: ismaestro
 	- **Message**: fix(tools): solve stylelint issues
 	- **Date**: Sat Feb 1 07:47:16 2025 +0100
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) `@angular-eslint/runtime-localize` | 0 | 0 | 0 | 21 |  |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) `@angular-eslint/runtime-localize` | 0 | 0 | 0 | 21 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| runtime-localize | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 21 | 0 | 0 |  |  |  |
 
 
 
@@ -570,68 +595,36 @@
 	- **Author**: Tiberiu Zuld
 	- **Message**: chore: fix npm repository url
 	- **Date**: Thu Dec 5 09:26:29 2024 +0200
+
 #### 🧮 Total
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 28 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 3 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 3 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 28 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 3 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 28 |  |  | 💡 |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 3 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 3 | 🔧 |  |  |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 3 |  |  | 💡 |
+| sort-lifecycle-methods | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 2 |  |  |  |
 
 
 
 
 #### 💻 gridster-app
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 25 |  |  | 💡 |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 25 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 25 | 0 | 25 |  |  | 💡 |
 
 
 #### 💻 angular-gridster2
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 3 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 3 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 3 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 3 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 3 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 🔧 |  |  |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |
+| sort-lifecycle-methods | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |
 
 
 
@@ -641,24 +634,22 @@
 **Info from repo**:
 - **URL**: <https://github.com/KillerCodeMonkey/ngx-quill>
 - **LastCommit**:
-	- **Hash**: 9623a9d10a290ac95ad881c726370060826bee7b
-	- **Author**: migudel
-	- **Message**: INICIO DE PRUEBAS
-	- **Date**: Sat Mar 29 20:35:43 2025 +0100
-#### 📊 Before 
+	- **Hash**: e7ea1915838ae668f588be4d71d40d63b7b27611
+	- **Author**: KillerCodeMonkey
+	- **Message**: chore: bump version
+	- **Date**: Mon Feb 24 09:57:07 2025 +0100
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) `@angular-eslint/no-output-on-prefix` | 0 | 9 | 0 | 9 |  | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) `@angular-eslint/component-selector` | 0 | 3 | 0 | 3 |  |  |  |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) `@angular-eslint/no-output-on-prefix` | 0 | 9 | 0 | 9 | ✅ |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) `@angular-eslint/component-selector` | 0 | 3 | 0 | 3 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| no-output-on-prefix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-on-prefix) | 0 | 0 | 0 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | 0 |  | ✅ |  |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | 9 |  |  | 💡 |
+| component-selector | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-selector) | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |  |  |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 🔧 |  |  |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | 🔧 |  |  |
+| no-forward-ref | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-forward-ref) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |
+| component-max-inline-declarations | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |  |  | 💡 |
 
 
 
@@ -672,23 +663,13 @@
 	- **Author**: Chris Barr
 	- **Message**: docs: fix demo to show progress for pink toast (#1023)
 	- **Date**: Tue Aug 27 17:04:26 2024 -0400
-#### 📊 Before 
 
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 11 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 6 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) `@angular-eslint/component-class-suffix` | 0 | 5 | 0 | 5 |  | ✅ |  |
-| ❌ ❌ `@angular-eslint/sort-ngmodule-metadata-arrays` | 0 | 0 | 0 | 3 | ❌ | ❌ | ❌ |
-
-
-#### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 11 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 6 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) `@angular-eslint/component-class-suffix` | 0 | 5 | 0 | 5 | ✅ |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| component-max-inline-declarations | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |  |  |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |
+| component-class-suffix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 0 |  | ✅ |  |
+| sort-ngmodule-metadata-arrays | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | ❌ | ❌ | ❌ |
 
 
 
@@ -702,66 +683,36 @@
 	- **Author**: Yaroslav Admin
 	- **Message**: Release 1.0.0
 	- **Date**: Thu Nov 21 00:00:00 2024 +0100
+
 #### 🧮 Total
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 37 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 10 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) `@angular-eslint/no-lifecycle-call` | 0 | 0 | 0 | 1 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 10 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) `@angular-eslint/no-lifecycle-call` | 0 | 0 | 0 | 1 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 37 | 🔧 |  |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 10 |  |  | 💡 |
+| sort-lifecycle-methods | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 2 |  |  |  |
+| no-lifecycle-call | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-lifecycle-call) | 0 | 0 | 0 | 1 |  |  |  |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 1 | 🔧 |  |  |
 
 
 
 
 #### 💻 angular-fontawesome
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 37 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 6 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) `@angular-eslint/no-lifecycle-call` | 0 | 0 | 0 | 1 |  |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 6 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 2 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) `@angular-eslint/no-lifecycle-call` | 0 | 0 | 0 | 1 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 37 | 0 | 0 | 🔧 |  |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |
+| sort-lifecycle-methods | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |
+| no-lifecycle-call | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-lifecycle-call) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |  |  |
 
 
 #### 💻 demo
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |
 
 
 
@@ -775,96 +726,53 @@
 	- **Author**: Matt Lewis
 	- **Message**: chore: update angular.json config
 	- **Date**: Wed Aug 21 18:37:18 2024 +0100
+
 #### 🧮 Total
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 156 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 43 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 29 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 28 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 24 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 18 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 13 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 12 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) `@angular-eslint/use-component-selector` | 0 | 0 | 0 | 6 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 3 |  |  |  |
-| ❌ ❌ `@angular-eslint/no-host-metadata-property` | 0 | 1 | 0 | 1 | ❌ | ❌ | ❌ |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 42 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 29 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 28 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 24 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 13 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 12 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) `@angular-eslint/use-component-selector` | 0 | 0 | 0 | 6 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 3 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 156 | 🔧 |  |  |
+| relative-url-prefix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 43 |  |  |  |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 29 |  |  | 💡 |
+| component-max-inline-declarations | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 28 |  |  |  |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 24 |  |  | 💡 |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 18 | 🔧 |  |  |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 13 |  |  | 💡 |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 12 |  |  | 💡 |
+| use-component-selector | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-selector) | 0 | 0 | 0 | 6 |  |  |  |
+| sort-lifecycle-methods | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 3 |  |  |  |
+| no-host-metadata-property | ❌ | ❌ | ❌ | 0 | 1 | 0 | 1 | ❌ | ❌ | ❌ |
 
 
 
 
 #### 💻 demos
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 43 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 17 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 12 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 11 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 7 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 7 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  |  | 💡 |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) `@angular-eslint/relative-url-prefix` | 0 | 0 | 0 | 42 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) `@angular-eslint/use-component-view-encapsulation` | 0 | 0 | 0 | 12 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 11 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 7 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 4 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 3 |  | 💡 |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| relative-url-prefix | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 43 | 0 | 0 |  |  |  |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 17 | 0 | 🔧 |  |  |
+| use-component-view-encapsulation | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |  |  | 💡 |
+| component-max-inline-declarations | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |  |  |  |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 | 🔧 |  |  |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |  |  | 💡 |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |
 
 
 #### 💻 angular-calendar
 
-##### 📊 Before 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Fixable | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) `@angular-eslint/prefer-signals` | 0 | 0 | 0 | 149 | 🔧 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 26 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 20 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 17 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) `@angular-eslint/use-component-selector` | 0 | 0 | 0 | 6 |  |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 6 |  |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 3 |  |  |  |
-| ❌ ❌ `@angular-eslint/no-host-metadata-property` | 0 | 1 | 0 | 1 | ❌ | ❌ | ❌ |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) `@angular-eslint/consistent-component-styles` | 0 | 0 | 0 | 1 | 🔧 |  |  |
-
-
-##### 📊 After 
-
-| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>❌ Errors | All<br>⚠️ Warnings | All<br>❌ Errors | Recommended | Has suggestions |
-| --- | :--: | :--: | :--: | :--: | :--: | :--: |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) `@angular-eslint/prefer-output-readonly` | 0 | 0 | 0 | 26 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) `@angular-eslint/prefer-on-push-component-change-detection` | 0 | 0 | 0 | 20 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) `@angular-eslint/component-max-inline-declarations` | 0 | 0 | 0 | 17 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) `@angular-eslint/use-component-selector` | 0 | 0 | 0 | 6 |  |  |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) `@angular-eslint/use-injectable-provided-in` | 0 | 0 | 0 | 6 |  | 💡 |
-| [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) [⌨️](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) `@angular-eslint/sort-lifecycle-methods` | 0 | 0 | 0 | 3 |  |  |
+| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |
+| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+| prefer-signals | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 149 | 0 | 0 | 🔧 |  |  |
+| prefer-output-readonly | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 26 | 0 | 26 |  |  | 💡 |
+| prefer-on-push-component-change-detection | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 0 | 20 |  |  | 💡 |
+| component-max-inline-declarations | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 0 | 0 |  |  |  |
+| use-component-selector | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-selector) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 0 |  |  |  |
+| use-injectable-provided-in | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |
+| sort-lifecycle-methods | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |  |  |  |
+| no-host-metadata-property | ❌ | ❌ | ❌ | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | ❌ | ❌ | ❌ |
+| consistent-component-styles | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |
 
 
 

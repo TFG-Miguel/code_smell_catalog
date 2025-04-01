@@ -3,6 +3,7 @@ Object.keys(rules).forEach((key) => {
   const rule = rules[key];
   rule.docs = `https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/${key}.md`;
   rule.code = `https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/${key}.ts`;
+  rule.test = `https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/${key}`;
 });
 exports.rules = rules;
 exports.rulesArray = Object.entries(rules);

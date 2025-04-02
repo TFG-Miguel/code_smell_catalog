@@ -3,7 +3,7 @@
 | --- | :--: | :--: | :--: | :--: | :--: | --- |
 | prefer-on-push-component-change-detection |    | ⚠ |    |    | 💡 | Depende de si el programador ha implementado alguna lógica concreta |
 | use-component-view-encapsulation          |    | ⚠ |    |    | 💡 | Depende de si el programador ha implementado alguna lógica concreta |
-| relative-url-prefix                       | 🛠 |    |    |    |    | Con la pega de que solo adpatará las url no las corregirá si no son validas o si son absolutas `(\[A-Z]:/ | /)` |
+| relative-url-prefix                       | 🛠 |    |    |    |    | Con la pega de que solo adpatará las url no las corregirá si no son validas o si son absolutas `(\[A-Z]:/ \| /)` |
 | component-max-inline-declarations         | 🛠 |    |    |    |    | Puede extraerse la información pero en caso de `templates` y `styles` con `template strings` no se extaería la información por lo que no se modificará y en el caso de las animaciones las dependencias entre ficheros podrían no ser validas (generando dependencias circulares).<br>Se podría evaluar el `template` y establecerlo |
 | prefer-output-readonly                    |    | ⚠ | ❗ |    | 💡 | La solución de agregar un readonly está ya implementado como sugerencia por que ciertos cambios requieren la intervención del usuario para no dañar la lógica |
 | use-injectable-provided-in                |    | ⚠ |    |    | 💡 | Es autosolucionable mientras que no el provideIn dependa del contexto o si hay configuraciones concretas (usar por defecto `provideIn: 'root'`). Ya implementado como sugerencia |

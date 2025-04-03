@@ -50,65 +50,40 @@ function change_mode() {
   sed -i $pattern $file
 }
 
-# Generate the individual repo report
-function generate_report() {
+function generate_repository_report() {
   # Get the last commit data on JSON format
   local url_repo=$(git config --get remote.origin.url)
   local data_repo=$(git log --skip=1 -1 --pretty=format:'{"commit": "%H", "author": "%an", "date": "%ad", "message": "%s"}')
-  local json_file_tmp=/tmp/tmp.report.json
 
-  jq -cn \
-    --argjson data "$data_repo" \
-    --arg url $url_repo \
-    '{ 
-          repo: { HEAD: $data, url: $url }, 
-          report: {}
-        }' >$json_tmp
-
-  for file in lint.res.{'all','recommended'}; do
-    if [[ -f "$file" ]]; then
-      local project_name mode
-
-      mode=$(echo "$file" | cut -d '.' -f 3)
-
-      cat "$file" | while IFS= read -r lining && IFS= read -r json_content; do
-        echo $json_content >$json_file_tmp
-        project_name=$(echo $lining | sed 's/Linting \"\(.*\)\".../\1/')
-
-        # echo name=$project_name when=$when mode=$mode
-        if ! jq -e --arg project "$project_name" '.report[$project]' $json_tmp >/dev/null; then
-          # Si no existe, insertar la clave con el valor
-          jq --arg project "$project_name" \
-            '.report += { ($project): {recommended: [], all:[]} }' $json_tmp >$json_tmp2
-          mv $json_tmp2 $json_tmp
-        fi
-        jq <$json_tmp \
-          --arg mode "$mode" \
-          --arg project "$project_name" \
-          --argfile data "$json_file_tmp" \
-          '.report[$project][$mode] = $data' >$json_tmp2
-        mv $json_tmp2 $json_tmp
-      done
+  echo -e "HEAD:$data_repo\nurl:$url_repo"
+  for mode in '' -i; do
+    change_mode $mode
+    if [ -z "$mode" ]; then
+      echo "recommended"
+    else
+      echo "all"
     fi
+    ng lint --format=json 2>>/tmp/ng.lint.report.log | sed '/^$/d;/All files pass linting./d;s/Linting \"\(.*\)\".../project:\1/g'
   done
-
-  cat $json_tmp
 }
 
-pwd=$PWD
 # Recorremos todos los repositorios
 i=0
 total=$(ls -d "$REPOS_DIR"/*/*/ | wc -l)
+reports=()
 for repo in "$REPOS_DIR"/*/*/; do
   if [ -d "$repo" ]; then
+
     repo_name=$(echo $repo | awk -F'/' '{print $(NF-1)}')
     repo_source=$(echo $repo | awk -F'/' '{print $(NF-2)}')
+    report_file=$repo_name.lint.txt
+
     i=$(($i + 1))
     printf "[ %02d / %02d ] " $i $total
-    echo "Processing repo: $repo_name [$repo_source] ($repo)"
+    echo "repo: $repo_name [$repo_source] ($repo)"
 
     # Acceder al repositorio
-    cd "$repo" || exit -1
+    cd "$repo" || continue
 
     # Buscar el primer archivo de configuración de eslint
     ESLINT_CONFIG=$(find . -type f \( -name ".eslintrc.json" -or -name "eslint.json" -or -name "eslint.config.js" -or -name "eslint.config.mjs" \) ! -path "*/node_modules/*" | tail -n 1 | cut -d'/' -f2-)
@@ -128,61 +103,18 @@ for repo in "$REPOS_DIR"/*/*/; do
       pwd
     fi
 
-    echo -e "\tBefore fix recommended mode: "
-
-    # Establecer el modo 'recommended'
-    change_mode $ESLINT_CONFIG -i
-
-    # Ejecutar el linting con el modo recomendado
-    if [ ! -e $res_recc ]; then
-      ng lint --format=json >$res_recc
-      sed -i '/^$/d;/All files pass linting./d' $res_recc
+    if [ ! -e $report_file ]; then
+      echo -en "\tLinting... "
+      generate_repository_report >$report_file
+      echo -e "\r\tLinted    "
     else
-      echo -e "\t\tProject already linted"
+      echo -e "\tProject already linted"
     fi
 
-    echo -e "\tBefore fix all mode: "
-
-    # Establecer el modo 'all'
-    change_mode $ESLINT_CONFIG
-
-    # Ejecutar el linting con el modo all
-    if [ ! -e $res_all ]; then
-      ng lint --format=json >$res_all
-      sed -i '/^$/d;/All files pass linting./d' $res_all
-    else
-      echo -e "\t\tProject already linted"
-    fi
-
-    # Generar el reporte con el programa Node.js
-    REPORT_FILE="$repo_name.report.json"
-    generate_report >$REPORT_FILE
-
-    echo -e "Generating report for the repo $repo_name [$PWD/$REPORT_FILE]\n\n"
-
-    cd $pwd
+    abs_path_report=$PWD/$REPORT_FILE
+    reports+=("$abs_path_report")
+    echo -e "Report generate for the repo $repo_name [$abs_path_report]\n\n"
   fi
 done
 
-cd $REPOS_DIR
-echo '{}' >$json_tmp
-
-echo "Coping reports: "
-i=0
-for report_file in $(find . -type f -name "*.report.json"); do
-  repo_name=$(basename $report_file | cut -d'.' -f1)
-  dest_file="$REPORTS_DIR/$(basename $report_file)"
-  cp $report_file $dest_file
-  i=$(($i + 1))
-  printf "[ %02d / %02d ] " $i $total
-  echo "$(echo $report_file | cut -d'/' -f2-) --> $dest_file"
-  cat $json_tmp | jq \
-    --argfile report $report_file \
-    --arg repo $repo_name \
-    '. += { ($repo) : $report }' >$json_tmp2
-  cp $json_tmp2 $json_tmp
-done
-dest_file=$REPORTS_DIR/automatic.report.only_repos.json
-cp $json_tmp $dest_file
-echo -e "\nGlobal json report saved in $dest_file"
-node $NODE_REPORT $dest_file $RESULT_DIR
+echo node $NODE_REPORT $dest_file $RESULT_DIR $reports

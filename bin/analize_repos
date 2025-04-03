@@ -26,6 +26,23 @@ json_tmp=/tmp/tmp_json.json
 json_tmp2=/tmp/tmp_json2.json
 report_name=automatic.report
 
+# Función de "pantalla de carga" (spinner)
+loading() {
+    local pid=$1  # Obtener el PID del proceso en segundo plano
+    local spinstr='|/-\'
+    local temp
+    touch $LOCK_FILE
+    while [ -e $LOCK_FILE ]; do
+        temp=${spinstr#?}
+        printf "\t[%c] Linting... " "$spinstr"
+        spinstr=$temp${spinstr%"$temp"}
+        sleep .1
+        printf "\r"
+    done
+    printf "\r\t                          \r"  # Limpiar la línea cuando termina
+    echo -e "\tLinted!"
+}
+
 # Change the Angular-ESlint rules scope, by default try to change recommended to all, if -i is pressent in second arg it's inverted
 function change_mode() {
   local file="$1"
@@ -50,6 +67,10 @@ function change_mode() {
   sed -i $pattern $file
 }
 
+TMP_DIR=/tmp/analize.repos
+LOCK_FILE=$TMP_DIR/ng.lock 
+mkdir -p $TMP_DIR
+
 function generate_repository_report() {
   # Get the last commit data on JSON format
   local url_repo=$(git config --get remote.origin.url)
@@ -57,13 +78,15 @@ function generate_repository_report() {
 
   echo -e "HEAD:$data_repo\nurl:$url_repo"
   for mode in '' -i; do
-    change_mode $mode
+    change_mode $ESLINT_CONFIG $mode
     if [ -z "$mode" ]; then
       echo "recommended"
     else
       echo "all"
     fi
-    ng lint --format=json 2>>/tmp/ng.lint.report.log | sed '/^$/d;/All files pass linting./d;s/Linting \"\(.*\)\".../project:\1/g'
+    
+    ng lint --format=json 2>>/tmp/ng.lint.report.log | sed '/^$/d;/^All files pass linting.$/d;s/^Linting \"\(.*\)\"...$/project:\1/g'
+  rm -f $LOCK_FILE
   done
 }
 
@@ -89,32 +112,33 @@ for repo in "$REPOS_DIR"/*/*/; do
     ESLINT_CONFIG=$(find . -type f \( -name ".eslintrc.json" -or -name "eslint.json" -or -name "eslint.config.js" -or -name "eslint.config.mjs" \) ! -path "*/node_modules/*" | tail -n 1 | cut -d'/' -f2-)
 
     if [ -z "$ESLINT_CONFIG" ]; then
-      echo "No ESLint config found in $repo"
+      echo -e "\n\tNo ESLint config found in $repo"
       continue
     fi
 
-    echo "Config found at: $ESLINT_CONFIG"
+    echo -e "\n\tConfig found at: $ESLINT_CONFIG"
 
     REPO_DIR_NAME=$(dirname $ESLINT_CONFIG)
     if [[ -n "$REPO_DIR_NAME" && "$REPO_DIR_NAME" != "." ]]; then
-      echo "Going into $REPO_DIR_NAME"
+      echo -e "\tGoing into $REPO_DIR_NAME"
       cd $REPO_DIR_NAME
       ESLINT_CONFIG=$(basename $ESLINT_CONFIG)
-      pwd
     fi
+    echo ""
 
     if [ ! -e $report_file ]; then
-      echo -en "\tLinting... "
-      generate_repository_report >$report_file
-      echo -e "\r\tLinted    "
+      # echo -en "\tLinting... "
+      generate_repository_report $ESLINT_CONFIG > $report_file &
+      loading 
+      # echo -e "\r\tLinted    "
     else
       echo -e "\tProject already linted"
     fi
 
-    abs_path_report=$PWD/$REPORT_FILE
+    abs_path_report=$PWD/$report_file
     reports+=("$abs_path_report")
-    echo -e "Report generate for the repo $repo_name [$abs_path_report]\n\n"
+    echo -e "\tReport generated [$abs_path_report]\n\n"
   fi
 done
 
-echo node $NODE_REPORT $dest_file $RESULT_DIR $reports
+echo node $NODE_REPORT -a \$ANALIZE_DIR -r $RESULT_DIR $dest_file $RESULT_DIR ${reports[@]}

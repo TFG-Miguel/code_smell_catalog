@@ -2,7 +2,7 @@
 for repo in $REPOS/*/*/; do
   echo -e "\nREPO: $repo"
   cd $repo
-  find $repo -type f -regex ".*/lint\.res\.\(recommended\|all\)" ! -path "*/node_modules/*" -exec rm {} \;
+  find $repo -type f -name "*.lint.txt" ! -path "*/node_modules/*" -exec rm {} \;
   git reset --hard
   git status --short --branch
 done

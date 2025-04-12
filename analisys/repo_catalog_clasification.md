@@ -17,5 +17,5 @@
 | component-selector                        | 🛠 | ⚠ |    |    |    | La configuración en formato arrays podría dar problemas |
 | no-output-native                          |    |    | ❗ | ✅ |    | Se podría sugerir nombres pero no creo que se pueda sabar la información oportuna del contexto para generar la sugerencia |
 | directive-selector                        | 🛠 | ⚠ |    |    |    | La configuración en formato arrays podría dar problemas |
-| no-duplicates-in-metadata-arrays          | 🛠 |    |    |    |    | Corrección automática, eliminar esos duplicados |
-| no-lifecycle-call                         | 🛠 | ⚠ |    |    |    | ¿Eliminar la llamada? Esta podría ocasionar una ruptura en la lógica |
+| \*no-duplicates-in-metadata-arrays          | 🛠 |    |    |    |    | Corrección automática, eliminar esos duplicados |
+| no-lifecycle-call                         |    | ⚠ |    |    |    | ¿Eliminar la llamada? Esta podría ocasionar una ruptura en la lógica |

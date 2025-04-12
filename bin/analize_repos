@@ -28,19 +28,19 @@ report_name=automatic.report
 
 # Función de "pantalla de carga" (spinner)
 loading() {
-    local pid=$1  # Obtener el PID del proceso en segundo plano
-    local spinstr='|/-\'
-    local temp
-    touch $LOCK_FILE
-    while [ -e $LOCK_FILE ]; do
-        temp=${spinstr#?}
-        printf "\t[%c] Linting... " "$spinstr"
-        spinstr=$temp${spinstr%"$temp"}
-        sleep .1
-        printf "\r"
-    done
-    printf "\r\t                          \r"  # Limpiar la línea cuando termina
-    echo -e "\tLinted!"
+  local pid=$1 # Obtener el PID del proceso en segundo plano
+  local spinstr='|/-\'
+  local temp
+  touch $LOCK_FILE
+  while [ -e $LOCK_FILE ]; do
+    temp=${spinstr#?}
+    printf "\t[%c] Linting... " "$spinstr"
+    spinstr=$temp${spinstr%"$temp"}
+    sleep .1
+    printf "\r"
+  done
+  printf "\r\t                          \r" # Limpiar la línea cuando termina
+  echo -e "\tLinted!"
 }
 
 # Change the Angular-ESlint rules scope, by default try to change recommended to all, if -i is pressent in second arg it's inverted
@@ -68,7 +68,7 @@ function change_mode() {
 }
 
 TMP_DIR=/tmp/analize.repos
-LOCK_FILE=$TMP_DIR/ng.lock 
+LOCK_FILE=$TMP_DIR/ng.lock
 mkdir -p $TMP_DIR
 
 function generate_repository_report() {
@@ -79,14 +79,15 @@ function generate_repository_report() {
   echo -e "HEAD:$data_repo\nurl:$url_repo"
   for mode in '' -i; do
     change_mode $ESLINT_CONFIG $mode
+    echo -n "mode:"
     if [ -z "$mode" ]; then
       echo "recommended"
     else
       echo "all"
     fi
-    
+
     ng lint --format=json 2>>/tmp/ng.lint.report.log | sed '/^$/d;/^All files pass linting.$/d;s/^Linting \"\(.*\)\"...$/project:\1/g'
-  rm -f $LOCK_FILE
+    rm -f $LOCK_FILE
   done
 }
 
@@ -128,8 +129,8 @@ for repo in "$REPOS_DIR"/*/*/; do
 
     if [ ! -e $report_file ]; then
       # echo -en "\tLinting... "
-      generate_repository_report $ESLINT_CONFIG > $report_file &
-      loading 
+      generate_repository_report $ESLINT_CONFIG >$report_file &
+      loading
       # echo -e "\r\tLinted    "
     else
       echo -e "\tProject already linted"
@@ -140,5 +141,6 @@ for repo in "$REPOS_DIR"/*/*/; do
     echo -e "\tReport generated [$abs_path_report]\n\n"
   fi
 done
-
-echo node $NODE_REPORT -a \$ANALIZE_DIR -r $RESULT_DIR $dest_file $RESULT_DIR ${reports[@]}
+node_command="node $NODE_REPORT -i -r $RESULT_DIR ${reports[@]}"
+echo $node_command
+$node_command

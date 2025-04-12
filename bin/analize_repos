@@ -142,5 +142,4 @@ for repo in "$REPOS_DIR"/*/*/; do
   fi
 done
 node_command="node $NODE_REPORT -i -r $RESULT_DIR ${reports[@]}"
-echo $node_command
 $node_command

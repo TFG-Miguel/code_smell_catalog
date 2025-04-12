@@ -132,7 +132,7 @@ function getMRef(repo, project, intermediate) {
   return [repo, project]
     .map((item, i) => [
       item,
-      `${i ? "" : ""}-${item}`,
+      `${i ? "" : "%EF%B8%8F"}-${item}`,
       // item
       // 	.replaceAll(" ", "-")
       // 	.toLocaleLowerCase()

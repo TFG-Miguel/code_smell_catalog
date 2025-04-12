@@ -54,7 +54,6 @@ exports.trateParams = function (argv) {
   let INTERMEDIATE = false;
 
   for (let i = 2; i < argv.length; i++) {
-    console.log(argv[i]);
     switch (argv[i]) {
       case "-h":
       case "--help":

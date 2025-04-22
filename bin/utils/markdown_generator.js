@@ -1,4 +1,5 @@
 const utils = require("./markdown_utils");
+const { getValue } = require("./utils");
 
 /**
  * Generate a markdown table from a data array, which contains objects, the field items define how and what show in the table like the way to obtain the value to show
@@ -144,49 +145,56 @@ function getMRef(repo, project, intermediate) {
     .join("-->");
 }
 
+const calculate = (array) => array.reduce((a, c) => a + getValue(c), 0);
+
 function genRulesInProject(rules, intermediate) {
   let markdown = "";
-  Object.entries(rules).forEach(([rule, files]) => {
-    markdown += `<details>\n<summary>${rule}</summary>\n\n`;
-    const max = files.reduce((acc, { all, recommended }) => {
-      Object.entries({ all, recommended }).forEach(
-        ([mode, { warnings, errors }]) => {
-          Object.entries({ warnings, errors }).forEach(([type, value]) => {
-            if (!acc[mode]) acc[mode] = {};
-            if (!acc[mode][type]) acc[mode][type] = 0;
-            acc[mode][type] = Math.max(acc[mode][type], `${value}`.length);
-          });
-        }
-      );
-      return acc;
-    }, {});
-    files
-      .sort(
-        ({ recommended: r1, all: a1 }, { recommended: r2, all: a2 }) =>
-          r2.warnings +
-          r2.errors +
-          a2.warnings +
-          a2.errors -
-          (r1.warnings + r1.errors + a1.warnings + a1.errors)
+  Object.entries(rules)
+    .sort(([_1, f1], [_2, f2]) => calculate(f2) - calculate(f1))
+    .forEach(([rule, files]) => {
+      const symbolInfo = utils.ESLINT_RULE_DATA_ENTRY.map(({ fn }) =>
+        fn([rule])
       )
-      .forEach(({ project: [repo, project], recommended: rec, all }) => {
-        const refMarkdown = getMRef(repo, project, intermediate);
-        markdown += `- RECOMMENDED: \\[${utils.SYMBOLS.warnings} ${formatNumber(
-          rec.warnings,
-          max.recommended.warnings
-        )} ${utils.SYMBOLS.errors} ${formatNumber(
-          rec.errors,
-          max.recommended.errors
-        )}] ALL: \\[${utils.SYMBOLS.warnings} ${formatNumber(
-          all.warnings,
-          max.all.warnings
-        )} ${utils.SYMBOLS.errors} ${formatNumber(
-          all.errors,
-          max.all.errors
-        )}] ${refMarkdown}\n\n`;
-      });
-    markdown += "</details>\n\n";
-  });
+        .join(" ")
+        .trim();
+      let matches = 0;
+      const max = files.reduce((acc, { all, recommended }) => {
+        Object.entries({ all, recommended }).forEach(
+          ([mode, { warnings, errors }]) => {
+            Object.entries({ warnings, errors }).forEach(([type, value]) => {
+              matches += value;
+              if (!acc[mode]) acc[mode] = {};
+              if (!acc[mode][type]) acc[mode][type] = 0;
+              acc[mode][type] = Math.max(acc[mode][type], `${value}`.length);
+            });
+          }
+        );
+        return acc;
+      }, {});
+      markdown += `<details>\n<summary>${rule} (projects: ${files.length}, matches: ${matches}) ${symbolInfo}</summary>\n\n`;
+      files
+        .sort(
+          ({ recommended: r1, all: a1 }, { recommended: r2, all: a2 }) =>
+            r2.warnings +
+            r2.errors +
+            a2.warnings +
+            a2.errors -
+            (r1.warnings + r1.errors + a1.warnings + a1.errors)
+        )
+        .forEach(({ project: [repo, project], recommended: rec, all }) => {
+          const refMarkdown = getMRef(repo, project, intermediate);
+          markdown += `- RECOMMENDED: \\[${
+            utils.SYMBOLS.warnings
+          } ${formatNumber(rec.warnings, max.recommended.warnings)} ${
+            utils.SYMBOLS.errors
+          } ${formatNumber(rec.errors, max.recommended.errors)}] ALL: \\[${
+            utils.SYMBOLS.warnings
+          } ${formatNumber(all.warnings, max.all.warnings)} ${
+            utils.SYMBOLS.errors
+          } ${formatNumber(all.errors, max.all.errors)}] ${refMarkdown}\n\n`;
+        });
+      markdown += "</details>\n\n";
+    });
   return markdown;
 }
 

@@ -3,6 +3,11 @@ const path = require("path");
 // Consts definitions
 exports.OUTPUT_NAME = "automatic.report.analyze";
 exports.ADVICES = ["warnings", "errors"];
+/**
+ *
+ * @param {number} severity
+ * @returns {"warnings"|"errors"}
+ */
 exports.getSeverityRuleMeaning = (severity) => this.ADVICES[severity - 1];
 exports.MODES = ["recommended", "all"];
 exports.getModesWithResources = (recommended, all) => {
@@ -102,3 +107,14 @@ function printUsage() {
   console.log("\n\n");
   process.exit(1);
 }
+
+/**
+ *
+ * @param {{recommended: {warnings:number, errors:number}, all: {warnings:number, errors:number}}}} rule
+ */
+exports.getValue = ({
+  recommended: { warnings: w1, errors: e1 },
+  all: { warnings: w2, errors: e2 },
+}) => {
+  return w1 + e1 + w2 + e2;
+};

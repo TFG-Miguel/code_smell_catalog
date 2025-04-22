@@ -1,0 +1,126 @@
+{
+  "name": "ng-apexcharts",
+  "HEAD": {
+    "commit": "8e4f59daece2bbe9605dbdef25488983beb31f85",
+    "author": "Juned Chhipa",
+    "date": "Wed Mar 19 14:42:20 2025 +0530",
+    "message": "Merge remote-tracking branch 'refs/remotes/origin/master'"
+  },
+  "url": "https://github.com/apexcharts/ng-apexcharts",
+  "projects": {
+    "ng-apexcharts-demo": {
+      "prefer-on-push-component-change-detection": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 1
+        }
+      },
+      "consistent-component-styles": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 1,
+          "errors-with-suggestions": 0
+        }
+      },
+      "prefer-signals": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      }
+    },
+    "ng-apexcharts": {}
+  },
+  "total": {
+    "prefer-on-push-component-change-detection": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 1
+      }
+    },
+    "consistent-component-styles": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 1,
+        "errors-with-suggestions": 0
+      }
+    },
+    "prefer-signals": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    }
+  },
+  "md": "# 🖊️ ng-apexcharts\n\n**Info from repo**:\n- **URL**: <https://github.com/apexcharts/ng-apexcharts>\n- **LastCommit**:\n\t- **Hash**: 8e4f59daece2bbe9605dbdef25488983beb31f85\n\t- **Author**: Juned Chhipa\n\t- **Message**: Merge remote-tracking branch 'refs/remotes/origin/master'\n\t- **Date**: Wed Mar 19 14:42:20 2025 +0530\n\n## 🧮 Total\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 1 |  |  | 💡 |\n\n\n\n## 💻 ng-apexcharts-demo\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |\n\n## 💻 ng-apexcharts\n\n\n> [!WARNING]\n> undefined\n\n"
+}

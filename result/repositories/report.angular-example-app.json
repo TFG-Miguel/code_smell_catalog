@@ -1,0 +1,53 @@
+{
+  "name": "angular-example-app",
+  "HEAD": {
+    "commit": "b43fcab316a8a4c87549eca67a8b7d915f850434",
+    "author": "ismaestro",
+    "date": "Sat Feb 1 07:47:16 2025 +0100",
+    "message": "fix(tools): solve stylelint issues"
+  },
+  "url": "https://github.com/Ismaestro/angular-example-app",
+  "projects": {
+    "angularexampleapp": {
+      "runtime-localize": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 21,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      }
+    }
+  },
+  "total": {
+    "runtime-localize": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 21,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    }
+  },
+  "md": "# 🖊️ angular-example-app\n\n**Info from repo**:\n- **URL**: <https://github.com/Ismaestro/angular-example-app>\n- **LastCommit**:\n\t- **Hash**: b43fcab316a8a4c87549eca67a8b7d915f850434\n\t- **Author**: ismaestro\n\t- **Message**: fix(tools): solve stylelint issues\n\t- **Date**: Sat Feb 1 07:47:16 2025 +0100\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `runtime-localize` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 21 | 0 | 0 |  |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `runtime-localize` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 21 |  |  |  |\n\n\n\n"
+}

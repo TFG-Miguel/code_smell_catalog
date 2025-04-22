@@ -1,0 +1,523 @@
+{
+  "name": "angular-calendar",
+  "HEAD": {
+    "commit": "987fa74220e84d85265b01e53e248932ad1a3da6",
+    "author": "Matt Lewis",
+    "date": "Wed Aug 21 18:37:18 2024 +0100",
+    "message": "chore: update angular.json config"
+  },
+  "url": "https://github.com/mattlewis92/angular-calendar",
+  "projects": {
+    "demos": {
+      "prefer-on-push-component-change-detection": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 4,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 4
+        }
+      },
+      "consistent-component-styles": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 17,
+          "fixable-errors": 17,
+          "errors-with-suggestions": 0
+        }
+      },
+      "use-component-view-encapsulation": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 12,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 12
+        }
+      },
+      "prefer-signals": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 7,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "relative-url-prefix": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 43,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "component-max-inline-declarations": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 11,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "use-injectable-provided-in": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 7,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 7
+        }
+      },
+      "prefer-output-readonly": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 3,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 3
+        }
+      }
+    },
+    "angular-calendar": {
+      "no-host-metadata-property": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "use-component-selector": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 6,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "prefer-on-push-component-change-detection": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 20,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 20
+        }
+      },
+      "use-injectable-provided-in": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 6,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 6
+        }
+      },
+      "component-max-inline-declarations": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 17,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "prefer-signals": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 149,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "prefer-output-readonly": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 26,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 26
+        }
+      },
+      "sort-lifecycle-methods": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 3,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      "consistent-component-styles": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 1,
+          "errors-with-suggestions": 0
+        }
+      }
+    }
+  },
+  "total": {
+    "no-host-metadata-property": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "prefer-on-push-component-change-detection": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 24,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 24
+      }
+    },
+    "consistent-component-styles": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 18,
+        "fixable-errors": 18,
+        "errors-with-suggestions": 0
+      }
+    },
+    "use-component-view-encapsulation": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 12,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 12
+      }
+    },
+    "prefer-signals": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 156,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "relative-url-prefix": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 43,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "component-max-inline-declarations": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 28,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "use-injectable-provided-in": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 13,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 13
+      }
+    },
+    "prefer-output-readonly": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 29,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 29
+      }
+    },
+    "use-component-selector": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 6,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "sort-lifecycle-methods": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 3,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    }
+  },
+  "md": "# 🖊️ angular-calendar\n\n**Info from repo**:\n- **URL**: <https://github.com/mattlewis92/angular-calendar>\n- **LastCommit**:\n\t- **Hash**: 987fa74220e84d85265b01e53e248932ad1a3da6\n\t- **Author**: Matt Lewis\n\t- **Message**: chore: update angular.json config\n\t- **Date**: Wed Aug 21 18:37:18 2024 +0100\n\n## 🧮 Total\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 43 |  |  |  |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 29 |  |  | 💡 |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 28 |  |  |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 24 |  |  | 💡 |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 13 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 12 |  |  | 💡 |\n| `use-component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-selector) | 0 | 0 | 0 | 6 |  |  |  |\n| `sort-lifecycle-methods` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 3 |  |  |  |\n\n\n\n## 💻 demos\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `relative-url-prefix` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 43 | 0 | 0 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 17 | 0 |\n| `use-component-view-encapsulation` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |\n\n## 💻 angular-calendar\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 149 | 0 | 0 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 26 | 0 | 26 |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 0 | 20 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 0 | 0 |\n| `use-component-selector` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 0 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |\n| `sort-lifecycle-methods` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |\n| `no-host-metadata-property` | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |\n\n"
+}

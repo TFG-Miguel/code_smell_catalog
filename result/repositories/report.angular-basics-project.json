@@ -1,0 +1,89 @@
+{
+  "name": "angular-basics-project",
+  "HEAD": {
+    "commit": "504cab8f87defbbaf6462988956b8176861ba802",
+    "author": "akotech",
+    "date": "Sun Oct 24 18:47:33 2021 +0200",
+    "message": "update playlist link"
+  },
+  "url": "https://github.com/ako-tech/angular-basics-project",
+  "projects": {
+    "shopping-cart": {
+      "prefer-on-push-component-change-detection": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 1
+        }
+      },
+      "consistent-component-styles": {
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 1,
+          "errors-with-suggestions": 0
+        }
+      }
+    }
+  },
+  "total": {
+    "prefer-on-push-component-change-detection": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 1
+      }
+    },
+    "consistent-component-styles": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 1,
+        "errors-with-suggestions": 0
+      }
+    }
+  },
+  "md": "# 🖊️ angular-basics-project\n\n**Info from repo**:\n- **URL**: <https://github.com/ako-tech/angular-basics-project>\n- **LastCommit**:\n\t- **Hash**: 504cab8f87defbbaf6462988956b8176861ba802\n\t- **Author**: akotech\n\t- **Message**: update playlist link\n\t- **Date**: Sun Oct 24 18:47:33 2021 +0200\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 1 |  |  | 💡 |\n\n\n\n"
+}

@@ -43,12 +43,12 @@ loading() {
   echo -e "\tLinted!"
 }
 
-# Change the Angular-ESlint rules scope, by default try to change recommended to all, if -i is pressent in second arg it's inverted
+# Change the Angular-ESlint rules scope, by default try to change all to recommended, if -i is pressent in second arg it's inverted
 function change_mode() {
   local file="$1"
   # Modos de ESLint
-  local src='recommended'
-  local dest='all'
+  local src='all'
+  local dest='recommended'
 
   if [[ "$2" == "-i" ]]; then
     local tmp="$src"
@@ -65,6 +65,10 @@ function change_mode() {
   fi
 
   sed -i $pattern $file
+
+  grep angular $file >>/tmp/report.ts
+
+  echo $dest
 }
 
 TMP_DIR=/tmp/analize.repos
@@ -78,17 +82,12 @@ function generate_repository_report() {
 
   echo -e "HEAD:$data_repo\nurl:$url_repo"
   for mode in '' -i; do
-    change_mode $ESLINT_CONFIG $mode
-    echo -n "mode:"
-    if [ -z "$mode" ]; then
-      echo "recommended"
-    else
-      echo "all"
-    fi
+    mode="$(change_mode $ESLINT_CONFIG $mode)"
+    echo "mode:$mode"
 
     ng lint --format=json 2>>/tmp/ng.lint.report.log | sed '/^$/d;/^All files pass linting.$/d;s/^Linting \"\(.*\)\"...$/project:\1/g'
-    rm -f $LOCK_FILE
   done
+  rm -f $LOCK_FILE
 }
 
 # Recorremos todos los repositorios

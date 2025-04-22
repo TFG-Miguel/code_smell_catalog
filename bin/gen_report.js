@@ -99,9 +99,15 @@ function generateRepositoryReport(report, resultDir, intermediate = false) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir);
     }
-    const file = `${dir}/report.${report.name}.md`;
-    fs.writeFileSync(file, md);
-    console.log(`✅ Report for repo "${report.name}" saved in "${file}"`);
+
+    const [jsonFile, mdFile] = ["json", "md"].map(
+      (ext) => `${dir}/report.${report.name}.${ext}`
+    );
+
+    fs.writeFileSync(jsonFile, JSON.stringify(report, null, 2));
+    console.log(`✅ Report json for repo saved in "${jsonFile}"`);
+    fs.writeFileSync(mdFile, md);
+    console.log(`✅ Report for repo saved in "${mdFile}"`);
   }
 }
 
@@ -113,12 +119,17 @@ function generateRepositoryReport(report, resultDir, intermediate = false) {
  */
 function generateResumeReport(report, analysisDir, intermediate = false) {
   const md = mdGen.genMarkdownResumeReport(report, intermediate);
-  const file = `${analysisDir}/automatic.report.md`;
-  fs.writeFileSync(file, md);
+  const [jsonFile, mdFile] = ["json", "md"].map(
+    (ext) => `${analysisDir}/automatic.report.${ext}`
+  );
+
+  fs.writeFileSync(jsonFile, JSON.stringify(report, null, 2));
+  console.log("✅", `Report json saved in "${jsonFile}"`);
+  fs.writeFileSync(mdFile, md);
   console.log(
     "✅",
     intermediate ? "Resume report" : "Report",
-    `saved in "${file}"`
+    `saved in "${mdFile}"`
   );
 }
 

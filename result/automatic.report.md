@@ -89,6 +89,35 @@
 ### Which projects has rules
 
 <details>
+<summary>prefer-signals (projects: 12, matches: 219) 🔧</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 149] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 037] [angular-fontawesome](repositories/report.angular-fontawesome.md#%EF%B8%8F-angular-fontawesome)-->[angular-fontawesome](repositories/report.angular-fontawesome.md#-angular-fontawesome)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 009] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 007] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 005] [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic)-->[first-app](repositories/report.gojs-angular-basic.md#-first-app)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 003] [Angular-Full-Stack](repositories/report.Angular-Full-Stack.md#%EF%B8%8F-Angular-Full-Stack)-->[angular2-full-stack](repositories/report.Angular-Full-Stack.md#-angular2-full-stack)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 002] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 002] [angular-16-crud-example](repositories/report.angular-16-crud-example.md#%EF%B8%8F-angular-16-crud-example)-->[angular-16-crud](repositories/report.angular-16-crud-example.md#-angular-16-crud)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 002] [angular-17-crud-example](repositories/report.angular-17-crud-example.md#%EF%B8%8F-angular-17-crud-example)-->[angular-17-crud](repositories/report.angular-17-crud-example.md#-angular-17-crud)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 001] [mean](repositories/report.mean.md#%EF%B8%8F-mean)-->[mean](repositories/report.mean.md#-mean)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 001] [ng-apexcharts](repositories/report.ng-apexcharts.md#%EF%B8%8F-ng-apexcharts)-->[ng-apexcharts-demo](repositories/report.ng-apexcharts.md#-ng-apexcharts-demo)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 001] [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template)-->[ng-three-template](repositories/report.ng-three-template.md#-ng-three-template)
+
+</details>
+
+<details>
 <summary>prefer-on-push-component-change-detection (projects: 18, matches: 125) 💡</summary>
 
 - RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 20] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
@@ -130,6 +159,32 @@
 </details>
 
 <details>
+<summary>use-component-view-encapsulation (projects: 6, matches: 59) 💡</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 25] [angular-gridster2](repositories/report.angular-gridster2.md#%EF%B8%8F-angular-gridster2)-->[gridster-app](repositories/report.angular-gridster2.md#-gridster-app)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 12] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 10] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 07] [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template)-->[ng-three-template](repositories/report.ng-three-template.md#-ng-three-template)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 03] [angular-gridster2](repositories/report.angular-gridster2.md#%EF%B8%8F-angular-gridster2)-->[angular-gridster2](repositories/report.angular-gridster2.md#-angular-gridster2)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 02] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
+
+</details>
+
+<details>
+<summary>relative-url-prefix (projects: 2, matches: 50) </summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 43] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 07] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
+
+</details>
+
+<details>
 <summary>consistent-component-styles (projects: 14, matches: 48) 🔧</summary>
 
 - RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 17] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
@@ -163,65 +218,15 @@
 </details>
 
 <details>
-<summary>prefer-signals (projects: 12, matches: 219) 🔧</summary>
+<summary>component-max-inline-declarations (projects: 5, matches: 47) </summary>
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 149] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 17] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 037] [angular-fontawesome](repositories/report.angular-fontawesome.md#%EF%B8%8F-angular-fontawesome)-->[angular-fontawesome](repositories/report.angular-fontawesome.md#-angular-fontawesome)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 11] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 009] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 11] [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr)-->[ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr)
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 007] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 005] [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic)-->[first-app](repositories/report.gojs-angular-basic.md#-first-app)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 003] [Angular-Full-Stack](repositories/report.Angular-Full-Stack.md#%EF%B8%8F-Angular-Full-Stack)-->[angular2-full-stack](repositories/report.Angular-Full-Stack.md#-angular2-full-stack)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 002] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 002] [angular-16-crud-example](repositories/report.angular-16-crud-example.md#%EF%B8%8F-angular-16-crud-example)-->[angular-16-crud](repositories/report.angular-16-crud-example.md#-angular-16-crud)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 002] [angular-17-crud-example](repositories/report.angular-17-crud-example.md#%EF%B8%8F-angular-17-crud-example)-->[angular-17-crud](repositories/report.angular-17-crud-example.md#-angular-17-crud)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 001] [mean](repositories/report.mean.md#%EF%B8%8F-mean)-->[mean](repositories/report.mean.md#-mean)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 001] [ng-apexcharts](repositories/report.ng-apexcharts.md#%EF%B8%8F-ng-apexcharts)-->[ng-apexcharts-demo](repositories/report.ng-apexcharts.md#-ng-apexcharts-demo)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 001] [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template)-->[ng-three-template](repositories/report.ng-three-template.md#-ng-three-template)
-
-</details>
-
-<details>
-<summary>use-injectable-provided-in (projects: 7, matches: 31) 💡</summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 7] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 7] [QuickApp](repositories/report.QuickApp.md#%EF%B8%8F-QuickApp)-->[quickapp.client](repositories/report.QuickApp.md#-quickapp.client)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 6] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 5] [Angular-Full-Stack](repositories/report.Angular-Full-Stack.md#%EF%B8%8F-Angular-Full-Stack)-->[angular2-full-stack](repositories/report.Angular-Full-Stack.md#-angular2-full-stack)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 4] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [mean](repositories/report.mean.md#%EF%B8%8F-mean)-->[mean](repositories/report.mean.md#-mean)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [play-scala-angular-seed](repositories/report.play-scala-angular-seed.md#%EF%B8%8F-play-scala-angular-seed)-->[scala-play-angular-seed](repositories/report.play-scala-angular-seed.md#-scala-play-angular-seed)
-
-</details>
-
-<details>
-<summary>use-component-view-encapsulation (projects: 6, matches: 59) 💡</summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 25] [angular-gridster2](repositories/report.angular-gridster2.md#%EF%B8%8F-angular-gridster2)-->[gridster-app](repositories/report.angular-gridster2.md#-gridster-app)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 12] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 10] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 07] [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template)-->[ng-three-template](repositories/report.ng-three-template.md#-ng-three-template)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 03] [angular-gridster2](repositories/report.angular-gridster2.md#%EF%B8%8F-angular-gridster2)-->[angular-gridster2](repositories/report.angular-gridster2.md#-angular-gridster2)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 06] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
 
 - RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 02] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
 
@@ -245,17 +250,74 @@
 </details>
 
 <details>
-<summary>component-max-inline-declarations (projects: 5, matches: 47) </summary>
+<summary>use-injectable-provided-in (projects: 7, matches: 31) 💡</summary>
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 17] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 7] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 11] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 7] [QuickApp](repositories/report.QuickApp.md#%EF%B8%8F-QuickApp)-->[quickapp.client](repositories/report.QuickApp.md#-quickapp.client)
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 11] [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr)-->[ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 6] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 06] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 5] [Angular-Full-Stack](repositories/report.Angular-Full-Stack.md#%EF%B8%8F-Angular-Full-Stack)-->[angular2-full-stack](repositories/report.Angular-Full-Stack.md#-angular2-full-stack)
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 02] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 4] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [mean](repositories/report.mean.md#%EF%B8%8F-mean)-->[mean](repositories/report.mean.md#-mean)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [play-scala-angular-seed](repositories/report.play-scala-angular-seed.md#%EF%B8%8F-play-scala-angular-seed)-->[scala-play-angular-seed](repositories/report.play-scala-angular-seed.md#-scala-play-angular-seed)
+
+</details>
+
+<details>
+<summary>prefer-standalone (projects: 1, matches: 24) 🔧 ✅</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 12] ALL: \[⚠️ 0 💥 12] [Angular-Full-Stack](repositories/report.Angular-Full-Stack.md#%EF%B8%8F-Angular-Full-Stack)-->[angular2-full-stack](repositories/report.Angular-Full-Stack.md#-angular2-full-stack)
+
+</details>
+
+<details>
+<summary>no-output-on-prefix (projects: 2, matches: 22) ✅</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 9] ALL: \[⚠️ 0 💥 9] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
+
+- RECOMMENDED: \[⚠️ 0 💥 2] ALL: \[⚠️ 0 💥 2] [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic)-->[first-app](repositories/report.gojs-angular-basic.md#-first-app)
+
+</details>
+
+<details>
+<summary>runtime-localize (projects: 1, matches: 21) </summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 21] [angular-example-app](repositories/report.angular-example-app.md#%EF%B8%8F-angular-example-app)-->[angularexampleapp](repositories/report.angular-example-app.md#-angularexampleapp)
+
+</details>
+
+<details>
+<summary>prefer-standalone-component (projects: 1, matches: 11) ❌ ❌ ❌</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 11] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
+
+</details>
+
+<details>
+<summary>component-class-suffix (projects: 1, matches: 10) ✅</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 5] ALL: \[⚠️ 0 💥 5] [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr)-->[ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr)
+
+</details>
+
+<details>
+<summary>no-empty-lifecycle-method (projects: 1, matches: 10) ✅ 💡</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 5] ALL: \[⚠️ 0 💥 5] [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template)-->[ng-three-template](repositories/report.ng-three-template.md#-ng-three-template)
+
+</details>
+
+<details>
+<summary>sort-ngmodule-metadata-arrays (projects: 2, matches: 9) ❌ ❌ ❌</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 6] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 3] [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr)-->[ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr)
 
 </details>
 
@@ -271,20 +333,23 @@
 </details>
 
 <details>
-<summary>relative-url-prefix (projects: 2, matches: 50) </summary>
+<summary>use-component-selector (projects: 1, matches: 6) </summary>
 
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 43] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[demos](repositories/report.angular-calendar.md#-demos)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 07] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 6] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
 
 </details>
 
 <details>
-<summary>no-output-on-prefix (projects: 2, matches: 22) ✅</summary>
+<summary>component-selector (projects: 1, matches: 6) </summary>
 
-- RECOMMENDED: \[⚠️ 0 💥 9] ALL: \[⚠️ 0 💥 9] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
+- RECOMMENDED: \[⚠️ 0 💥 3] ALL: \[⚠️ 0 💥 3] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
 
-- RECOMMENDED: \[⚠️ 0 💥 2] ALL: \[⚠️ 0 💥 2] [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic)-->[first-app](repositories/report.gojs-angular-basic.md#-first-app)
+</details>
+
+<details>
+<summary>no-output-native (projects: 1, matches: 4) ✅</summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 2] ALL: \[⚠️ 0 💥 2] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
 
 </details>
 
@@ -298,67 +363,9 @@
 </details>
 
 <details>
-<summary>sort-ngmodule-metadata-arrays (projects: 2, matches: 9) ❌ ❌ ❌</summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 6] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 3] [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr)-->[ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr)
-
-</details>
-
-<details>
 <summary>no-host-metadata-property (projects: 1, matches: 2) ❌ ❌ ❌</summary>
 
 - RECOMMENDED: \[⚠️ 0 💥 1] ALL: \[⚠️ 0 💥 1] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
-
-</details>
-
-<details>
-<summary>use-component-selector (projects: 1, matches: 6) </summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 6] [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar)-->[angular-calendar](repositories/report.angular-calendar.md#-angular-calendar)
-
-</details>
-
-<details>
-<summary>no-lifecycle-call (projects: 1, matches: 1) </summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [angular-fontawesome](repositories/report.angular-fontawesome.md#%EF%B8%8F-angular-fontawesome)-->[angular-fontawesome](repositories/report.angular-fontawesome.md#-angular-fontawesome)
-
-</details>
-
-<details>
-<summary>component-selector (projects: 1, matches: 6) </summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 3] ALL: \[⚠️ 0 💥 3] [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill)-->[ngx-quill](repositories/report.ngx-quill.md#-ngx-quill)
-
-</details>
-
-<details>
-<summary>component-class-suffix (projects: 1, matches: 10) ✅</summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 5] ALL: \[⚠️ 0 💥 5] [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr)-->[ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr)
-
-</details>
-
-<details>
-<summary>runtime-localize (projects: 1, matches: 21) </summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 21] [angular-example-app](repositories/report.angular-example-app.md#%EF%B8%8F-angular-example-app)-->[angularexampleapp](repositories/report.angular-example-app.md#-angularexampleapp)
-
-</details>
-
-<details>
-<summary>prefer-standalone (projects: 1, matches: 24) 🔧 ✅</summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 12] ALL: \[⚠️ 0 💥 12] [Angular-Full-Stack](repositories/report.Angular-Full-Stack.md#%EF%B8%8F-Angular-Full-Stack)-->[angular2-full-stack](repositories/report.Angular-Full-Stack.md#-angular2-full-stack)
-
-</details>
-
-<details>
-<summary>prefer-standalone-component (projects: 1, matches: 11) ❌ ❌ ❌</summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 11] [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies)-->[angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies)
 
 </details>
 
@@ -370,20 +377,6 @@
 </details>
 
 <details>
-<summary>no-output-native (projects: 1, matches: 4) ✅</summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 2] ALL: \[⚠️ 0 💥 2] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
-
-</details>
-
-<details>
-<summary>no-duplicates-in-metadata-arrays (projects: 1, matches: 1) </summary>
-
-- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
-
-</details>
-
-<details>
 <summary>use-lifecycle-interface (projects: 1, matches: 2) 🔧</summary>
 
 - RECOMMENDED: \[⚠️ 1 💥 0] ALL: \[⚠️ 0 💥 1] [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic)-->[first-app](repositories/report.gojs-angular-basic.md#-first-app)
@@ -391,9 +384,16 @@
 </details>
 
 <details>
-<summary>no-empty-lifecycle-method (projects: 1, matches: 10) ✅ 💡</summary>
+<summary>no-lifecycle-call (projects: 1, matches: 1) </summary>
 
-- RECOMMENDED: \[⚠️ 0 💥 5] ALL: \[⚠️ 0 💥 5] [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template)-->[ng-three-template](repositories/report.ng-three-template.md#-ng-three-template)
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [angular-fontawesome](repositories/report.angular-fontawesome.md#%EF%B8%8F-angular-fontawesome)-->[angular-fontawesome](repositories/report.angular-fontawesome.md#-angular-fontawesome)
+
+</details>
+
+<details>
+<summary>no-duplicates-in-metadata-arrays (projects: 1, matches: 1) </summary>
+
+- RECOMMENDED: \[⚠️ 0 💥 0] ALL: \[⚠️ 0 💥 1] [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app)-->[angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit)
 
 </details>
 

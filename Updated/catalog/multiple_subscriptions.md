@@ -91,33 +91,28 @@ export class JourneyListItemComponent implements OnDestroy {
 ```
 
 >[!note]
-> En caso de que se haga una suscripción manual, se debería emplear `takeUntil` junto con el observable.
+> En caso de que se haga una suscripción manual, se debería emplear `takeUntilDestroy` junto con el observable.
 > 
 > ```ts
->@Component({
->  selector: 'journey-list-item',
->  templateUrl: './journey-list-item.component.html',
->  styleUrls: ['./journey-list-item.component.scss'],
->})
->export class JourneyListItemComponent implements OnInit, OnDestroy {
->   private readonly destroy$ = new Subject<void>();
->
->   constructor(private readonly journeyService: ReiseService) { }
->   
->   ngOnInit() { 
->       this.journeyId$.pipe(
->           distinctUntilChanged(),
->           switchMap((id) => this.journeyService.getJourney(id)),
->           shareReplay(1),
->           takeUntil(this.destroy$)
->       );
->   }
->
->   ngOnDestroy() {
->     this.destroy$.next();
->     this.destroy$.complete();
->   }
->}
+> @Component({
+>   selector: 'journey-list-item',
+>   templateUrl: './journey-list-item.component.html',
+>   styleUrls: ['./journey-list-item.component.scss'],
+> })
+> export class JourneyListItemComponent implements OnInit{
+> 
+>    constructor(private readonly journeyService: ReiseService) { }
+>    
+>    ngOnInit() { 
+>        this.journeyId$.pipe(
+>            distinctUntilChanged(),
+>            switchMap((id) => this.journeyService.getJourney(id)),
+>            shareReplay(1),
+>            takeUntilDestroy()
+>        );
+>    }
+> }
+> ```
 
 ### Usar `publishReplay(1)` y `refCount()`
 
@@ -137,9 +132,8 @@ pageTitle = this.route.params.pipe(
 <p>You are viewing {{pageTitle | async}}.</p>
 ```
 
----
 
-### ✅ Opción 3: Angular 16+ con `takeUntilDestroyed`
+### Angular 16+ con `takeUntilDestroyed`
 
 ```ts
 @Component({...})
@@ -156,16 +150,3 @@ export class JourneyListItemComponent {
   }
 }
 ```
-
----
-
-# ✅ Buenas prácticas
-
-* Usa `shareReplay(1)` para compartir streams sin repetir emisiones.
-* No uses múltiples `async` sobre el mismo `Observable`, combínalo en un `*ngIf`.
-* Usa `takeUntilDestroyed()` en Angular 16+ en vez de `takeUntil(destroy$)`.
-* Para streams con estado largo, considera `BehaviorSubject` o `signals`.
-
----
-
-¿Quieres que lo convierta ahora a Markdown o seguimos con otro code smell?

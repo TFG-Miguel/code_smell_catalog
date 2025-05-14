@@ -1,15 +1,30 @@
 # Inheritance over composition
 ## Description
-En el desarrollo de aplicaciones Angular, es común reutilizar lógica compartida entre componentes. Una práctica habitual es crear una clase base y extenderla mediante herencia. Sin embargo, este enfoque puede llevar a una arquitectura rígida y difícil de mantener. La composición, en cambio, propone construir componentes combinando funcionalidades específicas a través de servicios o directivas, promoviendo una arquitectura más flexible y modular.
+En el desarrollo de aplicaciones Angular, es común reutilizar lógica compartida entre componentes. Una práctica habitual es crear una clase base y extenderla mediante herencia. Sin embargo, este enfoque puede llevar a una arquitectura rígida y difícil de mantener. 
+
+La composición, en cambio, propone construir componentes combinando funcionalidades específicas a través de servicios o directivas, promoviendo una arquitectura más flexible y modular.
+
+Debido a esto este *code smell* se plantea como el uso de la herencia en vez del uso de la composición.
 ## Why is a code smell
 - **Acoplamiento rígido**: La herencia crea una relación fuerte entre la clase base y las derivadas, lo que dificulta la modificación o reutilización de componentes en contextos diferentes.
 - **Reutilización limitada**: Los componentes derivados heredan toda la funcionalidad de la clase base, incluso si solo necesitan una parte, lo que puede llevar a una sobrecarga innecesaria.
 - **Dificultad en pruebas**: Las dependencias compartidas en la clase base pueden complicar las pruebas unitarias de los componentes derivados.
 - **Problemas de mantenimiento**: Cambios en la clase base pueden tener efectos colaterales en todos los componentes que la extienden, aumentando el riesgo de introducir errores.
+
+---
 ## Non-Compliant code example
 
+Cuestionario html empleados en ambos componentes
+```html
+<form [formGroup]="myform" (ngSubmit)="save()">
+  <h1>Recovery password</h1>
+  <input type="text" formControlName="email" />
+  <button>Save</button>
+  <span *ngFor="let error of errors">{{ error }}</span>
+</form>
+```
+Componente base e hijos
 ```typescript
-// baseForm.ts
 import { FormBuilder, Validators } from '@angular/forms';
 
 export class BaseForm {
@@ -37,17 +52,6 @@ export class BaseForm {
   }
 }
 
-// Form template used in both child components
-
-<form [formGroup]="myform" (ngSubmit)="save()">
-  <h1>Recovery password</h1>
-  <input type="text" formControlName="email" />
-  <button>Save</button>
-  <span *ngFor="let error of errors">{{ error }}</span>
-</form>
-
-// newsletter.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BaseForm } from '../../core/baseForm';
@@ -61,8 +65,6 @@ export class NewsletterComponent extends BaseForm {
     super(fb);
   }
 }
-
-// recovery-password.component.ts
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
@@ -82,12 +84,12 @@ export class RecoveryPasswordComponent extends BaseForm {
 
 En este ejemplo, `UserFormComponent` hereda toda la lógica de `BaseFormComponent`, incluso si solo necesita una parte de ella, lo que puede llevar a una sobrecarga innecesaria y a un acoplamiento rígido.
 
+---
 ## Compliant code example
 
 ### Servicio con lógica compartida
 
 ```typescript
-// form-wrapper.service.ts
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -116,7 +118,6 @@ export class FormWrapperService {
 ```
 
 ### Componente que utiliza el servicio
-
 ```typescript
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
@@ -138,10 +139,11 @@ export class WaitingListComponent {
     }
   }
 }
-
 ```
+En cambio, al extraerlo a un servicio, no estamos tenemos ese acoplamiento tan rígido si no que es mucho menor ya que solo se usa el servicio en los diferentes componentes.
 
-Para agregar aún más flexibilidad, otra recomendación es la la sustitución de una implementación directa al servicio por una abstracción y su respectiva implementación, de esta manera se deja abierto a otros posibles servicios que, en caso de querer usarse en ese componente, solo será necesario especificar el cambio en el proveedor que queremos inyectar
+>[!tip]
+>Para agregar aún más flexibilidad, otra recomendación es la la sustitución de una implementación directa al servicio por una abstracción y su respectiva implementación, de esta manera se deja abierto a otros posibles servicios que, en caso de querer usarse en ese componente, solo será necesario especificar el cambio en el proveedor que queremos inyectar
 
 
 [1]:https://danywalls.com/understand-composition-and-inheritance-in-angular

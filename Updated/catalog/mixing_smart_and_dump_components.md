@@ -1,6 +1,8 @@
 # Mixing Smart and Dumb components
 ## Description
-Cuando un componente crece incluyendo lógica de negocio, llamadas HTTP, gestión de estado y responsabilidad de presentación en un solo lugar, se vuelve difícil de mantener y probar. El patrón de **Smart (container)** y **Dumb (presentational) Components** propone separar las responsabilidades:
+*Este code smell* se da cuando un componente crece incluyendo lógica de negocio, llamadas HTTP, gestión de estado y responsabilidad de presentación en un solo lugar, se vuelve difícil de mantener y probar. 
+
+El patrón de **Smart (container)** y **Dumb (presentational) Components** propone separar las responsabilidades:
 - Los **Smart Components** se encargan de obtener datos, manejar el estado y coordinar servicios.
 - Los **Dumb Components** sólo se ocupan de mostrar datos recibidos vía `@Input` y emitir eventos simples con `@Output`.
 
@@ -10,13 +12,15 @@ De esta manera logramos un componente *dump* desacoplado de la lógica recogida 
 - **Dificultad para pruebas unitarias**: Probar un componente que mezcla lógica de negocio y presentación requiere montar servicios y dependencias innecesarias.
 - **Reutilización limitada**: La lógica y la vista están acopladas, impidiendo usar la parte de UI en otros contextos sin arrastrar dependencias y pudiendo llegar a duplicar código debido a su baja reutilización.
 - **Mantenimiento complejo**: Cada cambio en la lógica de negocio o en la presentación obliga a revisar un único archivo masivo, aumentando riesgo de errores.
-## Non-Compliant code example []
+
+---
+## Non-Compliant code example
 ```typescript 
 @Component({
   selector: 'app-home',
   template: `
     <h2>All Lessons</h2>
-    <h4>Total Lessons: {{lessons?.length}}</h4>
+    <h4>Total Lessons: {{lessons.length}}</h4>
     <div class="lessons-list-container v-h-center-block-parent">
         <table class="table lessons-list card card-strong">
             <tbody>
@@ -31,34 +35,29 @@ De esta manera logramos un componente *dump* desacoplado de la lógica recogida 
         </table>
     </div>
 `,
-  styleUrls: ['./home.component.css']
+  styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
 
-    lessons: Lesson[];
+  lessons: Lesson[];
 
-  constructor(private lessonsService: LessonsService) {
-  }
+  constructor(private lessonsService: LessonsService) {  }
 
   ngOnInit() {
-      this.lessonsService.findAllLessons()
-          .pipe(
-              tap(console.log)
-           )
-          .subscribe(
-              lessons => this.allLessons = lessons
-          );
+    this.lessonsService.findAllLessons()
+      .pipe(tap(console.log))
+      .subscribe(
+        lessons => this.allLessons = lessons
+      );
   }
 
-  selectLesson(lesson) {
-    ...
-  }
-
+  selectLesson(lesson) { ... }
 }
 
 ```
+---
 ## Compliant code example
-### Dump component
+### Dump component (Presentational)
 ```typescript
 import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 import {Lesson} from "../shared/model/lesson";
@@ -88,13 +87,13 @@ export class LessonsListComponent {
   @Output('lesson')
   lessonEmitter = new EventEmitter<Lesson>();
 
-    selectLesson(lesson:Lesson) {
-        this.lessonEmitter.emit(lesson);
-    }
+  selectLesson(lesson:Lesson) {
+    this.lessonEmitter.emit(lesson);
+  }
 
 }
 ```
-### Smart component
+### Smart component (Container / Business logic)
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import {LessonsService} from "../shared/model/lessons.service";
@@ -104,7 +103,7 @@ import {Lesson} from "../shared/model/lesson";
   selector: 'app-home',
   template: `
       <h2>All Lessons</h2>
-      <h4>Total Lessons: {{lessons?.length}}</h4>
+      <h4>Total Lessons: {{lessons.length}}</h4>
       <div class="lessons-list-container v-h-center-block-parent">
           <lessons-list [lessons]="lessons" (lesson)="selectLesson($event)"></lessons-list>
       </div>
@@ -113,19 +112,13 @@ import {Lesson} from "../shared/model/lesson";
 })
 export class HomeComponent implements OnInit {
 
-    lessons: Lesson[];
+  lessons: Lesson[];
 
-  constructor(private lessonsService: LessonsService) {
-  }
+  constructor(private lessonsService: LessonsService) {   }
 
-  ngOnInit() {
-     ...
-  }
+  ngOnInit() { ... }
 
-  selectLesson(lesson) {
-    ...
-  }
-
+  selectLesson(lesson) { ... }
 }
 ```
 

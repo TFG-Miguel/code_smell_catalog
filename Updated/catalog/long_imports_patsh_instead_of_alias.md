@@ -13,7 +13,7 @@ Angular (a través de TypeScript) permite definir alias personalizados en el arc
 - **Aumenta la probabilidad de errores**: es fácil equivocarse con el número de `../`.
 - **Rompe la escalabilidad**: en proyectos grandes, las rutas relativas generan confusión.
 - **Dificulta la navegación en el editor**: el autocompletado y la resolución de paths se vuelve menos predecible.
-
+---
 ## Non-Compliant code example
 
 ```ts
@@ -21,8 +21,7 @@ Angular (a través de TypeScript) permite definir alias personalizados en el arc
 import { UserService } from '../../../../core/services/user/user.service';
 import { environment } from '../../../../environments/environment';
 ```
-
-
+---
 ## Compliant code example
 
 ```ts
@@ -45,7 +44,6 @@ import { UserService } from '@core/services/user/user.service';
 import { environment } from '@env';
 ```
 
-# Recomendaciones
-- Define alias para carpetas comunes como `@core`, `@shared`, `@env`, `@features`, `@models`.
-- Usa alias tanto en el código del proyecto como en las pruebas.
+>[!tip]
+> Define alias para carpetas comunes como `@core`, `@shared`, `@env`, `@features`, `@models`.
 

@@ -16,33 +16,35 @@ Además, la falta de configuración adecuada en `angular.json` puede hacer que e
 
 ## Why is a code smell
 
-* **Crea paquetes innecesariamente grandes**: que impactan directamente en el tiempo de carga.
-* **Reduce el rendimiento general**: tanto del navegador como del servidor (en SSR).
-* **Impacta negativamente en la experiencia del usuario**: especialmente en dispositivos móviles.
-* **Ignora herramientas ya incluidas en Angular**: como optimización de dependencias y minificación.
-* **Dificulta el mantenimiento del código**: al no detectar dependencias no utilizadas.
+- **Crea paquetes innecesariamente grandes**: que impactan directamente en el tiempo de carga.
+- **Reduce el rendimiento general**: tanto del navegador como del servidor (en SSR).
+- **Impacta negativamente en la experiencia del usuario**: especialmente en dispositivos móviles.
+- **Ignora herramientas ya incluidas en Angular**: como optimización de dependencias y minificación.
+- **Dificulta el mantenimiento del código**: al no detectar dependencias no utilizadas.
 
 ---
 
 ## Non-Compliant code example
 
-* No usar `ng build --configuration production`
-* No configurar `budgets` en `angular.json`
-* Usar imports globales innecesarios (cargar toda una librería en vez de lo que se necesite):
-```ts
-import * as lodash from 'lodash';
-```
+- No usar `ng build --configuration production`
+- No configurar `budgets` en `angular.json`
+- Usar imports globales innecesarios (cargar toda una librería en vez de lo que se necesite):
+  ```ts
+  import * as lodash from 'lodash';
+  ```
 - Uso de carga ansiosa o '*eager*'
-```ts
-import AdminModule from './admin/admin.module'
+  ```ts
+  import AdminModule from './admin/admin.module'
 
-const routes: Routes = [
-  {
-    path: 'admin',
-    children: AdminModule.routes
-  }
-];
-```
+  const routes: Routes = [
+    {
+      path: 'admin',
+      children: AdminModule.routes
+    }
+  ];
+  ```
+
+---
 ## Compliant code example
 
 ### Comando de build en producción
@@ -104,7 +106,7 @@ const routes: Routes = [
   }
 }
 ```
-## Consideraciones adicionales
-Para hacer más eficientes o pequeños estos bloques se recomienda:
-- El uso `pure` pipes para facilitar el *tree-shaking* (limpieza de código muerto).
-- Divide el código por dominios y aplica `standalone components` cuando sea posible para dividir el bundler en trozos más pequeños que se irán cargando a necesidad.
+>[!tip]
+> Para hacer más eficientes o pequeños estos bloques se recomienda:
+> - El uso `pure` pipes para facilitar el *tree-shaking* (limpieza de código muerto).
+> - Divide el código por dominios y aplica `standalone components` cuando sea posible para dividir el bundler en trozos más pequeños que se irán cargando a necesidad.

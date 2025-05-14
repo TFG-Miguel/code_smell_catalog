@@ -1,7 +1,8 @@
 # Include logic in templates
 ## Description
+Este code smell se da cuando se realiza un uso excesivo de lógica en las plantillas.
 
-Aunque las plantillas Angular permiten usar condiciones simples, su uso excesivo o anidado con lógica compleja (como múltiples comparaciones, estructuras condicionales anidadas o negaciones encadenadas) convierte la vista en un lugar difícil de leer, mantener y probar.
+Aunque las plantillas html Angular permiten usar condiciones simples, su uso excesivo o anidado con lógica compleja (como múltiples comparaciones, estructuras condicionales anidadas o negaciones encadenadas) convierte la vista en un lugar difícil de leer, mantener y probar.
 
 Esto incluye también el abuso de directivas como `*ngIf`, `*ngFor`, `ngSwitch` con condiciones complejas, y estructuras que deberían delegarse al componente o encapsularse mediante directivas personalizadas.
 
@@ -18,6 +19,7 @@ Para mejorar la claridad del template se recomienda:
 - **Aumenta la complejidad**: estructuras condicionales profundas crean vistas difíciles de mantener.
 - **Reduce la reutilización**: las condiciones complejas embebidas no son reutilizables ni testeables.
 
+---
 ## Non-Compliant code example
 
 ```html
@@ -25,7 +27,7 @@ Para mejorar la claridad del template se recomienda:
   Bienvenido, {{ user.name }}!
 </div>
 ```
-
+---
 ## Compliant code example
 
 ### Mover la lógica al componente

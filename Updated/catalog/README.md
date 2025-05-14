@@ -3,7 +3,7 @@
 |[Not unsubscribe a subscription](not_unsubscribe_subscriptions.md) [[3].5,[7]]                                                  |10|
 |[Unoptimized module loading](Unoptimized_module_loading.md) [[1],[3].10]                                                     |08|
 |[Default change detection instead OnPush](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [[1],[2],[4]]                                       |07|
-|[Subscribe in templates](subscribe_in_templates.md) [[3].9,[7]]                                                              |06|
+|[Manual subscriptions](manual_subscriptions.md) [[3].9,[7]]                                                              |06|
 |[Mixing Smart and Dumb components](mixing_smart_and_dump_components.md) [[1].3,[3].7, [3].12]                                              |06|
 |[Include functions in templates](include_functions_in_templates.md) [[2]]                                                   |05|
 |[Inheritance over composition](inheritance_over_composition.md) [[4]]                                                          |04|
@@ -18,7 +18,7 @@
 |[Use a component in multiple modules](use_a_component_in_multiple_modules.md) [[1].1]                                          |02|
 |[Modify DOM directly](modify_dom_directly.md)                                                                         |02|
 |[Use stateful streams](use_stateful_streams.md)                                                                        |02|
-|[Multiple subscriptions](multiple_subscriptions.md) [[2],[7]]                                                            |0|2|02|
+|[Multiple subscriptions](multiple_subscriptions.md) [[2],[7]]                                                            |02|
 
 
 

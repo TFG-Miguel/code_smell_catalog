@@ -16,8 +16,8 @@ En lugar de ello, se recomienda **transportar el estado intermedio dentro del pr
 - **Complica el manejo de errores**: un fallo en cualquier etapa puede dejar el estado externo inconsistente.
 - **Reduce la mantenibilidad**: propenso a errores y difícil de refactorizar o testear correctamente.
 
+---
 ## Non-Compliant code example
-
 ```ts
 this.route.params.pipe(
   switchMap(({ customerId }) => customerService.getCustomer(customerId)),
@@ -35,8 +35,8 @@ this.route.params.pipe(
   this.view = moreComplexComutation(this.customer, this.code, combinedResult);
 });
 ```
+---
 ## Compliant code example
-
 ```ts
 createStream<number>([1, 2], 25).pipe(
   switchMap(id => requestCustomer(id)),
@@ -59,4 +59,4 @@ createStream<number>([1, 2], 25).pipe(
 });
 ```
 
-[source](https://www.thinktecture.com/en/angular/rxjs-antipattern-2-state/)
+[source]:https://www.thinktecture.com/en/angular/rxjs-antipattern-2-state/

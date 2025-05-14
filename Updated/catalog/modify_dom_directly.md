@@ -21,6 +21,7 @@ En lugar de modificar manualmente el DOM, Angular promueve el uso de:
 - **Dificulta el mantenimiento**: el DOM puede cambiar y romper referencias manuales.
 - **Complica el testing**: los tests se vuelven más frágiles e impredecibles al depender de manipulación directa.
 
+---
 ## Non-Compliant code example
 
 ```ts
@@ -37,7 +38,7 @@ ngAfterViewInit(): void {
   }
 }
 ```
-
+---
 ## Compliant code example
 
 ### Usar propiedades y bindings en la plantilla

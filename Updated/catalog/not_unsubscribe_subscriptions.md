@@ -2,16 +2,17 @@
 
 ## Description
 
-En los componentes que se suscriben a observables (manual) y no se desuscriben, antes de que el componente se destruya, están expuestos una **fuga de memoria** o un comportamiento inesperado por un callback desencadenada por la respuesta de un valor de la suscripción, puesto que la suscripción se mantiene activa incluso tras la destrucción de la vista. 
+Este *code smell* ocurre cuando los componentes que se suscriben a observables (manualmente) y no cancelan la suscripción antes de que el componente se destruya; quedando expuestos una **fuga de memoria** o un comportamiento inesperado por un callback desencadenado por la respuesta de un valor de la suscripción, puesto que la suscripción se mantiene activa incluso tras la destrucción de la vista. 
 
 Con el tiempo, estas suscripciones "zombies" se acumularán produciendo consumos de recursos innecesarios degradando el rendimiento de nuestra aplicación.
 
 ## Why is a code smell
 
-1. **Retención de memoria:** Cada suscripción no cancelada impide que el recolector de basura libere los recursos asociados, provocando un incremento constante del uso de memoria.
-2. **Impacto en rendimiento:** Con el tiempo, el exceso de suscripciones activas ralentiza la aplicación y puede originar comportamientos inesperados, como callbacks ejecutándose en componentes destruidos.
-3. **Difícil de depurar:** Identificar y localizar fugas de memoria por suscripciones olvidadas es complejo, especialmente en aplicaciones grandes con múltiples puntos de suscripción.
+- **Retención de memoria:** Cada suscripción no cancelada impide que el recolector de basura libere los recursos asociados, provocando un incremento constante del uso de memoria.
+- **Impacto en rendimiento:** Con el tiempo, el exceso de suscripciones activas ralentiza la aplicación y puede originar comportamientos inesperados, como callbacks ejecutándose en componentes destruidos.
+- **Difícil de depurar:** Identificar y localizar fugas de memoria por suscripciones olvidadas es complejo, especialmente en aplicaciones grandes con múltiples puntos de suscripción.
 
+---
 ## Non-Compliant code example
 
 ```typescript
@@ -28,25 +29,23 @@ export class ExampleComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    // Suscripción sin cancelación posterior
     this.dataService.getData()
       .subscribe(value => {
         this.data = value;
       });
   }
-
-  // No hay ngOnDestroy ni unsubscribe()
 }
 ```
 
 Este fragmento muestra una suscripción en `ngOnInit` sin el correspondiente `unsubscribe()` en `ngOnDestroy`, lo que provoca la fuga de memoria.
 
+---
 ## Compliant code example
 Para solucionar este code smell tenemos las siguientes soluciones:
 
-### 1. Cancelar manualmente en `ngOnDestroy`
+### Cancelar manualmente en `ngOnDestroy`
 
-Empleando el método de ciclo de vida `ngOnDestroy` (se ejecuta cada vez que el componente se destruye) realizamos una desuscripción explicita de manera que liberamos los recursos.
+Empleando el *lifecycle* `ngOnDestroy` (se ejecuta cada vez que el componente se destruye) realizamos una cancelación de la suscripción explicita permitiendo de manera al recolector de basura liberar los recursos correctamente.
 
 ```typescript
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -71,65 +70,45 @@ export class ExampleComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // Cancelación explícita de la suscripción
     this.sub.unsubscribe();
   }
 }
 ```
 
-### 2. Usar patrón `takeUntil` [1]
-Otra opción es emplear la utilidad `takeUntil` ofrecida por el paquete `rxjs`. 
+### Usar patrón `takeUntilDestroyed`
+Otra opción moderna y recomendada a partir de Angular 16 es usar el operador `takeUntilDestroyed()` ofrecido por el paquete oficial `@angular/core/rxjs-interop`.
 
-Esta funcionalidad nos permite automatizar la cancelación de suscripciones. Lo que logramos con esta utilidad es que la suscripción sigue emitiendo valores hasta que se reciba *notify* pasado por parámetro; en dicho momento, el propio método se desuscribirá de la suscripción. 
+Este operador automatiza la cancelación de suscripciones sin necesidad de declarar manualmente un `Subject` ni implementar `ngOnDestroy`. Su funcionamiento es similar al clásico `takeUntil`, pero integrado con el ciclo de vida del componente: cancela la suscripción automáticamente cuando el componente (directiva o pipe) se destruye.([takeUntilDestroyed in Angular v16][3], [Angular docs - takeUntilDestroyed][4])
 
-Es especialmente útil en componentes con varios observables.
+Esto permite mantener el código limpio y evitar errores por suscripciones no canceladas. Además, es especialmente útil en componentes con varios observables.
 
 ```typescript
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-example',
   template: `<p>{{ data }}</p>`,
 })
-export class ExampleComponent implements OnInit, OnDestroy {
+export class ExampleComponent implements OnInit {
   displayText:any
-  private subDestroyed$ = new Subject();
 
   public ngOnInit (): void {
     myObservable$.pipe(
         map(value => value.item),
         take(1),
-        // Queremos mantener la suscripción hasta que el componente se destruya
-        takeUntil(this.subDestroyed$)
+        takeUntilDestroyed()
       ).subscribe(item => this.displayText = item);
   }
-
-  ngOnDestroy (): void {
-    // Emite y completa para cancelar todas las suscripciones ligadas
-    this.subDestroyed$.next();
-    this.subDestroyed$.complete();
-  }
 }
 ```
 
-### 3. Utilizar el  `AsyncPipe` en la plantilla [2]
-Otra solución que maneja de manera automática la suscripción y cancelación de la misma tras la destrucción del componente es el uso del `async` *pipe* en la plantilla html sobre el propio observable.
-
-```typescript
-// En el componente
-@Component()
-export class Foo {
-    someStringToDisplay = someObservable.pipe(map(/*...*/));
-}
-
-// En la plantilla HTML
-<span>{{someStringToDisplay | async}}</span>
-```
-
-El **async pipe** maneja automáticamente la suscripción y la cancelación al destruir el componente, reduciendo la necesidad de lógica manual en el código TypeScript ([Angular Training][2]).
+### Utilizar el  `AsyncPipe` en la plantilla
+Otra solución es el pipe `async` en las plantilla html, que se encarga de realizar la suscripción, de un observable, y cancelación de la misma tras la destrucción del componente. Véase [Manual subscriptions](manual_subscriptions.md).
 
 [1]: https://zydesoft.com/must-know-clean-code-principles-in-angular/
 [2]: https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/
-
+[3]: https://angular.love/takeuntildestroy-in-angular-v16
+[4]: https://angular.dev/api/core/rxjs-interop/takeUntilDestroyed
+[5]: https://medium.com/netanelbasal/getting-to-know-the-takeuntildestroyed-operator-in-angular-d965b7263856

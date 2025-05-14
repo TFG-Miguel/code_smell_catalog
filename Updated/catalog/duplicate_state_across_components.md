@@ -19,23 +19,23 @@ La solución adecuada suele ser:
 - **Dificulta la escalabilidad**: a medida que crece la aplicación, el mantenimiento se vuelve insostenible.
 - **Rompe el principio de fuente única de verdad (_single source of truth_)**.
 
+---
 ## Non-Compliant code example
 
 ```ts
-// componente-a.component.ts
+@Component({...})
 export class ComponenteA {
   user = { name: 'Ana', loggedIn: true };
 }
 
-// componente-b.component.ts
+@Component({...})
 export class ComponenteB {
   user = { name: 'Ana', loggedIn: true }; // Estado duplicado e independiente
 }
 ```
-
+---
 ## Compliant code example
 ```ts
-// (share/)user.service.ts
 @Injectable({ providedIn: 'root' })
 export class UserService {
   private userSubject = new BehaviorSubject<User | null>(null);
@@ -52,7 +52,6 @@ export class UserService {
 ```
 
 ```ts
-// componente-a.component.ts
 @Component({...})
 export class ComponenteA {
   constructor(private userService: UserService) {}
@@ -64,7 +63,6 @@ export class ComponenteA {
 ```
 
 ```ts
-// componente-b.component.ts
 @Component({
   template: `
     <div *ngIf="user$ | async as user">

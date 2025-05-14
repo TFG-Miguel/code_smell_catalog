@@ -6,7 +6,6 @@ Uno de los errores más comunes (y frecuentemente pasados por alto) en Angular e
 
 Este *code smell* indica una falta de organización en la estructura modular del proyecto. La solución correcta es **declarar el componente una sola vez en su propio módulo (módulo hijo), exportarlo desde ahí, e importar ese módulo donde se necesite**.
 
----
 
 ## Why is a code smell
 
@@ -33,7 +32,7 @@ export class AdminModule {}
 
 ```ts
 @NgModule({
-  declarations: [HeroComponent], // ❌ ya está declarado en AdminModule
+  declarations: [HeroComponent], // Ya está declarado en AdminModule
   exports: [HeroComponent]
 })
 export class DashboardModule {}
@@ -70,6 +69,4 @@ export class AdminModule {}
 export class DashboardModule {}
 ```
 
----
-
-source: https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html
+[source]: https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html

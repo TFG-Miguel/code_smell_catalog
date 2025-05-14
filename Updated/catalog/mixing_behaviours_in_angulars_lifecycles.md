@@ -2,11 +2,11 @@
 
 ## Description
 
-Este *code smell- ocurre cuando se hace un uso incorrecto, inconsistente o desorganizado de los métodos del ciclo de vida de Angular, por ejemplo:
+Este *code smell* ocurre cuando se hace un uso incorrecto, inconsistente o desorganizado de los métodos del ciclo de vida de Angular, por ejemplo:
 
-* Ejecutar lógica de negocio (como suscripciones o llamadas HTTP) en `ngAfterViewInit` en lugar de `ngOnInit`.
-* Mezclar múltiples responsabilidades dentro de un mismo hook, como cargar datos, configurar listeners, manipular el DOM y enviar métricas en el mismo `ngOnInit`.
-* Ejecutar lógica dependiente del DOM antes de que Angular haya renderizado completamente la vista.
+- Ejecutar lógica de negocio (como suscripciones o llamadas HTTP) en `ngAfterViewInit` en lugar de `ngOnInit`.
+- Mezclar múltiples responsabilidades dentro de un mismo hook, como cargar datos, configurar listeners, manipular el DOM y enviar métricas en el mismo `ngOnInit`.
+- Ejecutar lógica dependiente del DOM antes de que Angular haya renderizado completamente la vista.
 
 Este patrón provoca componentes menos legibles, más frágiles y difíciles de testear, ya que el comportamiento del componente depende del orden y momento de ejecución de código que puede no estar bien separado.
 
@@ -18,6 +18,7 @@ Este patrón provoca componentes menos legibles, más frágiles y difíciles de 
 - **Complica el testeo**: mezclar comportamientos interfiere en la validación aislada.
 - **Dificulta el mantenimiento**: agrupar demasiada lógica en un mismo hook hace que el código crezca descontroladamente.
 
+---
 ## Non-Compliant code example
 
 ```ts
@@ -35,8 +36,7 @@ export class TestComponent {
   }
 }
 ```
-
-
+---
 ## Compliant code example
 
 ```ts
@@ -71,9 +71,3 @@ export class TestComponent {
   }
 }
 ```
-
----
-
-Este enfoque mantiene **una única responsabilidad por hook**, garantiza que el código se ejecuta en el momento adecuado, y facilita tanto el **mantenimiento como el testeo** de cada comportamiento.
-
-¿Quieres que ahora te lo convierta a Markdown? ¿O pasamos al siguiente code smell?

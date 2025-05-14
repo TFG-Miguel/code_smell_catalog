@@ -2,21 +2,25 @@
 
 ## Description
 
-Muchas suscripciones pueden ser necesarias durante toda la vida del componente por lo que es necesario disponer de este valor desde que se crea el componente. 
+Este code smell se da cuando, por necesidad de requerir una suscripción durante toda la vida del componente, la suscripción se realiza en el constructor en vez de en el lifecycle `ngOnInit`. 
 
-Esto nos da la idea de que debemos realizar la suscripción en métodos que se ejecuten en la creación del componente (`constructor` y `ngOnInit`). 
-
-Pero lo ideal es hacerlo en el segundo método, `ngOnInit`, ya que lo ideal es respetar el ciclo de vida definido por angular y debido a que es una de las buenas prácticas del framework (promueven mantener los constructores ligeros y libres de lógica).
+Ya las buenas practicas nos recomiendan respetar el ciclo de vida definido por angular y además de promover mantener los constructores ligeros y libres de lógica.
 
 
+>[!note]
+>Si la suscripción no es estrictamente necesaria y solo se emplea en la visualización de datos se puede plantear eliminar la suscripción y trabajar con la `async` pipe.
+>
+>Véase [Manual subscription](manual_subscriptions.md).
 
 ## Why is a code smell
 
 - **Rompe el principio de responsabilidad única**: el constructor debe usarse solo para la inicialización básica del objeto, no para ejecutar lógica.
 - **Dificulta el testeo**: al suscribirse automáticamente al crear la instancia, no se puede probar fácilmente el componente sin que se activen efectos secundarios.
 - **Complica el ciclo de vida**: no respeta el flujo natural del ciclo de vida de Angular (`ngOnInit`), lo que puede generar problemas si otros elementos aún no están inicializados.
-- **Riesgo de fugas de memoria**: es más fácil olvidar desuscribirse si no se sigue una estructura clara como en `ngOnDestroy`.
+- **Riesgo de fugas de memoria**: es más fácil olvidar cancelar la suscripción si no se sigue una estructura clara como en `ngOnDestroy`.
 
+
+---
 ## Non-Compliant code example
 
 ```ts
@@ -31,7 +35,7 @@ export class UserComponent {
   }
 }
 ```
-
+---
 ## Compliant code example
 
 ### Mover la suscripción a `ngOnInit`
@@ -57,9 +61,3 @@ export class UserComponent implements OnInit {
   }
 }
 ```
-
-### Eliminar suscripción
-
-Si la suscripción no es estrictamente necesaria y solo se emplea en la visualización de datos se puede plantear eliminar la suscripción y trabajar con la `async` pipe.
-
-Véase [Not unsubscribe subscription](not_unsubscribe_subscriptions.md).

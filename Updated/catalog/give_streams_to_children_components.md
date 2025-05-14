@@ -17,59 +17,51 @@ En Angular, los componentes deben recibir **datos procesados y listos para mostr
 - **Rompe el patrón de unidireccionalidad de datos**: los hijos deberían ser consumidores pasivos.
 
 
-
+---
 ## Non-Compliant code example
 
 ```ts
-// padre.component.ts
-@Component({ ... })
-export class PadreComponent {
+@Component({ 
+    template: '<child-component [users]="users$"></child-component>'
+ })
+export class ParentComponent {
   users$ = this.userService.getUsers();
 }
 ```
 
-```html
-<!-- Pasa un stream directamente -->
-<hijo-component [users]="users$"></hijo-component>
-```
-
 ```ts
-// hijo.component.ts
-@Component({ ... })
-export class HijoComponent {
+@Component({ 
+    selector: 'child-component',
+ })
+export class ChildComponent {
   @Input() users!: Observable<User[]>;
 
   ngOnInit(): void {
-    this.users.subscribe(data => {
-      // lógica aquí
-    });
+    this.users.subscribe(data => { ... });
   }
 }
 ```
 
-
-
+---
 ## Compliant code example
 
-### Resolver el observable en el padre (mejor enfoque)
+### Resolver el observable en el padre
 
 ```ts
-// padre.component.ts
-@Component({ ... })
-export class PadreComponent {
+@Component({ 
+    template: '<child-component [users]="users$ | async"></child-component>'
+ })
+export class ParentComponent {
   users$ = this.userService.getUsers();
 }
 ```
 
-```html
-<!-- Resolver observable en la plantilla -->
-<hijo-component [users]="users$ | async"></hijo-component>
-```
 
 ```ts
-// hijo.component.ts
-@Component({ ... })
-export class HijoComponent {
+@Component({ 
+    selector: 'child-component'
+ })
+export class ChildComponent {
   @Input() users: User[] = [];
 }
 ```
@@ -86,6 +78,6 @@ export class ContenedorComponent {
 
 ```html
 <ng-container *ngIf="users$ | async as users">
-  <hijo-component [users]="users"></hijo-component>
+  <child-component [users]="users"></child-component>
 </ng-container>
 ```

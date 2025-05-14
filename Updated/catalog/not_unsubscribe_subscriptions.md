@@ -12,7 +12,7 @@ Con el tiempo, estas suscripciones "zombies" se acumularán produciendo consumos
 2. **Impacto en rendimiento:** Con el tiempo, el exceso de suscripciones activas ralentiza la aplicación y puede originar comportamientos inesperados, como callbacks ejecutándose en componentes destruidos.
 3. **Difícil de depurar:** Identificar y localizar fugas de memoria por suscripciones olvidadas es complejo, especialmente en aplicaciones grandes con múltiples puntos de suscripción.
 
-## Non-Compliant code example(s)
+## Non-Compliant code example
 
 ```typescript
 import { Component, OnInit } from '@angular/core';

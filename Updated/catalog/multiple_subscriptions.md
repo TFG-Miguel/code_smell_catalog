@@ -1,0 +1,171 @@
+# Multiple subscriptions
+
+## Description
+
+Este *code smell* aparece cuando se realizan **múltiples suscripciones a un mismo `Observable`**, ya sea:
+
+- De forma explícita (`.subscribe()`) en diferentes partes del componente.
+- De forma implícita en la plantilla HTML usando varias veces el pipe `async` sobre el mismo `Observable`.
+
+Este patrón puede provocar **efectos secundarios no deseados**, especialmente si el `Observable` es **"cold"** (como una llamada HTTP), ya que se ejecutará cada vez que se suscriba, duplicando peticiones, procesamiento o eventos.
+
+En Angular, esto suele suceder cuando se utiliza `async` más de una vez sobre el mismo `Observable` sin compartir su resultado. La solución es **compartir el stream** mediante operadores como `shareReplay` o `publishReplay(1), refCount()` para **caché local**, o almacenar el resultado intermedio en una variable.
+
+---
+
+## Why is a code smell
+
+- **Dispara múltiples ejecuciones innecesarias**: llamadas HTTP, timers, cálculos, etc.
+- **Produce efectos secundarios duplicados**: como acciones duplicadas o renderizados extra.
+- **Complica el rastreo de errores**: múltiples flujos activos sobre el mismo origen.
+- **Reduce el rendimiento**: más operaciones, más suscripciones, más renders.
+- **Rompe la reactividad limpia**: ya que el `Observable` deja de ser predecible.
+
+---
+
+## Non-Compliant code example
+
+```ts
+@Component({
+  selector: 'journey-list-item',
+  templateUrl: './journey-list-item.component.html',
+  styleUrls: ['./journey-list-item.component.scss'],
+})
+export class JourneyListItemComponent {
+  @Input() 
+  set journeyId(value: number) {
+    this.journeyId$.next(value);
+  }
+  @Output() addAction = new EventEmitter<void>();
+  
+  private journeyId$ = new BehaviorSubject<Journey | undefined>(undefined);
+  journey$ = this.journeyId$.pipe(
+              switchMap((id) => this.journeyService.getJourney(id))
+             );
+}
+```
+
+```html
+<h1>{{(journey$ | async).title}}</h1>
+<div *ngIf="let journey of (journey$ | async)">
+    <span>journey?.description</span>
+</div>
+```
+
+---
+
+## Compliant code example
+### Trabajar con la misma suscripción
+
+```html
+<ng-container *ngIf="journey$ | async as journey">
+  <h1>{{ journey.title }}</h1>
+  <p>{{ journey.description }}</p>
+</ng-container>
+```
+De esta manera se almacena la suscripción en la variable journey y solo se solicita una vez la suscripción.
+
+### Usar `shareReplay(1)` y `distinctUntilChanged()`
+
+```ts
+@Component({
+  selector: 'journey-list-item',
+  templateUrl: './journey-list-item.component.html',
+  styleUrls: ['./journey-list-item.component.scss'],
+})
+export class JourneyListItemComponent implements OnDestroy {
+
+  @Input()
+  set journeyId(value: number) {
+    this.journeyId$.next(value);
+  }
+  @Output() addAction = new EventEmitter<void>();
+  
+  private readonly journeyId$ = new BehaviorSubject<Journey | undefined>(undefined);
+  journey$ = this.journeyId$.pipe(
+      distinctUntilChanged(),
+      switchMap((id) => this.journeyService.getJourney(id)),
+      shareReplay(1)
+  );
+}
+```
+
+>[!note]
+> En caso de que se haga una suscripción manual, se debería emplear `takeUntil` junto con el observable.
+> 
+> ```ts
+>@Component({
+>  selector: 'journey-list-item',
+>  templateUrl: './journey-list-item.component.html',
+>  styleUrls: ['./journey-list-item.component.scss'],
+>})
+>export class JourneyListItemComponent implements OnInit, OnDestroy {
+>   private readonly destroy$ = new Subject<void>();
+>
+>   constructor(private readonly journeyService: ReiseService) { }
+>   
+>   ngOnInit() { 
+>       this.journeyId$.pipe(
+>           distinctUntilChanged(),
+>           switchMap((id) => this.journeyService.getJourney(id)),
+>           shareReplay(1),
+>           takeUntil(this.destroy$)
+>       );
+>   }
+>
+>   ngOnDestroy() {
+>     this.destroy$.next();
+>     this.destroy$.complete();
+>   }
+>}
+
+### Usar `publishReplay(1)` y `refCount()`
+
+```ts
+pageTitle = this.route.params.pipe(
+    map((params) => params["id"]),
+    flatMap((id) =>
+        this.http.get(`api/pages/${id}/title`, { responseType: "text" })
+    ),
+    publishReplay(1),
+    refCount()
+);
+```
+
+```html
+<h1>{{pageTitle | async}}</h1>
+<p>You are viewing {{pageTitle | async}}.</p>
+```
+
+---
+
+### ✅ Opción 3: Angular 16+ con `takeUntilDestroyed`
+
+```ts
+@Component({...})
+export class JourneyListItemComponent {
+  journey: Journey | undefined;
+
+  constructor(private journeyService: JourneyService) {
+    this.journeyId$.pipe(
+      distinctUntilChanged(),
+      switchMap(id => this.journeyService.getJourney(id)),
+      shareReplay(1),
+      takeUntilDestroyed() // ✅ no hace falta destroy$ manual
+    ).subscribe(journey => this.journey = journey);
+  }
+}
+```
+
+---
+
+# ✅ Buenas prácticas
+
+* Usa `shareReplay(1)` para compartir streams sin repetir emisiones.
+* No uses múltiples `async` sobre el mismo `Observable`, combínalo en un `*ngIf`.
+* Usa `takeUntilDestroyed()` en Angular 16+ en vez de `takeUntil(destroy$)`.
+* Para streams con estado largo, considera `BehaviorSubject` o `signals`.
+
+---
+
+¿Quieres que lo convierta ahora a Markdown o seguimos con otro code smell?

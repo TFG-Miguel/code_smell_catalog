@@ -1,44 +1,50 @@
 # Joined Catalog
-|Code Smell                                                                               |Source  |Paper | Own |Total|
-|:--                                                                                      |:--:    |:--:  |:--: |:--: |
-|Not unsubscribe a subscription                                                           |Paper   | 8    | 3   | 11  |
-|Not using LazyLoading in Modules                                                         |Paper   | 6    | 2   |  8  |
-|Manual subscriptions (subscriptions in templates)                                        |Paper   | 4    | 3   |  7  |
-|No usage of OnPush strategy                                                              |Paper   | 4    | 2   |  6  |
-|Duplicate state across components                                                        |Paper   | 2    | 4   |  6  |
-|Include logic in HTML templates                                                          |Paper   | 3    | 2   |  5  |
-|No usage of trackBy                                                                      |Paper   | 2    | 2   |  4  |
-|Mixing Smart/Dumb components in the same scope                                           |Paper   | 3    | 1   |  4  |
-|Inheritance of a BaseComponent                                                           |Paper   | 3    | 0   |  3  |
-|Include functions in HTML templates                                                      |Paper   | 2    | 1   |  3  |
-|Use the same component in multiple modules                                               |Paper   | 2    | 1   |  3  |
-|Nested subscriptions within other subscriptions                                          |Search  | 0    | 3   |  3  |
-|Subscribe in constructor                                                                 |Paper   | 2    | 0   |  2  |
-|Mixing behaviors in Angular’s Lifecycle                                                  |Paper   | 2    | 0   |  2  |
-|Modify DOM directly                                                                      |Paper   | 2    | 0   |  2  |
-|Give streams to children components                                                      |Paper   | 2    | 0   |  2  |
-|No usage of alias for long import paths                                                  |Paper   | 2    | 0   |  2  |
-|No usage of pipes                                                                        |Paper   | 2    | 0   |  2  |
-|No usage of bundlers to reduce size of application                                       |Paper   | 2    | 0   |  2  |
-|Use stateful streams                                                                     |Paper   | 2    | 0   |  2  |
-|Not using pipeable operators* when working with rxjs                                     |Search  | 0    | 2   |  2  |
-|Using toSignal() on cold observables (HTTP requests)                                     |Search  | 0    | 2   |  2  |
+|Code Smell| Paper|Own|Total|
+|:--|:--:|:--:|:--:|
+|Not unsubscribe a subscription [[3].5,[7]]                                                  |8|2|10|
+|Unoptimized module loading [[1],[3].10]                                                     |6|2|08|
+|Default change detection instead OnPush [[1],[2],[4]]                                       |4|3|07|
+|Subscribe in templates [[3].9,[7]]                                                          |4|2|06|
+|Mixing Smart and Dumb components [[1].3,[3].7, [3].12]                                      |3|3|06|
+|Include functions in HTML templates [[2]]                                                   |4|1|05|
+|Composition over inheritance [[4]]                                                          |3|1|04|
+|Include logic in templates [[1].4]                                                          |3|1|04|
+|No usage of trackBy [[2],[3]]                                                               |2|2|04|
+|Subscribe in constructor [[7]]                                                              |2|1|03|
+|Duplicate state across components [[1].6]                                                   |2|1|03|
+|Use the same component in multiple modules [[1].1]                                          |2|1|03|
+|Mixing behaviors in Angular’s Lifecycle                                                     |2|0|02|
+|Give streams to children components                                                         |2|0|02|
+|No usage of alias for long import paths                                                     |2|0|02|
+|No usage of bundlers to reduce size of application                                          |2|0|02|
+|Modify DOM directly                                                                         |2|0|02|
+|Use stateful streams                                                                        |2|0|02|
+|Multiple subscriptions [[2],[7]]                                                            |0|2|02|
 
-# Only in search and only one match
-|Code Smell                                                                               | Own |
-|:--                                                                                      |:--: |
-|Duplicate functionality across micro frontends                                           | 1   |
-|Using detectChanges instead of markForCheck                                              | 1   |
-|Not using appropriate flatting operators with observables (switchMap, mergeMap, etc.)    | 1   |
-|Incorrect use of toObservable() in *Signals*                                             | 1   |
-|Templates with complex conditionals (If or For directives nesting)                       | 1   |
-|Preloading key modules                                                                   | 1   |
-|Not creating small reusable components                                                   | 1   |
-|Making duplicate API calls                                                               | 1   |
-|Using @Input and @Output instead of input() and output()                                 | 1   |
-|Using ngOnChanges() instead of effect()                                                  | 1   |
-|Using complex computed() signals                                                         | 1   |
-|Using complex effects() signals                                                          | 1   |
-|Excessive use of effect()                                                                | 1   |
-|Using class properties inside computed() or effects()                                    | 1   |
-|Passing WritableSignal as a function parameter                                           | 1   |
+|Code Smell| Paper|Own|Total|
+|:--|:--:|:--:|:--:|
+|Usage of detectChanges instead of markForCheck[2]                                           |0|1|01|
+|Not using pipeable operators [[3].1]                                                        |0|1|01|
+|Not usage of proper rxjs operators [[3].2]                                                  |0|1|01|
+|Nested subscriptions [[3].6]                                                                |0|1|01|
+|Usage of async/await and Promises instead of RXJs or mix them [[4]]                         |0|1|01|
+|No usage of input and output signals [[5]]                                                  |0|1|01|
+|Usage of non signal values in templates [[5]]                                               |0|1|01|
+|Usage of `@Input()` and `@Output()` instead `model` [[5]]                                   |0|1|01|
+|Usage of `OnChange` instead of effect [[5]]                                                 |0|1|01|
+|Complex signals [[5]]                                                                       |0|1|01|
+|Abusive usage of effect [[5]]                                                               |0|1|01|
+|Usage of computed signals or effects in class properties [[5]]                              |0|1|01|
+|Usage of WritableSignal as function parameter [[5]]                                         |0|1|01|
+|Usage of toObservable [[5]]                                                                 |0|1|01|
+|Usage of toSignal on Colds observables [[5]]                                                |0|1|01|
+|Complex effects [[6]]                                                                       |0|1|01|
+|Not using asyncPipe on for, if and else directives to manage load state [[7]]               |0|1|01|
+
+[1]:https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d
+[2]:https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e
+[3]:https://zydesoft.com/must-know-clean-code-principles-in-angular/
+[4]:https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d
+[5]:https://developapa.com/signals/
+[6]:https://davidboothe.com/2024/08/getting-started-with-angular-signals-a-comprehensive-guide/
+[7]:https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/

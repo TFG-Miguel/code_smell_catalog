@@ -3,7 +3,9 @@
 |:--|:--:|:--:|:--:|
 |Not unsubscribe a subscription [[3].5,[7]]                                                  |8|2|10|
 |Unoptimized module loading [[1],[3].10]                                                     |6|2|08|
+|**God Component**                                                                           |7|0|07|
 |Default change detection instead OnPush [[1],[2],[4]]                                       |4|3|07|
+|**Nested subscriptions** [[3].6]                                                                |5|1|06|
 |Manual subscriptions [[3].9,[7]]                                                            |4|2|06|
 |Mixing Smart and Dumb components [[1].3,[3].7, [3].12]                                      |3|3|06|
 |Include functions in templates [[2]]                                                        |4|1|05|
@@ -21,13 +23,20 @@
 |Use stateful streams                                                                        |2|0|02|
 |Multiple subscriptions [[2],[7]]                                                            |0|2|02|
 
+## Limbo
+|Code Smell| Paper|Own|Total|
+|:--|:--:|:--:|:--:|
+|**Include logic instead of rxjs operators**                                                 |3|0|03|
+|Not using pipeable operators [[3].1]                                                        |0|1|01|
+|Not usage of proper rxjs operators [[3].2]                                                  |0|1|01|
+|Usage of async/await and Promises instead of RXJs or mix them [[4]]                         |0|1|01|
+
+# Descartados
+
+
 |Code Smell| Paper|Own|Total|
 |:--|:--:|:--:|:--:|
 |Usage of detectChanges instead of markForCheck [[2]]                                        |0|1|01|
-|Not using pipeable operators [[3].1]                                                        |0|1|01|
-|Not usage of proper rxjs operators [[3].2]                                                  |0|1|01|
-|Nested subscriptions [[3].6]                                                                |0|1|01|
-|Usage of async/await and Promises instead of RXJs or mix them [[4]]                         |0|1|01|
 |No usage of input and output signals [[5]]                                                  |0|1|01|
 |Usage of non signal values in templates [[5]]                                               |0|1|01|
 |Usage of `@Input()` and `@Output()` instead `model` [[5]]                                   |0|1|01|

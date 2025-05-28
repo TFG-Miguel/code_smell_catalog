@@ -1,24 +1,25 @@
-|Code Smell|Counts|
-|:--|:--:|
-|[Not unsubscribe a subscription](not_unsubscribe_subscriptions.md) [[3].5,[7]]                                                  |10|
-|[Unoptimized module loading](Unoptimized_module_loading.md) [[1],[3].10]                                                     |08|
-|[Default change detection instead OnPush](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) [[1],[2],[4]]                                       |07|
-|[Manual subscriptions](manual_subscriptions.md) [[3].9,[7]]                                                              |06|
-|[Mixing Smart and Dumb components](mixing_smart_and_dump_components.md) [[1].3,[3].7, [3].12]                                              |06|
-|[Include functions in templates](include_functions_in_templates.md) [[2]]                                                   |05|
-|[Inheritance over composition](inheritance_over_composition.md) [[4]]                                                          |04|
-|[Include logic in templates](include_logic_in_templates.md) [[1].4]                                                     |04|
-|[No usage of trackBy](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin-template/docs/rules/use-track-by-function.md) [[2],[3]]                                                         |04|
-|[Subscribe in constructor](subscribe_in_constructor.md) [[7]]                                                              |03|
-|[Duplicate state across components](duplicate_state_across_components.md) [[1].6]                                                   |03|
+# Updated catalog (28/05/2025)
+|Code Smell|Counts|Sources|
+|:--|:--:|---|
+|[Not unsubscribe a subscription](not_unsubscribe_subscriptions.md) |10|[3].5,[7]|
+|[Unoptimized module loading](Unoptimized_module_loading.md) |08|[1], [3].10|
+|[Default change detection instead OnPush](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) |07|[1], [2], [4]|
+|[Manual subscriptions](manual_subscriptions.md) |06|[3].9,[7]|
+|[Mixing Smart and Dumb components](mixing_smart_and_dump_components.md) |06|[1].3,[3].7,[3].12|
+|[Include functions in templates](include_functions_in_templates.md) |05|[2]|
+|[Inheritance over composition](inheritance_over_composition.md) |04|[4]|
+|[Include logic in templates](include_logic_in_templates.md) |04|[1].4|
+|[No usage of trackBy](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin-template/docs/rules/use-track-by-function.md) |04|[2], [3]|
+|[Subscribe in constructor](subscribe_in_constructor.md) |03|[7]|
+|[Duplicate state across components](duplicate_state_across_components.md) |03|[1].6|
 |[Mixing behaviors in Angular’s Lifecycle](mixing_behaviours_in_angulars_lifecycles.md)                                                     |02|
 |[Give streams to children components](give_streams_to_children_components.md)                                                         |02|
 |[Long import paths instead of alias](long_imports_patsh_instead_of_alias.md)                                                     |02|
 |[No usage of bundlers to reduce size of application](no_usage_of_bundlers_to_reduce_size_of_application.md)                                          |02|
-|[Use a component in multiple modules](use_a_component_in_multiple_modules.md) [[1].1]                                          |02|
+|[Use a component in multiple modules](use_a_component_in_multiple_modules.md) |02|[1].1|
 |[Modify DOM directly](modify_dom_directly.md)                                                                         |02|
 |[Use stateful streams](use_stateful_streams.md)                                                                        |02|
-|[Multiple subscriptions](multiple_subscriptions.md) [[2],[7]]                                                            |02|
+|[Multiple subscriptions](multiple_subscriptions.md) |02|[2], [7]|
 
 
 

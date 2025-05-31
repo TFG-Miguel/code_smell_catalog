@@ -1,32 +1,26 @@
 # Updated catalog (28/05/2025)
-|Code Smell|Counts|Sources|
-|:--|:--:|---|
-|[Not unsubscribe a subscription](not_unsubscribe_subscriptions.md) |10|[3].5,[7]|
-|[Unoptimized module loading](Unoptimized_module_loading.md) |08|[1], [3].10|
-|[Default change detection instead OnPush](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) |07|[1], [2], [4]|
-|[Manual subscriptions](manual_subscriptions.md) |06|[3].9,[7]|
-|[Mixing Smart and Dumb components](mixing_smart_and_dump_components.md) |06|[1].3,[3].7,[3].12|
-|[Include functions in templates](include_functions_in_templates.md) |05|[2]|
-|[Inheritance over composition](inheritance_over_composition.md) |04|[4]|
-|[Include logic in templates](include_logic_in_templates.md) |04|[1].4|
-|[No usage of trackBy](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin-template/docs/rules/use-track-by-function.md) |04|[2], [3]|
-|[Subscribe in constructor](subscribe_in_constructor.md) |03|[7]|
-|[Duplicate state across components](duplicate_state_across_components.md) |03|[1].6|
-|[Mixing behaviors in Angular’s Lifecycle](mixing_behaviours_in_angulars_lifecycles.md)                                                     |02|
-|[Give streams to children components](give_streams_to_children_components.md)                                                         |02|
-|[Long import paths instead of alias](long_imports_patsh_instead_of_alias.md)                                                     |02|
-|[No usage of bundlers to reduce size of application](no_usage_of_bundlers_to_reduce_size_of_application.md)                                          |02|
-|[Use a component in multiple modules](use_a_component_in_multiple_modules.md) |02|[1].1|
-|[Modify DOM directly](modify_dom_directly.md)                                                                         |02|
-|[Use stateful streams](use_stateful_streams.md)                                                                        |02|
-|[Multiple subscriptions](multiple_subscriptions.md) |02|[2], [7]|
-
-
-
-[1]:https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d
-[2]:https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e
-[3]:https://zydesoft.com/must-know-clean-code-principles-in-angular/
-[4]:https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d
-[5]:https://developapa.com/signals/
-[6]:https://davidboothe.com/2024/08/getting-started-with-angular-signals-a-comprehensive-guide/
-[7]:https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/
+| Code Smell                                                                                                  | Counts|
+| :--                                                                                                         | :--:  |
+| [Not unsubscribe a subscription](not_unsubscribe_subscriptions.md)                                          | 10    |
+| [Unoptimized module loading](unoptimized_module_loading.md)                                                 | 08    |
+| [God Component](god_component.md)                                                                           | 07    |
+| [Default change detection instead OnPush](default_change_detection_instead_onpush.md)                       | 07    |
+| [Nested subscriptions](nested_subscriptions.md)                                                             | 06    |
+| [Manual subscriptions](manual_subscriptions.md)                                                             | 06    |
+| [Mixing Smart and Dumb components](mixing_smart_and_dump_components.md)                                     | 06    |
+| [Include functions in templates](include_functions_in_templates.md)                                         | 05    |
+| [Inheritance over composition](inheritance_over_composition.md)                                             | 04    |
+| [Include logic in templates](include_logic_in_templates.md)                                                 | 04    |
+| [No usage of trackBy](no_usage_of_trackby.md)                                                               | 04    |
+| [Include logic instead of rxjs operators](include_login_instead_of_rxjs_operators.md)                       | 03    |
+| [Subscribe in constructor](subscribe_in_constructor.md)                                                     | 03    |
+| [Duplicate state across components](duplicate_state_across_components.md)                                   | 03    |
+| [Use a component in multiple modules](use_a_component_in_multiple_modules.md)                               | 03    |
+| [Mixing behaviors in Angular’s Lifecycle](mixing_behaviours_in_angulars_lifecycles.md)                      | 02    | 
+| [Give streams to children components](give_streams_to_children_components.md)                               | 02    | 
+| [Long import paths instead of alias](long_imports_patsh_instead_of_alias.md)                                | 02    | 
+| [No usage of bundlers to reduce size of application](no_usage_of_bundlers_to_reduce_size_of_application.md) | 02    | 
+| [Modify DOM directly](modify_dom_directly.md)                                                               | 02    | 
+| [Use stateful streams](use_stateful_streams.md)                                                             | 02    | 
+| [No usage of pipes](no_usage_of_pipes.md)                                                                   | 02    |
+| [Multiple subscriptions](multiple_subscriptions.md)                                                         | 02    |

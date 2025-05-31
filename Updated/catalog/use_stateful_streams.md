@@ -60,3 +60,6 @@ createStream<number>([1, 2], 25).pipe(
 ```
 
 [source]:https://www.thinktecture.com/en/angular/rxjs-antipattern-2-state/
+## Sources
+- https://www.thinktecture.com/en/angular/rxjs-antipattern-2-state/ 
+- https://www.sourceallies.com/2020/11/state-management-anti-patterns/ section 5

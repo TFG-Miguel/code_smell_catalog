@@ -68,3 +68,8 @@ export class UppercaseNamePipe implements PipeTransform {
   }
 }
 ```
+---
+## Sources
+- https://alex-klaus.com/angular-code-review/ section 2
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.2
+- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e 

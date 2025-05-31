@@ -150,3 +150,6 @@ export class JourneyListItemComponent {
   }
 }
 ```
+## Sources
+- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e 
+- https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/

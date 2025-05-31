@@ -81,3 +81,6 @@ export class ContenedorComponent {
   <child-component [users]="users"></child-component>
 </ng-container>
 ```
+## Sources
+- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 8
+- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 5

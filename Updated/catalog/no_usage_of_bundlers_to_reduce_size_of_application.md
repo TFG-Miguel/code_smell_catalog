@@ -110,3 +110,5 @@ const routes: Routes = [
 > Para hacer más eficientes o pequeños estos bloques se recomienda:
 > - El uso `pure` pipes para facilitar el *tree-shaking* (limpieza de código muerto).
 > - Divide el código por dominios y aplica `standalone components` cuando sea posible para dividir el bundler en trozos más pequeños que se irán cargando a necesidad.
+## Sources
+- https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 section 4

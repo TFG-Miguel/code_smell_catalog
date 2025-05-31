@@ -70,3 +70,8 @@ export class DashboardModule {}
 ```
 
 [source]: https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html
+## Sources
+- https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html section 1.6
+- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 3
+- https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 5
+- https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 1 and 3

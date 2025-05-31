@@ -89,3 +89,8 @@ export class IfAdultUserDirective {
 </div>
 ```
 
+---
+## Sources
+- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 17
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 4.3
+- https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 4

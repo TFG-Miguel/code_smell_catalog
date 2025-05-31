@@ -2,7 +2,7 @@
 
 ## Description
 
-Este *code smell* ocurre cuando se modifica el DOM directamente utilizando APIs nativas como `document.querySelector`, `document.getElementById`, `innerHTML`, `appendChild`, o accediendo manualmente al DOM mediante `ElementRef.nativeElement`.
+Este *code smell* ocurre cuando se modifica el DOM directamente utilizando APIs nativas como `document.querySelector`, `document.getElementById`, `innerHTML`, `appendChild`, herramientas como `jQuery` o accediendo manualmente al DOM mediante `ElementRef.nativeElement`.
 
 Angular es un framework declarativo y reactivo que proporciona herramientas específicas para reflejar el estado de los componentes en la vista de forma segura y estructurada. Saltarse este sistema para acceder y modificar el DOM directamente rompe la abstracción del framework, reduce la mantenibilidad y puede comprometer la seguridad de la aplicación.
 
@@ -59,7 +59,7 @@ export class TestComponent {
 <div [innerHTML]="htmlContent"></div>
 ```
 
-### Usar directivas personalizadas si se requiere lógica compleja
+### Directivas personalizadas
 
 ```ts
 @Directive({
@@ -77,3 +77,8 @@ export class AutoFocusDirective implements AfterViewInit {
 ```html
 <input appAutoFocus />
 ```
+## Sources
+- https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html section 1.4
+- https://rules.sonarsource.com/typescript/RSPEC-6268/ 
+- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 1
+- https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 4

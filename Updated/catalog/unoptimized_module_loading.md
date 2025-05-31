@@ -49,3 +49,13 @@ El `lazy loading` se logra a través de la definición del método `Route.loadCo
 
 [1]:https://v17.angular.io/guide/lazy-loading-ngmodules 
 [2]:https://angular.dev/reference/migrations/route-lazy-loading
+
+---
+## Sources
+- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j section 7
+- https://javascript-conference.com/blog/angular-code-smells/ section 4
+- https://angular-enterprise.com/en/ngpost/courses/bad-practices/ section 7
+- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 8
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.1
+- https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d 
+- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 10

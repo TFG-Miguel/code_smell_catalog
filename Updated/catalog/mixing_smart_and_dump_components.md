@@ -129,3 +129,13 @@ export class HomeComponent implements OnInit {
 [4]:https://blog.stackademic.com/angular-smart-dumb-components-118f557b667c
 [5]:https://jackthenomad.com/how-to-write-good-composable-and-pure-components-in-angular-2-1756945c0f5b
 [6]:https://tejas-variya.medium.com/smart-vs-dumb-components-in-angular-the-secret-to-scalable-apps-49c2f49103eb
+
+----
+## Sources
+- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j section 3
+- https://angular-enterprise.com/en/ngpost/courses/bad-practices/ section 1
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 1.2
+- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 12
+- https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 3
+- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 7
+- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 12

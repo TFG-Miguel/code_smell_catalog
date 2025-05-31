@@ -61,3 +61,5 @@ export class UserComponent implements OnInit {
   }
 }
 ```
+## Sources
+- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 10

@@ -67,3 +67,12 @@ export class Foo {
 
 [1]:https://zydesoft.com/must-know-clean-code-principles-in-angular/
 [2]:https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/
+
+----
+## Sources
+- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j section 5
+- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 5
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.3
+- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 7
+- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 9
+- https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/

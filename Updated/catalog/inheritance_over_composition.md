@@ -149,3 +149,9 @@ En cambio, al extraerlo a un servicio, no estamos tenemos ese acoplamiento tan r
 [1]:https://danywalls.com/understand-composition-and-inheritance-in-angular
 [2]:https://github.com/danywalls/how_handle_constructor_dependecies_in_components/
 [3]:https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d
+---
+## Sources
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 1.1
+- https://danywalls.com/understand-composition-and-inheritance-in-angular 
+- https://dev.to/this-is-angular/you-dont-want-a-basecomponent-in-your-app-23hn 
+- https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d 

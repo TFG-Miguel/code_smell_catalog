@@ -47,3 +47,5 @@ import { environment } from '@env';
 >[!tip]
 > Define alias para carpetas comunes como `@core`, `@shared`, `@env`, `@features`, `@models`.
 
+## Sources
+- https://javascript-conference.com/blog/angular-code-smells/ section 1

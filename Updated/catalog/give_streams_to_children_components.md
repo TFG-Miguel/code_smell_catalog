@@ -4,7 +4,7 @@
 
 Este *code smell* ocurre cuando se pasa un `Observable` o `Subject` directamente como `@Input()` a un componente hijo, en lugar de enviarle los datos ya consumidos (por ejemplo, con `async`) o encapsular la lógica de suscripción dentro del componente padre.
 
-Aunque técnicamente es válido pasar streams a los hijos, esto acopla innecesariamente al componente hijo al conocimiento de RxJS y le obliga a manejar suscripciones, estados intermedios o transformaciones que deberían resolverse en niveles superiores.
+Aunque técnicamente es válido pasar streams a los hijos, es acoplamiento innecesario del componente hijo al conocimiento de RxJS y que lo obliga a manejar suscripciones, estados intermedios o transformaciones que deberían resolverse en niveles superiores.
 
 En Angular, los componentes deben recibir **datos procesados y listos para mostrar**. El trabajo con observables debe estar encapsulado en el componente que tiene el control del flujo de datos.
 
@@ -45,8 +45,6 @@ export class ChildComponent {
 ---
 ## Compliant code example
 
-### Resolver el observable en el padre
-
 ```ts
 @Component({ 
     template: '<child-component [users]="users$ | async"></child-component>'
@@ -65,22 +63,23 @@ export class ChildComponent {
   @Input() users: User[] = [];
 }
 ```
-
-### Alternativa: encapsular lógica en componente contenedor
+Siguiendo con la linea anterior, si se usa el stream como input para varios componentes, se puede encapsular de la siguiente forma:
 
 ```ts
-// contenedor.component.ts
-@Component({ ... })
-export class ContenedorComponent {
+@Component({
+  template: `
+    <ng-container *ngIf="users$ | async as users">
+      <child-component [users]="users"></child-component>
+      <child-component-2 [users]="users"></child-component-2>
+    </ng-container>
+  `
+})
+export class ContainerComponent {
   users$ = this.userService.getUsers();
 }
 ```
+De esta forma se realiza una única suscripción que es aprovechada y empleada en todos los componentes con inputs.
 
-```html
-<ng-container *ngIf="users$ | async as users">
-  <child-component [users]="users"></child-component>
-</ng-container>
-```
 ## Sources
-- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 8
-- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 5
+- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 8 (*Don’t pass streams to components directly*)
+- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 5 (*Don't pass streams to components*)

@@ -1,6 +1,7 @@
 # Mixing Smart and Dumb components
 ## Description
-*Este code smell* se da cuando un componente crece incluyendo lógica de negocio, llamadas HTTP, gestión de estado y responsabilidad de presentación en un solo lugar, se vuelve difícil de mantener y probar. 
+
+Este *code smell* se da cuando por un mal diseño o un abuso de los beneficios de los componentes tenemos un componente que mezcla lógica de negocio (consumo, transformación y distribución de datos) junto con la lógica y la administración de la presentación.
 
 El patrón de **Smart (container)** y **Dumb (presentational) Components** propone separar las responsabilidades:
 - Los **Smart Components** se encargan de obtener datos, manejar el estado y coordinar servicios.
@@ -132,10 +133,9 @@ export class HomeComponent implements OnInit {
 
 ----
 ## Sources
-- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j section 3
-- https://angular-enterprise.com/en/ngpost/courses/bad-practices/ section 1
+- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j 3º sin
+- https://angular-enterprise.com/en/ngpost/courses/bad-practices/ point 1
 - https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 1.2
 - https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 12
 - https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 3
-- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 7
-- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 12
+- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 7 and 12

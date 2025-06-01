@@ -2,26 +2,30 @@
 
 ## Description
 
-Este *code smell* ocurre cuando se modifica el DOM directamente utilizando APIs nativas como `document.querySelector`, `document.getElementById`, `innerHTML`, `appendChild`, herramientas como `jQuery` o accediendo manualmente al DOM mediante `ElementRef.nativeElement`.
+Este *code smell* ocurre cuando se modifica directamente el DOM mediante APIs nativas del navegador como `document.querySelector`, `document.getElementById`, `innerHTML`, `appendChild` o bibliotecas como `jQuery`, así como cuando se accede directamente al DOM con `ElementRef.nativeElement`.
 
-Angular es un framework declarativo y reactivo que proporciona herramientas específicas para reflejar el estado de los componentes en la vista de forma segura y estructurada. Saltarse este sistema para acceder y modificar el DOM directamente rompe la abstracción del framework, reduce la mantenibilidad y puede comprometer la seguridad de la aplicación.
+Angular es un framework basado en un modelo **declarativo y reactivo**. Proporciona mecanismos seguros, escalables y testables para reflejar cambios de estado en la vista a través de su sistema de plantillas, directivas, bindings y encapsulación. Saltarse estos mecanismos para manipular manualmente el DOM **rompe las abstracciones del framework**, introduce riesgos de seguridad, reduce la mantenibilidad y complica el testing.
 
-En lugar de modificar manualmente el DOM, Angular promueve el uso de:
+En lugar de manipular el DOM directamente, Angular promueve el uso de:
 
-- **Propiedades del componente vinculadas a la plantilla** (`[hidden]`, `[class]`, `[style]`, etc.)
-- **Directivas estructurales** (`*ngIf`, `*ngFor`, `ngClass`, `ngStyle`)
-- **Pipes** para transformar contenido dinámicamente
-- **Renderer2** o `ViewChild` como último recurso en casos justificados
+- **Propiedades de plantilla y bindings estructurados** (`[hidden]`, `[style]`, `[class]`, `[attr.disabled]`, `[innerHTML]`, etc.)
+- **Directivas estructurales y de atributos** (`*ngIf`, `*ngFor`, `ngClass`, `ngStyle`)
+- **Directivas personalizadas** para manipulación compleja
+- **`Renderer2`** como mecanismo seguro y desacoplado para casos justificados
+- **`ElementRef` sólo con sanitización y en escenarios muy controlados**
+
 
 ## Why is a code smell
 
-- **Rompe el modelo declarativo de Angular**: se salta el binding unidireccional controlado por el framework.
-- **Compromete la seguridad**: puede introducir vulnerabilidades como XSS (especialmente con `innerHTML` sin sanitizar).
-- **Reduce la compatibilidad**: puede fallar en SSR (Server-Side Rendering) o en entornos limitados.
-- **Dificulta el mantenimiento**: el DOM puede cambiar y romper referencias manuales.
-- **Complica el testing**: los tests se vuelven más frágiles e impredecibles al depender de manipulación directa.
+- **Rompe el modelo declarativo de Angular**: al modificar directamente el DOM se ignora el sistema de bindings, cambiando el estado de la vista fuera del flujo natural de Angular.
+- **Compromete la seguridad de la aplicación**: el uso de `innerHTML` sin sanitización puede permitir ataques XSS (*Cross-Site Scripting*).
+- **Limita la compatibilidad entre plataformas**: el código puede fallar en entornos de renderizado como SSR (*Server-Side Rendering*), Web Workers o Angular Universal.
+- **Dificulta la mantenibilidad**: acceder al DOM directamente acopla el código a la estructura interna del HTML, que puede cambiar.
+- **Complica la testabilidad**: el acceso directo al DOM hace que los tests sean frágiles y menos predecibles.
+- **Viola el principio de separación de responsabilidades**: mezcla lógica de presentación con manipulación directa del entorno.
 
 ---
+
 ## Non-Compliant code example
 
 ```ts
@@ -38,28 +42,35 @@ ngAfterViewInit(): void {
   }
 }
 ```
+
 ---
+
 ## Compliant code example
 
-### Usar propiedades y bindings en la plantilla
+### Usar bindings declarativos
 
 ```ts
-@Component({...})
+@Component({
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
 export class TestComponent {
   isDisabled = true;
   isHighlighted = true;
-  htmlContent = '<p>Hola</p>';
+  htmlContent = this.sanitizer.bypassSecurityTrustHtml('<p>Hola</p>');
+
+  constructor(private sanitizer: DomSanitizer) {}
 }
 ```
 
 ```html
+<!-- Declarativo y seguro -->
 <input [disabled]="isDisabled" [ngClass]="{ 'resaltado': isHighlighted }" />
-
-<!-- [innerHTML] con sanitización si es necesario -->
 <div [innerHTML]="htmlContent"></div>
 ```
 
-### Directivas personalizadas
+### Directiva personalizada
 
 ```ts
 @Directive({
@@ -77,8 +88,31 @@ export class AutoFocusDirective implements AfterViewInit {
 ```html
 <input appAutoFocus />
 ```
+
+### Manipulación controlada con Renderer2
+
+```ts
+@Component({ ... })
+export class ButtonComponent implements AfterViewInit {
+  @ViewChild('myBtn') buttonRef!: ElementRef;
+
+  constructor(private renderer: Renderer2) {}
+
+  ngAfterViewInit(): void {
+    this.renderer.setAttribute(this.buttonRef.nativeElement, 'disabled', 'true');
+    this.renderer.addClass(this.buttonRef.nativeElement, 'resaltado');
+  }
+}
+```
+
+```html
+<button #myBtn>Haz clic</button>
+```
+
+---
+
 ## Sources
 - https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html section 1.4
 - https://rules.sonarsource.com/typescript/RSPEC-6268/ 
-- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 1
+- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 1 (*Direct DOM Manipulation*) and 2 (*Using jQuery with Angular*)
 - https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 4

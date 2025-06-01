@@ -6,5 +6,5 @@
 ## Sources
 - https://marcoslooten.com/blog/4-common-angular-mistakes/ section 2
 - https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 1
-- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e 
-- https://zydesoft.com/must-know-clean-code-principles-in-angular/ 
+- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e section 3
+- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 3

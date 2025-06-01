@@ -1,10 +1,10 @@
 # Manual subscriptions
 ## Description
-Manejar las suscripciones manuales desde un componente (`.subscribe()`) conlleva la responsabilidad de cancelar manualmente la suscripción ante la destrucción del componente (`ngOnDestroy`) con los riesgos que conlleva. Véase [not unsubscribe subscriptions](not_unsubscribe_subscriptions.md).
+Este *code smell* se da cuando se realizan suscripciones manuales en vez de aprovechar la abstracción de las suscripciones en plantillas (a través del pipe `async`) siempre que sea posible, ya que en ciertos casos (como llamadas http que se realizan una única vez, *cold observables*).
 
-Debido a esto, este **code smell** se da cuando no se realizan las suscripciones dentro de las plantillas a través del pipe `async` siempre que sea posible. 
+Manejar las suscripciones manuales desde un componente (`.subscribe()`) conlleva la responsabilidad de cancelar la suscripción de manera que no produzca lagunas de memoria, con los riesgos que conlleva. Véase [not unsubscribe subscriptions](not_unsubscribe_subscriptions.md).
 
-El uso de este pipe nos simplifica el manejo de la suscripción, ya que al emplearla, se encarga de realizar la suscripción y, en caso de que se destruya el componente, cancelarla y limpiar la suscripción de forma transparente.
+El uso de esta pipe nos simplifica el manejo de la suscripción, ya que se encarga de realizar la suscripción y cancelarla y limpiar la suscripción de forma transparente cuando el componente es destruido.
 
 De esta manera logramos un código más limpio, simplificado y menos propenso a riesgos por el manejo de suscripciones.
 
@@ -19,20 +19,23 @@ De esta manera logramos un código más limpio, simplificado y menos propenso a 
 @Component({
   template: '<span>{{someStringToDisplay}}</span>'
 })
-export class Foo implements OnInit, OnDestroy {
+export class Foo implements OnInit {
   someStringToDisplay = "";
 
   ngOnInit() {
     someObservable
-      .pipe(takeUntilDestroyed(), map(/* ... */))
-      .subscribe((next) => {
+      .pipe(
+        takeUntilDestroyed(), 
+        map(/* ... */)
+      ).subscribe((next) => {
         this.someStringToDisplay = next;
         this.ref.markForCheck();
       });
   }
 }
 
-// O manualmente
+
+// Or manually
 @Component({
   template: '<span>{{someStringToDisplay}}</span>'
 })
@@ -53,6 +56,7 @@ export class Foo implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 }
+
 ``` 
 ---
 ## Compliant code example
@@ -70,9 +74,9 @@ export class Foo {
 
 ----
 ## Sources
-- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j section 5
+- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j 5º sin
 - https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 5
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.3
-- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 7
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.3 (second solution for *Memory Leaks*)
+- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 7 (*Avoiding manual subscribes in Angular*)
 - https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 9
 - https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/

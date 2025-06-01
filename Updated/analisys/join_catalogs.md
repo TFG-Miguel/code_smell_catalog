@@ -1,29 +1,29 @@
 # Joined Catalog
-| Code Smell                                        | Paper| Own | Total| A                                                                                                | Sources                | 
-| :--                                               | :--: | :--:| :--: | ---                                                                                              | ---                    | 
-| Not unsubscribe a subscription                    | 8    | 2   | 10   | [1].1, [2].3, [8].3, [10].6, [12].1.1, [15].4, [16].2.3, [16].4.1, [17].5, [18].3, [23].3, [25].2| [N3].5, [N7]           | 
-| Unoptimized module loading                        | 6    | 2   | 08   | [3].7, [6].4, [9].7, [10].8, [16].2.1                                                            | [N1], [N3].10          | 
-| God Component                                     | 7    | 0   | 07   | [3].4, [4].1, [6].5, [8].1, [10].13, [12].1.2                                                    |                        | 
-| Default change detection instead OnPush           | 4    | 3   | 07   | [1].3, [2].2                                                                                     | [N1], [N2], [N4]       | 
-| Nested subscriptions                              | 5    | 1   | 06   | [10].9, [17].6, [18].6, [20], [23].4                                                             | [N3].6                 | 
-| Manual subscriptions                              | 4    | 2   | 06   | [3].5, [10].5, [16].2.3, [17].7                                                                  | [N3].9, [N7]           | 
-| Mixing Smart and Dumb components                  | 3    | 3   | 06   | [3].3, [9].1, [16].1.2, [10].12                                                                  | [N1].3, [N3].7, [N3].12| 
-| Include functions in templates                    | 4    | 1   | 05   | [2].2, [16].2.2                                                                                  | [N2]                   | 
-| Inheritance over composition                      | 3    | 1   | 04   | [16].1.1, [19], [26]                                                                             | [N4]                   | 
-| Include logic in templates                        | 3    | 1   | 04   | [10].17, [16].4.3                                                                                | [N1].4                 | 
-| No usage of trackBy                               | 2    | 2   | 04   | [1].2, [10].1                                                                                    | [N2], [N3]             | 
-| Include logic instead of rxjs operators           | 3    | 0   | 03   | [18].10                                                                                          |                        | 
-| Subscribe in constructor                          | 2    | 1   | 03   | [18].2                                                                                           | [N7]                   | 
-| Duplicate state across components                 | 2    | 1   | 03   | [10].19, [23].1, [23].2                                                                          | [N1].3, [N1].6         | 
-| Use a component in multiple modules               | 2    | 1   | 03   | [12].1.6, [15].3, [25].5                                                                         | [N1].1, [N1].3         | 
-| Mixing behaviors in Angular’s Lifecycle           | 2    | 0   | 02   | [15].6, [25].1                                                                                   |                        | 
-| Give streams to children components               | 2    | 0   | 02   | [17].8, [18].5                                                                                   |                        | 
-| Long import paths instead of alias                | 2    | 0   | 02   | [6].1                                                                                            |                        | 
-| No usage of bundlers to reduce size of application| 2    | 0   | 02   | [8].4                                                                                            |                        | 
-| Modify DOM directly                               | 2    | 0   | 02   | [12].1.4, [14], [15].1, [25].4                                                                   |                        | 
-| Use stateful streams                              | 2    | 0   | 02   | [21], [23].5                                                                                     |                        | 
-| No usage of pipes                                 | 2    | 0   | 02   | [4].7, [8].2                                                                                     |                        | 
-| Multiple subscriptions                            | 0    | 2   | 02   |                                                                                                  | [N2],[N7]              |
+| Code Smell                                        | Paper| Own | Total| A                                                                                       | Sources                | 
+| :--                                               | :--: | :--:| :--: | ---                                                                                     | ---                    | 
+| Not unsubscribe a subscription                    | 8    | 2   | 10   | [1].1, [2].3, [8].3, [10].6, [12].1.1, [15].4, [16].2.3, [17].5, [18].3, [23].3, [25].2 | [N3].5                 | 
+| Unoptimized module loading                        | 6    | 2   | 08   | [3].7, [6].4, [9].7, [10].8, [16].2.1                                                   | [N1], [N3].10          | 
+| God Component                                     | 7    | 0   | 07   | [3].4, [4].1, [6].5, [8].1, [10].13, [12].1.2, [16].4.1                                 |                        | 
+| Nested subscriptions                              | 5    | 1   | 06   | [10].9, [17].6, [18].6, [20], [23].4                                                    | [N3].6                 | 
+| Default change detection instead OnPush           | 4    | 2   | 06   | [1].3, [2].2                                                                            | [N1].2, [N2].1         | 
+| Manual subscriptions                              | 4    | 2   | 06   | [3].5, [10].5, [16].2.3, [17].7                                                         | [N3].9, [N7]           | 
+| Mixing Smart and Dumb components                  | 3    | 3   | 06   | [3].3, [9].1, [16].1.2, [10].12                                                         | [N1].3, [N3].7, [N3].12| 
+| Include functions in templates                    | 4    | 1   | 05   | [2].2, [16].2.2                                                                         | [N2].2                 | 
+| Inheritance over composition                      | 3    | 1   | 04   | [16].1.1, [19], [26]                                                                    | [N4].5                 | 
+| No usage of trackBy                               | 2    | 2   | 04   | [1].2, [10].1                                                                           | [N2].3, [N3].3         | 
+| Include logic in templates                        | 3    | 0   | 03   | [10].17, [16].4.3                                                                       |                        | 
+| Include logic instead of rxjs operators           | 3    | 0   | 03   | [18].10                                                                                 |                        | 
+| Subscribe in constructor                          | 2    | 1   | 03   | [18].2                                                                                  | [N7]                   | 
+| Duplicate state across components                 | 2    | 1   | 03   | [10].19, [23].1, [23].2                                                                 | [N1].3, [N1].6         | 
+| Multiple subscriptions                            | 0    | 2   | 02   |                                                                                         | [N2].5, [N7]           |
+| Use a component in multiple modules               | 2    | 0   | 02   | [12].1.6, [15].3, [25].5                                                                |                        |
+| Mixing behaviors in Angular’s Lifecycle           | 2    | 0   | 02   | [15].6, [25].1                                                                          |                        | 
+| Give streams to children components               | 2    | 0   | 02   | [17].8, [18].5                                                                          |                        | 
+| Long import paths instead of alias                | 2    | 0   | 02   | [6].1                                                                                   |                        | 
+| No usage of bundlers to reduce size of application| 2    | 0   | 02   | [8].4                                                                                   |                        | 
+| Modify DOM directly                               | 2    | 0   | 02   | [12].1.4, [14], [15].1, [15].2, [25].4                                                  |                        | 
+| Use stateful streams                              | 2    | 0   | 02   | [21], [23].5                                                                            |                        | 
+| No usage of pipes                                 | 2    | 0   | 02   | [4].7, [8].2                                                                            |                        | 
 
 # Descartados
 | Code Smell                                                             | Paper| Own | Total| Sources|

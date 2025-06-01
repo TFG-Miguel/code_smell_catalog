@@ -4,25 +4,22 @@
 
 Este *code smell* ocurre cuando múltiples componentes mantienen una copia local del mismo estado o información, en lugar de compartir una fuente única de verdad (*single source of truth*). Aunque puede parecer una solución rápida, este patrón se vuelve insostenible a medida que crece la complejidad de la aplicación, generando inconsistencias, redundancia y lógica dispersa.
 
-Los ejemplos comunes incluyen duplicar datos de usuario, estado de sesión, filtros activos o resultados de búsqueda en componentes distintos. Este enfoque viola el principio DRY (*Don't Repeat Yourself*) y complica la mantenibilidad del sistema.
-
-
-## Solución
+Los ejemplos comunes incluyen duplicar datos de usuario, estado de sesión, filtros activos o resultados de búsqueda en componentes distintos. Este enfoque viola el principio DRY (*Don't Repeat Yourself*) y complica el mantenimiento del sistema.
 
 La forma más adecuada de abordar este *code smell* es mediante el uso de un enfoque reactivo centralizado para el estado compartido. Las principales alternativas son:
 
-* **RxJS**: Ideal para aplicaciones pequeñas o medianas. Utilizar `BehaviorSubject` en servicios inyectables permite crear *stores* ligeros, encapsulados y reactivos sin necesidad de librerías externas.
-* **NgRx**: Recomendado para aplicaciones grandes con múltiples fuentes de estado y lógica de negocio compleja. Implementa Redux y proporciona flujo unidireccional, trazabilidad de acciones y efectos para lógica asíncrona.
-* **Akita**: Alternativa moderna y más simple que NgRx, centrada en ergonomía y productividad. Especialmente útil para proyectos que requieren una solución potente pero con menor curva de aprendizaje.
+- **RxJS**: Ideal para aplicaciones pequeñas o medianas. Utilizar `BehaviorSubject` en servicios inyectables permite crear *stores* ligeros, encapsulados y reactivos sin necesidad de librerías externas.
+- **NgRx**: Recomendado para aplicaciones grandes con múltiples fuentes de estado y lógica de negocio compleja. Implementa Redux y proporciona flujo unidireccional, trazabilidad de acciones y efectos para lógica asíncrona.
+- **Akita**: Alternativa moderna y más simple que NgRx, centrada en ergonomía y productividad. Especialmente útil para proyectos que requieren una solución potente pero con menor curva de aprendizaje.
 
 
 ## Why is a code smell
 
-* **Desincronización del estado**: diferentes componentes pueden mostrar datos inconsistentes.
-* **Aumento de complejidad**: se necesita lógica adicional para mantener sincronizados los estados.
-* **Dificultad para mantener**: cualquier cambio en el estado debe replicarse manualmente en múltiples lugares.
-* **Dificulta la escalabilidad**: el crecimiento de la aplicación incrementa el riesgo de errores.
-* **Rompe el principio de fuente única de verdad (*single source of truth*)**.
+- **Desincronización del estado**: diferentes componentes pueden mostrar datos inconsistentes.
+- **Aumento de complejidad**: se necesita lógica adicional para mantener sincronizados los estados.
+- **Dificultad para mantener**: cualquier cambio en el estado debe replicarse manualmente en múltiples lugares.
+- **Dificulta la escalabilidad**: el crecimiento de la aplicación incrementa el riesgo de errores.
+- **Rompe el principio de fuente única de verdad (*single source of truth*)**.
 
 ---
 
@@ -275,7 +272,7 @@ export class ComponentB {
 ```
 
 ## Sources
-- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ *Bigger picture $\rightarrow$ state management* section
+- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ *Bigger picture -> state management* section
 - https://www.sourceallies.com/2020/11/state-management-anti-patterns/ section 1 and 2
 - https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 3 and 6
 

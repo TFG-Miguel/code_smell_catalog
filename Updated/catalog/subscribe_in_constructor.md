@@ -2,15 +2,15 @@
 
 ## Description
 
-Este code smell se da cuando, por necesidad de requerir una suscripción durante toda la vida del componente, la suscripción se realiza en el constructor en vez de en el lifecycle `ngOnInit`. 
+Este *code smell* se da cuando, por necesidad de requerir una suscripción durante toda la vida del componente, la suscripción se realiza en el constructor en vez de en el lifecycle `ngOnInit`. 
 
-Ya las buenas practicas nos recomiendan respetar el ciclo de vida definido por angular y además de promover mantener los constructores ligeros y libres de lógica.
+Las buenas practicas nos recomiendan respetar el ciclo de vida definido por angular y además de promover mantener los constructores ligeros y libres de lógica moviendo la lógica del constructor al lifecycle `ngOnInit`.
 
 
->[!note]
->Si la suscripción no es estrictamente necesaria y solo se emplea en la visualización de datos se puede plantear eliminar la suscripción y trabajar con la `async` pipe.
+> [!note]
+> Si la suscripción no es estrictamente necesaria y solo se emplea en la visualización de datos se puede plantear eliminar la suscripción y trabajar con la `async` pipe.
 >
->Véase [Manual subscription](manual_subscriptions.md).
+> Véase [Manual subscription](manual_subscriptions.md).
 
 ## Why is a code smell
 
@@ -22,7 +22,6 @@ Ya las buenas practicas nos recomiendan respetar el ciclo de vida definido por a
 
 ---
 ## Non-Compliant code example
-
 ```ts
 @Component({ ... })
 export class UserComponent {
@@ -35,11 +34,9 @@ export class UserComponent {
   }
 }
 ```
+
 ---
 ## Compliant code example
-
-### Mover la suscripción a `ngOnInit`
-
 ```ts
 @Component({ ... })
 export class UserComponent implements OnInit {
@@ -60,6 +57,8 @@ export class UserComponent implements OnInit {
     }
   }
 }
+
+---
 ```
 ## Sources
 - https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 10

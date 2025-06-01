@@ -1,14 +1,14 @@
 # Include logic in templates
 ## Description
-Este code smell se da cuando se realiza un uso excesivo de lógica en las plantillas.
+Este *code smell* se da cuando se realiza un uso excesivo de lógica en las plantillas.
 
-Aunque las plantillas html Angular permiten usar condiciones simples, su uso excesivo o anidado con lógica compleja (como múltiples comparaciones, estructuras condicionales anidadas o negaciones encadenadas) convierte la vista en un lugar difícil de leer, mantener y probar.
+Aunque las plantillas html Angular permiten usar condiciones simples, su uso excesivo o anidado con lógica compleja (como múltiples comparaciones, estructuras condicionales anidadas o negaciones encadenadas) convierte la vista en algo difícil de leer, mantener y probar.
 
 Esto incluye también el abuso de directivas como `*ngIf`, `*ngFor`, `ngSwitch` con condiciones complejas, y estructuras que deberían delegarse al componente o encapsularse mediante directivas personalizadas.
 
 Para mejorar la claridad del template se recomienda:
 
-- Delegar la lógica al componente mediante `getters` o propiedades preparadas.
+- Delegar la lógica al componente mediante propiedades precalculadas para lógicas complejas o resultados que no cambian frecuentemente o `getters`, si su lógica no es muy costosa o sus resultados cambian muy seguido, aunque se recomienda evitar su uso si es posible.
 - Encapsular condiciones en **directivas estructurales personalizadas** para mantener las plantillas declarativas.
 
 ## Why is a code smell
@@ -22,10 +22,17 @@ Para mejorar la claridad del template se recomienda:
 ---
 ## Non-Compliant code example
 
-```html
-<div *ngIf="user.age > 18 && !isBanned(user)">
-  Bienvenido, {{ user.name }}!
-</div>
+```ts
+@Component({
+  template: `
+    <p *ngIf="role==='developer'"> Status: Developer </p>
+  `
+})
+export class TestComponent implements OnInit {
+  public ngOnInit (): void {
+    this.role = 'developer';
+  }
+}
 ```
 ---
 ## Compliant code example
@@ -33,28 +40,24 @@ Para mejorar la claridad del template se recomienda:
 ### Mover la lógica al componente
 
 ```ts
-@Component({ 
-  selector: 'app-example',
-  templateUrl: './newsletter.component.html',
-  imports: [UppercaseNamePipe]
- })
-export class TextComponent {
-  user:User
+@Component({
+  template: `
+    <p *ngIf="showDeveloperStatus"> Status: Developer </p>
+  `
+})
+export class TestComponent implements OnInit {
+  this.role = 'developer';
+  // Precalculated value
+  this.showDeveloperStatus = true;
 
-  get isAdultUser(): boolean {
-    return this.user.age > 18 && !this.isBanned(this.user);
+  ngOnInit (): void {
+    this.updateStatus();
   }
-
-  private isBanned(user:User): boolean { 
-    return false;
+  
+  private updateStatus() {
+    this.showDeveloperStatus = this.role === 'develop';
   }
 }
-```
-
-```html
-<div *ngIf="isAdultUser">
-  Bienvenido, {{ user.name }}!
-</div>
 ```
 
 ### Usar directivas personalizadas
@@ -65,7 +68,7 @@ export class TextComponent {
 })
 export class IfAdultUserDirective {
   @Input() set appIfAdultUser(user: User) {
-    const isAdult = user.age > 18 && !this.isBanned(user);
+    const isAdult = user.age > 18;
     this.viewContainer.clear();
     if (isAdult) {
       this.viewContainer.createEmbeddedView(this.templateRef);
@@ -93,4 +96,3 @@ export class IfAdultUserDirective {
 ## Sources
 - https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 17
 - https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 4.3
-- https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 4

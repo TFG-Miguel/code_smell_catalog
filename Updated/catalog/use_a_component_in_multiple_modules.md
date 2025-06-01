@@ -9,12 +9,11 @@ Este *code smell* indica una falta de organización en la estructura modular del
 
 ## Why is a code smell
 
-* **Angular lo prohíbe explícitamente**: un componente no puede estar en varias `declarations`.
-* **Provoca errores en tiempo de compilación**, como:
+- **Angular lo prohíbe explícitamente**: un componente no puede estar en varias `declarations`. En caso de hacerlo provoca errores en tiempo de compilación, como:
   > `Type HeroComponent is part of the declarations of 2 modules...`
-* **Refleja una arquitectura inadecuada**: reutilizar un componente sin encapsularlo en un módulo propio.
-* **Dificulta la escalabilidad**: errores de duplicación se acumulan a medida que crece la base de código.
-* **Rompe el principio de reusabilidad modular**: los componentes compartidos deben ser independientes y bien encapsulados.
+- **Refleja una arquitectura inadecuada**: reutilizar un componente sin encapsularlo en un módulo propio.
+- **Dificulta la escalabilidad**: errores de duplicación se acumulan a medida que crece la base de código.
+- **Rompe el principio de reusabilidad modular**: los componentes compartidos deben ser independientes y bien encapsulados.
 
 ---
 
@@ -72,6 +71,5 @@ export class DashboardModule {}
 [source]: https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html
 ## Sources
 - https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html section 1.6
-- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 3
+- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 3 (*Declaring the Same Component in More than One NgModule*)
 - https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 5
-- https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 1 and 3

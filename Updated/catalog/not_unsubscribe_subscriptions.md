@@ -37,11 +37,8 @@ export class ExampleComponent implements OnInit {
 }
 ```
 
-Este fragmento muestra una suscripción en `ngOnInit` sin el correspondiente `unsubscribe()` en `ngOnDestroy`, lo que provoca la fuga de memoria.
-
 ---
 ## Compliant code example
-Para solucionar este code smell tenemos las siguientes soluciones:
 
 ### Cancelar manualmente en `ngOnDestroy`
 
@@ -71,6 +68,34 @@ export class ExampleComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+}
+```
+
+En el caso de disponer de varias suscripciones es inviable manejar una a una por lo que propone una variante basada en una agrupación de suscripciones (`rxjs.Subscription`):
+```ts
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
+
+@Component({
+  selector: 'app-component',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent implements OnInit, OnDestroy {
+  subscription = new Subscription();
+
+  ngOnInit(): void {
+    this.subscription.add(
+      interval(500).subscribe(x => console.log(`A: ${x}`))
+    );
+    this.subscription.add(
+      interval(700).subscribe(x => console.log(`B: ${x}`))
+    );
+  }
+  
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
 ```
@@ -117,15 +142,13 @@ Otra solución es el pipe `async` en las plantilla html, que se encarga de reali
 ## Sources
 - https://marcoslooten.com/blog/4-common-angular-mistakes/ section 1
 - https://alex-klaus.com/angular-code-review/ section 3
-- https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 section 3
+- https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 section 3 (*Don’t forget to unsubscribe*)
 - https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 6
 - https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html section 1.1
-- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 4
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.3
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 4.1
-- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 5
-- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 3
+- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 4 (*Not Unsubscribing from the listed events*)
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.3 (*Memory Leaks*)
+- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 5 (*Avoiding memory leaks*)
+- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 3º bad practice
 - https://www.sourceallies.com/2020/11/state-management-anti-patterns/ section 3
 - https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 2
 - https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 5
-- https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/ 

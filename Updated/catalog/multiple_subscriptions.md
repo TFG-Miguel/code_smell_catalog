@@ -66,7 +66,6 @@ export class JourneyListItemComponent {
 De esta manera se almacena la suscripción en la variable journey y solo se solicita una vez la suscripción.
 
 ### Usar `shareReplay(1)` y `distinctUntilChanged()`
-
 ```ts
 @Component({
   selector: 'journey-list-item',
@@ -85,37 +84,17 @@ export class JourneyListItemComponent implements OnDestroy {
   journey$ = this.journeyId$.pipe(
       distinctUntilChanged(),
       switchMap((id) => this.journeyService.getJourney(id)),
-      shareReplay(1)
+      shareReplay(1) // Replay much times as needed subscriptions
   );
 }
 ```
 
 >[!note]
-> En caso de que se haga una suscripción manual, se debería emplear `takeUntilDestroy` junto con el observable.
-> 
-> ```ts
-> @Component({
->   selector: 'journey-list-item',
->   templateUrl: './journey-list-item.component.html',
->   styleUrls: ['./journey-list-item.component.scss'],
-> })
-> export class JourneyListItemComponent implements OnInit{
-> 
->    constructor(private readonly journeyService: ReiseService) { }
->    
->    ngOnInit() { 
->        this.journeyId$.pipe(
->            distinctUntilChanged(),
->            switchMap((id) => this.journeyService.getJourney(id)),
->            shareReplay(1),
->            takeUntilDestroy()
->        );
->    }
-> }
-> ```
+> En caso de que se haga una suscripción manual, se deberá gestionar la suscripción mediante [`takeUntilDestroyed`](#angular-16-con-takeuntildestroyed) (o `takeUntil` y un evento que notifique de la destrucción del componente, es mejor evitar disponiendo de `takeUntilDestroyed`).
+
 
 ### Usar `publishReplay(1)` y `refCount()`
-
+Esta solución permite cachear la petición y emplearla en varios sitios habiendo realizado una única petición.
 ```ts
 pageTitle = this.route.params.pipe(
     map((params) => params["id"]),
@@ -145,11 +124,11 @@ export class JourneyListItemComponent {
       distinctUntilChanged(),
       switchMap(id => this.journeyService.getJourney(id)),
       shareReplay(1),
-      takeUntilDestroyed() // ✅ no hace falta destroy$ manual
+      takeUntilDestroyed()
     ).subscribe(journey => this.journey = journey);
   }
 }
 ```
 ## Sources
-- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e 
+- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e section 5
 - https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/

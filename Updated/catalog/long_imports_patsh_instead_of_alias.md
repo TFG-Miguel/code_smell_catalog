@@ -2,7 +2,7 @@
 
 ## Description
 
-Este *code smell* ocurre cuando se utilizan rutas de importación largas y relativas (por ejemplo, `../../../../services/user/user.service`) en lugar de definir y usar **alias de importación**. A medida que crece la estructura de carpetas de una aplicación Angular, estas rutas relativas profundas se vuelven difíciles de leer, mantener y refactorizar.
+Este *code smell* ocurre cuando se utilizan rutas de importación largas y relativas (por ejemplo, `../../../../services/user/user.service`) en lugar de definir y usar **alias de importación** (`@services/user/user.services`). A medida que crece la estructura de carpetas de una aplicación Angular, estas rutas relativas profundas se vuelven difíciles de leer, mantener y refactorizar.
 
 Angular (a través de TypeScript) permite definir alias personalizados en el archivo `tsconfig.json`, lo que facilita importaciones limpias, claras y estables. Usar alias ayuda a mejorar la mantenibilidad, evitar errores y facilitar la navegación entre módulos.
 
@@ -17,7 +17,6 @@ Angular (a través de TypeScript) permite definir alias personalizados en el arc
 ## Non-Compliant code example
 
 ```ts
-// user.component.ts
 import { UserService } from '../../../../core/services/user/user.service';
 import { environment } from '../../../../environments/environment';
 ```
@@ -39,7 +38,6 @@ import { environment } from '../../../../environments/environment';
 ```
 
 ```ts
-// user.component.ts
 import { UserService } from '@core/services/user/user.service';
 import { environment } from '@env';
 ```
@@ -48,4 +46,4 @@ import { environment } from '@env';
 > Define alias para carpetas comunes como `@core`, `@shared`, `@env`, `@features`, `@models`.
 
 ## Sources
-- https://javascript-conference.com/blog/angular-code-smells/ section 1
+- https://javascript-conference.com/blog/angular-code-smells/ section 1 (*Code smells*)

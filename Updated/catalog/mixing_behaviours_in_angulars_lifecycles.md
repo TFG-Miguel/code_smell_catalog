@@ -1,15 +1,17 @@
 # `ngOnChanges` misconceptions
 ## Description
-Este *code smell* se refiere al uso conjunto y mal estructurado de los métodos `ngOnChanges` y `ngDoCheck` del ciclo de vida de Angular, en especial cuando no se comprende bien cómo y cuándo se activan. Aunque ambos hooks están diseñados para reaccionar a cambios, tienen **finalidades distintas** y comportamientos muy diferentes. Mezclar lógica entre ellos suele generar código redundante, confuso o ineficiente.
+Este *code smell* se refiere al uso conjunto y mal estructurado de los métodos `ngOnChanges` y `ngDoCheck` del ciclo de vida de Angular, en especial cuando no se comprende bien cómo y cuándo se activan. 
 
-- `ngOnChanges` tiene como propósito principal **detectar cambios en propiedades marcadas con `@Input`**. Se ejecuta únicamente cuando la **referencia completa del objeto cambia**. No detectará cambios en campos internos si la referencia del objeto no se ha modificado. Muchos desarrolladores asumen incorrectamente que funciona para cualquier tipo de cambio, lo cual no es cierto.
+Aunque ambos hooks están diseñados para reaccionar a cambios, tienen **finalidades distintas** y comportamientos muy diferentes. Mezclar lógica entre ellos suele generar código redundante, confuso o ineficiente.
+
+- `ngOnChanges` tiene como propósito principal **detectar cambios en propiedades marcadas con `@Input`**. Se ejecuta únicamente cuando la **referencia del objeto cambia** (se hace una copia y se modifica `{updated: true, ...old}`). No detectará cambios en campos internos si la referencia del objeto no se ha modificado. Muchos desarrolladores asumen incorrectamente que funciona para cualquier tipo de cambio, lo cual no es cierto.
   
 - `ngDoCheck`, en cambio, se dispara **en cada ciclo de detección de cambios** y permite implementar una **detección personalizada**, incluso cuando no cambian las referencias. Es útil cuando se necesita observar mutaciones internas o comparar propiedades profundamente. Sin embargo, su uso frecuente lo hace propenso a introducir errores de rendimiento o lógica si no se gestiona correctamente.
 
 Por tanto, en caso de necesitar observar campos internos o cambios dentro de objetos inmutables, `ngDoCheck` es apropiado. Si solo se necesita reaccionar ante un cambio de valor (por referencia), `ngOnChanges` es más claro, eficiente y declarativo. [lifecycles-hooks]
 
 > [!note]
-> En caso de necesitar usar ngDoCheck, por el posible impacto en el rendimiento se recomienda utilizar de manera adecuada ChangeDetectionStrategy estableciéndola a OnPush y usando de manera adecuada la notificación de cambios.
+> En caso de necesitar usar `ngDoCheck`, por el posible impacto en el rendimiento se recomienda utilizar de manera adecuada ChangeDetectionStrategy estableciéndola a `OnPush` y usando de manera adecuada la notificación de cambios.
 >
 > En los ejemplos de código no se empleará esta estrategia pero en caso de usarla plantee las siguientes situaciones:
 > - Clonado de objeto con propiedad modificada (`{updated: true, ...old}`), esto modificará la referencia por lo que sí que será identificada por `ngOnChanges`.
@@ -159,7 +161,7 @@ export class ChildComponent implements OnChanges {
 }
 ```
 ## Sources
-- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 6
+- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 6 (*ngOnChanges misconceptions*)
 - https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 1
 
 [lifecycles-hooks]:https://v17.angular.io/guide/lifecycle-hooks#lifecycle-event-sequence

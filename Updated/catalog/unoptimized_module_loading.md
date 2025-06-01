@@ -3,7 +3,9 @@
 
 ## Description
 
-El *lazy loading* es un patrón de diseño que retrasa la importación e inicialización de módulos o componentes `standalone` (considerados módulos autocontenidos) en Angular hasta el momento en que el usuario accede a la ruta que los utiliza. Este *code smell* se da cuando se prescinde de este patron, provocando que la aplicación agrupe todos los módulos en un único bundle que se descarga al iniciar la aplicación, haciendo más lenta la carga inicial.
+El *lazy loading* es un patrón de diseño que retrasa la importación e inicialización de módulos o componentes, directivas o pipes `standalone` (considerados módulos autocontenidos) en Angular hasta el momento en que el usuario accede a la ruta que los utiliza. 
+
+Este *code smell* se da cuando se prescinde de este patron, provocando que la aplicación agrupe todos los módulos en un único bundle que se descarga al iniciar la aplicación, haciendo más lenta la carga inicial.
 
 ## Why is a code smell
 
@@ -52,10 +54,10 @@ El `lazy loading` se logra a través de la definición del método `Route.loadCo
 
 ---
 ## Sources
-- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j section 7
-- https://javascript-conference.com/blog/angular-code-smells/ section 4
-- https://angular-enterprise.com/en/ngpost/courses/bad-practices/ section 7
+- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j 7º sin (*Eagerly loading all features*)
+- https://javascript-conference.com/blog/angular-code-smells/ section 4 (*Loading Speed*)
+- https://angular-enterprise.com/en/ngpost/courses/bad-practices/ 7º point (*lack of splitting in modules, especially lazy modules...*)
 - https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 8
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.1
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.1 (*Lazy Loading Feature Modules*)
 - https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d 
 - https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 10

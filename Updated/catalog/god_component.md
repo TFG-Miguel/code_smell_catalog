@@ -1,5 +1,5 @@
 # God Component
-## Descripction
+## Description
 Un *God Component* es un componente de Angular que asume una cantidad excesiva de responsabilidades. Suele encargarse de obtener datos, gestionar el estado, manejar eventos, contener lógica de negocio compleja y renderizar la interfaz de usuario en un mismo lugar. Esto viola el *Principio de Responsabilidad Única* y dificulta la escalabilidad y capacidad de prueba del código.
 
 > [!Note]
@@ -112,3 +112,4 @@ export class DashboardComponent implements OnInit {
 - https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 1º section (*Write external system interactions inside component*)
 - https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ 13º practice
 - https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html 1.2º section
+- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 4.1

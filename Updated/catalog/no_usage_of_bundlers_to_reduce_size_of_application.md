@@ -2,39 +2,48 @@
 
 ## Description
 
-Este *code smell* se presenta cuando una aplicación Angular no utiliza adecuadamente un bundler para reducir el tamaño del paquete final en producción. A pesar de que Angular CLI ya incluye Webpack como herramienta de *bundling*, muchos proyectos no aprovechan sus capacidades si no configuran correctamente el *build* para producción o si no usan prácticas recomendadas como:
+Este *code smell* se presenta cuando una aplicación Angular no aprovecha correctamente las herramientas y configuraciones disponibles para minimizar el tamaño del paquete final que se entrega al cliente. Esto incluye una mala configuración del `build`, la ausencia de técnicas como el *lazy loading*, o el uso ineficiente de librerías externas.
 
-- Lazy loading de módulos
-- Importaciones específicas (en lugar de importar librerías completas)
-- Pipes puras
+A partir de Angular 9 se introdujo **Ivy**, un nuevo compilador y motor de renderizado que permite generar paquetes significativamente más pequeños, gracias a su capacidad de eliminar código no utilizado (**tree-shaking**) y de compilar los componentes de forma más granular. Desde Angular 12, Ivy se convirtió en el único motor de renderizado disponible, pero para aprovechar al máximo sus ventajas es necesario seguir ciertas prácticas específicas de optimización:
+
 - Uso del comando `ng build --configuration production`
-- Eliminación de código muerto (*tree-shaking*)
+- Eliminación de imports globales innecesarios
+- Uso de pipes puros (`pure: true`)
+- Aplicación de *lazy loading* de módulos y componentes
+- Configuración adecuada de presupuestos (*budgets*) en `angular.json`
+- Separación lógica por dominios, usando `standalone components` si es posible
 
-Además, la falta de configuración adecuada en `angular.json` puede hacer que el proceso de construcción no elimine código innecesario ni optimice correctamente los recursos.
+Estas acciones permiten reducir el tamaño de los *bundles* generados, lo que repercute en tiempos de carga más rápidos, mejor experiencia de usuario y mayor eficiencia en dispositivos móviles o de bajo rendimiento.
 
 ---
 
 ## Why is a code smell
 
-- **Crea paquetes innecesariamente grandes**: que impactan directamente en el tiempo de carga.
-- **Reduce el rendimiento general**: tanto del navegador como del servidor (en SSR).
-- **Impacta negativamente en la experiencia del usuario**: especialmente en dispositivos móviles.
-- **Ignora herramientas ya incluidas en Angular**: como optimización de dependencias y minificación.
-- **Dificulta el mantenimiento del código**: al no detectar dependencias no utilizadas.
+- **Genera paquetes excesivamente grandes**: lo que incrementa el tiempo de descarga, análisis y ejecución en el navegador.
+- **Desaprovecha las ventajas de Ivy**: al no permitir que el compilador elimine dependencias innecesarias ni optimice los componentes.
+- **Rompe el principio de modularidad progresiva**: al cargar todo el código de la aplicación desde el inicio.
+- **Impacta negativamente en la experiencia de usuario**: especialmente en conexiones lentas o dispositivos de gama baja.
+- **Dificulta el mantenimiento y escalado**: al no tener visibilidad ni límites claros sobre el tamaño y peso de los distintos artefactos generados.
 
 ---
 
 ## Non-Compliant code example
 
 - No usar `ng build --configuration production`
+
 - No configurar `budgets` en `angular.json`
-- Usar imports globales innecesarios (cargar toda una librería en vez de lo que se necesite):
+
+- Importar librerías completas innecesariamente:
+
   ```ts
+  // Impossible Tree-shaking
   import * as lodash from 'lodash';
   ```
-- Uso de carga ansiosa o '*eager*'
+
+- Uso de carga ansiosa (*eager loading*) de módulos grandes:
+
   ```ts
-  import AdminModule from './admin/admin.module'
+  import { AdminModule } from './admin/admin.module';
 
   const routes: Routes = [
     {
@@ -45,18 +54,20 @@ Además, la falta de configuración adecuada en `angular.json` puede hacer que e
   ```
 
 ---
+
 ## Compliant code example
 
-### Comando de build en producción
+### Comando de build optimizado
 
 ```bash
 ng build --configuration production
 ```
 
-### Importaciones concretas
+### Importaciones específicas
 
 ```ts
-import cloneDeep from 'lodash/cloneDeep';
+// Effective Tree-shaking
+import cloneDeep from 'lodash/cloneDeep'; 
 ```
 
 ### Lazy loading de módulos
@@ -65,12 +76,11 @@ import cloneDeep from 'lodash/cloneDeep';
 const routes: Routes = [
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () =>
+      import('./admin/admin.module').then(m => m.AdminModule)
   }
 ];
 ```
-
----
 
 ### Configuración de budgets (`angular.json`)
 
@@ -88,27 +98,33 @@ const routes: Routes = [
         "maximumWarning": "6kb"
       }
     ],
-    "fileReplacements": [
-      {
-        "replace": "src/environments/environment.ts",
-        "with": "src/environments/environment.prod.ts"
-      }
-    ],
     "optimization": true,
     "outputHashing": "all",
-    "sourceMap": false,
+    "aot": true,
     "extractCss": true,
     "namedChunks": false,
-    "aot": true,
     "extractLicenses": true,
     "vendorChunk": false,
-    "buildOptimizer": true
+    "buildOptimizer": true,
+    "sourceMap": false
   }
 }
 ```
->[!tip]
-> Para hacer más eficientes o pequeños estos bloques se recomienda:
-> - El uso `pure` pipes para facilitar el *tree-shaking* (limpieza de código muerto).
-> - Divide el código por dominios y aplica `standalone components` cuando sea posible para dividir el bundler en trozos más pequeños que se irán cargando a necesidad.
+
+---
+
+> [!Tip]
+> Para hacer bloques más pequeños, y por tanto eficientes, se recomienda:
+> - **Usar pipes puros** para permitir a Ivy eliminar código no referenciado:
+>   ```ts
+>   @Pipe({ name: 'uppercaseName', pure: true })
+>   export class UppercaseNamePipe implements PipeTransform {
+>     transform(name: string): string {
+>       return name.toUpperCase();
+>     }
+>   }
+>   ```
+> - **Dividir código por dominios**, usando componentes independientes (`standalone`) cuando sea posible para favorecer la fragmentación del bundle.
+
 ## Sources
-- https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 section 4
+- https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 section 4 (*Shake your code*)

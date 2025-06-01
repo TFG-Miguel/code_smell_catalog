@@ -1,10 +1,11 @@
 # Inheritance over composition
 ## Description
-En el desarrollo de aplicaciones Angular, es común reutilizar lógica compartida entre componentes. Una práctica habitual es crear una clase base y extenderla mediante herencia. Sin embargo, este enfoque puede llevar a una arquitectura rígida y difícil de mantener. 
+En el desarrollo de aplicaciones Angular, es común reutilizar lógica compartida entre componentes. 
 
-La composición, en cambio, propone construir componentes combinando funcionalidades específicas a través de servicios o directivas, promoviendo una arquitectura más flexible y modular.
+Este *code smell* se da cuando esta reutilización acaba formando una arquitectura rígida y difícil de mantener, dicho de otro modo cuando varios componentes heredan de uno base. Para solucionar esto se propone el uso de componentes reutilizables los cuales empleen servicios intercambiables de manera que se ajusten a las necesidades de cada uso. 
 
-Debido a esto este *code smell* se plantea como el uso de la herencia en vez del uso de la composición.
+De esta manera se logra una arquitectura más flexible, modular y reutilizable.
+
 ## Why is a code smell
 - **Acoplamiento rígido**: La herencia crea una relación fuerte entre la clase base y las derivadas, lo que dificulta la modificación o reutilización de componentes en contextos diferentes.
 - **Reutilización limitada**: Los componentes derivados heredan toda la funcionalidad de la clase base, incluso si solo necesitan una parte, lo que puede llevar a una sobrecarga innecesaria.
@@ -140,7 +141,6 @@ export class WaitingListComponent {
   }
 }
 ```
-En cambio, al extraerlo a un servicio, no estamos tenemos ese acoplamiento tan rígido si no que es mucho menor ya que solo se usa el servicio en los diferentes componentes.
 
 >[!tip]
 >Para agregar aún más flexibilidad, otra recomendación es la la sustitución de una implementación directa al servicio por una abstracción y su respectiva implementación, de esta manera se deja abierto a otros posibles servicios que, en caso de querer usarse en ese componente, solo será necesario especificar el cambio en el proveedor que queremos inyectar
@@ -154,4 +154,4 @@ En cambio, al extraerlo a un servicio, no estamos tenemos ese acoplamiento tan r
 - https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 1.1
 - https://danywalls.com/understand-composition-and-inheritance-in-angular 
 - https://dev.to/this-is-angular/you-dont-want-a-basecomponent-in-your-app-23hn 
-- https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d 
+- https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d section 5

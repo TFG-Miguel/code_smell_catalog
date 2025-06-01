@@ -4,6 +4,8 @@
 > - https://github.com/cartant/eslint-plugin-rxjs/blob/main/docs/rules/no-nested-subscribe.md
 > - https://github.com/JasonWeinzierl/eslint-plugin-rxjs-x/blob/main/docs/rules/no-nested-subscribe.md
 
+Meter también https://alex-klaus.com/angular-code-review/ .3 subsection
+
 ## Description
 Las *Nested Subscriptions* ocurren cuando se realizan suscripciones anidadas dentro de otras suscripciones en código Angular, lo cual lleva a una estructura piramidal difícil de leer, mantener y testear. Este enfoque ignora el potencial de composición reactiva de RxJS.
 

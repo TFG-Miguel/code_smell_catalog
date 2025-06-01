@@ -1,18 +1,22 @@
-# Include logic instead of rxjs operators
+# Include Logic Instead of RxJS Operators
+
 ## Description
-Este *code smell* ocurre cuando se introduce lógica condicional, filtrado, transformación o cualquier tipo de manipulación directamente dentro del `subscribe()` o funciones auxiliares, en lugar de usar operadores de RxJS como `filter`, `map`, `tap`, etc. Esto rompe el estilo declarativo de RxJS y degrada la calidad del código.
 
-## Why is a code smell
+This code smell occurs when conditional logic, filtering, transformation, or any kind of data manipulation is implemented directly inside the `subscribe()` block or auxiliary functions, instead of leveraging RxJS operators such as `filter`, `map`, or `tap`. This practice breaks the declarative nature of RxJS and deteriorates code clarity and maintainability.
 
-- **Rompe el paradigma declarativo de RxJS**: al insertar lógica imperativa dentro de `subscribe()`, se pierde la expresividad y la claridad que ofrecen los operadores reactivamente encadenables.
-- **Reduce la legibilidad del flujo de datos**: el uso de estructuras condicionales o transformaciones ocultas en `subscribe()` dificulta entender el propósito de la secuencia de eventos.
-- **Aumenta el acoplamiento y la complejidad**: al mezclar efectos secundarios con lógica de negocio, el `subscribe()` asume múltiples responsabilidades, violando el principio de separación de preocupaciones.
-- **Limita la reutilización del código**: al encapsular lógica dentro de `subscribe()`, se impide la reutilización en otros flujos reactivos o su testeo unitario de forma aislada.
-- **Dificulta la depuración y el testing**: los errores en lógica embebida dentro de `subscribe()` son menos trazables que en operadores separados y testeables como `filter()` o `map()`.
-- **Desvía de las buenas prácticas reactivas**: una suscripción debería estar orientada únicamente a efectos secundarios terminales (UI, almacenamiento, navegación…), no a manipulación de datos.
+## Why This Is a Code Smell
 
-----
-## Non-Compliant code example
+- **Breaks RxJS's declarative paradigm**: Embedding imperative logic inside `subscribe()` defeats the expressive and composable power of RxJS operators.
+- **Reduces data flow readability**: Placing conditions or transformations in `subscribe()` obscures the purpose of the observable pipeline.
+- **Increases coupling and complexity**: Mixing side effects with business logic violates the separation of concerns principle.
+- **Limits reusability**: Logic encapsulated in `subscribe()` cannot be easily reused across different reactive streams or tested independently.
+- **Hinders debugging and testing**: Errors within `subscribe()` are harder to trace and isolate compared to well-structured operators like `filter()` or `map()`.
+- **Deviates from reactive best practices**: A subscription should focus solely on terminal side effects (e.g., UI rendering, storage, routing), not on core data manipulation.
+
+---
+
+## Non-Compliant Code Example
+
 ```ts
 obs$.pipe(
   map(v => v * 10)
@@ -23,7 +27,10 @@ obs$.pipe(
 });
 ```
 
-## Compliant code example
+---
+
+## Compliant Code Example
+
 ```ts
 obs$.pipe(
   map(v => v * 10),
@@ -33,6 +40,8 @@ obs$.pipe(
 });
 ```
 
+---
 
 ## Sources
-- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 10
+
+- [https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471](https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471) (Section 10)

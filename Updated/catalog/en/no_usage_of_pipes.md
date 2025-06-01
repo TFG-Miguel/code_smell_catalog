@@ -1,19 +1,24 @@
-# No usage of pipes
+# No Usage of Pipes
+
 ## Description
-Este *code smell* aparece cuando se omite el uso de **pipes** (*pure pipes* siempre que sea posible) de Angular para transformar datos en plantillas, recurriendo en su lugar a soluciones menos adecuadas como getters, llamadas a funciones dentro de la vista o propiedades duplicadas pretransformadas en el componente. 
 
-Este enfoque rompe el flujo declarativo de Angular, dificulta el mantenimiento y puede afectar el rendimiento, especialmente cuando se trata de transformaciones costosas o listas de datos extensas.
+This code smell occurs when Angular **pipes**—especially *pure pipes*—are omitted in favor of less suitable alternatives such as getters, method calls within the template, or pre-transformed properties declared in the component.
 
-## Why is a code smell
-- **Rompe la separación de responsabilidades**: mezcla la lógica de transformación con la presentación al procesar los datos directamente en el componente o dentro del template.
-- **Reduce la legibilidad declarativa de la plantilla**: el uso de funciones o getters en lugar de pipes hace que las expresiones sean más difíciles de entender a simple vista.
-- **Impacta negativamente en el rendimiento**: las funciones invocadas desde el template se ejecutan en cada ciclo de detección de cambios, incluso si sus argumentos no han cambiado.
-- **Dificulta el mantenimiento y la escalabilidad**: al duplicar transformaciones en múltiples componentes o controladores, se incrementa el riesgo de inconsistencias y errores.
-- **Desaprovecha las ventajas del sistema de `pure pipes`**: como la memoización automática y el bajo coste computacional cuando no hay cambios en los datos de entrada.
-- **Limita la reutilización de lógica transformadora**: al no encapsularla como una unidad reutilizable, testeable y declarativa como lo permite un pipe.
+By doing so, developers break Angular's declarative paradigm, increase maintenance complexity, and may introduce performance issues, particularly when the transformation is expensive or applied to large datasets.
 
-----
-## Non-Compliant code example
+## Why This Is a Code Smell
+
+- **Violates separation of concerns**: Transformation logic is embedded either in the component logic or directly within the template, rather than being cleanly abstracted.
+- **Decreases template readability**: Using functions or getters instead of pipes results in less expressive and harder-to-read templates.
+- **Hurts performance**: Methods called in the template are re-evaluated on every change detection cycle—even if their inputs haven't changed.
+- **Reduces maintainability and scalability**: Duplicating transformation logic across multiple components or controllers increases the likelihood of inconsistencies and bugs.
+- **Neglects the benefits of pure pipes**: Pure pipes are automatically memoized and optimized by Angular, making them a lightweight and efficient solution when inputs remain unchanged.
+- **Limits reusability**: Logic that could be encapsulated in a declarative, testable, and reusable pipe remains fragmented or duplicated.
+
+---
+
+## Non-Compliant Code Example
+
 ```ts
 import { Component } from '@angular/core';
 
@@ -37,10 +42,11 @@ export class PipeDemonstrationComponent {
 }
 ```
 
-## Compliant code example
+---
+
+## Compliant Code Example
 
 ```ts
-
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'filesize' })
@@ -72,6 +78,10 @@ export class PipeDemonstrationComponent {
   size = 0;
 }
 ```
+
+---
+
 ## Sources
-- https://codeburst.io/angular-bad-practices-eab0e594ce92 section 7 (*Not using/Misusing Pipes*)
-- https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 section 2 (*Misusing or not using some Angular features*)
+
+- [https://codeburst.io/angular-bad-practices-eab0e594ce92](https://codeburst.io/angular-bad-practices-eab0e594ce92) – Section 7 (*Not using/Misusing Pipes*)
+- [https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7](https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7) – Section 2 (*Misusing or not using some Angular features*)

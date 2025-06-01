@@ -17,7 +17,7 @@
 | [Duplicate state across components](duplicate_state_across_components.md)                                   | 03    |
 | [Multiple subscriptions](multiple_subscriptions.md)                                                         | 02    |
 | [Use a component in multiple modules](use_a_component_in_multiple_modules.md)                               | 03    |
-| [Mixing behaviors in Angular’s Lifecycle](mixing_behaviours_in_angulars_lifecycles.md)                      | 02    | 
+| [`ngOnChanges` Misconceptions](ngonchanges_misconceptions.md)                                               | 02    | 
 | [Give streams to children components](give_streams_to_children_components.md)                               | 02    | 
 | [Long import paths instead of alias](long_imports_patsh_instead_of_alias.md)                                | 02    | 
 | [No usage of bundlers to reduce size of application](no_usage_of_bundlers_to_reduce_size_of_application.md) | 02    | 

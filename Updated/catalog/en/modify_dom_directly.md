@@ -1,53 +1,52 @@
-# Modify DOM directly
+# Modify DOM Directly
 
 ## Description
 
-Este *code smell* ocurre cuando se modifica directamente el DOM mediante APIs nativas del navegador como `document.querySelector`, `document.getElementById`, `innerHTML`, `appendChild` o bibliotecas como `jQuery`, así como cuando se accede directamente al DOM con `ElementRef.nativeElement`.
+This code smell occurs when the DOM is directly modified using native browser APIs such as `document.querySelector`, `document.getElementById`, `innerHTML`, or `appendChild`, or by relying on external libraries like jQuery. It also applies when directly accessing the DOM via `ElementRef.nativeElement`.
 
-Angular es un framework basado en un modelo **declarativo y reactivo**. Proporciona mecanismos seguros, escalables y testables para reflejar cambios de estado en la vista a través de su sistema de plantillas, directivas, bindings y encapsulación. Saltarse estos mecanismos para manipular manualmente el DOM **rompe las abstracciones del framework**, introduce riesgos de seguridad, reduce la mantenibilidad y complica el testing.
+Angular is a framework built around a **declarative and reactive model**. It provides safe, scalable, and testable mechanisms to reflect state changes in the view through its templating system, directives, bindings, and encapsulation. Bypassing these abstractions to manipulate the DOM manually **breaks the framework's design principles**, introduces security risks, reduces maintainability, and complicates testing.
 
-En lugar de manipular el DOM directamente, Angular promueve el uso de:
+Instead of directly manipulating the DOM, Angular encourages the use of:
 
-- **Propiedades de plantilla y bindings estructurados** (`[hidden]`, `[style]`, `[class]`, `[attr.disabled]`, `[innerHTML]`, etc.)
-- **Directivas estructurales y de atributos** (`*ngIf`, `*ngFor`, `ngClass`, `ngStyle`)
-- **Directivas personalizadas** para manipulación compleja
-- **`Renderer2`** como mecanismo seguro y desacoplado para casos justificados
-- **`ElementRef` sólo con sanitización y en escenarios muy controlados**
+- **Template bindings and structural bindings** (`[hidden]`, `[style]`, `[class]`, `[attr.disabled]`, `[innerHTML]`, etc.)
+- **Structural and attribute directives** (`*ngIf`, `*ngFor`, `ngClass`, `ngStyle`)
+- **Custom directives** for more advanced behavior
+- **`Renderer2`** for safe and decoupled DOM manipulation
+- **`ElementRef`** only in highly controlled and sanitized contexts
 
+## Why This Is a Code Smell
 
-## Why is a code smell
-
-- **Rompe el modelo declarativo de Angular**: al modificar directamente el DOM se ignora el sistema de bindings, cambiando el estado de la vista fuera del flujo natural de Angular.
-- **Compromete la seguridad de la aplicación**: el uso de `innerHTML` sin sanitización puede permitir ataques XSS (*Cross-Site Scripting*).
-- **Limita la compatibilidad entre plataformas**: el código puede fallar en entornos de renderizado como SSR (*Server-Side Rendering*), Web Workers o Angular Universal.
-- **Dificulta la mantenibilidad**: acceder al DOM directamente acopla el código a la estructura interna del HTML, que puede cambiar.
-- **Complica la testabilidad**: el acceso directo al DOM hace que los tests sean frágiles y menos predecibles.
-- **Viola el principio de separación de responsabilidades**: mezcla lógica de presentación con manipulación directa del entorno.
+- **Breaks Angular's declarative model**: Direct DOM manipulation circumvents the binding system and alters the view outside of Angular’s controlled update cycle.
+- **Introduces security risks**: Unsanitized use of `innerHTML` can open the door to Cross-Site Scripting (XSS) attacks.
+- **Reduces platform compatibility**: Code relying on direct DOM access may fail in server-side rendering environments like Angular Universal or in Web Workers.
+- **Impairs maintainability**: Coupling logic to HTML structure makes code fragile to view changes.
+- **Complicates testability**: Direct DOM access leads to fragile and unpredictable tests.
+- **Violates separation of concerns**: Blends UI logic with platform-specific manipulation.
 
 ---
 
-## Non-Compliant code example
+## Non-Compliant Code Example
 
 ```ts
 ngAfterViewInit(): void {
   const input = document.querySelector('.input');
   if (input) {
     input.setAttribute('disabled', 'true');
-    input.classList.add('resaltado');
+    input.classList.add('highlighted');
   }
 
   const container = document.getElementById('main');
   if (container) {
-    container.innerHTML = '<p>Hola</p>';
+    container.innerHTML = '<p>Hello</p>';
   }
 }
 ```
 
 ---
 
-## Compliant code example
+## Compliant Code Examples
 
-### Usar bindings declarativos
+### Declarative bindings
 
 ```ts
 @Component({
@@ -58,19 +57,19 @@ ngAfterViewInit(): void {
 export class TestComponent {
   isDisabled = true;
   isHighlighted = true;
-  htmlContent = this.sanitizer.bypassSecurityTrustHtml('<p>Hola</p>');
+  htmlContent = this.sanitizer.bypassSecurityTrustHtml('<p>Hello</p>');
 
   constructor(private sanitizer: DomSanitizer) {}
 }
 ```
 
 ```html
-<!-- Declarativo y seguro -->
-<input [disabled]="isDisabled" [ngClass]="{ 'resaltado': isHighlighted }" />
+<!-- Declarative and safe -->
+<input [disabled]="isDisabled" [ngClass]="{ 'highlighted': isHighlighted }" />
 <div [innerHTML]="htmlContent"></div>
 ```
 
-### Directiva personalizada
+### Custom directive
 
 ```ts
 @Directive({
@@ -89,7 +88,7 @@ export class AutoFocusDirective implements AfterViewInit {
 <input appAutoFocus />
 ```
 
-### Manipulación controlada con Renderer2
+### Controlled DOM manipulation using Renderer2
 
 ```ts
 @Component({ ... })
@@ -100,19 +99,20 @@ export class ButtonComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.renderer.setAttribute(this.buttonRef.nativeElement, 'disabled', 'true');
-    this.renderer.addClass(this.buttonRef.nativeElement, 'resaltado');
+    this.renderer.addClass(this.buttonRef.nativeElement, 'highlighted');
   }
 }
 ```
 
 ```html
-<button #myBtn>Haz clic</button>
+<button #myBtn>Click me</button>
 ```
 
 ---
 
 ## Sources
-- https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html section 1.4
-- https://rules.sonarsource.com/typescript/RSPEC-6268/ 
-- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 1 (*Direct DOM Manipulation*) and 2 (*Using jQuery with Angular*)
-- https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 4
+
+- [TatvaSoft – Common Angular Pitfalls](https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html) – Section 1.4
+- [SonarSource Rule RSPEC-6268](https://rules.sonarsource.com/typescript/RSPEC-6268/)
+- [Chudovo – Most Common Angular Mistakes](https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/) – Sections 1 and 2
+- [OPTASY – Top 5 Angular Mistakes](https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65) – Section 4

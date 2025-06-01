@@ -1,22 +1,26 @@
 # God Component
+
 ## Description
-Un *God Component* es un componente de Angular que asume una cantidad excesiva de responsabilidades. Suele encargarse de obtener datos, gestionar el estado, manejar eventos, contener lógica de negocio compleja y renderizar la interfaz de usuario en un mismo lugar. Esto viola el *Principio de Responsabilidad Única* y dificulta la escalabilidad y capacidad de prueba del código.
+
+A **God Component** in Angular is one that takes on too many responsibilities. It often handles data fetching, state management, event handling, complex business logic, and UI rendering all within a single component. This violates the **Single Responsibility Principle (SRP)** and hinders both scalability and testability.
 
 > [!Note]
-> Este code smell muy probablemente aparezca junto con [`Mixing Smart and Dumb Components`](mixing_smart_and_dump_components.md), debido a su alta similitud y conexión. 
-> 
-> La principal diferencia es que este se centra en el abuso de responsabilidades y el otro se centra en el mal uso de los componentes juntando en uno solo, componentes reutilizables que manejen lógica simple de interfaz (dumb) con componentes organizativos que obtienen los datos de los servicios y se encargan de organizar y disponer las componentes visuales (smart).
+> This code smell often appears alongside [`Mixing Smart and Dumb Components`](mixing_smart_and_dump_components.md), due to their high similarity and conceptual overlap.
+> The key difference is that **God Component** refers to an abuse of responsibilities within a single component, while *Mixing Smart and Dumb Components* refers to mixing component roles—combining presentation-only components (dumb) with those responsible for orchestration and data management (smart).
 
-## Why is a code smell
-- Dificulta la reutilización del código.
-- Hace que las pruebas unitarias sean más complejas y lentas.
-- Obstaculiza la mantenibilidad y la comprensión del componente.
-- Viola el principio de responsabilidad única (*Single Responsibility Principle*).
-- Aumenta el acoplamiento entre lógica de negocio y presentación.
-- Puede llevar a errores difíciles de rastrear en aplicaciones grandes.
+## Why This Is a Code Smell
 
-----
-## Non-Compliant code example
+- **Limited reusability**: When a component handles multiple concerns, its logic becomes harder to extract and reuse across the application.
+- **Complicated testing**: Testing a component with many responsibilities requires mocking or stubbing many unrelated behaviors.
+- **Poor maintainability**: Large, monolithic components are harder to read, navigate, and safely refactor.
+- **Violation of the Single Responsibility Principle**: Mixing unrelated responsibilities in a single component leads to fragile, error-prone code.
+- **Tight coupling between layers**: Business logic and UI are intertwined, reducing flexibility and separation of concerns.
+- **Increased risk of hidden bugs**: Oversized components can contain subtle issues that are harder to isolate and fix.
+
+---
+
+## Non-Compliant Code Example
+
 ```ts
 @Component({
   selector: 'app-dashboard',
@@ -56,7 +60,9 @@ export class DashboardComponent implements OnInit {
 ```
 
 ---
-## Compliant code example
+
+## Compliant Code Example
+
 ```ts
 // user.service.ts
 @Injectable({ providedIn: 'root' })
@@ -104,12 +110,14 @@ export class DashboardComponent implements OnInit {
 }
 ```
 
-----
+---
+
 ## Sources
-- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j 4º sin
-- https://codeburst.io/angular-bad-practices-eab0e594ce92 1º section (*Not making a REAL use of Angular’s components*)
-- https://javascript-conference.com/blog/angular-code-smells/ 5º section (*Injecting services*)
-- https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7 1º section (*Write external system interactions inside component*)
-- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ 13º practice
-- https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html 1.2º section
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 4.1
+
+- [https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j](https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j) (4th sin)
+- [https://codeburst.io/angular-bad-practices-eab0e594ce92](https://codeburst.io/angular-bad-practices-eab0e594ce92) (1st section: *Not making a REAL use of Angular’s components*)
+- [https://javascript-conference.com/blog/angular-code-smells/](https://javascript-conference.com/blog/angular-code-smells/) (5th section: *Injecting services*)
+- [https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7](https://medium.com/codex/avoid-these-bad-practices-when-you-are-an-angular-developer-135323db74c7) (1st section: *Write external system interactions inside component*)
+- [https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) (13th practice)
+- [https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html](https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html) (Section 1.2)
+- [https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb](https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb) (Section 4.1)

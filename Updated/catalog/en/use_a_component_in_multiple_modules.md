@@ -1,25 +1,26 @@
-# Use a component in multiple modules
+# Use a Component in Multiple Modules
 
 ## Description
 
-Uno de los errores más comunes (y frecuentemente pasados por alto) en Angular es **intentar declarar un mismo componente en varios módulos** (`NgModule`). Angular **no permite** que un componente aparezca más de una vez en las secciones `declarations` de distintos módulos, y hacerlo provoca errores de compilación.
+One of the most common—and often overlooked—mistakes in Angular is **attempting to declare the same component in multiple modules** (`NgModule`). Angular **explicitly disallows** a component from being listed in the `declarations` array of more than one module, and doing so will result in compilation errors.
 
-Este *code smell* indica una falta de organización en la estructura modular del proyecto. La solución correcta es **declarar el componente una sola vez en su propio módulo (módulo hijo), exportarlo desde ahí, e importar ese módulo donde se necesite**.
-
-
-## Why is a code smell
-
-- **Angular lo prohíbe explícitamente**: un componente no puede estar en varias `declarations`. En caso de hacerlo provoca errores en tiempo de compilación, como:
-  > `Type HeroComponent is part of the declarations of 2 modules...`
-- **Refleja una arquitectura inadecuada**: reutilizar un componente sin encapsularlo en un módulo propio.
-- **Dificulta la escalabilidad**: errores de duplicación se acumulan a medida que crece la base de código.
-- **Rompe el principio de reusabilidad modular**: los componentes compartidos deben ser independientes y bien encapsulados.
+This code smell points to a lack of modular organization in the project’s architecture. The proper solution is to **declare the component once in its own feature module, export it from there, and import that module wherever the component is needed**.
 
 ---
 
-## Non-Compliant code example
+## Why This Is a Code Smell
 
-HeroComponent se declara en dos módulos
+- **Explicitly forbidden by Angular**: A component cannot be declared in more than one module. Doing so produces compile-time errors such as:
+  > `Type HeroComponent is part of the declarations of 2 modules...`
+- **Indicates poor architectural planning**: Attempting to reuse a component without encapsulating it in its own module.
+- **Hinders scalability**: Duplication-related issues accumulate as the codebase grows.
+- **Breaks modular reusability principles**: Shared components should be properly encapsulated and reusable via module exports.
+
+---
+
+## Non-Compliant Code Example
+
+The same component is declared in two different modules:
 
 ```ts
 @NgModule({
@@ -31,7 +32,7 @@ export class AdminModule {}
 
 ```ts
 @NgModule({
-  declarations: [HeroComponent], // Ya está declarado en AdminModule
+  declarations: [HeroComponent], // Already declared in AdminModule
   exports: [HeroComponent]
 })
 export class DashboardModule {}
@@ -39,9 +40,9 @@ export class DashboardModule {}
 
 ---
 
-## Compliant code example
+## Compliant Code Example
 
-Declarar el componente en un módulo hijo y reutilizarlo vía `exports`/`imports`
+Declare the component in a dedicated feature module and reuse it through `exports`/`imports`:
 
 ```ts
 // hero.module.ts
@@ -68,8 +69,10 @@ export class AdminModule {}
 export class DashboardModule {}
 ```
 
-[source]: https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html
+---
+
 ## Sources
-- https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html section 1.6
-- https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/ section 3 (*Declaring the Same Component in More than One NgModule*)
-- https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65 section 5
+
+- [https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html](https://www.tatvasoft.com/outsourcing/2021/07/top-angular-developer-pitfalls.html) – Section 1.6
+- [https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/](https://chudovo.com/most-common-angular-mistakes-every-developer-should-avoid/) – Section 3 (*Declaring the Same Component in More than One NgModule*)
+- [https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65](https://medium.com/@OPTASY.com/what-are-the-5-most-common-angular-mistakes-that-developers-make-53f6d7c5bf65) – Section 5

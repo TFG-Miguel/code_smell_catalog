@@ -1,29 +1,29 @@
-# Multiple subscriptions
+# Multiple Subscriptions
 
 ## Description
 
-Este *code smell* aparece cuando se realizan **múltiples suscripciones a un mismo `Observable`**, ya sea:
+This code smell occurs when there are **multiple subscriptions to the same `Observable`**, either:
 
-- De forma explícita (`.subscribe()`) en diferentes partes del componente.
-- De forma implícita en la plantilla HTML usando varias veces el pipe `async` sobre el mismo `Observable`.
+- Explicitly via multiple `.subscribe()` calls in different parts of the component, or
+- Implicitly in the HTML template by using the `async` pipe multiple times on the same `Observable`.
 
-Este patrón puede provocar **efectos secundarios no deseados**, especialmente si el `Observable` es **"cold"** (como una llamada HTTP), ya que se ejecutará cada vez que se suscriba, duplicando peticiones, procesamiento o eventos.
+This pattern can lead to **undesired side effects**, especially if the `Observable` is **cold** (e.g., an HTTP request), since it re-executes every time it's subscribed to—potentially duplicating requests, computations, or event emissions.
 
-En Angular, esto suele suceder cuando se utiliza `async` más de una vez sobre el mismo `Observable` sin compartir su resultado. La solución es **compartir el stream** mediante operadores como `shareReplay` o `publishReplay(1), refCount()` para **caché local**, o almacenar el resultado intermedio en una variable.
-
----
-
-## Why is a code smell
-
-- **Dispara múltiples ejecuciones innecesarias**: llamadas HTTP, timers, cálculos, etc.
-- **Produce efectos secundarios duplicados**: como acciones duplicadas o renderizados extra.
-- **Complica el rastreo de errores**: múltiples flujos activos sobre el mismo origen.
-- **Reduce el rendimiento**: más operaciones, más suscripciones, más renders.
-- **Rompe la reactividad limpia**: ya que el `Observable` deja de ser predecible.
+In Angular, this often happens when the same `Observable` is used with the `async` pipe in multiple places without sharing the underlying stream. The recommended solution is to **share the stream** using operators like `shareReplay` or `publishReplay(1), refCount()` for **local caching**, or to store the intermediate result in a variable.
 
 ---
 
-## Non-Compliant code example
+## Why This Is a Code Smell
+
+- **Triggers unnecessary executions**: including HTTP calls, timers, or calculations.
+- **Causes duplicated side effects**: such as multiple actions or redundant rendering.
+- **Complicates error tracing**: multiple active subscriptions over the same source obscure the flow.
+- **Degrades performance**: more operations, more subscriptions, more re-renders.
+- **Breaks clean reactivity**: the `Observable` becomes non-deterministic and less predictable.
+
+---
+
+## Non-Compliant Code Example
 
 ```ts
 @Component({
@@ -40,22 +40,23 @@ export class JourneyListItemComponent {
   
   private journeyId$ = new BehaviorSubject<Journey | undefined>(undefined);
   journey$ = this.journeyId$.pipe(
-              switchMap((id) => this.journeyService.getJourney(id))
-             );
+    switchMap((id) => this.journeyService.getJourney(id))
+  );
 }
 ```
 
 ```html
-<h1>{{(journey$ | async).title}}</h1>
+<h1>{{ (journey$ | async).title }}</h1>
 <div *ngIf="let journey of (journey$ | async)">
-    <span>journey?.description</span>
+  <span>{{ journey?.description }}</span>
 </div>
 ```
 
 ---
 
-## Compliant code example
-### Trabajar con la misma suscripción
+## Compliant Code Example
+
+### Use a single subscription in the template
 
 ```html
 <ng-container *ngIf="journey$ | async as journey">
@@ -63,9 +64,11 @@ export class JourneyListItemComponent {
   <p>{{ journey.description }}</p>
 </ng-container>
 ```
-De esta manera se almacena la suscripción en la variable journey y solo se solicita una vez la suscripción.
 
-### Usar `shareReplay(1)` y `distinctUntilChanged()`
+This way, the subscription result is stored in a local variable, and the `Observable` is only subscribed to once.
+
+### Use `shareReplay(1)` and `distinctUntilChanged()`
+
 ```ts
 @Component({
   selector: 'journey-list-item',
@@ -73,46 +76,47 @@ De esta manera se almacena la suscripción en la variable journey y solo se soli
   styleUrls: ['./journey-list-item.component.scss'],
 })
 export class JourneyListItemComponent implements OnDestroy {
-
   @Input()
   set journeyId(value: number) {
     this.journeyId$.next(value);
   }
+
   @Output() addAction = new EventEmitter<void>();
-  
+
   private readonly journeyId$ = new BehaviorSubject<Journey | undefined>(undefined);
   journey$ = this.journeyId$.pipe(
-      distinctUntilChanged(),
-      switchMap((id) => this.journeyService.getJourney(id)),
-      shareReplay(1) // Replay much times as needed subscriptions
+    distinctUntilChanged(),
+    switchMap((id) => this.journeyService.getJourney(id)),
+    shareReplay(1) // Replays to multiple subscribers without re-fetching
   );
 }
 ```
 
->[!note]
-> En caso de que se haga una suscripción manual, se deberá gestionar la suscripción mediante [`takeUntilDestroyed`](#angular-16-con-takeuntildestroyed) (o `takeUntil` y un evento que notifique de la destrucción del componente, es mejor evitar disponiendo de `takeUntilDestroyed`).
+> [!note]
+> If using manual subscriptions, manage them using [`takeUntilDestroyed`](#angular-16-with-takeuntildestroyed) or with `takeUntil` and a dedicated destruction signal. Prefer `takeUntilDestroyed` if available.
 
 
-### Usar `publishReplay(1)` y `refCount()`
-Esta solución permite cachear la petición y emplearla en varios sitios habiendo realizado una única petición.
+### Use `publishReplay(1)` and `refCount()`
+
+This approach caches the result for reuse across multiple subscribers, avoiding redundant operations.
+
 ```ts
 pageTitle = this.route.params.pipe(
-    map((params) => params["id"]),
-    flatMap((id) =>
-        this.http.get(`api/pages/${id}/title`, { responseType: "text" })
-    ),
-    publishReplay(1),
-    refCount()
+  map(params => params["id"]),
+  flatMap(id =>
+    this.http.get(`api/pages/${id}/title`, { responseType: "text" })
+  ),
+  publishReplay(1),
+  refCount()
 );
 ```
 
 ```html
-<h1>{{pageTitle | async}}</h1>
-<p>You are viewing {{pageTitle | async}}.</p>
+<h1>{{ pageTitle | async }}</h1>
+<p>You are viewing {{ pageTitle | async }}.</p>
 ```
 
-
-### Angular 16+ con `takeUntilDestroyed`
+### Angular 16+ with `takeUntilDestroyed`
 
 ```ts
 @Component({...})
@@ -129,6 +133,10 @@ export class JourneyListItemComponent {
   }
 }
 ```
+
+---
+
 ## Sources
-- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e section 5
-- https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/
+
+- [https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e](https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e) – Section 5
+- [https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/](https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/)

@@ -1,21 +1,24 @@
-# Manual subscriptions
+# Manual Subscriptions
+
 ## Description
-Este *code smell* se da cuando se realizan suscripciones manuales en vez de aprovechar la abstracción de las suscripciones en plantillas (a través del pipe `async`) siempre que sea posible, ya que en ciertos casos (como llamadas http que se realizan una única vez, *cold observables*).
 
-Manejar las suscripciones manuales desde un componente (`.subscribe()`) conlleva la responsabilidad de cancelar la suscripción de manera que no produzca lagunas de memoria, con los riesgos que conlleva. Véase [not unsubscribe subscriptions](not_unsubscribe_subscriptions.md).
+This code smell occurs when subscriptions are managed manually inside Angular components using `.subscribe()` instead of leveraging the `async` pipe in the template whenever possible. Although there are valid use cases for manual subscriptions (e.g., cold observables or one-time HTTP calls), relying on them by default introduces risks.
 
-El uso de esta pipe nos simplifica el manejo de la suscripción, ya que se encarga de realizar la suscripción y cancelarla y limpiar la suscripción de forma transparente cuando el componente es destruido.
+Manually subscribing transfers the responsibility of unsubscribing to the developer, which can lead to memory leaks and lifecycle issues if not handled properly. See also: [Not Unsubscribing Subscriptions](not_unsubscribe_subscriptions.md).
 
-De esta manera logramos un código más limpio, simplificado y menos propenso a riesgos por el manejo de suscripciones.
+The `async` pipe abstracts away subscription and unsubscription logic by automatically subscribing to an observable and cleaning it up when the component is destroyed. This results in cleaner, safer, and more maintainable code.
 
-## Why is a code smell
-- **Riesgo de fuga de memoria**: Al ser el programador el responsable de asegurar la cancelación de la suscripción puede que no se realice correctamente y se produzcan fugas de memoria.
-- **Complejidad**: Debido a que el programador es responsable de realizar la cancelación, este debe implementar la lógica necesaria para poder cancelar de manera adecuada la suscripción, haciendo que la cantidad de código crezca y se dificulte su mantenimiento.
-- **Posible inconsistencia del dato**: La suscripción manual en el componente puede introducir errores cuando los datos sufren cambios fuera de la suscripción.
+## Why This Is a Code Smell
+
+- **Memory leak risk:** When the developer forgets to unsubscribe, observables may stay active after the component is destroyed, causing memory leaks.
+- **Increased complexity:** Manual subscription management introduces boilerplate logic for tracking and cleaning up resources, making the code harder to read and maintain.
+- **Potential data inconsistency:** Manually setting values in the component increases the risk of race conditions or stale data if updates occur outside the subscription’s control.
 
 ---
-## Non-Compliant code example
-```typescript
+
+## Non-Compliant Code Example
+
+```ts
 @Component({
   template: '<span>{{someStringToDisplay}}</span>'
 })
@@ -27,15 +30,17 @@ export class Foo implements OnInit {
       .pipe(
         takeUntilDestroyed(), 
         map(/* ... */)
-      ).subscribe((next) => {
+      )
+      .subscribe((next) => {
         this.someStringToDisplay = next;
         this.ref.markForCheck();
       });
   }
 }
+```
 
-
-// Or manually
+```ts
+// Or manually managing the subscription lifecycle:
 @Component({
   template: '<span>{{someStringToDisplay}}</span>'
 })
@@ -56,27 +61,28 @@ export class Foo implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 }
+```
 
-``` 
 ---
-## Compliant code example
-```typescript
+
+## Compliant Code Example
+
+```ts
 @Component({
   template: '<span>{{someStringToDisplay$ | async}}</span>'
 })
 export class Foo {
-    someStringToDisplay$ = someObservable.pipe(map(/*...*/));
+  someStringToDisplay$ = someObservable.pipe(map(/*...*/));
 }
 ```
 
-[1]:https://zydesoft.com/must-know-clean-code-principles-in-angular/
-[2]:https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/
+---
 
-----
 ## Sources
-- https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j 5º sin
-- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 5
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.3 (second solution for *Memory Leaks*)
-- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 7 (*Avoiding manual subscribes in Angular*)
-- https://zydesoft.com/must-know-clean-code-principles-in-angular/ section 9
-- https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/
+
+- [https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j](https://dev.to/this-is-angular/7-deadly-sins-of-angular-1n2j) (5th sin)
+- [https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) (Section 5)
+- [https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb](https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb) (Section 2.3 – second solution for *Memory Leaks*)
+- [https://blog.brecht.io/rxjs-best-practices-in-angular/](https://blog.brecht.io/rxjs-best-practices-in-angular/) (Section 7: *Avoiding manual subscribes in Angular*)
+- [https://zydesoft.com/must-know-clean-code-principles-in-angular/](https://zydesoft.com/must-know-clean-code-principles-in-angular/) (Section 9)
+- [https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/](https://blog.eyas.sh/2018/12/use-asyncpipe-when-possible/)

@@ -1,27 +1,26 @@
-# Subscribe in constructor
+# Subscribe in Constructor
 
 ## Description
 
-Este *code smell* se da cuando, por necesidad de requerir una suscripción durante toda la vida del componente, la suscripción se realiza en el constructor en vez de en el lifecycle `ngOnInit`. 
+This code smell occurs when a subscription is made directly inside the constructor of a component, instead of using the `ngOnInit` lifecycle hook. While this may seem straightforward, it breaks Angular’s lifecycle conventions and can lead to issues in maintainability, testability, and resource management.
 
-Las buenas practicas nos recomiendan respetar el ciclo de vida definido por angular y además de promover mantener los constructores ligeros y libres de lógica moviendo la lógica del constructor al lifecycle `ngOnInit`.
-
+Best practices recommend keeping constructors clean and free from logic. Any initialization involving service calls, subscriptions, or side effects should be handled within lifecycle hooks such as `ngOnInit`.
 
 > [!note]
-> Si la suscripción no es estrictamente necesaria y solo se emplea en la visualización de datos se puede plantear eliminar la suscripción y trabajar con la `async` pipe.
->
-> Véase [Manual subscription](manual_subscriptions.md).
+> If the subscription is only needed for rendering data, consider removing it entirely and using the `async` pipe instead.
+> See also: [Manual subscriptions](manual_subscriptions.md)
 
-## Why is a code smell
+## Why This Is a Code Smell
 
-- **Rompe el principio de responsabilidad única**: el constructor debe usarse solo para la inicialización básica del objeto, no para ejecutar lógica.
-- **Dificulta el testeo**: al suscribirse automáticamente al crear la instancia, no se puede probar fácilmente el componente sin que se activen efectos secundarios.
-- **Complica el ciclo de vida**: no respeta el flujo natural del ciclo de vida de Angular (`ngOnInit`), lo que puede generar problemas si otros elementos aún no están inicializados.
-- **Riesgo de fugas de memoria**: es más fácil olvidar cancelar la suscripción si no se sigue una estructura clara como en `ngOnDestroy`.
-
+- **Violates the single responsibility principle**: The constructor should only handle basic dependency injection and not contain operational logic.
+- **Hinders testability**: Automatically triggering subscriptions on instantiation introduces side effects that complicate unit tests.
+- **Lifecycle misalignment**: Bypassing Angular’s lifecycle hooks can result in errors when interacting with elements that are not yet initialized.
+- **Increased risk of memory leaks**: Subscriptions made in constructors are more prone to being forgotten or mismanaged, especially without a structured cleanup strategy like `ngOnDestroy`.
 
 ---
-## Non-Compliant code example
+
+## Non-Compliant Code Example
+
 ```ts
 @Component({ ... })
 export class UserComponent {
@@ -36,10 +35,12 @@ export class UserComponent {
 ```
 
 ---
-## Compliant code example
+
+## Compliant Code Example
+
 ```ts
 @Component({ ... })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   user: User | null = null;
   private userSubscription: Subscription | null = null;
 
@@ -52,13 +53,13 @@ export class UserComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    if (this.userSubscription) {
-      this.userSubscription.unsubscribe();
-    }
+    this.userSubscription?.unsubscribe();
   }
 }
+```
 
 ---
-```
+
 ## Sources
-- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 10
+
+- [https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471](https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471) (Section 10)

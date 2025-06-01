@@ -1,29 +1,28 @@
-# Duplicate state across components
+# Duplicate State Across Components
 
 ## Description
 
-Este *code smell* ocurre cuando múltiples componentes mantienen una copia local del mismo estado o información, en lugar de compartir una fuente única de verdad (*single source of truth*). Aunque puede parecer una solución rápida, este patrón se vuelve insostenible a medida que crece la complejidad de la aplicación, generando inconsistencias, redundancia y lógica dispersa.
+This code smell occurs when multiple components maintain their own local copies of the same state or data, instead of relying on a single source of truth. While duplicating state may seem like a quick solution, it becomes increasingly unsustainable as the application grows, leading to inconsistencies, redundancy, and scattered logic.
 
-Los ejemplos comunes incluyen duplicar datos de usuario, estado de sesión, filtros activos o resultados de búsqueda en componentes distintos. Este enfoque viola el principio DRY (*Don't Repeat Yourself*) y complica el mantenimiento del sistema.
+Common examples include duplicating user data, session status, active filters, or search results across components. This approach violates the DRY (Don't Repeat Yourself) principle and complicates system maintenance.
 
-La forma más adecuada de abordar este *code smell* es mediante el uso de un enfoque reactivo centralizado para el estado compartido. Las principales alternativas son:
+The most appropriate way to address this issue is to adopt a centralized and reactive state management strategy. The main alternatives are:
 
-- **RxJS**: Ideal para aplicaciones pequeñas o medianas. Utilizar `BehaviorSubject` en servicios inyectables permite crear *stores* ligeros, encapsulados y reactivos sin necesidad de librerías externas.
-- **NgRx**: Recomendado para aplicaciones grandes con múltiples fuentes de estado y lógica de negocio compleja. Implementa Redux y proporciona flujo unidireccional, trazabilidad de acciones y efectos para lógica asíncrona.
-- **Akita**: Alternativa moderna y más simple que NgRx, centrada en ergonomía y productividad. Especialmente útil para proyectos que requieren una solución potente pero con menor curva de aprendizaje.
+- **RxJS**: Suitable for small or medium-sized applications. Using `BehaviorSubject` in injectable services enables lightweight, encapsulated, and reactive stores without relying on external libraries.
+- **NgRx**: Recommended for large-scale applications with complex business logic and multiple sources of state. Implements Redux with a unidirectional data flow, action traceability, and support for asynchronous effects.
+- **Akita**: A modern and more ergonomic alternative to NgRx, focused on developer productivity. Particularly useful for projects needing a powerful solution with a smaller learning curve.
 
+## Why This Is a Code Smell
 
-## Why is a code smell
-
-- **Desincronización del estado**: diferentes componentes pueden mostrar datos inconsistentes.
-- **Aumento de complejidad**: se necesita lógica adicional para mantener sincronizados los estados.
-- **Dificultad para mantener**: cualquier cambio en el estado debe replicarse manualmente en múltiples lugares.
-- **Dificulta la escalabilidad**: el crecimiento de la aplicación incrementa el riesgo de errores.
-- **Rompe el principio de fuente única de verdad (*single source of truth*)**.
+- **State desynchronization**: Components may display inconsistent or outdated data.
+- **Increased complexity**: Extra logic is required to keep duplicated states in sync.
+- **Harder maintenance**: Any update to the shared state must be manually replicated in all copies.
+- **Poor scalability**: As the application grows, so does the likelihood of state-related bugs.
+- **Violates the single source of truth principle**: State should have one authoritative source.
 
 ---
 
-## Non-Compliant code example
+## Non-Compliant Code Example
 
 ```ts
 @Component({...})
@@ -33,15 +32,17 @@ export class ComponentA {
 
 @Component({...})
 export class ComponentB {
-  // Estado duplicado e independiente
+  // Duplicated and independent state
   user = { name: 'Ana', loggedIn: true }; 
 }
 ```
 
 ---
 
-## Compliant code example
+## Compliant Code Example
+
 ### RxJS
+
 ```ts
 // user-store.service.ts
 import { Injectable } from '@angular/core';
@@ -100,6 +101,7 @@ export class ComponentB {
 ```
 
 ### [NgRx][use_ngrx]
+
 ```ts
 // user.actions.ts
 import { createAction, props } from '@ngrx/store';
@@ -168,7 +170,7 @@ import { User } from './user.model';
 @Component({
   template: `
     <div *ngIf="user$ | async as user">
-      Bienvenida, {{ user.name }}!
+      Welcome, {{ user.name }}!
     </div>
   `
 })
@@ -182,6 +184,7 @@ export class ComponentB {
 ```
 
 ### [Akita][use_akita]
+
 ```ts
 // user.store.ts
 import { Injectable } from '@angular/core';
@@ -198,6 +201,7 @@ export class UserStore extends EntityStore<UserState, User> {
   }
 }
 ```
+
 ```ts
 // user.query.ts
 import { Injectable } from '@angular/core';
@@ -211,6 +215,7 @@ export class UserQuery extends QueryEntity<UserState> {
   }
 }
 ```
+
 ```ts
 // user.service.ts
 import { Injectable } from '@angular/core';
@@ -224,7 +229,6 @@ export class UserService {
 
   login(user: User) {
     this.userStore.setLoading(true);
-    // Asynchronous simulated login
     setTimeout(() => {
       this.userStore.set([user]);
       this.userStore.setLoading(false);
@@ -232,6 +236,7 @@ export class UserService {
   }
 }
 ```
+
 ```ts
 // component-a.component.ts
 import { Component } from '@angular/core';
@@ -257,7 +262,7 @@ import { User } from './user.model';
 @Component({
   template: `
     <div *ngIf="user$ | async as user">
-      Bienvenida, {{ user.name }}!
+      Welcome, {{ user.name }}!
     </div>
   `
 })
@@ -265,16 +270,18 @@ export class ComponentB {
   user$: Observable<User | undefined>;
 
   constructor(private userQuery: UserQuery) {
-    // Identify the user by the User Id
     this.user$ = this.userQuery.selectEntity(1);
   }
 }
 ```
 
-## Sources
-- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ *Bigger picture -> state management* section
-- https://www.sourceallies.com/2020/11/state-management-anti-patterns/ section 1 and 2
-- https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d section 3 and 6
+---
 
-[use_ngrx]:https://medium.com/@igorm573/state-management-with-ngrx-in-angular-66ddc61cdf14
-[use_akita]:https://medium.com/@ShantKhayalian/state-management-in-angular-ngrx-vs-akita-e31d81a2ec87
+## Sources
+
+- [https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) – "Bigger picture -> state management" section
+- [https://www.sourceallies.com/2020/11/state-management-anti-patterns/](https://www.sourceallies.com/2020/11/state-management-anti-patterns/) – Sections 1 and 2
+- [https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d](https://roshancloudarchitect.me/identifying-and-eliminating-code-smells-in-angular-micro-frontends-advanced-techniques-for-6f07a781f93d) – Sections 3 and 6
+
+[use_ngrx]: https://medium.com/@igorm573/state-management-with-ngrx-in-angular-66ddc61cdf14
+[use_akita]: https://medium.com/@ShantKhayalian/state-management-in-angular-ngrx-vs-akita-e31d81a2ec87

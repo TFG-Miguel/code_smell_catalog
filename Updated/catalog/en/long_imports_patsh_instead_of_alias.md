@@ -1,30 +1,34 @@
-# Long import paths instead of alias
+# Long Import Paths Instead of Aliases
 
 ## Description
 
-Este *code smell* ocurre cuando se utilizan rutas de importación largas y relativas (por ejemplo, `../../../../services/user/user.service`) en lugar de definir y usar **alias de importación** (`@services/user/user.services`). A medida que crece la estructura de carpetas de una aplicación Angular, estas rutas relativas profundas se vuelven difíciles de leer, mantener y refactorizar.
+This code smell arises when long and deeply nested **relative import paths** are used (e.g., `../../../../services/user/user.service`) instead of defining and using **import aliases** (e.g., `@services/user/user.service`). As the folder structure of an Angular application grows, deep relative paths become increasingly difficult to read, maintain, and refactor.
 
-Angular (a través de TypeScript) permite definir alias personalizados en el archivo `tsconfig.json`, lo que facilita importaciones limpias, claras y estables. Usar alias ayuda a mejorar la mantenibilidad, evitar errores y facilitar la navegación entre módulos.
+Angular (via TypeScript) supports **custom path aliases** defined in the `tsconfig.json` file. Using aliases results in cleaner, more maintainable, and more stable imports, improving overall code quality and developer experience.
 
-## Why is a code smell
+## Why This Is a Code Smell
 
-- **Reduce la legibilidad**: las rutas largas son visualmente ruidosas y difíciles de seguir.
-- **Dificulta el mantenimiento**: los cambios en la estructura de carpetas requieren actualizar muchas rutas.
-- **Aumenta la probabilidad de errores**: es fácil equivocarse con el número de `../`.
-- **Rompe la escalabilidad**: en proyectos grandes, las rutas relativas generan confusión.
-- **Dificulta la navegación en el editor**: el autocompletado y la resolución de paths se vuelve menos predecible.
+- **Reduces readability**: long relative paths are visually noisy and hard to follow.
+- **Increases maintenance burden**: changes in folder structure require updating many imports.
+- **Error-prone**: it’s easy to miscount the number of `../` segments and reference the wrong path.
+- **Hurts scalability**: large projects become harder to navigate and maintain with relative imports.
+- **Hinders navigation in editors**: autocomplete and path resolution become less predictable and harder to manage.
+
 ---
-## Non-Compliant code example
+
+## Non-Compliant Code Example
 
 ```ts
 import { UserService } from '../../../../core/services/user/user.service';
 import { environment } from '../../../../environments/environment';
 ```
+
 ---
-## Compliant code example
+
+## Compliant Code Example
 
 ```ts
-// tsconfig.json (o tsconfig.base.json)
+// tsconfig.json or tsconfig.base.json
 {
   "compilerOptions": {
     "baseUrl": "./",
@@ -42,8 +46,11 @@ import { UserService } from '@core/services/user/user.service';
 import { environment } from '@env';
 ```
 
->[!tip]
-> Define alias para carpetas comunes como `@core`, `@shared`, `@env`, `@features`, `@models`.
+> [!tip]
+> Define aliases for common folders like `@core`, `@shared`, `@env`, `@features`, and `@models` to streamline imports and improve maintainability.
+
+---
 
 ## Sources
-- https://javascript-conference.com/blog/angular-code-smells/ section 1 (*Code smells*)
+
+- [https://javascript-conference.com/blog/angular-code-smells/](https://javascript-conference.com/blog/angular-code-smells/) – Section 1 (*Code smells*)

@@ -1,65 +1,69 @@
-# Include functions in templates
+# Include Functions in Templates
 
 ## Description
 
-Este *code smell* se da cuando se realizan llamadas a funciones directamente dentro de las plantillas Angular, dentro de expresiones de interpolación (`{{ }}`) o directivas estructurales (`*ngIf`, `*ngFor`).
+This code smell appears when functions are called directly inside Angular templates—whether in interpolation expressions (`{{ }}`) or structural directives like `*ngIf` or `*ngFor`.
 
-Dichas llamadas pueden provocar importantes problemas de rendimiento y dificultar el mantenimiento del código. Aunque parezca conveniente, estas funciones se ejecutan en cada ciclo de detección de cambios (*change detection*), lo que puede generar múltiples invocaciones innecesarias y consecuencias no deseadas.
+Although it may seem convenient, such calls can severely impact performance and reduce maintainability. These functions are executed on every change detection cycle, often resulting in unnecessary repeated invocations.
 
-Las propiedades getters, aunque visualmente no lo parezcan, también son funciones y por tanto debe evitarse su uso, ya que su uso en plantillas implica una ejecución por cada renderizado.
+Even `getters`, which may appear harmless, are function calls and follow the same behavior: they are reevaluated every time Angular checks the template for changes.
 
-Para evitarlo, se recomienda:
+To avoid this, it's recommended to:
 
-- Usar variables evaluadas o calculadas previamente en el componente.
-- Usar `pipes` personalizadas puras para realizar transformaciones declarativas en la vista.
+- Precompute values inside the component class and bind to variables instead.
+- Use custom **pure pipes** to perform declarative transformations in the view.
 
 > [!NOTE]
-> Existe una regla en `@angular-eslint` que asegura que las pipes personalizadas sean puras ([no-pipes-impure](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-pipe-impure.ts)), lo que está relacionado con este code smell, aunque no lo cubre por completo.
+> There is an `@angular-eslint` rule related to this smell: [`no-pipe-impure`](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-pipe-impure.ts), which ensures that custom pipes are pure, although it does not fully address this issue.
 
-## Why is a code smell
+## Why This Is a Code Smell
 
-- **Degrada el rendimiento**: las funciones se ejecutan múltiples veces durante el ciclo de vida del componente.
-- **Oculta problemas de eficiencia**: es difícil detectar problemas de rendimiento al revisar solo el HTML.
-- **Reduce la legibilidad**: el template se vuelve más difícil de seguir con expresiones complejas.
-- **Dificulta el testeo**: no se puede controlar cuándo y cuántas veces se ejecutan las funciones.
+- **Performance degradation:** Functions inside templates are re-evaluated multiple times during change detection, leading to CPU overuse.
+- **Hidden inefficiencies:** These issues are difficult to identify by inspecting only the HTML, as the performance cost isn't visually apparent.
+- **Reduced readability:** Embedding complex expressions in templates makes them harder to understand and maintain.
+- **Testing complications:** Since you cannot control how many times the function is executed, unit testing becomes less predictable and more brittle.
 
 ---
-## Non-Compliant code example
+
+## Non-Compliant Code Example
+
 ```html
 <div *ngIf="isAdult(user)">
-  Bienvenido, {{ user.name.toUpperCase() }}!
+  Welcome, {{ user.name.toUpperCase() }}!
 </div>
 
-<p>Fecha: {{ formatDate(createdAt) }}</p>
+<p>Date: {{ formatDate(createdAt) }}</p>
 ```
+
 ---
-## Compliant code example
+
+## Compliant Code Example
+
 ```html
 <div *ngIf="isAdultUser">
-  Bienvenido, {{ user.name | uppercaseName }}!
+  Welcome, {{ user.name | uppercaseName }}!
 </div>
 
-<p>Fecha: {{ formattedDate }}</p>
+<p>Date: {{ formattedDate }}</p>
 ```
+
 ```ts
 @Component({ 
   selector: 'app-example',
   templateUrl: './newsletter.component.html',
   imports: [UppercaseNamePipe]
- })
+})
 export class ExampleComponent implements OnInit {
 
   @Input() user!: { name: string; age: number; };
   @Input() createdAt!: Date;
   
-  // Pre calculated values have to be updated 
-  // if the input source changes
-  isAdultUser:boolean = false;
-  formattedDate:string = '';
+  isAdultUser: boolean = false;
+  formattedDate: string = '';
 
   ngOnInit() {
-    updateIsAdultUser();
-    updateFormattedDate()
+    this.updateIsAdultUser();
+    this.updateFormattedDate();
   }
 
   private updateIsAdultUser(): void {
@@ -71,6 +75,7 @@ export class ExampleComponent implements OnInit {
   }
 }
 ```
+
 ```ts
 @Pipe({
   name: 'uppercaseName',
@@ -82,8 +87,12 @@ export class UppercaseNamePipe implements PipeTransform {
   }
 }
 ```
+
 ---
+
 ## Sources
-- https://alex-klaus.com/angular-code-review/ section 2
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 2.2
-- https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e section 2
+
+- [https://alex-klaus.com/angular-code-review/](https://alex-klaus.com/angular-code-review/) (Section 2)
+- [https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb](https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb) (Section 2.2)
+- [https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e](https://medium.com/@robert.maiersilldorff/code-smells-in-angular-deep-dive-part-i-d63dd5f5215e) (Section 2)
+

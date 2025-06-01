@@ -1,29 +1,29 @@
-# Give streams to children components
+# Give Streams to Child Components
 
 ## Description
 
-Este *code smell* ocurre cuando se pasa un `Observable` o `Subject` directamente como `@Input()` a un componente hijo, en lugar de enviarle los datos ya consumidos (por ejemplo, con `async`) o encapsular la lógica de suscripción dentro del componente padre.
+This code smell occurs when an `Observable` or `Subject` is passed directly to a child component via `@Input()`, instead of providing already-consumed data (e.g., via `async` pipe) or handling subscriptions entirely in the parent component.
 
-Aunque técnicamente es válido pasar streams a los hijos, es acoplamiento innecesario del componente hijo al conocimiento de RxJS y que lo obliga a manejar suscripciones, estados intermedios o transformaciones que deberían resolverse en niveles superiores.
+While technically valid, passing streams directly increases the child component's dependency on RxJS. It forces the child to manage subscriptions, intermediate state, or transformations—responsibilities that should remain in higher-level components.
 
-En Angular, los componentes deben recibir **datos procesados y listos para mostrar**. El trabajo con observables debe estar encapsulado en el componente que tiene el control del flujo de datos.
+In Angular, child components should receive **ready-to-display data**, while observables and reactive logic should remain encapsulated in the parent or container component that controls the data flow.
 
-## Why is a code smell
+## Why This Is a Code Smell
 
-- **Rompe la encapsulación**: el hijo debe conocer detalles de RxJS que no le corresponden.
-- **Aumenta el acoplamiento**: el padre impone al hijo cómo debe consumir los datos.
-- **Dificulta la reutilización**: el componente hijo ya no puede usarse fácilmente sin observables.
-- **Complica el testeo**: hay que simular observables en lugar de pasar datos simples.
-- **Rompe el patrón de unidireccionalidad de datos**: los hijos deberían ser consumidores pasivos.
-
+- **Breaks encapsulation**: the child must know how to handle observables, which violates abstraction.
+- **Increases coupling**: the parent dictates how the child must consume the data.
+- **Reduces reusability**: the child component cannot be easily reused without passing streams.
+- **Makes testing harder**: tests must simulate observables rather than using simple mock data.
+- **Violates one-way data flow**: child components should remain passive data consumers, not reactive processors.
 
 ---
-## Non-Compliant code example
+
+## Non-Compliant Code Example
 
 ```ts
 @Component({ 
-    template: '<child-component [users]="users$"></child-component>'
- })
+  template: '<child-component [users]="users$"></child-component>'
+})
 export class ParentComponent {
   users$ = this.userService.getUsers();
 }
@@ -31,39 +31,42 @@ export class ParentComponent {
 
 ```ts
 @Component({ 
-    selector: 'child-component',
- })
+  selector: 'child-component'
+})
 export class ChildComponent {
   @Input() users!: Observable<User[]>;
 
   ngOnInit(): void {
-    this.users.subscribe(data => { ... });
+    this.users.subscribe(data => {
+      // Process data internally
+    });
   }
 }
 ```
 
 ---
-## Compliant code example
+
+## Compliant Code Example
 
 ```ts
 @Component({ 
-    template: '<child-component [users]="users$ | async"></child-component>'
- })
+  template: '<child-component [users]="users$ | async"></child-component>'
+})
 export class ParentComponent {
   users$ = this.userService.getUsers();
 }
 ```
 
-
 ```ts
 @Component({ 
-    selector: 'child-component'
- })
+  selector: 'child-component'
+})
 export class ChildComponent {
   @Input() users: User[] = [];
 }
 ```
-Siguiendo con la linea anterior, si se usa el stream como input para varios componentes, se puede encapsular de la siguiente forma:
+
+If the same stream needs to be passed to multiple components, encapsulate the subscription like this:
 
 ```ts
 @Component({
@@ -78,8 +81,12 @@ export class ContainerComponent {
   users$ = this.userService.getUsers();
 }
 ```
-De esta forma se realiza una única suscripción que es aprovechada y empleada en todos los componentes con inputs.
+
+This ensures that only a **single subscription** is made and the result is reused across multiple inputs.
+
+---
 
 ## Sources
-- https://blog.brecht.io/rxjs-best-practices-in-angular/ section 8 (*Don’t pass streams to components directly*)
-- https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471 section 5 (*Don't pass streams to components*)
+
+- [https://blog.brecht.io/rxjs-best-practices-in-angular/](https://blog.brecht.io/rxjs-best-practices-in-angular/) – Section 8 (*Don’t pass streams to components directly*)
+- [https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471](https://www.slideshare.net/slideshow/rxjs-best-bad-practices-for-angular-developers/233392471) – Section 5 (*Don't pass streams to components*)

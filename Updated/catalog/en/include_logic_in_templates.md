@@ -1,66 +1,71 @@
-# Include logic in templates
+# Include Logic in Templates
+
 ## Description
-Este *code smell* se da cuando se realiza un uso excesivo de lógica en las plantillas.
 
-Aunque las plantillas html Angular permiten usar condiciones simples, su uso excesivo o anidado con lógica compleja (como múltiples comparaciones, estructuras condicionales anidadas o negaciones encadenadas) convierte la vista en algo difícil de leer, mantener y probar.
+This code smell occurs when templates contain excessive or complex logic.
 
-Esto incluye también el abuso de directivas como `*ngIf`, `*ngFor`, `ngSwitch` con condiciones complejas, y estructuras que deberían delegarse al componente o encapsularse mediante directivas personalizadas.
+While Angular templates support basic conditions, relying too heavily on in-template logic—such as chained comparisons, nested conditions, or negations—makes the view difficult to read, maintain, and test. Overuse of structural directives like `*ngIf`, `*ngFor`, or `ngSwitch` with complex expressions is another common symptom.
 
-Para mejorar la claridad del template se recomienda:
+To improve clarity and maintainability, it's recommended to:
 
-- Delegar la lógica al componente mediante propiedades precalculadas para lógicas complejas o resultados que no cambian frecuentemente o `getters`, si su lógica no es muy costosa o sus resultados cambian muy seguido, aunque se recomienda evitar su uso si es posible.
-- Encapsular condiciones en **directivas estructurales personalizadas** para mantener las plantillas declarativas.
+- Delegate logic to the component through precomputed properties for values that change infrequently.
+- Use lightweight `getters` only for simple or frequently updated logic (though avoid them if performance could be impacted).
+- Encapsulate repeated or complex logic in **custom structural directives**.
 
-## Why is a code smell
+## Why This Is a Code Smell
 
-- **Rompe la separación de responsabilidades**: mezcla lógica con presentación.
-- **Reduce la legibilidad**: dificulta entender qué hace la plantilla a simple vista.
-- **Complica la depuración**: errores en condiciones anidadas son difíciles de rastrear.
-- **Aumenta la complejidad**: estructuras condicionales profundas crean vistas difíciles de mantener.
-- **Reduce la reutilización**: las condiciones complejas embebidas no son reutilizables ni testeables.
+- **Breaks separation of concerns:** It mixes business logic with view rendering, violating the single-responsibility principle.
+- **Reduces readability:** Makes it harder to understand what the template does at a glance.
+- **Complicates debugging:** Logic embedded in templates is harder to inspect and trace.
+- **Increases complexity:** Deeply nested conditions lead to bloated, fragile views.
+- **Hinders reuse and testing:** Inline conditions can’t be easily reused or unit tested in isolation.
 
 ---
-## Non-Compliant code example
+
+## Non-Compliant Code Example
 
 ```ts
 @Component({
   template: `
-    <p *ngIf="role==='developer'"> Status: Developer </p>
+    <p *ngIf="role === 'developer'">Status: Developer</p>
   `
 })
 export class TestComponent implements OnInit {
-  public ngOnInit (): void {
+  ngOnInit(): void {
     this.role = 'developer';
   }
 }
 ```
----
-## Compliant code example
 
-### Mover la lógica al componente
+---
+
+## Compliant Code Example
+
+### Move Logic to the Component
 
 ```ts
 @Component({
   template: `
-    <p *ngIf="showDeveloperStatus"> Status: Developer </p>
+    <p *ngIf="showDeveloperStatus">Status: Developer</p>
   `
 })
 export class TestComponent implements OnInit {
-  this.role = 'developer';
-  // Precalculated value
-  this.showDeveloperStatus = true;
+  role = 'developer';
+  showDeveloperStatus = false;
 
-  ngOnInit (): void {
+  ngOnInit(): void {
     this.updateStatus();
   }
-  
-  private updateStatus() {
-    this.showDeveloperStatus = this.role === 'develop';
+
+  private updateStatus(): void {
+    this.showDeveloperStatus = this.role === 'developer';
   }
 }
 ```
 
-### Usar directivas personalizadas
+---
+
+### Use Custom Structural Directives
 
 ```ts
 @Directive({
@@ -81,18 +86,22 @@ export class IfAdultUserDirective {
   ) {}
 
   private isBanned(user: User): boolean {
+    // Business rule logic
     return false;
   }
 }
 ```
 
 ```html
+<!-- Clear and reusable condition -->
 <div *appIfAdultUser="user">
-  Bienvenido, {{ user.name }}!
+  Welcome, {{ user.name }}!
 </div>
 ```
 
 ---
+
 ## Sources
-- https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/ section 17
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 4.3
+
+- [https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/](https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/) (Section 17)
+- [https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb](https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb) (Section 4.3)

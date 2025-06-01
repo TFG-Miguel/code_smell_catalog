@@ -1,21 +1,26 @@
-# Inheritance over composition
+# Inheritance Over Composition
+
 ## Description
-En el desarrollo de aplicaciones Angular, es común reutilizar lógica compartida entre componentes. 
 
-Este *code smell* se da cuando esta reutilización acaba formando una arquitectura rígida y difícil de mantener, dicho de otro modo cuando varios componentes heredan de uno base. Para solucionar esto se propone el uso de componentes reutilizables los cuales empleen servicios intercambiables de manera que se ajusten a las necesidades de cada uso. 
+In Angular application development, it's common to reuse shared logic across components.
 
-De esta manera se logra una arquitectura más flexible, modular y reutilizable.
+This code smell occurs when such reuse leads to a rigid architecture based on class inheritance, where multiple components extend a base component to share functionality. This approach often results in tight coupling and limited flexibility.
 
-## Why is a code smell
-- **Acoplamiento rígido**: La herencia crea una relación fuerte entre la clase base y las derivadas, lo que dificulta la modificación o reutilización de componentes en contextos diferentes.
-- **Reutilización limitada**: Los componentes derivados heredan toda la funcionalidad de la clase base, incluso si solo necesitan una parte, lo que puede llevar a una sobrecarga innecesaria.
-- **Dificultad en pruebas**: Las dependencias compartidas en la clase base pueden complicar las pruebas unitarias de los componentes derivados.
-- **Problemas de mantenimiento**: Cambios en la clase base pueden tener efectos colaterales en todos los componentes que la extienden, aumentando el riesgo de introducir errores.
+Instead, it's recommended to use **composition**: create reusable components or services with interchangeable logic that can be injected and configured per use case. This leads to a more modular, flexible, and testable architecture.
+
+## Why This Is a Code Smell
+
+- **Tight coupling:** Inheritance creates a strong dependency between base and child components, making changes harder and reducing flexibility.
+- **Limited reusability:** Derived components inherit all functionality from the base class—even unnecessary parts—leading to bloated and less maintainable components.
+- **Difficult unit testing:** Shared dependencies in the base class complicate the testing of derived components, especially when mocking is required.
+- **Fragile maintenance:** Any change in the base component can introduce unexpected side effects in all components that inherit from it, increasing the risk of regressions.
 
 ---
-## Non-Compliant code example
 
-Cuestionario html empleados en ambos componentes
+## Non-Compliant Code Example
+
+### HTML Shared Across Components
+
 ```html
 <form [formGroup]="myform" (ngSubmit)="save()">
   <h1>Recovery password</h1>
@@ -24,8 +29,11 @@ Cuestionario html empleados en ambos componentes
   <span *ngFor="let error of errors">{{ error }}</span>
 </form>
 ```
-Componente base e hijos
-```typescript
+
+### Base and Inherited Components
+
+```ts
+// base-form.ts
 import { FormBuilder, Validators } from '@angular/forms';
 
 export class BaseForm {
@@ -35,6 +43,7 @@ export class BaseForm {
   });
 
   constructor(private fb: FormBuilder) {}
+
   save() {
     if (!this.myform.valid) {
       this.showErrors();
@@ -45,18 +54,16 @@ export class BaseForm {
   }
 
   showErrors() {
-    const emailError = this.myform.get('email').errors;
-    console.log(emailError);
-    Object.keys(emailError).forEach((value) => {
+    const emailError = this.myform.get('email')?.errors;
+    Object.keys(emailError || {}).forEach((value) => {
       this.errors = [...value];
     });
   }
 }
+```
 
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { BaseForm } from '../../core/baseForm';
-
+```ts
+// newsletter.component.ts
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
@@ -66,15 +73,13 @@ export class NewsletterComponent extends BaseForm {
     super(fb);
   }
 }
+```
 
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { BaseForm } from '../../core/baseForm';
-
+```ts
+// recovery-password.component.ts
 @Component({
   selector: 'app-recovery-password',
   templateUrl: './recovery-password.component.html',
-  styleUrls: ['./recovery-password.component.css'],
 })
 export class RecoveryPasswordComponent extends BaseForm {
   constructor(public fb: FormBuilder) {
@@ -83,57 +88,52 @@ export class RecoveryPasswordComponent extends BaseForm {
 }
 ```
 
-En este ejemplo, `UserFormComponent` hereda toda la lógica de `BaseFormComponent`, incluso si solo necesita una parte de ella, lo que puede llevar a una sobrecarga innecesaria y a un acoplamiento rígido.
+In this example, `NewsletterComponent` and `RecoveryPasswordComponent` inherit all logic from `BaseForm`, even if they only need a small subset of it—resulting in unnecessary overhead and rigid coupling.
 
 ---
-## Compliant code example
 
-### Servicio con lógica compartida
+## Compliant Code Example
 
-```typescript
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { BaseForm } from './baseForm';
+### Reusable Service with Shared Logic
 
+```ts
 @Injectable()
 export class FormWrapperService {
   public myform: FormGroup;
+  private _baseForm: BaseForm;
 
   public get errors(): string[] {
     return this._baseForm.errors;
   }
-  private _baseForm: BaseForm;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this._baseForm = new BaseForm(this.fb, this.http, 'A');
     this.myform = this._baseForm.myform;
   }
+
   save(form: FormGroup): boolean {
     this._baseForm.myform = form;
     this._baseForm.save();
     return this._baseForm.errors.length === 0;
   }
 }
-
 ```
 
-### Componente que utiliza el servicio
-```typescript
-import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { FormWrapperService } from '../../core/form-wrapper.service';
+### Component Using the Service
 
+```ts
 @Component({
   selector: 'app-waiting-list',
   templateUrl: './waiting-list.component.html',
 })
 export class WaitingListComponent {
   myform: FormGroup;
-  errors = [];
+  errors: string[] = [];
+
   constructor(private formWrapper: FormWrapperService) {
     this.myform = formWrapper.myform;
   }
+
   save() {
     if (!this.formWrapper.save(this.myform)) {
       this.errors = this.formWrapper.errors;
@@ -142,16 +142,15 @@ export class WaitingListComponent {
 }
 ```
 
->[!tip]
->Para agregar aún más flexibilidad, otra recomendación es la la sustitución de una implementación directa al servicio por una abstracción y su respectiva implementación, de esta manera se deja abierto a otros posibles servicios que, en caso de querer usarse en ese componente, solo será necesario especificar el cambio en el proveedor que queremos inyectar
+> [!TIP]
+> For even more flexibility, consider injecting an abstract interface instead of a concrete service. This allows for swapping implementations via Angular's dependency injection system without changing component logic.
 
-
-[1]:https://danywalls.com/understand-composition-and-inheritance-in-angular
-[2]:https://github.com/danywalls/how_handle_constructor_dependecies_in_components/
-[3]:https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d
 ---
+
 ## Sources
-- https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb section 1.1
-- https://danywalls.com/understand-composition-and-inheritance-in-angular 
-- https://dev.to/this-is-angular/you-dont-want-a-basecomponent-in-your-app-23hn 
-- https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d section 5
+
+- [https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb](https://levelup.gitconnected.com/refactoring-angular-applications-be18a7ee65cb) (Section 1.1)
+- [https://danywalls.com/understand-composition-and-inheritance-in-angular](https://danywalls.com/understand-composition-and-inheritance-in-angular)
+- [https://dev.to/this-is-angular/you-dont-want-a-basecomponent-in-your-app-23hn](https://dev.to/this-is-angular/you-dont-want-a-basecomponent-in-your-app-23hn)
+- [https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d](https://dev.to/vixero/common-mistakes-that-backend-programmers-make-in-angular-434d) (Section 5)
+

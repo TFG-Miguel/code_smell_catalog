@@ -24,12 +24,14 @@
 ## Non-Compliant Code Example
 
 ```ts
+// Consuming the first subscription (data dependency)
 this.userService.getUser().subscribe(user => {
   this.orderService.getOrders(user.id).subscribe(orders => {
     this.orders = orders;
   });
 });
 
+// Combination of the 2 subscriptions
 firstObservable$.pipe(
   take(1)
 )
@@ -48,12 +50,14 @@ firstObservable$.pipe(
 ## Compliant Code Example
 
 ```ts
+// Consuming the first subscription (data dependency)
 this.userService.getUser().pipe(
   switchMap(user => this.orderService.getOrders(user.id))
 ).subscribe(orders => {
   this.orders = orders;
 });
 
+// Combination of the 2 subscriptions
 firstObservable$.pipe(
   withLatestFrom(secondObservable$),
   first()

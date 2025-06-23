@@ -102,9 +102,6 @@ function printUsage() {
  *
  * @param {{recommended: {warnings:number, errors:number}, all: {warnings:number, errors:number}}}} rule
  */
-exports.getValue = ({
-  recommended: { warnings: w1, errors: e1 },
-  all: { warnings: w2, errors: e2 },
-}) => {
-  return w1 + e1 + w2 + e2;
+exports.getValue = ({ all: { warnings: w2, errors: e2 } }) => {
+  return w2 + e2;
 };

@@ -60,7 +60,6 @@
 | `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 125 | 0 | 125 |  |  | 💡 |
 | `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 48 | 48 | 0 | 🔧 |  |  |
 | `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 219 | 0 | 2 | 🔧 |  |  |
-| `no-host-metadata-property` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | ❌ | ❌ | ❌ |
 | `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 59 | 0 | 59 |  |  | 💡 |
 | `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 50 | 0 | 0 |  |  |  |
 | `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 47 | 0 | 0 |  |  |  |
@@ -71,8 +70,6 @@
 | `runtime-localize` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 21 | 0 | 0 |  |  |  |
 | `no-lifecycle-call` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-lifecycle-call) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |  |  |
 | `prefer-standalone` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-standalone.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-standalone.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-standalone) | 0 | 0 | 0 | 12 | 12 | 0 | 0 | 0 | 0 | 12 | 12 | 0 | 🔧 | ✅ |  |
-| `prefer-standalone-component` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 11 | 0 | ❌ | ❌ | ❌ |
-| `sort-ngmodule-metadata-arrays` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 | 9 | 0 | ❌ | ❌ | ❌ |
 | `directive-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/directive-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/directive-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/directive-selector) | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |  |  |
 | `no-output-native` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-native.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-native.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-native) | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  | ✅ |  |
 | `no-duplicates-in-metadata-arrays` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-duplicates-in-metadata-arrays.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-duplicates-in-metadata-arrays.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-duplicates-in-metadata-arrays) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |  |  |  |
@@ -249,6 +246,15 @@
 </details>
 
 <details>
+<summary>runtime-localize (projects: 1, matches: 21) </summary>
+
+| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
+|---|---|:--:|:--:|:--:|:--:|
+| [angular-example-app](repositories/report.angular-example-app.md#%EF%B8%8F-angular-example-app) | [angularexampleapp](repositories/report.angular-example-app.md#-angularexampleapp) | 0 | 0 | 0 | 21 |
+
+</details>
+
+<details>
 <summary>prefer-standalone (projects: 1, matches: 24) 🔧 ✅</summary>
 
 | Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
@@ -264,52 +270,6 @@
 |---|---|:--:|:--:|:--:|:--:|
 | [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill) | [ngx-quill](repositories/report.ngx-quill.md#-ngx-quill) | 0 | 9 | 0 | 9 |
 | [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic) | [first-app](repositories/report.gojs-angular-basic.md#-first-app) | 0 | 2 | 0 | 2 |
-
-</details>
-
-<details>
-<summary>runtime-localize (projects: 1, matches: 21) </summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [angular-example-app](repositories/report.angular-example-app.md#%EF%B8%8F-angular-example-app) | [angularexampleapp](repositories/report.angular-example-app.md#-angularexampleapp) | 0 | 0 | 0 | 21 |
-
-</details>
-
-<details>
-<summary>prefer-standalone-component (projects: 1, matches: 11) ❌ ❌ ❌</summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies) | [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies) | 0 | 0 | 0 | 11 |
-
-</details>
-
-<details>
-<summary>no-empty-lifecycle-method (projects: 1, matches: 10) ✅ 💡</summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template) | [ng-three-template](repositories/report.ng-three-template.md#-ng-three-template) | 0 | 5 | 0 | 5 |
-
-</details>
-
-<details>
-<summary>component-class-suffix (projects: 1, matches: 10) ✅</summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr) | [ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr) | 0 | 5 | 0 | 5 |
-
-</details>
-
-<details>
-<summary>sort-ngmodule-metadata-arrays (projects: 2, matches: 9) ❌ ❌ ❌</summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies) | [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies) | 0 | 0 | 0 | 6 |
-| [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr) | [ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr) | 0 | 0 | 0 | 3 |
 
 </details>
 
@@ -334,20 +294,29 @@
 </details>
 
 <details>
+<summary>no-empty-lifecycle-method (projects: 1, matches: 10) ✅ 💡</summary>
+
+| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
+|---|---|:--:|:--:|:--:|:--:|
+| [ng-three-template](repositories/report.ng-three-template.md#%EF%B8%8F-ng-three-template) | [ng-three-template](repositories/report.ng-three-template.md#-ng-three-template) | 0 | 5 | 0 | 5 |
+
+</details>
+
+<details>
+<summary>component-class-suffix (projects: 1, matches: 10) ✅</summary>
+
+| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
+|---|---|:--:|:--:|:--:|:--:|
+| [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr) | [ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr) | 0 | 5 | 0 | 5 |
+
+</details>
+
+<details>
 <summary>component-selector (projects: 1, matches: 6) </summary>
 
 | Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
 |---|---|:--:|:--:|:--:|:--:|
 | [ngx-quill](repositories/report.ngx-quill.md#%EF%B8%8F-ngx-quill) | [ngx-quill](repositories/report.ngx-quill.md#-ngx-quill) | 0 | 3 | 0 | 3 |
-
-</details>
-
-<details>
-<summary>no-output-native (projects: 1, matches: 4) ✅</summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 0 | 2 | 0 | 2 |
 
 </details>
 
@@ -362,29 +331,11 @@
 </details>
 
 <details>
-<summary>no-host-metadata-property (projects: 1, matches: 2) ❌ ❌ ❌</summary>
+<summary>no-output-native (projects: 1, matches: 4) ✅</summary>
 
 | Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
 |---|---|:--:|:--:|:--:|:--:|
-| [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar) | [angular-calendar](repositories/report.angular-calendar.md#-angular-calendar) | 0 | 1 | 0 | 1 |
-
-</details>
-
-<details>
-<summary>directive-selector (projects: 1, matches: 2) </summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 0 | 1 | 0 | 1 |
-
-</details>
-
-<details>
-<summary>use-lifecycle-interface (projects: 1, matches: 2) 🔧</summary>
-
-| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
-|---|---|:--:|:--:|:--:|:--:|
-| [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic) | [first-app](repositories/report.gojs-angular-basic.md#-first-app) | 1 | 0 | 0 | 1 |
+| [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 0 | 2 | 0 | 2 |
 
 </details>
 
@@ -398,11 +349,29 @@
 </details>
 
 <details>
+<summary>directive-selector (projects: 1, matches: 2) </summary>
+
+| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
+|---|---|:--:|:--:|:--:|:--:|
+| [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 0 | 1 | 0 | 1 |
+
+</details>
+
+<details>
 <summary>no-duplicates-in-metadata-arrays (projects: 1, matches: 1) </summary>
 
 | Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
 |---|---|:--:|:--:|:--:|:--:|
 | [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 0 | 0 | 0 | 1 |
+
+</details>
+
+<details>
+<summary>use-lifecycle-interface (projects: 1, matches: 2) 🔧</summary>
+
+| Repository | Project | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors |
+|---|---|:--:|:--:|:--:|:--:|
+| [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic) | [first-app](repositories/report.gojs-angular-basic.md#-first-app) | 1 | 0 | 0 | 1 |
 
 </details>
 
@@ -482,7 +451,6 @@
 | | [angular-gridster2](repositories/report.angular-gridster2.md#%EF%B8%8F-angular-gridster2) | [angular-gridster2](repositories/report.angular-gridster2.md#-angular-gridster2) | 3 |
 | | [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 3 |
 | | [gojs-angular-basic](repositories/report.gojs-angular-basic.md#%EF%B8%8F-gojs-angular-basic) | [first-app](repositories/report.gojs-angular-basic.md#-first-app) | 2 |
-|no-host-metadata-property | [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar) | [angular-calendar](repositories/report.angular-calendar.md#-angular-calendar) | 1 |
 |use-component-selector | [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar) | [angular-calendar](repositories/report.angular-calendar.md#-angular-calendar) | 6 |
 |sort-lifecycle-methods | [angular-calendar](repositories/report.angular-calendar.md#%EF%B8%8F-angular-calendar) | [angular-calendar](repositories/report.angular-calendar.md#-angular-calendar) | 3 |
 | | [angular-fontawesome](repositories/report.angular-fontawesome.md#%EF%B8%8F-angular-fontawesome) | [angular-fontawesome](repositories/report.angular-fontawesome.md#-angular-fontawesome) | 2 |
@@ -490,9 +458,6 @@
 |runtime-localize | [angular-example-app](repositories/report.angular-example-app.md#%EF%B8%8F-angular-example-app) | [angularexampleapp](repositories/report.angular-example-app.md#-angularexampleapp) | 21 |
 |no-lifecycle-call | [angular-fontawesome](repositories/report.angular-fontawesome.md#%EF%B8%8F-angular-fontawesome) | [angular-fontawesome](repositories/report.angular-fontawesome.md#-angular-fontawesome) | 1 |
 |prefer-standalone | [Angular-Full-Stack](repositories/report.Angular-Full-Stack.md#%EF%B8%8F-Angular-Full-Stack) | [angular2-full-stack](repositories/report.Angular-Full-Stack.md#-angular2-full-stack) | 12 |
-|prefer-standalone-component | [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies) | [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies) | 11 |
-|sort-ngmodule-metadata-arrays | [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#%EF%B8%8F-angular-ionic-ngxs-movies) | [angular-ionic-ngxs-movies](repositories/report.angular-ionic-ngxs-movies.md#-angular-ionic-ngxs-movies) | 6 |
-| | [ngx-toastr](repositories/report.ngx-toastr.md#%EF%B8%8F-ngx-toastr) | [ngx-toastr](repositories/report.ngx-toastr.md#-ngx-toastr) | 3 |
 |directive-selector | [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 1 |
 |no-output-native | [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 2 |
 |no-duplicates-in-metadata-arrays | [angular-realworld-example-app](repositories/report.angular-realworld-example-app.md#%EF%B8%8F-angular-realworld-example-app) | [angular-conduit](repositories/report.angular-realworld-example-app.md#-angular-conduit) | 1 |

@@ -1,6 +1,7 @@
 const fs = require("fs");
 const utils = require("./utils/utils");
 const mdGen = require("./utils/markdown_generator");
+const { rules } = require("./utils/es-lint-rules");
 
 /**
  *
@@ -39,20 +40,23 @@ function analyzeMatches(mode, project, matches, report) {
         !ruleId.startsWith("@angular-eslint/template")
       ) {
         const ruleName = ruleId.split("/").pop();
-        const type = utils.getSeverityRuleMeaning(severity);
-        const fixable = !!fix;
-        const has_suggestions = suggestions && suggestions.length > 0;
+        if (rules[ruleName]) {
+          const type = utils.getSeverityRuleMeaning(severity);
+          const fixable = !!fix;
+          const has_suggestions = suggestions && suggestions.length > 0;
 
-        if (!report.projects[project][ruleName])
-          report.projects[project][ruleName] = utils.getDefaultRuleRecount();
-        if (!report.total[ruleName])
-          report.total[ruleName] = utils.getDefaultRuleRecount();
-        [report.projects[project], report.total].forEach((dest) => {
-          const ruleReport = dest[ruleName][mode];
-          ruleReport[type]++;
-          fixable && ruleReport[`${utils.FIXABLE_PREFIX}-${type}`]++;
-          has_suggestions && ruleReport[`${type}-${utils.SUGGESTION_SUFFIX}`]++;
-        });
+          if (!report.projects[project][ruleName])
+            report.projects[project][ruleName] = utils.getDefaultRuleRecount();
+          if (!report.total[ruleName])
+            report.total[ruleName] = utils.getDefaultRuleRecount();
+          [report.projects[project], report.total].forEach((dest) => {
+            const ruleReport = dest[ruleName][mode];
+            ruleReport[type]++;
+            fixable && ruleReport[`${utils.FIXABLE_PREFIX}-${type}`]++;
+            has_suggestions &&
+              ruleReport[`${type}-${utils.SUGGESTION_SUFFIX}`]++;
+          });
+        }
       }
     })
   );

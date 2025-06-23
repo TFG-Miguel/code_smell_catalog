@@ -496,24 +496,6 @@
           }
         },
         "angular-calendar": {
-          "no-host-metadata-property": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 1,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 1,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          },
           "use-component-selector": {
             "recommended": {
               "warnings": 0,
@@ -661,24 +643,6 @@
         }
       },
       "total": {
-        "no-host-metadata-property": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 1,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 1,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        },
         "prefer-on-push-component-change-detection": {
           "recommended": {
             "warnings": 0,
@@ -860,7 +824,7 @@
           }
         }
       },
-      "md": "# 🖊️ angular-calendar\n\n**Info from repo**:\n- **URL**: <https://github.com/mattlewis92/angular-calendar>\n- **LastCommit**:\n\t- **Hash**: 987fa74220e84d85265b01e53e248932ad1a3da6\n\t- **Author**: Matt Lewis\n\t- **Message**: chore: update angular.json config\n\t- **Date**: Wed Aug 21 18:37:18 2024 +0100\n\n## 🧮 Total\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 24 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 12 |  |  | 💡 |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 43 |  |  |  |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 28 |  |  |  |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 13 |  |  | 💡 |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 29 |  |  | 💡 |\n| `use-component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-selector) | 0 | 0 | 0 | 6 |  |  |  |\n| `sort-lifecycle-methods` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 3 |  |  |  |\n\n\n\n## 💻 demos\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 17 | 0 |\n| `use-component-view-encapsulation` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 |\n| `relative-url-prefix` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 43 | 0 | 0 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |\n\n## 💻 angular-calendar\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `no-host-metadata-property` | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |\n| `use-component-selector` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 0 |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 0 | 20 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 0 | 0 |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 149 | 0 | 0 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 26 | 0 | 26 |\n| `sort-lifecycle-methods` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |\n\n"
+      "md": "# 🖊️ angular-calendar\n\n**Info from repo**:\n- **URL**: <https://github.com/mattlewis92/angular-calendar>\n- **LastCommit**:\n\t- **Hash**: 987fa74220e84d85265b01e53e248932ad1a3da6\n\t- **Author**: Matt Lewis\n\t- **Message**: chore: update angular.json config\n\t- **Date**: Wed Aug 21 18:37:18 2024 +0100\n\n## 🧮 Total\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 24 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 12 |  |  | 💡 |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 43 |  |  |  |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 28 |  |  |  |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 13 |  |  | 💡 |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 29 |  |  | 💡 |\n| `use-component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-selector) | 0 | 0 | 0 | 6 |  |  |  |\n| `sort-lifecycle-methods` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 3 |  |  |  |\n\n\n\n## 💻 demos\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 17 | 0 |\n| `use-component-view-encapsulation` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 |\n| `relative-url-prefix` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 43 | 0 | 0 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |\n\n## 💻 angular-calendar\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `use-component-selector` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 0 |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 0 | 20 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 0 | 0 |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 149 | 0 | 0 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 26 | 0 | 26 |\n| `sort-lifecycle-methods` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |\n\n"
     },
     "angular-example-app": {
       "name": "angular-example-app",
@@ -1557,24 +1521,6 @@
       "url": "https://github.com/abritopach/angular-ionic-ngxs-movies",
       "projects": {
         "angular-ionic-ngxs-movies": {
-          "prefer-standalone-component": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 11,
-              "fixable-errors": 11,
-              "errors-with-suggestions": 0
-            }
-          },
           "prefer-on-push-component-change-detection": {
             "recommended": {
               "warnings": 0,
@@ -1609,24 +1555,6 @@
               "errors": 10,
               "fixable-errors": 0,
               "errors-with-suggestions": 10
-            }
-          },
-          "sort-ngmodule-metadata-arrays": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 6,
-              "fixable-errors": 6,
-              "errors-with-suggestions": 0
             }
           },
           "relative-url-prefix": {
@@ -1668,24 +1596,6 @@
         }
       },
       "total": {
-        "prefer-standalone-component": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 11,
-            "fixable-errors": 11,
-            "errors-with-suggestions": 0
-          }
-        },
         "prefer-on-push-component-change-detection": {
           "recommended": {
             "warnings": 0,
@@ -1720,24 +1630,6 @@
             "errors": 10,
             "fixable-errors": 0,
             "errors-with-suggestions": 10
-          }
-        },
-        "sort-ngmodule-metadata-arrays": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 6,
-            "fixable-errors": 6,
-            "errors-with-suggestions": 0
           }
         },
         "relative-url-prefix": {
@@ -1777,7 +1669,7 @@
           }
         }
       },
-      "md": "# 🖊️ angular-ionic-ngxs-movies\n\n**Info from repo**:\n- **URL**: <https://github.com/abritopach/angular-ionic-ngxs-movies>\n- **LastCommit**:\n\t- **Hash**: 8f02cdce74b58725f3010362e926a38688cf48f2\n\t- **Author**: Adrián Brito Pacheco\n\t- **Message**: Merge pull request #98 from abritopach/develop\n\t- **Date**: Thu Feb 8 22:43:28 2024 +0000\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-standalone-component` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 11 | 0 | ❌ | ❌ | ❌ |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 11 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 | 0 | 10 |  |  | 💡 |\n| `sort-ngmodule-metadata-arrays` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 6 | 0 | ❌ | ❌ | ❌ |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 |  |  |  |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 11 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 10 |  |  | 💡 |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 7 |  |  |  |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 4 |  |  | 💡 |\n\n\n\n"
+      "md": "# 🖊️ angular-ionic-ngxs-movies\n\n**Info from repo**:\n- **URL**: <https://github.com/abritopach/angular-ionic-ngxs-movies>\n- **LastCommit**:\n\t- **Hash**: 8f02cdce74b58725f3010362e926a38688cf48f2\n\t- **Author**: Adrián Brito Pacheco\n\t- **Message**: Merge pull request #98 from abritopach/develop\n\t- **Date**: Thu Feb 8 22:43:28 2024 +0000\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 11 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 10 | 0 | 10 |  |  | 💡 |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 |  |  |  |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 11 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 10 |  |  | 💡 |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 7 |  |  |  |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 4 |  |  | 💡 |\n\n\n\n"
     },
     "angular-realworld-example-app": {
       "name": "angular-realworld-example-app",
@@ -3117,24 +3009,6 @@
               "errors-with-suggestions": 6
             }
           },
-          "sort-ngmodule-metadata-arrays": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 3,
-              "errors-with-suggestions": 0
-            }
-          },
           "component-max-inline-declarations": {
             "recommended": {
               "warnings": 0,
@@ -3192,24 +3066,6 @@
             "errors-with-suggestions": 6
           }
         },
-        "sort-ngmodule-metadata-arrays": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 3,
-            "errors-with-suggestions": 0
-          }
-        },
         "component-max-inline-declarations": {
           "recommended": {
             "warnings": 0,
@@ -3229,7 +3085,7 @@
           }
         }
       },
-      "md": "# 🖊️ ngx-toastr\n\n**Info from repo**:\n- **URL**: <https://github.com/scttcper/ngx-toastr>\n- **LastCommit**:\n\t- **Hash**: e688d8039158bc83a9fe4ac08589f2ab8c550466\n\t- **Author**: Chris Barr\n\t- **Message**: docs: fix demo to show progress for pink toast (#1023)\n\t- **Date**: Tue Aug 27 17:04:26 2024 -0400\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 0 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |\n| `sort-ngmodule-metadata-arrays` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | ❌ | ❌ | ❌ |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |  |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 5 | 0 | 5 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 6 |  |  | 💡 |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 11 |  |  |  |\n\n\n\n"
+      "md": "# 🖊️ ngx-toastr\n\n**Info from repo**:\n- **URL**: <https://github.com/scttcper/ngx-toastr>\n- **LastCommit**:\n\t- **Hash**: e688d8039158bc83a9fe4ac08589f2ab8c550466\n\t- **Author**: Chris Barr\n\t- **Message**: docs: fix demo to show progress for pink toast (#1023)\n\t- **Date**: Tue Aug 27 17:04:26 2024 -0400\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 0 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |  |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 5 | 0 | 5 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 6 |  |  | 💡 |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 11 |  |  |  |\n\n\n\n"
     },
     "play-scala-angular-seed": {
       "name": "play-scala-angular-seed",
@@ -3537,24 +3393,6 @@
         "errors-with-suggestions": 2
       }
     },
-    "no-host-metadata-property": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 1,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 1,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      }
-    },
     "use-component-view-encapsulation": {
       "recommended": {
         "warnings": 0,
@@ -3732,42 +3570,6 @@
         "warnings-with-suggestions": 0,
         "errors": 12,
         "fixable-errors": 12,
-        "errors-with-suggestions": 0
-      }
-    },
-    "prefer-standalone-component": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 0,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 11,
-        "fixable-errors": 11,
-        "errors-with-suggestions": 0
-      }
-    },
-    "sort-ngmodule-metadata-arrays": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 0,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 9,
-        "fixable-errors": 9,
         "errors-with-suggestions": 0
       }
     },
@@ -5491,30 +5293,6 @@
         }
       }
     ],
-    "no-host-metadata-property": [
-      {
-        "project": [
-          "angular-calendar",
-          "angular-calendar"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 1,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 1,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
     "use-component-selector": [
       {
         "project": [
@@ -5675,76 +5453,6 @@
           "warnings-with-suggestions": 0,
           "errors": 12,
           "fixable-errors": 12,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "prefer-standalone-component": [
-      {
-        "project": [
-          "angular-ionic-ngxs-movies",
-          "angular-ionic-ngxs-movies"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 11,
-          "fixable-errors": 11,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "sort-ngmodule-metadata-arrays": [
-      {
-        "project": [
-          "angular-ionic-ngxs-movies",
-          "angular-ionic-ngxs-movies"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 6,
-          "fixable-errors": 6,
-          "errors-with-suggestions": 0
-        }
-      },
-      {
-        "project": [
-          "ngx-toastr",
-          "ngx-toastr"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 3,
-          "fixable-errors": 3,
           "errors-with-suggestions": 0
         }
       }

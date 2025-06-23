@@ -99,8 +99,8 @@ const DETAIL_RECOUNT_ENTRY = INSANE_DETAIL_RECOUNT_ENTRY.filter(
 );
 // Rule data from es-lint
 exports.ESLINT_RULE_DATA_ENTRY = [
-  "fixable",
   "recommended",
+  "fixable",
   "has_suggestions",
 ].map((item) => ({
   name: SYMBOLS[item],
@@ -115,24 +115,9 @@ exports.ESLINT_RULE_DATA_ENTRY = [
   },
 }));
 
-exports.TABLE_ENTRIES = {
-  ALL_ENTRIES: [
-    RULE_NAME_ENTRY,
-    ...RULE_ACCESS_ENTRY,
-    ...INSANE_DETAIL_RECOUNT_ENTRY,
-    ...this.ESLINT_RULE_DATA_ENTRY,
-  ],
-  RESUME: [
-    RULE_NAME_ENTRY,
-    ...RULE_ACCESS_ENTRY,
-    ...DETAIL_RECOUNT_ENTRY,
-    ...this.ESLINT_RULE_DATA_ENTRY,
-  ],
-  REPO: [
-    RULE_NAME_ENTRY,
-    ...RULE_ACCESS_ENTRY,
-    ...DETAIL_RECOUNT_ENTRY,
-    ...this.ESLINT_RULE_DATA_ENTRY,
-  ],
-  PROJECT: [RULE_NAME_ENTRY, ...INSANE_DETAIL_RECOUNT_ENTRY],
-};
+exports.RESUME_ENTRIES = [
+  RULE_NAME_ENTRY,
+  ...RULE_ACCESS_ENTRY,
+  ...DETAIL_RECOUNT_ENTRY,
+  ...this.ESLINT_RULE_DATA_ENTRY,
+];

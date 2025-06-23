@@ -8,10 +8,10 @@ const { getValue } = require("./utils");
  * @returns {string} Una cadena de texto con la tabla en formato Markdown
  */
 function genMarkdownTable(data, ...fields) {
-  let noEntryMessage = "No data";
+  let noEntryMessage = "The project pass linting";
   if (!Array.isArray(data)) {
     data = data.data;
-    noEntryMessage = data.message;
+    noEntryMessage = data.message ?? noEntryMessage;
   }
   if (!data.length) return `\n> [!WARNING]\n> ${noEntryMessage}\n\n`;
   const aligns = { c: ":--:", r: "--:" };
@@ -63,22 +63,20 @@ function genIndexMarkdown(md) {
 /**
  *
  * @param {*} data
- * @param {'all_entries'|'resume'|'repo'|'project'} mode
  * @param {string} noEntryMessage
  * @returns
  */
 function genMarkdownRepoTable(
   data,
-  mode = "all_entries",
   filterFn = (_) => true,
   noEntryMessage = "The project pass linting"
 ) {
   const array = Object.entries(data)
     .sort(utils.sortFn)
-    .filter((value) => mode !== "resume" || filterFn(value[0]));
+    .filter((value) => filterFn(value[0]));
   return genMarkdownTable(
     { data: array, message: noEntryMessage },
-    ...utils.TABLE_ENTRIES[mode.toLocaleUpperCase()]
+    ...utils.RESUME_ENTRIES
   );
 }
 
@@ -105,22 +103,30 @@ exports.genMarkdownRepoReport = function (repo) {
     (projects.length > 1
       ? "#".repeat(level + 1) +
         ` 🧮 Total\n\n` +
-        genMarkdownRepoTable(repo.total, "resume") +
+        genMarkdownRepoTable(repo.total, utils.isNotAFixableOrSuggestRule) +
         "\n\n" +
         projects
           .map(
             ([projectName, project]) =>
               "#".repeat(level + 1) +
               ` 💻 ${projectName}\n\n` +
-              genMarkdownRepoTable(project, "project")
+              genMarkdownRepoTable(
+                project,
+                (_) => true,
+                "The project pass linting"
+              )
           )
           .join("")
       : "#".repeat(level + 1) +
         ` All\n\n` +
-        `${genMarkdownRepoTable(repo.total, "all_entries")}\n\n` +
+        `${genMarkdownRepoTable(repo.total)}\n\n` +
         "#".repeat(level + 1) +
         ` Important to us\n\n` +
-        `${genMarkdownRepoTable(repo.total, "resume")}\n\n`)
+        `${genMarkdownRepoTable(
+          repo.total,
+          utils.isNotAFixableOrSuggestRule,
+          "The project pass linting"
+        )}\n\n`)
   );
 };
 
@@ -188,13 +194,13 @@ function genCatalog(rules) {
   return header + "\n" + rows;
 }
 
-function genMarkdownRepoIndex(repo, analysisDir) {
+function genMarkdownRepoIndex(repo) {
   return Object.keys(repo)
-    .map((repo) => `- [${repo}](${analysisDir}/report.${repo}.md)`)
+    .map((repo) => `- [${repo}](repositories/report.${repo}.md)`)
     .join("\n");
 }
 
-exports.genMarkdownResumeReport = function (report, analysisDir) {
+exports.genMarkdownResumeReport = function (report) {
   const intro =
     "# 📑 `@angular-eslint@19.3.0` Rules Analysis Report\n\n" +
     "## Symbols\n\n" +
@@ -202,14 +208,13 @@ exports.genMarkdownResumeReport = function (report, analysisDir) {
 
   const markdown =
     "## Repositories Navigation Index\n\n" +
-    `${genMarkdownRepoIndex(report.repos, analysisDir)}\n\n` +
+    `${genMarkdownRepoIndex(report.repos)}\n\n` +
     "## Global Summary\n\n" +
     "### All Rules\n\n" +
-    `${genMarkdownRepoTable(report.total, "resume")}\n\n` +
-    "### Rules Important to us\n\n" +
+    `${genMarkdownRepoTable(report.total)}\n\n` +
+    "### Rules Important to Us\n\n" +
     `${genMarkdownRepoTable(
       report.total,
-      "resume",
       utils.isNotAFixableOrSuggestRule
     )}\n\n` +
     "## Rules by Repository\n\n" +
@@ -228,10 +233,7 @@ if (require.main === module) {
   const fs = require("fs");
   const path = require("path");
 
-  const catalog = this.genMarkdownResumeReport(
-    report,
-    path.join(__dirname, "..", "result")
-  );
+  const catalog = this.genMarkdownResumeReport(report);
   fs.writeFileSync(path.join(__dirname, "report.md"), catalog);
   console.log(
     "✅",

@@ -118,7 +118,7 @@ function generateRepositoryReport(report, resultDir) {
  * @param {string} analysisDir
  */
 function generateResumeReport(report, analysisDir) {
-  const md = mdGen.genMarkdownResumeReport(report, analysisDir);
+  const md = mdGen.genMarkdownResumeReport(report);
   const [jsonFile, mdFile] = ["json", "md"].map(
     (ext) => `${analysisDir}/automatic.report.${ext}`
   );

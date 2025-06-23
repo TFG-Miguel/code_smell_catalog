@@ -88,10 +88,9 @@ function formatNumber(number, digits = 0, fillString = "0") {
 /**
  *
  * @param {*} report
- * @param {boolean} intermediate
  */
-exports.genMarkdownRepoReport = function (repo, intermediate = false) {
-  const level = intermediate ? 1 : 3;
+exports.genMarkdownRepoReport = function (repo) {
+  const level = 1;
   const projects = Object.entries(repo.projects);
 
   if (repo.name === "ng-apexcharts") debugger;
@@ -128,26 +127,20 @@ exports.genMarkdownRepoReport = function (repo, intermediate = false) {
   );
 };
 
-function getMRef(repo, project, intermediate) {
+function getMRef(repo, project) {
   const file = `repositories/report.${repo}.md`;
   return [repo, project]
     .map((item, i) => [
       item,
       `${i ? "" : "%EF%B8%8F"}-${item}`,
-      // item
-      // 	.replaceAll(" ", "-")
-      // 	.toLocaleLowerCase()
-      // 	.replace("🖊️", "%EF%B8%8F")
-      // 	.replace("💻", "")
-      // 	.replace("🧮", ""),
     ])
-    .map(([item, ref]) => (intermediate ? `[${item}](${file}#${ref})` : item))
-    .join("-->");
+    .map(([item, ref]) => `[${item}](${file}#${ref})`)
+    .join(" | ");
 }
 
 const calculate = (array) => array.reduce((a, c) => a + getValue(c), 0);
 
-function genRulesInProject(rules, intermediate) {
+function genRulesInProject(rules) {
   let markdown = "";
   Object.entries(rules)
     .sort(([_1, f1], [_2, f2]) => calculate(f2) - calculate(f1))
@@ -158,21 +151,7 @@ function genRulesInProject(rules, intermediate) {
         .join(" ")
         .trim();
       let matches = 0;
-      const max = files.reduce((acc, { all, recommended }) => {
-        Object.entries({ all, recommended }).forEach(
-          ([mode, { warnings, errors }]) => {
-            Object.entries({ warnings, errors }).forEach(([type, value]) => {
-              matches += value;
-              if (!acc[mode]) acc[mode] = {};
-              if (!acc[mode][type]) acc[mode][type] = 0;
-              acc[mode][type] = Math.max(acc[mode][type], `${value}`.length);
-            });
-          }
-        );
-        return acc;
-      }, {});
-      markdown += `<details>\n<summary>${rule} (projects: ${files.length}, matches: ${matches}) ${symbolInfo}</summary>\n\n`;
-      files
+      const table = files
         .sort(
           ({ recommended: r1, all: a1 }, { recommended: r2, all: a2 }) =>
             r2.warnings +
@@ -181,45 +160,79 @@ function genRulesInProject(rules, intermediate) {
             a2.errors -
             (r1.warnings + r1.errors + a1.warnings + a1.errors)
         )
-        .forEach(({ project: [repo, project], recommended: rec, all }) => {
-          const refMarkdown = getMRef(repo, project, intermediate);
-          markdown += `- RECOMMENDED: \\[${
-            utils.SYMBOLS.warnings
-          } ${formatNumber(rec.warnings, max.recommended.warnings)} ${
-            utils.SYMBOLS.errors
-          } ${formatNumber(rec.errors, max.recommended.errors)}] ALL: \\[${
-            utils.SYMBOLS.warnings
-          } ${formatNumber(all.warnings, max.all.warnings)} ${
-            utils.SYMBOLS.errors
-          } ${formatNumber(all.errors, max.all.errors)}] ${refMarkdown}\n\n`;
-        });
+        .map(({ project: [repo, project], recommended: rec, all }) => {
+          const refMarkdown = getMRef(repo, project);
+          matches += rec.warnings + rec.errors + all.warnings + all.errors;
+          return `| ${refMarkdown} | ${rec.warnings} | ${rec.errors} | ${all.warnings} | ${all.errors} |`;
+        }
+        ).join("\n");
+
+      markdown += `<details>\n<summary>${rule} (projects: ${files.length}, matches: ${matches}) ${symbolInfo}</summary>\n\n`;
+      markdown += `| Repository | Project | Recommended<br>${
+          utils.SYMBOLS.warnings
+        } Warnings | Recommended<br>${
+          utils.SYMBOLS.errors
+        } Errors | All<br>${
+          utils.SYMBOLS.warnings
+        } Warnings | All<br>${
+          utils.SYMBOLS.errors
+        } Errors |\n`;
+      markdown += "|---|---|:--:|:--:|:--:|:--:|\n";
+      markdown += table + "\n\n";
       markdown += "</details>\n\n";
     });
   return markdown;
 }
 
-exports.genMarkdownResumeReport = function (report, intermediate) {
+function genCatalog(rules) {
+  const header = "| Rule | Repository | Project | Count |\n|---|---|---|:--:|";
+  const rows = Object.entries(rules)
+  .map(([rule, projects]) => {
+    return projects.map(({project, _, all}, i) => {
+      return '|' + [i === 0 ? rule : "", getMRef(project[0], project[1]), all.warnings + all.errors].join(" | ") + " |";
+    }).join("\n");
+  }).join("\n");
+  return header + "\n" + rows;
+}
+
+function genMarkdownRepoIndex(repo, analysisDir) {
+  return Object.keys(repo)
+    .map((repo) => `- [${repo}](${analysisDir}/report.${repo}.md)`)
+    .join("\n");
+}
+
+
+exports.genMarkdownResumeReport = function (report, analysisDir) {
   const intro =
-    "# 📑 Angular ESLint RULES Analysis Report\n\n" +
+    "# 📑 `@angular-eslint@19` Rules Analysis Report\n\n" +
     "## Symbols\n\n" +
     `${utils.SYMBOLS_DESCRIPTION}\n\n`;
 
   const markdown =
-    "## Resume\n\n" +
-    "### All\n\n" +
+    "## Repositories Navigation Index\n\n" +
+    `${genMarkdownRepoIndex(report.repos, analysisDir)}\n\n` +
+    "## Global Summary\n\n" +
+    "### All Rules\n\n" +
     `${genMarkdownRepoTable(report.total, "all_entries")}\n\n` +
-    "### Important to us project\n\n" +
+    "### Rules Important to us\n\n" +
     `${genMarkdownRepoTable(report.total, "resume")}\n\n` +
-    "### Which projects has rules\n\n" +
-    `${genRulesInProject(report.rules, intermediate)}\n\n` +
-    (!intermediate
-      ? "## Repositories Report\n\n" +
-        `${Object.values(report.repos)
-          .map((repo) => repo.md)
-          .join("\n\n")}\n\n`
-      : "");
+    "## Rules by Repository\n\n" +
+    "### Detailed Rules\n\n" +
+    `${genRulesInProject(report.rules)}\n\n` +
+    "### Catalog\n\n" +
+    `${genCatalog(report.rules)}\n\n`;
 
   return (
     intro + "## Index\n\n" + `${genIndexMarkdown(markdown)}\n\n` + `${markdown}`
   );
 };
+
+if (require.main === module) {
+  const report = require("../../result/automatic.report.json");
+  const fs = require("fs");
+  const path = require("path");
+
+  const catalog = this.genMarkdownResumeReport(report, path.join(__dirname, "..", "result"));
+  fs.writeFileSync(path.join(__dirname, "report.md"), catalog);
+  console.log("✅", "Catalog saved in", `"${path.join(__dirname, "report.md")}"`);
+}

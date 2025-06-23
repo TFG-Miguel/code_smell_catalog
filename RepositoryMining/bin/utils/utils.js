@@ -56,17 +56,12 @@ ${all}
 exports.trateParams = function (argv) {
   const repoReports = [];
   let RESULT_DIR = path.resolve(__dirname);
-  let INTERMEDIATE = false;
 
   for (let i = 2; i < argv.length; i++) {
     switch (argv[i]) {
       case "-h":
       case "--help":
         printUsage();
-        break;
-      case "-i":
-      case "--intermediate":
-        INTERMEDIATE = true;
         break;
       case "-r":
       case "--result":
@@ -80,21 +75,16 @@ exports.trateParams = function (argv) {
         break;
     }
   }
-  return { RESULT_DIR, INTERMEDIATE, REPORTS: repoReports };
+  return { RESULT_DIR, REPORTS: repoReports };
 };
 
 function printUsage() {
   console.log(
     `Use: ${path.basename(process.argv[0])} ${path.basename(
       process.argv[1]
-      // )} [ -a | --analysis <analysis_dir> ] [ -r | --result <result_dir> ] ...repo_linter_results`
     )} [ -r | --result <result_dir> ] ...repo_linter_results`
   );
   console.log("\nOptions:");
-  //   console.log(
-  //     "  -a, --analysis <analysis_file>  Specify the analysis directory in which will be save the individual repositories reports" +
-  //       "                                  By default the reports will be saved in the same dirs in which are the repositories linter result"
-  //   );
   console.log(
     "  -r, --result <result_dir>       Specify the directory in which will be saved the final reports (json and md)"
   );

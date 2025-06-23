@@ -140,5 +140,5 @@ for repo in "$REPOS_DIR"/*/*/; do
     echo -e "\tReport generated [$abs_path_report]\n\n"
   fi
 done
-node_command="node $NODE_REPORT -i -r $RESULT_DIR ${reports[@]}"
+node_command="node $NODE_REPORT -r $RESULT_DIR ${reports[@]}"
 $node_command

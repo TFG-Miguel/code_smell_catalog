@@ -1,5 +1,344 @@
 {
   "repos": {
+    "angular-16-crud-example": {
+      "name": "angular-16-crud-example",
+      "HEAD": {
+        "commit": "e760ebb02fd950b478b0fa863e767b672929b10d",
+        "author": "tienbku",
+        "date": "Thu May 25 15:57:13 2023 +0700",
+        "message": "first commit"
+      },
+      "url": "https://github.com/bezkoder/angular-16-crud-example",
+      "projects": {
+        "angular-16-crud": {
+          "prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 4,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 4
+            }
+          },
+          "consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 4,
+              "fixable-errors": 4,
+              "errors-with-suggestions": 0
+            }
+          },
+          "prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 2,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          }
+        }
+      },
+      "total": {
+        "prefer-on-push-component-change-detection": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 4,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 4
+          }
+        },
+        "consistent-component-styles": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 4,
+            "fixable-errors": 4,
+            "errors-with-suggestions": 0
+          }
+        },
+        "prefer-signals": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 2,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        }
+      },
+      "md": "# 🖊️ angular-16-crud-example\n\n**Info from repo**:\n- **URL**: <https://github.com/bezkoder/angular-16-crud-example>\n- **LastCommit**:\n\t- **Hash**: e760ebb02fd950b478b0fa863e767b672929b10d\n\t- **Author**: tienbku\n\t- **Message**: first commit\n\t- **Date**: Thu May 25 15:57:13 2023 +0700\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 4 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 4 |  |  | 💡 |\n\n\n\n"
+    },
+    "angular-17-crud-example": {
+      "name": "angular-17-crud-example",
+      "HEAD": {
+        "commit": "c0af324c915716b34f61ae10acae98092ec8570a",
+        "author": "tienbku",
+        "date": "Sun Feb 4 15:39:28 2024 +0700",
+        "message": "update references"
+      },
+      "url": "https://github.com/bezkoder/angular-17-crud-example",
+      "projects": {
+        "angular-17-crud": {
+          "prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 4,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 4
+            }
+          },
+          "consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 3,
+              "fixable-errors": 3,
+              "errors-with-suggestions": 0
+            }
+          },
+          "prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 2,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          }
+        }
+      },
+      "total": {
+        "prefer-on-push-component-change-detection": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 4,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 4
+          }
+        },
+        "consistent-component-styles": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 3,
+            "fixable-errors": 3,
+            "errors-with-suggestions": 0
+          }
+        },
+        "prefer-signals": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 2,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        }
+      },
+      "md": "# 🖊️ angular-17-crud-example\n\n**Info from repo**:\n- **URL**: <https://github.com/bezkoder/angular-17-crud-example>\n- **LastCommit**:\n\t- **Hash**: c0af324c915716b34f61ae10acae98092ec8570a\n\t- **Author**: tienbku\n\t- **Message**: update references\n\t- **Date**: Sun Feb 4 15:39:28 2024 +0700\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 4 |  |  | 💡 |\n\n\n\n"
+    },
+    "angular-basics-project": {
+      "name": "angular-basics-project",
+      "HEAD": {
+        "commit": "504cab8f87defbbaf6462988956b8176861ba802",
+        "author": "akotech",
+        "date": "Sun Oct 24 18:47:33 2021 +0200",
+        "message": "update playlist link"
+      },
+      "url": "https://github.com/ako-tech/angular-basics-project",
+      "projects": {
+        "shopping-cart": {
+          "prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 1,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 1
+            }
+          },
+          "consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 1,
+              "fixable-errors": 1,
+              "errors-with-suggestions": 0
+            }
+          }
+        }
+      },
+      "total": {
+        "prefer-on-push-component-change-detection": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 1,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 1
+          }
+        },
+        "consistent-component-styles": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 1,
+            "fixable-errors": 1,
+            "errors-with-suggestions": 0
+          }
+        }
+      },
+      "md": "# 🖊️ angular-basics-project\n\n**Info from repo**:\n- **URL**: <https://github.com/ako-tech/angular-basics-project>\n- **LastCommit**:\n\t- **Hash**: 504cab8f87defbbaf6462988956b8176861ba802\n\t- **Author**: akotech\n\t- **Message**: update playlist link\n\t- **Date**: Sun Oct 24 18:47:33 2021 +0200\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 1 |  |  | 💡 |\n\n\n\n"
+    },
     "angular-calendar": {
       "name": "angular-calendar",
       "HEAD": {
@@ -523,6 +862,59 @@
       },
       "md": "# 🖊️ angular-calendar\n\n**Info from repo**:\n- **URL**: <https://github.com/mattlewis92/angular-calendar>\n- **LastCommit**:\n\t- **Hash**: 987fa74220e84d85265b01e53e248932ad1a3da6\n\t- **Author**: Matt Lewis\n\t- **Message**: chore: update angular.json config\n\t- **Date**: Wed Aug 21 18:37:18 2024 +0100\n\n## 🧮 Total\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `relative-url-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/relative-url-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/relative-url-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/relative-url-prefix) | 0 | 0 | 0 | 43 |  |  |  |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 29 |  |  | 💡 |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 28 |  |  |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 24 |  |  | 💡 |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 13 |  |  | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 12 |  |  | 💡 |\n| `use-component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-selector) | 0 | 0 | 0 | 6 |  |  |  |\n| `sort-lifecycle-methods` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 3 |  |  |  |\n\n\n\n## 💻 demos\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `relative-url-prefix` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 43 | 0 | 0 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 17 | 0 |\n| `use-component-view-encapsulation` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 0 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |\n\n## 💻 angular-calendar\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 149 | 0 | 0 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 26 | 0 | 26 |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 0 | 20 |\n| `component-max-inline-declarations` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 | 0 | 0 |\n| `use-component-selector` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 0 |\n| `use-injectable-provided-in` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |\n| `sort-lifecycle-methods` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |\n| `no-host-metadata-property` | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |\n\n"
     },
+    "angular-example-app": {
+      "name": "angular-example-app",
+      "HEAD": {
+        "commit": "b43fcab316a8a4c87549eca67a8b7d915f850434",
+        "author": "ismaestro",
+        "date": "Sat Feb 1 07:47:16 2025 +0100",
+        "message": "fix(tools): solve stylelint issues"
+      },
+      "url": "https://github.com/Ismaestro/angular-example-app",
+      "projects": {
+        "angularexampleapp": {
+          "runtime-localize": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 21,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          }
+        }
+      },
+      "total": {
+        "runtime-localize": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 21,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        }
+      },
+      "md": "# 🖊️ angular-example-app\n\n**Info from repo**:\n- **URL**: <https://github.com/Ismaestro/angular-example-app>\n- **LastCommit**:\n\t- **Hash**: b43fcab316a8a4c87549eca67a8b7d915f850434\n\t- **Author**: ismaestro\n\t- **Message**: fix(tools): solve stylelint issues\n\t- **Date**: Sat Feb 1 07:47:16 2025 +0100\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `runtime-localize` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 21 | 0 | 0 |  |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `runtime-localize` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 21 |  |  |  |\n\n\n\n"
+    },
     "angular-fontawesome": {
       "name": "angular-fontawesome",
       "HEAD": {
@@ -740,6 +1132,203 @@
       },
       "md": "# 🖊️ angular-fontawesome\n\n**Info from repo**:\n- **URL**: <https://github.com/FortAwesome/angular-fontawesome>\n- **LastCommit**:\n\t- **Hash**: 88ea9db3780a4a86d34f69920105166d914497ea\n\t- **Author**: Yaroslav Admin\n\t- **Message**: Release 1.0.0\n\t- **Date**: Thu Nov 21 00:00:00 2024 +0100\n\n## 🧮 Total\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 10 |  |  | 💡 |\n| `sort-lifecycle-methods` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 2 |  |  |  |\n| `no-lifecycle-call` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-lifecycle-call.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-lifecycle-call.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-lifecycle-call) | 0 | 0 | 0 | 1 |  |  |  |\n\n\n\n## 💻 angular-fontawesome\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-signals` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 37 | 0 | 0 |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |\n| `sort-lifecycle-methods` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |\n| `no-lifecycle-call` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |\n\n## 💻 demo\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |\n\n"
     },
+    "Angular-Full-Stack": {
+      "name": "Angular-Full-Stack",
+      "HEAD": {
+        "commit": "64a8ed9eb474c08896cbc6b436a810739c6a534e",
+        "author": "DavideViolante",
+        "date": "Wed Jan 22 09:38:49 2025 +0100",
+        "message": "chore(deps): upgrade to angular v19"
+      },
+      "url": "https://github.com/DavideViolante/Angular-Full-Stack",
+      "projects": {
+        "angular2-full-stack": {
+          "prefer-standalone": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 12,
+              "fixable-errors": 12,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 12,
+              "fixable-errors": 12,
+              "errors-with-suggestions": 0
+            }
+          },
+          "prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 12,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 12
+            }
+          },
+          "consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 4,
+              "fixable-errors": 4,
+              "errors-with-suggestions": 0
+            }
+          },
+          "prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 3,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          },
+          "use-injectable-provided-in": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 5,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 5
+            }
+          }
+        }
+      },
+      "total": {
+        "prefer-standalone": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 12,
+            "fixable-errors": 12,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 12,
+            "fixable-errors": 12,
+            "errors-with-suggestions": 0
+          }
+        },
+        "prefer-on-push-component-change-detection": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 12,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 12
+          }
+        },
+        "consistent-component-styles": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 4,
+            "fixable-errors": 4,
+            "errors-with-suggestions": 0
+          }
+        },
+        "prefer-signals": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 3,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        },
+        "use-injectable-provided-in": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 5,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 5
+          }
+        }
+      },
+      "md": "# 🖊️ Angular-Full-Stack\n\n**Info from repo**:\n- **URL**: <https://github.com/DavideViolante/Angular-Full-Stack>\n- **LastCommit**:\n\t- **Hash**: 64a8ed9eb474c08896cbc6b436a810739c6a534e\n\t- **Author**: DavideViolante\n\t- **Message**: chore(deps): upgrade to angular v19\n\t- **Date**: Wed Jan 22 09:38:49 2025 +0100\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-standalone` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-standalone.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-standalone.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-standalone) | 0 | 0 | 0 | 12 | 12 | 0 | 0 | 0 | 0 | 12 | 12 | 0 | 🔧 | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |  |  | 💡 |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 5 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 4 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 12 |  |  | 💡 |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 5 |  |  | 💡 |\n\n\n\n"
+    },
     "angular-gridster2": {
       "name": "angular-gridster2",
       "HEAD": {
@@ -956,1097 +1545,6 @@
         }
       },
       "md": "# 🖊️ angular-gridster2\n\n**Info from repo**:\n- **URL**: <https://github.com/tiberiuzuld/angular-gridster2>\n- **LastCommit**:\n\t- **Hash**: 59e2b0de4dc71983f874e208f3466ba6ebb3fac4\n\t- **Author**: Tiberiu Zuld\n\t- **Message**: chore: fix npm repository url\n\t- **Date**: Thu Dec 5 09:26:29 2024 +0200\n\n## 🧮 Total\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 28 |  |  | 💡 |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 3 |  |  | 💡 |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 3 |  |  | 💡 |\n| `sort-lifecycle-methods` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/sort-lifecycle-methods.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/sort-lifecycle-methods.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/sort-lifecycle-methods) | 0 | 0 | 0 | 2 |  |  |  |\n\n\n\n## 💻 gridster-app\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `use-component-view-encapsulation` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 25 | 0 | 25 |\n\n## 💻 angular-gridster2\n\n| 📏 Rule | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |\n| `consistent-component-styles` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 |\n| `use-component-view-encapsulation` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |\n| `prefer-output-readonly` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |\n| `sort-lifecycle-methods` | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |\n\n"
-    },
-    "ngx-quill": {
-      "name": "ngx-quill",
-      "HEAD": {
-        "commit": "e7ea1915838ae668f588be4d71d40d63b7b27611",
-        "author": "KillerCodeMonkey",
-        "date": "Mon Feb 24 09:57:07 2025 +0100",
-        "message": "chore: bump version"
-      },
-      "url": "https://github.com/KillerCodeMonkey/ngx-quill",
-      "projects": {
-        "ngx-quill": {
-          "no-output-on-prefix": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 9,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 9,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          },
-          "component-selector": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          },
-          "prefer-output-readonly": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 9,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 9
-            }
-          },
-          "prefer-signals": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 2,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 2
-            }
-          },
-          "prefer-on-push-component-change-detection": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 3
-            }
-          },
-          "no-forward-ref": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 2,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          },
-          "component-max-inline-declarations": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 2,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          },
-          "consistent-component-styles": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 3,
-              "errors-with-suggestions": 0
-            }
-          },
-          "use-component-view-encapsulation": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 2,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 2
-            }
-          }
-        }
-      },
-      "total": {
-        "no-output-on-prefix": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 9,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 9,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        },
-        "component-selector": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        },
-        "prefer-output-readonly": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 9,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 9
-          }
-        },
-        "prefer-signals": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 2,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 2
-          }
-        },
-        "prefer-on-push-component-change-detection": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 3
-          }
-        },
-        "no-forward-ref": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 2,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        },
-        "component-max-inline-declarations": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 2,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        },
-        "consistent-component-styles": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 3,
-            "errors-with-suggestions": 0
-          }
-        },
-        "use-component-view-encapsulation": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 2,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 2
-          }
-        }
-      },
-      "md": "# 🖊️ ngx-quill\n\n**Info from repo**:\n- **URL**: <https://github.com/KillerCodeMonkey/ngx-quill>\n- **LastCommit**:\n\t- **Hash**: e7ea1915838ae668f588be4d71d40d63b7b27611\n\t- **Author**: KillerCodeMonkey\n\t- **Message**: chore: bump version\n\t- **Date**: Mon Feb 24 09:57:07 2025 +0100\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `no-output-on-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-on-prefix) | 0 | 0 | 0 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | 0 |  | ✅ |  |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | 9 |  |  | 💡 |\n| `component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-selector) | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |  |  |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | 🔧 |  |  |\n| `no-forward-ref` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-forward-ref) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |  |  | 💡 |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `no-output-on-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-on-prefix) | 0 | 9 | 0 | 9 |  | ✅ |  |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 9 |  |  | 💡 |\n| `component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-selector) | 0 | 3 | 0 | 3 |  |  |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 3 |  |  | 💡 |\n| `no-forward-ref` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-forward-ref) | 0 | 0 | 0 | 2 |  |  |  |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 2 |  |  |  |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 2 |  |  | 💡 |\n\n\n\n"
-    },
-    "ngx-toastr": {
-      "name": "ngx-toastr",
-      "HEAD": {
-        "commit": "e688d8039158bc83a9fe4ac08589f2ab8c550466",
-        "author": "Chris Barr",
-        "date": "Tue Aug 27 17:04:26 2024 -0400",
-        "message": "docs: fix demo to show progress for pink toast (#1023)"
-      },
-      "url": "https://github.com/scttcper/ngx-toastr",
-      "projects": {
-        "ngx-toastr": {
-          "component-class-suffix": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 5,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 5,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          },
-          "prefer-on-push-component-change-detection": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 6,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 6
-            }
-          },
-          "sort-ngmodule-metadata-arrays": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 3,
-              "errors-with-suggestions": 0
-            }
-          },
-          "component-max-inline-declarations": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 11,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          }
-        }
-      },
-      "total": {
-        "component-class-suffix": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 5,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 5,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        },
-        "prefer-on-push-component-change-detection": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 6,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 6
-          }
-        },
-        "sort-ngmodule-metadata-arrays": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 3,
-            "errors-with-suggestions": 0
-          }
-        },
-        "component-max-inline-declarations": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 11,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        }
-      },
-      "md": "# 🖊️ ngx-toastr\n\n**Info from repo**:\n- **URL**: <https://github.com/scttcper/ngx-toastr>\n- **LastCommit**:\n\t- **Hash**: e688d8039158bc83a9fe4ac08589f2ab8c550466\n\t- **Author**: Chris Barr\n\t- **Message**: docs: fix demo to show progress for pink toast (#1023)\n\t- **Date**: Tue Aug 27 17:04:26 2024 -0400\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |  |  |  |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 0 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |\n| `sort-ngmodule-metadata-arrays` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | ❌ | ❌ | ❌ |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 11 |  |  |  |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 5 | 0 | 5 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 6 |  |  | 💡 |\n\n\n\n"
-    },
-    "angular-16-crud-example": {
-      "name": "angular-16-crud-example",
-      "HEAD": {
-        "commit": "e760ebb02fd950b478b0fa863e767b672929b10d",
-        "author": "tienbku",
-        "date": "Thu May 25 15:57:13 2023 +0700",
-        "message": "first commit"
-      },
-      "url": "https://github.com/bezkoder/angular-16-crud-example",
-      "projects": {
-        "angular-16-crud": {
-          "prefer-on-push-component-change-detection": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 4,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 4
-            }
-          },
-          "consistent-component-styles": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 4,
-              "fixable-errors": 4,
-              "errors-with-suggestions": 0
-            }
-          },
-          "prefer-signals": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 2,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          }
-        }
-      },
-      "total": {
-        "prefer-on-push-component-change-detection": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 4,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 4
-          }
-        },
-        "consistent-component-styles": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 4,
-            "fixable-errors": 4,
-            "errors-with-suggestions": 0
-          }
-        },
-        "prefer-signals": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 2,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        }
-      },
-      "md": "# 🖊️ angular-16-crud-example\n\n**Info from repo**:\n- **URL**: <https://github.com/bezkoder/angular-16-crud-example>\n- **LastCommit**:\n\t- **Hash**: e760ebb02fd950b478b0fa863e767b672929b10d\n\t- **Author**: tienbku\n\t- **Message**: first commit\n\t- **Date**: Thu May 25 15:57:13 2023 +0700\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 4 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 4 |  |  | 💡 |\n\n\n\n"
-    },
-    "angular-17-crud-example": {
-      "name": "angular-17-crud-example",
-      "HEAD": {
-        "commit": "c0af324c915716b34f61ae10acae98092ec8570a",
-        "author": "tienbku",
-        "date": "Sun Feb 4 15:39:28 2024 +0700",
-        "message": "update references"
-      },
-      "url": "https://github.com/bezkoder/angular-17-crud-example",
-      "projects": {
-        "angular-17-crud": {
-          "prefer-on-push-component-change-detection": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 4,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 4
-            }
-          },
-          "consistent-component-styles": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 3,
-              "errors-with-suggestions": 0
-            }
-          },
-          "prefer-signals": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 2,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          }
-        }
-      },
-      "total": {
-        "prefer-on-push-component-change-detection": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 4,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 4
-          }
-        },
-        "consistent-component-styles": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 3,
-            "errors-with-suggestions": 0
-          }
-        },
-        "prefer-signals": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 2,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        }
-      },
-      "md": "# 🖊️ angular-17-crud-example\n\n**Info from repo**:\n- **URL**: <https://github.com/bezkoder/angular-17-crud-example>\n- **LastCommit**:\n\t- **Hash**: c0af324c915716b34f61ae10acae98092ec8570a\n\t- **Author**: tienbku\n\t- **Message**: update references\n\t- **Date**: Sun Feb 4 15:39:28 2024 +0700\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 0 | 4 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 4 |  |  | 💡 |\n\n\n\n"
-    },
-    "angular-basics-project": {
-      "name": "angular-basics-project",
-      "HEAD": {
-        "commit": "504cab8f87defbbaf6462988956b8176861ba802",
-        "author": "akotech",
-        "date": "Sun Oct 24 18:47:33 2021 +0200",
-        "message": "update playlist link"
-      },
-      "url": "https://github.com/ako-tech/angular-basics-project",
-      "projects": {
-        "shopping-cart": {
-          "prefer-on-push-component-change-detection": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 1,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 1
-            }
-          },
-          "consistent-component-styles": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 1,
-              "fixable-errors": 1,
-              "errors-with-suggestions": 0
-            }
-          }
-        }
-      },
-      "total": {
-        "prefer-on-push-component-change-detection": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 1,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 1
-          }
-        },
-        "consistent-component-styles": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 1,
-            "fixable-errors": 1,
-            "errors-with-suggestions": 0
-          }
-        }
-      },
-      "md": "# 🖊️ angular-basics-project\n\n**Info from repo**:\n- **URL**: <https://github.com/ako-tech/angular-basics-project>\n- **LastCommit**:\n\t- **Hash**: 504cab8f87defbbaf6462988956b8176861ba802\n\t- **Author**: akotech\n\t- **Message**: update playlist link\n\t- **Date**: Sun Oct 24 18:47:33 2021 +0200\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 1 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 1 |  |  | 💡 |\n\n\n\n"
-    },
-    "angular-example-app": {
-      "name": "angular-example-app",
-      "HEAD": {
-        "commit": "b43fcab316a8a4c87549eca67a8b7d915f850434",
-        "author": "ismaestro",
-        "date": "Sat Feb 1 07:47:16 2025 +0100",
-        "message": "fix(tools): solve stylelint issues"
-      },
-      "url": "https://github.com/Ismaestro/angular-example-app",
-      "projects": {
-        "angularexampleapp": {
-          "runtime-localize": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 21,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          }
-        }
-      },
-      "total": {
-        "runtime-localize": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 21,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        }
-      },
-      "md": "# 🖊️ angular-example-app\n\n**Info from repo**:\n- **URL**: <https://github.com/Ismaestro/angular-example-app>\n- **LastCommit**:\n\t- **Hash**: b43fcab316a8a4c87549eca67a8b7d915f850434\n\t- **Author**: ismaestro\n\t- **Message**: fix(tools): solve stylelint issues\n\t- **Date**: Sat Feb 1 07:47:16 2025 +0100\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `runtime-localize` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 21 | 0 | 0 |  |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `runtime-localize` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/runtime-localize.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/runtime-localize.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/runtime-localize) | 0 | 0 | 0 | 21 |  |  |  |\n\n\n\n"
-    },
-    "Angular-Full-Stack": {
-      "name": "Angular-Full-Stack",
-      "HEAD": {
-        "commit": "64a8ed9eb474c08896cbc6b436a810739c6a534e",
-        "author": "DavideViolante",
-        "date": "Wed Jan 22 09:38:49 2025 +0100",
-        "message": "chore(deps): upgrade to angular v19"
-      },
-      "url": "https://github.com/DavideViolante/Angular-Full-Stack",
-      "projects": {
-        "angular2-full-stack": {
-          "prefer-standalone": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 12,
-              "fixable-errors": 12,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 12,
-              "fixable-errors": 12,
-              "errors-with-suggestions": 0
-            }
-          },
-          "prefer-on-push-component-change-detection": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 12,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 12
-            }
-          },
-          "consistent-component-styles": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 4,
-              "fixable-errors": 4,
-              "errors-with-suggestions": 0
-            }
-          },
-          "prefer-signals": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 3,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            }
-          },
-          "use-injectable-provided-in": {
-            "recommended": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 0,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 0
-            },
-            "all": {
-              "warnings": 0,
-              "fixable-warnings": 0,
-              "warnings-with-suggestions": 0,
-              "errors": 5,
-              "fixable-errors": 0,
-              "errors-with-suggestions": 5
-            }
-          }
-        }
-      },
-      "total": {
-        "prefer-standalone": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 12,
-            "fixable-errors": 12,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 12,
-            "fixable-errors": 12,
-            "errors-with-suggestions": 0
-          }
-        },
-        "prefer-on-push-component-change-detection": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 12,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 12
-          }
-        },
-        "consistent-component-styles": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 4,
-            "fixable-errors": 4,
-            "errors-with-suggestions": 0
-          }
-        },
-        "prefer-signals": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 3,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          }
-        },
-        "use-injectable-provided-in": {
-          "recommended": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 0,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 0
-          },
-          "all": {
-            "warnings": 0,
-            "fixable-warnings": 0,
-            "warnings-with-suggestions": 0,
-            "errors": 5,
-            "fixable-errors": 0,
-            "errors-with-suggestions": 5
-          }
-        }
-      },
-      "md": "# 🖊️ Angular-Full-Stack\n\n**Info from repo**:\n- **URL**: <https://github.com/DavideViolante/Angular-Full-Stack>\n- **LastCommit**:\n\t- **Hash**: 64a8ed9eb474c08896cbc6b436a810739c6a534e\n\t- **Author**: DavideViolante\n\t- **Message**: chore(deps): upgrade to angular v19\n\t- **Date**: Wed Jan 22 09:38:49 2025 +0100\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-standalone` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-standalone.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-standalone.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-standalone) | 0 | 0 | 0 | 12 | 12 | 0 | 0 | 0 | 0 | 12 | 12 | 0 | 🔧 | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 12 | 0 | 12 |  |  | 💡 |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 5 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 4 | 4 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 12 |  |  | 💡 |\n| `use-injectable-provided-in` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-injectable-provided-in.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-injectable-provided-in.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-injectable-provided-in) | 0 | 0 | 0 | 5 |  |  | 💡 |\n\n\n\n"
     },
     "angular-ionic-ngxs-movies": {
       "name": "angular-ionic-ngxs-movies",
@@ -3231,6 +2729,508 @@
       },
       "md": "# 🖊️ ng-three-template\n\n**Info from repo**:\n- **URL**: <https://github.com/JohnnyDevNull/ng-three-template>\n- **LastCommit**:\n\t- **Hash**: 31fec97f2b3a25561f68b845a3aa63b64b4c70c2\n\t- **Author**: JohnnyDevNull\n\t- **Message**: Update README.md\n\t- **Date**: Thu May 2 12:10:19 2024 +0200\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `no-empty-lifecycle-method` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-empty-lifecycle-method) | 0 | 0 | 0 | 5 | 0 | 5 | 0 | 0 | 0 | 5 | 0 | 5 |  | ✅ | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 7 | 0 | 7 |  |  | 💡 |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 🔧 |  |  |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `no-empty-lifecycle-method` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-empty-lifecycle-method.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-empty-lifecycle-method.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-empty-lifecycle-method) | 0 | 5 | 0 | 5 |  | ✅ | 💡 |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 7 |  |  | 💡 |\n\n\n\n"
     },
+    "ngx-quill": {
+      "name": "ngx-quill",
+      "HEAD": {
+        "commit": "e7ea1915838ae668f588be4d71d40d63b7b27611",
+        "author": "KillerCodeMonkey",
+        "date": "Mon Feb 24 09:57:07 2025 +0100",
+        "message": "chore: bump version"
+      },
+      "url": "https://github.com/KillerCodeMonkey/ngx-quill",
+      "projects": {
+        "ngx-quill": {
+          "no-output-on-prefix": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 9,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 9,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          },
+          "component-selector": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 3,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 3,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          },
+          "prefer-output-readonly": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 9,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 9
+            }
+          },
+          "prefer-signals": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 2,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 2
+            }
+          },
+          "prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 3,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 3
+            }
+          },
+          "no-forward-ref": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 2,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          },
+          "component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 2,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          },
+          "consistent-component-styles": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 3,
+              "fixable-errors": 3,
+              "errors-with-suggestions": 0
+            }
+          },
+          "use-component-view-encapsulation": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 2,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 2
+            }
+          }
+        }
+      },
+      "total": {
+        "no-output-on-prefix": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 9,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 9,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        },
+        "component-selector": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 3,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 3,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        },
+        "prefer-output-readonly": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 9,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 9
+          }
+        },
+        "prefer-signals": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 2,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 2
+          }
+        },
+        "prefer-on-push-component-change-detection": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 3,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 3
+          }
+        },
+        "no-forward-ref": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 2,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        },
+        "component-max-inline-declarations": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 2,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        },
+        "consistent-component-styles": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 3,
+            "fixable-errors": 3,
+            "errors-with-suggestions": 0
+          }
+        },
+        "use-component-view-encapsulation": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 2,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 2
+          }
+        }
+      },
+      "md": "# 🖊️ ngx-quill\n\n**Info from repo**:\n- **URL**: <https://github.com/KillerCodeMonkey/ngx-quill>\n- **LastCommit**:\n\t- **Hash**: e7ea1915838ae668f588be4d71d40d63b7b27611\n\t- **Author**: KillerCodeMonkey\n\t- **Message**: chore: bump version\n\t- **Date**: Mon Feb 24 09:57:07 2025 +0100\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `no-output-on-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-on-prefix) | 0 | 0 | 0 | 9 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | 0 |  | ✅ |  |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 | 0 | 9 |  |  | 💡 |\n| `component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-selector) | 0 | 0 | 0 | 3 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 0 |  |  |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 0 | 3 |  |  | 💡 |\n| `consistent-component-styles` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/consistent-component-styles.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/consistent-component-styles.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/consistent-component-styles) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 🔧 |  |  |\n| `prefer-signals` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-signals.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-signals.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-signals) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 | 🔧 |  |  |\n| `no-forward-ref` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-forward-ref) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 0 |  |  |  |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 0 | 2 |  |  | 💡 |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `no-output-on-prefix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-output-on-prefix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-output-on-prefix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-output-on-prefix) | 0 | 9 | 0 | 9 |  | ✅ |  |\n| `prefer-output-readonly` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-output-readonly.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-output-readonly.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-output-readonly) | 0 | 0 | 0 | 9 |  |  | 💡 |\n| `component-selector` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-selector.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-selector.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-selector) | 0 | 3 | 0 | 3 |  |  |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 3 |  |  | 💡 |\n| `no-forward-ref` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-forward-ref.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/no-forward-ref.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/no-forward-ref) | 0 | 0 | 0 | 2 |  |  |  |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 2 |  |  |  |\n| `use-component-view-encapsulation` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/use-component-view-encapsulation.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/use-component-view-encapsulation.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/use-component-view-encapsulation) | 0 | 0 | 0 | 2 |  |  | 💡 |\n\n\n\n"
+    },
+    "ngx-toastr": {
+      "name": "ngx-toastr",
+      "HEAD": {
+        "commit": "e688d8039158bc83a9fe4ac08589f2ab8c550466",
+        "author": "Chris Barr",
+        "date": "Tue Aug 27 17:04:26 2024 -0400",
+        "message": "docs: fix demo to show progress for pink toast (#1023)"
+      },
+      "url": "https://github.com/scttcper/ngx-toastr",
+      "projects": {
+        "ngx-toastr": {
+          "component-class-suffix": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 5,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 5,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          },
+          "prefer-on-push-component-change-detection": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 6,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 6
+            }
+          },
+          "sort-ngmodule-metadata-arrays": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 3,
+              "fixable-errors": 3,
+              "errors-with-suggestions": 0
+            }
+          },
+          "component-max-inline-declarations": {
+            "recommended": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 0,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            },
+            "all": {
+              "warnings": 0,
+              "fixable-warnings": 0,
+              "warnings-with-suggestions": 0,
+              "errors": 11,
+              "fixable-errors": 0,
+              "errors-with-suggestions": 0
+            }
+          }
+        }
+      },
+      "total": {
+        "component-class-suffix": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 5,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 5,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        },
+        "prefer-on-push-component-change-detection": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 6,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 6
+          }
+        },
+        "sort-ngmodule-metadata-arrays": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 3,
+            "fixable-errors": 3,
+            "errors-with-suggestions": 0
+          }
+        },
+        "component-max-inline-declarations": {
+          "recommended": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 0,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          },
+          "all": {
+            "warnings": 0,
+            "fixable-warnings": 0,
+            "warnings-with-suggestions": 0,
+            "errors": 11,
+            "fixable-errors": 0,
+            "errors-with-suggestions": 0
+          }
+        }
+      },
+      "md": "# 🖊️ ngx-toastr\n\n**Info from repo**:\n- **URL**: <https://github.com/scttcper/ngx-toastr>\n- **LastCommit**:\n\t- **Hash**: e688d8039158bc83a9fe4ac08589f2ab8c550466\n\t- **Author**: Chris Barr\n\t- **Message**: docs: fix demo to show progress for pink toast (#1023)\n\t- **Date**: Tue Aug 27 17:04:26 2024 -0400\n\n## All\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>⚠️ Warnings<br>Fixables | Recommended<br>⚠️ Warnings<br>With Suggestions | Recommended<br>💥 Errors | Recommended<br>💥 Errors<br>Fixables | Recommended<br>💥 Errors<br>With Suggestions | All<br>⚠️ Warnings | All<br>⚠️ Warnings<br>Fixables | All<br>⚠️ Warnings<br>With Suggestions | All<br>💥 Errors | All<br>💥 Errors<br>Fixables | All<br>💥 Errors<br>With Suggestions | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 11 | 0 | 0 |  |  |  |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 0 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 | 0 | 6 |  |  | 💡 |\n| `sort-ngmodule-metadata-arrays` | ❌ | ❌ | ❌ | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | ❌ | ❌ | ❌ |\n\n\n\n## Important to us\n\n| 📏 Rule | 📚 | 📄 | 🧪 | Recommended<br>⚠️ Warnings | Recommended<br>💥 Errors | All<br>⚠️ Warnings | All<br>💥 Errors | 🔧 | ✅ | 💡 |\n| --- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |\n| `component-max-inline-declarations` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-max-inline-declarations.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-max-inline-declarations.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-max-inline-declarations) | 0 | 0 | 0 | 11 |  |  |  |\n| `component-class-suffix` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/component-class-suffix.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/component-class-suffix.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/component-class-suffix) | 0 | 5 | 0 | 5 |  | ✅ |  |\n| `prefer-on-push-component-change-detection` | [📚](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) | [📄](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/src/rules/prefer-on-push-component-change-detection.ts) | [🧪](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/tests/rules/prefer-on-push-component-change-detection) | 0 | 0 | 0 | 6 |  |  | 💡 |\n\n\n\n"
+    },
     "play-scala-angular-seed": {
       "name": "play-scala-angular-seed",
       "HEAD": {
@@ -3483,24 +3483,6 @@
     }
   },
   "total": {
-    "no-host-metadata-property": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 1,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 1,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      }
-    },
     "prefer-on-push-component-change-detection": {
       "recommended": {
         "warnings": 0,
@@ -3537,24 +3519,6 @@
         "errors-with-suggestions": 0
       }
     },
-    "use-component-view-encapsulation": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 0,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 59,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 59
-      }
-    },
     "prefer-signals": {
       "recommended": {
         "warnings": 0,
@@ -3571,6 +3535,42 @@
         "errors": 219,
         "fixable-errors": 0,
         "errors-with-suggestions": 2
+      }
+    },
+    "no-host-metadata-property": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "use-component-view-encapsulation": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 59,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 59
       }
     },
     "relative-url-prefix": {
@@ -3681,114 +3681,6 @@
         "errors-with-suggestions": 0
       }
     },
-    "no-lifecycle-call": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 0,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 1,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      }
-    },
-    "no-output-on-prefix": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 11,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 11,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      }
-    },
-    "component-selector": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 3,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 3,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      }
-    },
-    "no-forward-ref": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 0,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 3,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      }
-    },
-    "component-class-suffix": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 5,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 5,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      }
-    },
-    "sort-ngmodule-metadata-arrays": {
-      "recommended": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 0,
-        "fixable-errors": 0,
-        "errors-with-suggestions": 0
-      },
-      "all": {
-        "warnings": 0,
-        "fixable-warnings": 0,
-        "warnings-with-suggestions": 0,
-        "errors": 9,
-        "fixable-errors": 9,
-        "errors-with-suggestions": 0
-      }
-    },
     "runtime-localize": {
       "recommended": {
         "warnings": 0,
@@ -3803,6 +3695,24 @@
         "fixable-warnings": 0,
         "warnings-with-suggestions": 0,
         "errors": 21,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "no-lifecycle-call": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 1,
         "fixable-errors": 0,
         "errors-with-suggestions": 0
       }
@@ -3840,6 +3750,24 @@
         "warnings-with-suggestions": 0,
         "errors": 11,
         "fixable-errors": 11,
+        "errors-with-suggestions": 0
+      }
+    },
+    "sort-ngmodule-metadata-arrays": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 9,
+        "fixable-errors": 9,
         "errors-with-suggestions": 0
       }
     },
@@ -3915,6 +3843,24 @@
         "errors-with-suggestions": 0
       }
     },
+    "no-output-on-prefix": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 11,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 11,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
     "no-empty-lifecycle-method": {
       "recommended": {
         "warnings": 0,
@@ -3931,6 +3877,60 @@
         "errors": 5,
         "fixable-errors": 0,
         "errors-with-suggestions": 5
+      }
+    },
+    "component-selector": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 3,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 3,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "no-forward-ref": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 0,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 3,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      }
+    },
+    "component-class-suffix": {
+      "recommended": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 5,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
+      },
+      "all": {
+        "warnings": 0,
+        "fixable-warnings": 0,
+        "warnings-with-suggestions": 0,
+        "errors": 5,
+        "fixable-errors": 0,
+        "errors-with-suggestions": 0
       }
     }
   },
@@ -4070,28 +4070,6 @@
       },
       {
         "project": [
-          "ngx-toastr",
-          "ngx-toastr"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 6,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 6
-        }
-      },
-      {
-        "project": [
           "mean",
           "mean"
         ],
@@ -4114,8 +4092,8 @@
       },
       {
         "project": [
-          "angular-calendar",
-          "demos"
+          "ngx-toastr",
+          "ngx-toastr"
         ],
         "recommended": {
           "warnings": 0,
@@ -4129,31 +4107,9 @@
           "warnings": 0,
           "fixable-warnings": 0,
           "warnings-with-suggestions": 0,
-          "errors": 4,
+          "errors": 6,
           "fixable-errors": 0,
-          "errors-with-suggestions": 4
-        }
-      },
-      {
-        "project": [
-          "angular-fontawesome",
-          "demo"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 4,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 4
+          "errors-with-suggestions": 6
         }
       },
       {
@@ -4202,6 +4158,50 @@
       },
       {
         "project": [
+          "angular-calendar",
+          "demos"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 4,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 4
+        }
+      },
+      {
+        "project": [
+          "angular-fontawesome",
+          "demo"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 4,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 4
+        }
+      },
+      {
+        "project": [
           "angular-gridster2",
           "angular-gridster2"
         ],
@@ -4224,8 +4224,8 @@
       },
       {
         "project": [
-          "ngx-quill",
-          "ngx-quill"
+          "gojs-angular-basic",
+          "first-app"
         ],
         "recommended": {
           "warnings": 0,
@@ -4246,8 +4246,8 @@
       },
       {
         "project": [
-          "gojs-angular-basic",
-          "first-app"
+          "ngx-quill",
+          "ngx-quill"
         ],
         "recommended": {
           "warnings": 0,
@@ -4424,6 +4424,28 @@
       },
       {
         "project": [
+          "angular-17-crud-example",
+          "angular-17-crud"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 3,
+          "fixable-errors": 3,
+          "errors-with-suggestions": 0
+        }
+      },
+      {
+        "project": [
           "angular-gridster2",
           "angular-gridster2"
         ],
@@ -4448,28 +4470,6 @@
         "project": [
           "ngx-quill",
           "ngx-quill"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 3,
-          "fixable-errors": 3,
-          "errors-with-suggestions": 0
-        }
-      },
-      {
-        "project": [
-          "angular-17-crud-example",
-          "angular-17-crud"
         ],
         "recommended": {
           "warnings": 0,
@@ -4534,6 +4534,28 @@
       },
       {
         "project": [
+          "angular-basics-project",
+          "shopping-cart"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 1,
+          "errors-with-suggestions": 0
+        }
+      },
+      {
+        "project": [
           "angular-calendar",
           "angular-calendar"
         ],
@@ -4558,28 +4580,6 @@
         "project": [
           "angular-fontawesome",
           "demo"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 1,
-          "fixable-errors": 1,
-          "errors-with-suggestions": 0
-        }
-      },
-      {
-        "project": [
-          "angular-basics-project",
-          "shopping-cart"
         ],
         "recommended": {
           "warnings": 0,
@@ -4640,140 +4640,6 @@
           "errors": 1,
           "fixable-errors": 1,
           "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "use-component-view-encapsulation": [
-      {
-        "project": [
-          "angular-gridster2",
-          "gridster-app"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 25,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 25
-        }
-      },
-      {
-        "project": [
-          "angular-calendar",
-          "demos"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 12,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 12
-        }
-      },
-      {
-        "project": [
-          "angular-ionic-ngxs-movies",
-          "angular-ionic-ngxs-movies"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 10,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 10
-        }
-      },
-      {
-        "project": [
-          "ng-three-template",
-          "ng-three-template"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 7,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 7
-        }
-      },
-      {
-        "project": [
-          "angular-gridster2",
-          "angular-gridster2"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 3,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 3
-        }
-      },
-      {
-        "project": [
-          "ngx-quill",
-          "ngx-quill"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 2,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 2
         }
       }
     ],
@@ -4912,28 +4778,6 @@
       },
       {
         "project": [
-          "ngx-quill",
-          "ngx-quill"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 2,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 2
-        }
-      },
-      {
-        "project": [
           "angular-16-crud-example",
           "angular-16-crud"
         ],
@@ -4974,6 +4818,28 @@
           "errors": 2,
           "fixable-errors": 0,
           "errors-with-suggestions": 0
+        }
+      },
+      {
+        "project": [
+          "ngx-quill",
+          "ngx-quill"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 2,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 2
         }
       },
       {
@@ -5040,6 +4906,140 @@
           "errors": 1,
           "fixable-errors": 0,
           "errors-with-suggestions": 0
+        }
+      }
+    ],
+    "use-component-view-encapsulation": [
+      {
+        "project": [
+          "angular-gridster2",
+          "gridster-app"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 25,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 25
+        }
+      },
+      {
+        "project": [
+          "angular-calendar",
+          "demos"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 12,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 12
+        }
+      },
+      {
+        "project": [
+          "angular-ionic-ngxs-movies",
+          "angular-ionic-ngxs-movies"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 10,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 10
+        }
+      },
+      {
+        "project": [
+          "ng-three-template",
+          "ng-three-template"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 7,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 7
+        }
+      },
+      {
+        "project": [
+          "angular-gridster2",
+          "angular-gridster2"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 3,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 3
+        }
+      },
+      {
+        "project": [
+          "ngx-quill",
+          "ngx-quill"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 2,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 2
         }
       }
     ],
@@ -5607,216 +5607,6 @@
         }
       }
     ],
-    "no-lifecycle-call": [
-      {
-        "project": [
-          "angular-fontawesome",
-          "angular-fontawesome"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 1,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "no-output-on-prefix": [
-      {
-        "project": [
-          "ngx-quill",
-          "ngx-quill"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 9,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 9,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      },
-      {
-        "project": [
-          "gojs-angular-basic",
-          "first-app"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 2,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 2,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "component-selector": [
-      {
-        "project": [
-          "ngx-quill",
-          "ngx-quill"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 3,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 3,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "no-forward-ref": [
-      {
-        "project": [
-          "ngx-quill",
-          "ngx-quill"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 2,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      },
-      {
-        "project": [
-          "QuickApp",
-          "quickapp.client"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 1,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "component-class-suffix": [
-      {
-        "project": [
-          "ngx-toastr",
-          "ngx-toastr"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 5,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 5,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
-    "sort-ngmodule-metadata-arrays": [
-      {
-        "project": [
-          "angular-ionic-ngxs-movies",
-          "angular-ionic-ngxs-movies"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 6,
-          "fixable-errors": 6,
-          "errors-with-suggestions": 0
-        }
-      },
-      {
-        "project": [
-          "ngx-toastr",
-          "ngx-toastr"
-        ],
-        "recommended": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 0,
-          "fixable-errors": 0,
-          "errors-with-suggestions": 0
-        },
-        "all": {
-          "warnings": 0,
-          "fixable-warnings": 0,
-          "warnings-with-suggestions": 0,
-          "errors": 3,
-          "fixable-errors": 3,
-          "errors-with-suggestions": 0
-        }
-      }
-    ],
     "runtime-localize": [
       {
         "project": [
@@ -5836,6 +5626,30 @@
           "fixable-warnings": 0,
           "warnings-with-suggestions": 0,
           "errors": 21,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      }
+    ],
+    "no-lifecycle-call": [
+      {
+        "project": [
+          "angular-fontawesome",
+          "angular-fontawesome"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
           "fixable-errors": 0,
           "errors-with-suggestions": 0
         }
@@ -5885,6 +5699,52 @@
           "warnings-with-suggestions": 0,
           "errors": 11,
           "fixable-errors": 11,
+          "errors-with-suggestions": 0
+        }
+      }
+    ],
+    "sort-ngmodule-metadata-arrays": [
+      {
+        "project": [
+          "angular-ionic-ngxs-movies",
+          "angular-ionic-ngxs-movies"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 6,
+          "fixable-errors": 6,
+          "errors-with-suggestions": 0
+        }
+      },
+      {
+        "project": [
+          "ngx-toastr",
+          "ngx-toastr"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 3,
+          "fixable-errors": 3,
           "errors-with-suggestions": 0
         }
       }
@@ -5985,6 +5845,52 @@
         }
       }
     ],
+    "no-output-on-prefix": [
+      {
+        "project": [
+          "ngx-quill",
+          "ngx-quill"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 9,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 9,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      {
+        "project": [
+          "gojs-angular-basic",
+          "first-app"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 2,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 2,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      }
+    ],
     "no-empty-lifecycle-method": [
       {
         "project": [
@@ -6006,6 +5912,100 @@
           "errors": 5,
           "fixable-errors": 0,
           "errors-with-suggestions": 5
+        }
+      }
+    ],
+    "component-selector": [
+      {
+        "project": [
+          "ngx-quill",
+          "ngx-quill"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 3,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 3,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      }
+    ],
+    "no-forward-ref": [
+      {
+        "project": [
+          "ngx-quill",
+          "ngx-quill"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 2,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      },
+      {
+        "project": [
+          "QuickApp",
+          "quickapp.client"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 0,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 1,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        }
+      }
+    ],
+    "component-class-suffix": [
+      {
+        "project": [
+          "ngx-toastr",
+          "ngx-toastr"
+        ],
+        "recommended": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 5,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
+        },
+        "all": {
+          "warnings": 0,
+          "fixable-warnings": 0,
+          "warnings-with-suggestions": 0,
+          "errors": 5,
+          "fixable-errors": 0,
+          "errors-with-suggestions": 0
         }
       }
     ]

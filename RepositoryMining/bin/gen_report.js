@@ -89,36 +89,32 @@ function analyzeRepo({ name, recommended, all, ...data }, finalReport) {
  *
  * @param {*} report
  * @param {string} resultDir
- * @param {boolean} intermediate
  */
-function generateRepositoryReport(report, resultDir, intermediate = false) {
-  const md = mdGen.genMarkdownRepoReport(report, intermediate);
+function generateRepositoryReport(report, resultDir) {
+  const md = mdGen.genMarkdownRepoReport(report);
   report.md = md;
-  if (intermediate) {
-    const dir = `${resultDir}/repositories`;
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
-
-    const [jsonFile, mdFile] = ["json", "md"].map(
-      (ext) => `${dir}/report.${report.name}.${ext}`
-    );
-
-    fs.writeFileSync(jsonFile, JSON.stringify(report, null, 2));
-    console.log(`✅ Report json for repo saved in "${jsonFile}"`);
-    fs.writeFileSync(mdFile, md);
-    console.log(`✅ Report for repo saved in "${mdFile}"`);
+  const dir = `${resultDir}/repositories`;
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
   }
+
+  const [jsonFile, mdFile] = ["json", "md"].map(
+    (ext) => `${dir}/report.${report.name}.${ext}`
+  );
+
+  fs.writeFileSync(jsonFile, JSON.stringify(report, null, 2));
+  console.log(`✅ Report json for repo saved in "${jsonFile}"`);
+  fs.writeFileSync(mdFile, md);
+  console.log(`✅ Report for repo saved in "${mdFile}"`);
 }
 
 /**
  *
  * @param {*} report
  * @param {string} analysisDir
- * @param {boolean} intermediate
  */
-function generateResumeReport(report, analysisDir, intermediate = false) {
-  const md = mdGen.genMarkdownResumeReport(report, intermediate);
+function generateResumeReport(report, analysisDir) {
+  const md = mdGen.genMarkdownResumeReport(report, analysisDir);
   const [jsonFile, mdFile] = ["json", "md"].map(
     (ext) => `${analysisDir}/automatic.report.${ext}`
   );
@@ -126,11 +122,7 @@ function generateResumeReport(report, analysisDir, intermediate = false) {
   fs.writeFileSync(jsonFile, JSON.stringify(report, null, 2));
   console.log("✅", `Report json saved in "${jsonFile}"`);
   fs.writeFileSync(mdFile, md);
-  console.log(
-    "✅",
-    intermediate ? "Resume report" : "Report",
-    `saved in "${mdFile}"`
-  );
+  console.log("✅", "Resume report saved in", `"${mdFile}"`);
 }
 
 /**
@@ -158,7 +150,7 @@ ARGS.REPORTS.forEach((lintFileReport) => {
   const lintReport = load(lintFileReport);
   const repo = analyzeRepo(lintReport, report);
   repo.name = lintReport.name;
-  generateRepositoryReport(repo, ARGS.RESULT_DIR, ARGS.INTERMEDIATE);
+  generateRepositoryReport(repo, ARGS.RESULT_DIR);
   addRepoToReport(repo, report);
 });
-generateResumeReport(report, ARGS.RESULT_DIR, ARGS.INTERMEDIATE);
+generateResumeReport(report, ARGS.RESULT_DIR);

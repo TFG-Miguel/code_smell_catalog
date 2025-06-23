@@ -130,10 +130,7 @@ exports.genMarkdownRepoReport = function (repo) {
 function getMRef(repo, project) {
   const file = `repositories/report.${repo}.md`;
   return [repo, project]
-    .map((item, i) => [
-      item,
-      `${i ? "" : "%EF%B8%8F"}-${item}`,
-    ])
+    .map((item, i) => [item, `${i ? "" : "%EF%B8%8F"}-${item}`])
     .map(([item, ref]) => `[${item}](${file}#${ref})`)
     .join(" | ");
 }
@@ -153,30 +150,18 @@ function genRulesInProject(rules) {
       let matches = 0;
       const table = files
         .sort(
-          ({ recommended: r1, all: a1 }, { recommended: r2, all: a2 }) =>
-            r2.warnings +
-            r2.errors +
-            a2.warnings +
-            a2.errors -
-            (r1.warnings + r1.errors + a1.warnings + a1.errors)
+          ({ all: a1 }, { all: a2 }) =>
+            a2.warnings + a2.errors - (a1.warnings + a1.errors)
         )
         .map(({ project: [repo, project], recommended: rec, all }) => {
           const refMarkdown = getMRef(repo, project);
           matches += rec.warnings + rec.errors + all.warnings + all.errors;
           return `| ${refMarkdown} | ${rec.warnings} | ${rec.errors} | ${all.warnings} | ${all.errors} |`;
-        }
-        ).join("\n");
+        })
+        .join("\n");
 
       markdown += `<details>\n<summary>${rule} (projects: ${files.length}, matches: ${matches}) ${symbolInfo}</summary>\n\n`;
-      markdown += `| Repository | Project | Recommended<br>${
-          utils.SYMBOLS.warnings
-        } Warnings | Recommended<br>${
-          utils.SYMBOLS.errors
-        } Errors | All<br>${
-          utils.SYMBOLS.warnings
-        } Warnings | All<br>${
-          utils.SYMBOLS.errors
-        } Errors |\n`;
+      markdown += `| Repository | Project | Recommended<br>${utils.SYMBOLS.warnings} Warnings | Recommended<br>${utils.SYMBOLS.errors} Errors | All<br>${utils.SYMBOLS.warnings} Warnings | All<br>${utils.SYMBOLS.errors} Errors |\n`;
       markdown += "|---|---|:--:|:--:|:--:|:--:|\n";
       markdown += table + "\n\n";
       markdown += "</details>\n\n";
@@ -187,11 +172,22 @@ function genRulesInProject(rules) {
 function genCatalog(rules) {
   const header = "| Rule | Repository | Project | Count |\n|---|---|---|:--:|";
   const rows = Object.entries(rules)
-  .map(([rule, projects]) => {
-    return projects.map(({project, _, all}, i) => {
-      return '|' + [i === 0 ? rule : "", getMRef(project[0], project[1]), all.warnings + all.errors].join(" | ") + " |";
-    }).join("\n");
-  }).join("\n");
+    .map(([rule, projects]) => {
+      return projects
+        .map(({ project, _, all }, i) => {
+          return (
+            "|" +
+            [
+              i === 0 ? rule : "",
+              getMRef(project[0], project[1]),
+              all.warnings + all.errors,
+            ].join(" | ") +
+            " |"
+          );
+        })
+        .join("\n");
+    })
+    .join("\n");
   return header + "\n" + rows;
 }
 
@@ -201,10 +197,9 @@ function genMarkdownRepoIndex(repo, analysisDir) {
     .join("\n");
 }
 
-
 exports.genMarkdownResumeReport = function (report, analysisDir) {
   const intro =
-    "# 📑 `@angular-eslint@19` Rules Analysis Report\n\n" +
+    "# 📑 `@angular-eslint@19.3.0` Rules Analysis Report\n\n" +
     "## Symbols\n\n" +
     `${utils.SYMBOLS_DESCRIPTION}\n\n`;
 
@@ -232,7 +227,14 @@ if (require.main === module) {
   const fs = require("fs");
   const path = require("path");
 
-  const catalog = this.genMarkdownResumeReport(report, path.join(__dirname, "..", "result"));
+  const catalog = this.genMarkdownResumeReport(
+    report,
+    path.join(__dirname, "..", "result")
+  );
   fs.writeFileSync(path.join(__dirname, "report.md"), catalog);
-  console.log("✅", "Catalog saved in", `"${path.join(__dirname, "report.md")}"`);
+  console.log(
+    "✅",
+    "Catalog saved in",
+    `"${path.join(__dirname, "report.md")}"`
+  );
 }

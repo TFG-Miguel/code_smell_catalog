@@ -4,12 +4,7 @@ exports.RULES = rules;
 exports.sortFn = (item1, item2) =>
   item2[1].all.warnings +
   item2[1].all.errors +
-  item2[1].recommended.warnings +
-  item2[1].recommended.errors -
-  (item1[1].all.warnings +
-    item1[1].all.errors +
-    item1[1].recommended.warnings +
-    item1[1].recommended.errors);
+  (item1[1].all.warnings + item1[1].all.errors);
 
 const SYMBOLS = {
   errors: "💥",

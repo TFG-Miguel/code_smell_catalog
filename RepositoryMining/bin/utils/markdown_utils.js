@@ -3,7 +3,7 @@ const { rules } = require("./es-lint-rules");
 exports.RULES = rules;
 exports.sortFn = (item1, item2) =>
   item2[1].all.warnings +
-  item2[1].all.errors +
+  item2[1].all.errors -
   (item1[1].all.warnings + item1[1].all.errors);
 
 const SYMBOLS = {
@@ -20,6 +20,9 @@ const SYMBOLS = {
 
 exports.isNotAFixableRule = function (rule) {
   return rule in rules && !rules[rule].fixable;
+};
+exports.isNotAFixableOrSuggestRule = function (rule) {
+  return rule in rules && !rules[rule].fixable && !rules[rule].has_suggestions;
 };
 /**
  *

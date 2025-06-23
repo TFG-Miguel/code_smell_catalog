@@ -70,19 +70,16 @@ function genIndexMarkdown(md) {
 function genMarkdownRepoTable(
   data,
   mode = "all_entries",
+  filterFn = (_) => true,
   noEntryMessage = "The project pass linting"
 ) {
   const array = Object.entries(data)
     .sort(utils.sortFn)
-    .filter((value) => mode !== "resume" || utils.isNotAFixableRule(value[0]));
+    .filter((value) => mode !== "resume" || filterFn(value[0]));
   return genMarkdownTable(
     { data: array, message: noEntryMessage },
     ...utils.TABLE_ENTRIES[mode.toLocaleUpperCase()]
   );
-}
-
-function formatNumber(number, digits = 0, fillString = "0") {
-  return `${number}`.padStart(digits, fillString);
 }
 
 /**
@@ -208,9 +205,13 @@ exports.genMarkdownResumeReport = function (report, analysisDir) {
     `${genMarkdownRepoIndex(report.repos, analysisDir)}\n\n` +
     "## Global Summary\n\n" +
     "### All Rules\n\n" +
-    `${genMarkdownRepoTable(report.total, "all_entries")}\n\n` +
-    "### Rules Important to us\n\n" +
     `${genMarkdownRepoTable(report.total, "resume")}\n\n` +
+    "### Rules Important to us\n\n" +
+    `${genMarkdownRepoTable(
+      report.total,
+      "resume",
+      utils.isNotAFixableOrSuggestRule
+    )}\n\n` +
     "## Rules by Repository\n\n" +
     "### Detailed Rules\n\n" +
     `${genRulesInProject(report.rules)}\n\n` +

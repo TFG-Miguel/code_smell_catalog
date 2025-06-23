@@ -1,0 +1,8 @@
+HEAD:{"commit": "504cab8f87defbbaf6462988956b8176861ba802", "author": "akotech", "date": "Sun Oct 24 18:47:33 2021 +0200", "message": "update playlist link"}
+url:https://github.com/ako-tech/angular-basics-project
+mode:recommended
+project:shopping-cart
+[]
+mode:all
+project:shopping-cart
+[{"filePath":"/home/migudel/Documentos/TFG/repos/propios/angular-basics-project/src/app/app.component.ts","messages":[{"ruleId":"@angular-eslint/prefer-on-push-component-change-detection","severity":2,"message":"The component's `changeDetection` value should be set to `ChangeDetectionStrategy.OnPush`","line":3,"column":1,"nodeType":"Decorator","messageId":"preferOnPushComponentChangeDetection","endLine":7,"endColumn":3,"suggestions":[{"messageId":"suggestAddChangeDetectionOnPush","fix":{"range":[18,59],"text":", ChangeDetectionStrategy } from '@angular/core';\n\n@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush,"},"desc":"Add `ChangeDetectionStrategy.OnPush`"}]},{"ruleId":"@angular-eslint/consistent-component-styles","severity":2,"message":"Use `styleUrl` instead of `styleUrls` for a single stylesheet","line":6,"column":3,"nodeType":"Property","messageId":"useStyleUrl","endLine":6,"endColumn":37,"fix":{"range":[122,156],"text":"styleUrl: './app.component.css'"}}],"suppressedMessages":[],"errorCount":2,"fatalErrorCount":0,"warningCount":0,"fixableErrorCount":1,"fixableWarningCount":0,"source":"import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'shopping-cart';\n}\n","usedDeprecatedRules":[]}]

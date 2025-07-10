@@ -1,6 +1,6 @@
 # README
 
-> [!info]
+> [!note]
 > Este repositorio contiene entre otra mucha mucha información irrelevante de cara a lectores.
 > Debido a lo cual, se recomienda consultar unicamente las secciones navegables a través a través de los enlaces comentados a continuación.
 
@@ -15,4 +15,4 @@ A partir del catálogo de code smells planteado en el artículo de 2023 por Yani
 # Repository Mining
 De la misma manera que en el artículo también se ha planteado un catálogo de reglas que se han reportado durante el análisis de 13 repositorios (5 ya planteados más 8 nuevos incorporados). 
 
-El catálogo resultante se puede consultar en en el siguiente [fichero](RepositoryMining/catalog/README.md).
+El catálogo resultante se puede consultar en en el siguiente [fichero](RepositoryMining/result/automatic.report.md).

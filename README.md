@@ -13,6 +13,6 @@ A partir del catálogo de code smells planteado en el artículo de 2023 por Yani
 > Es importante resaltar que se ha realizado una intersección de este catálogo con los que localizan las reglas del plugin `@angular-eslint` y ha dado como resultado la regla [`prefer-on-push-component-change-detection`](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/prefer-on-push-component-change-detection.md) y de forma parcial la regla [`no-pipe-impure`](https://github.com/angular-eslint/angular-eslint/blob/main/packages/eslint-plugin/docs/rules/no-pipe-impure.md).
 
 # Repository Mining
-De la misma manera que en el artículo también se ha planteado un catálogo de reglas que se han reportado durante el análisis de 13 repositorios (5 ya planteados más 8 nuevos incorporados). 
+De la misma manera que en el artículo también se ha planteado un catálogo de reglas que se han reportado durante el análisis de 18 repositorios (5 ya planteados más 13 nuevos incorporados). 
 
 El catálogo resultante se puede consultar en en el siguiente [fichero](RepositoryMining/result/automatic.report.md).
